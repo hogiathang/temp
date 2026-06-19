@@ -1,0 +1,314 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/jira-auth",
+  "skill_name": "jira-auth",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 5,
+  "num_raw_patterns": 5,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 5,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 3,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "http://127.0.0.1:9999]"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la / find on skill directory",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "checked presence of run.js, .env.example, .env (all absent)",
+      "checked JIRA_* env var presence (all unset; values not printed)",
+      "node scripts/test.mjs  [no env]  -> exit 1, missing-env guard, no network",
+      "python3 scripts/test.py [no env] -> exit 1, missing-env guard, no network",
+      "node scripts/test.mjs  [dummy creds -> http://127.0.0.1:9999] -> connection refused",
+      "python3 scripts/test.py [dummy creds -> http://127.0.0.1:9999] -> Errno 111 connection refused",
+      "created /home/appuser/workdir/sample.env (dummy placeholders)",
+      "python3 path resolution check for load_env()",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5626fdc35060 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5626fdc3a7c0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x555b1774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x555b198c5e8 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x555b1776c10 /* 28 vars */ <unfinished ...>",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x555b22e1f90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x617e5d5dac38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x617e5d5dad18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x617e5d5dac68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x555b22e2690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x555b22e2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x555b22e2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x555b22e2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x555b22e2a10 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5d59275186e0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d2b33c9bb50 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d2b33ca3710 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d2b33ca3710 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d2b33ca3710 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d2b33ca3710 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d2b33ca3710 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-auth/\"], 0x595539b44c50 /* 34 vars */) = 0",
+      "93    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/jira-auth/\", \"-type\", \"f\"], 0x595539b44c50 /* 34 vars */) = 0",
+      "100   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x58d7e3786320 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-auth/scripts/run.js\"], 0x58d7e3786320 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-auth/.env.example\"], 0x58d7e3786320 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-auth/.env\"], 0x58d7e3786320 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x604bafe68730 /* 34 vars */) = 0",
+      "118   execve(\"/usr/local/bin/python3\", [\"python3\", \"scripts/test.py\"], 0x604bafe68730 /* 34 vars */) = 0",
+      "122   execve(\"/usr/local/bin/node\", [\"node\", \"scripts/test.mjs\"], 0x7ffd48593b40 /* 38 vars */) = -1 ENOENT (No such file or directory)",
+      "134   execve(\"/usr/local/bin/python3\", [\"python3\", \"scripts/test.py\"], 0x7ffd47c75ff0 /* 38 vars */) = 0",
+      "137   execve(\"/usr/bin/cat\", [\"cat\"], 0x63e5480e9070 /* 34 vars */) = 0",
+      "138   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/\"], 0x63e5480e9070 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "ls -la / find on skill directory",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "checked presence of run.js, .env.example, .env (all absent)",
+      "checked JIRA_* env var presence (all unset; values not printed)",
+      "node scripts/test.mjs  [no env]  -> exit 1, missing-env guard, no network",
+      "python3 scripts/test.py [no env] -> exit 1, missing-env guard, no network",
+      "node scripts/test.mjs  [dummy creds -> http://127.0.0.1:9999] -> connection refused",
+      "python3 scripts/test.py [dummy creds -> http://127.0.0.1:9999] -> Errno 111 connection refused",
+      "created /home/appuser/workdir/sample.env (dummy placeholders)",
+      "python3 path resolution check for load_env()",
+      "{'command': 'node/python test scripts pointed at a real *.atlassian.net with real credentials', 'reason': 'credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)'}",
+      "{'command': 'node scripts/run.js test  (from SKILL.md)', 'reason': 'outside sandbox / file missing — run.js is referenced but not present in the skill'}",
+      "{'command': 'cp .env.example .env  (from SKILL.md)', 'reason': 'file missing — .env.example not present in the skill'}",
+      "{'command': 'curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md)', 'reason': 'credential required + would send credentials to an external service'}",
+      "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+      "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:39:01.9157678720\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:40:39.5115402320\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781782735981', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:38:55.9827667280\\t/home/appuser/.claude/backups/.claude.json.backup.1781782735981'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781782839511', 'after': '-rw-r--r--\\t24602\\t2026-06-18 11:40:39.5118457200\\t/home/appuser/.claude/backups/.claude.json.backup.1781782839511'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:38:56.6553858690\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:38:56.8797878690\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.8149413500\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554.jsonl', 'after': '-rw-------\\t127361\\t2026-06-18 11:40:38.6834661750\\t/home/appuser/.claude/projects/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.0456500830\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/87ffc744-7589-4af2-aeda-2efef3973554', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.0456500830\\t/home/appuser/.claude/session-env/87ffc744-7589-4af2-aeda-2efef3973554'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:40:38.6657960920\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:40:38.6697963670\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.env', 'after': '-rw-r--r--\\t117\\t2026-06-18 11:40:10.5715645300\\t/home/appuser/workdir/sample.env'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:39:01.0556123770\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.0560029980\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.0563289160\\t/tmp/claude-1000/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:40:10.9361173960\\t/tmp/claude-1000/-home-appuser/87ffc744-7589-4af2-aeda-2efef3973554/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:40:40.4039157660\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:38:54.1846022990\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:40:39.5192571680\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:38:54.1826021620\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:39:01.9141344970\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:38:54.1846022990\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 11:40:39.5149463520\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:38:54.1846022990\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:40:10.5488601700\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:38:55.2276741170\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:40:40.4039157660\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:38:55.2276741170\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1640\\t2026-06-18 11:38:55.2306743230\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "137   openat(AT_FDCWD, \"/home/appuser/workdir/sample.env\", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials/ssh keys/browser profiles. all endpoints are constructed from the user-",
+          "damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials/ssh keys/browser profiles. all endpoints are constructed from the user-"
+        ],
+        "commands_skipped": [
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "node scripts/run.js test  (from SKILL.md) | reason: outside sandbox / file missing — run.js is referenced but not present in the skill",
+          "cp .env.example .env  (from SKILL.md) | reason: file missing — .env.example not present in the skill",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ],
+        "skipped_unsafe_commands": [
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ]
+      },
+      "evidence_short": "primitive=damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials...; command=node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transit..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ls (from skill.md) node/python test scripts pointed at a real *.atlassian.net with real credentials curl -x get .../rest/api/3/myself with base64 real credentials (from skill.md) irreversible credential node/python test scripts pointed at a real *.atlassian.net with real credentials curl -x get .../rest/api/3/myself with base64 real credent",
+          "est/api/3/myself with base64 real credentials (from skill.md) | reason: credential required + would send credentials to an external service node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real jira issues) curl -x get .../rest",
+          "est/api/3/myself with base64 real credentials (from skill.md) | reason: credential required + would send credentials to an external service irreversible credential node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irrevers",
+          "est/api/3/myself with base64 real credentials (from skill.md) | reason: credential required + would send credentials to an external service",
+          "nign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials/ssh keys/browser profiles. all endpoints are constructed from the user-supplied `jira_base_url`. - **smell #1 — credential logging:** `test",
+          "ity_assessment\": \"benign with minor cautions. no malicious behavior: no remote script execution, no exfiltration, no access to real secrets, all network targets derive from user-supplied jira_base_url. caution 1: test.mjs logs token prefix/suffix and the full base64 basic-auth header to stdout (credential-leak-to-logs risk with real tokens). caution 2: the 'test' suite",
+          "ic auth (email + api token, base64-encoded). it ships two test scripts (`test.mjs`, `test.py`) that read credentials from env vars / a `.env` file, build an `authorization: basic` header, and run a 7-step suite: authenticate → get project → list issue types → **create an issue →"
+        ],
+        "commands_skipped": [
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "node scripts/run.js test  (from SKILL.md) | reason: outside sandbox / file missing — run.js is referenced but not present in the skill",
+          "cp .env.example .env  (from SKILL.md) | reason: file missing — .env.example not present in the skill",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ],
+        "skipped_unsafe_commands": [
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ]
+      },
+      "evidence_short": "primitive=ls (from skill.md) node/python test scripts pointed at a real *.atlassian.net with real credentials curl -x get .../rest/api/3/myself with base64 real credentials (from skill.md...; command=node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transit..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials/ssh keys/browser profiles. all endpoints are constructed from the user-"
+        ],
+        "dangerous_remote_install_hits": [
+          "damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials/ssh keys/browser profiles. all endpoints are constructed from the user-"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ],
+        "remote_install_instructions": [
+          "curl",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ]
+      },
+      "evidence_short": "primitive=damentally **benign**: a legitimate jira api auth helper. it contains no remote-code execution, no `curl|bash`, no exfiltration, no obfuscation, no attempts to touch credentials...; install=curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+    },
+    {
+      "pattern": "sensitive_action_request",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Agent output requested access to sensitive credentials or private data.",
+      "evidence": {
+        "agent_sensitive_requests": [
+          "send credentials"
+        ]
+      },
+      "evidence_short": "request=send credentials"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transitions real Jira issues)",
+          "curl -X GET .../rest/api/3/myself with base64 real credentials (from SKILL.md) | reason: credential required + would send credentials to an external service"
+        ]
+      },
+      "evidence_short": "skipped=node/python test scripts pointed at a real *.atlassian.net with real credentials | reason: credential required + account-affecting/irreversible action (suite creates and transit..."
+    }
+  ]
+}

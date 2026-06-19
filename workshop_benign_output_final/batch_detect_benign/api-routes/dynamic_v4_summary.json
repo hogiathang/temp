@@ -1,0 +1,263 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/api-routes",
+  "skill_name": "api-routes",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 40.7,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 40.7 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "http://localhost:8081/api/hello"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/api-routes",
+      "command -v node npm npx expo eas curl (availability check)",
+      "node --version; npm --version; node -e (check Response/Request/crypto.subtle/fetch globals)",
+      "mkdir -p /home/appuser/workdir/app/api/users",
+      "Wrote app/api/hello+api.ts, app/api/users+api.ts, app/api/users/[id]+api.ts (skill examples)",
+      "node run_handlers.mjs (exercised GET/POST/PUT/DELETE, query params, auth headers, CORS, error handling)",
+      "node --input-type=module (Web Crypto SHA-256 demo via node:crypto webcrypto)",
+      "find . -type f; env-var presence check (no values printed)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x63d968e5d070 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x63d968e627e0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x51d22b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x51d22d8c5f0 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x51d22b76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x51d23709d90 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5e1f4d965c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5e1f4d965d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5e1f4d965c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x51d23701c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x51d2370a490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x51d23709a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x51d23700a90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x51d23700710 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6076801b26f0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e74f7ec1b60 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e74f7ec9730 /* 31 vars */ <unfinished ...>",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e74f7ec9730 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/api-routes\"], 0x5fd4b593bc90 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x6172297e9790 /* 34 vars */) = 0",
+      "102   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7fffad10f3d0 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "122   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir/app/api/users\"], 0x5940d3415c70 /* 34 vars */) = 0",
+      "123   execve(\"/usr/bin/ls\", [\"ls\", \"-R\", \"/home/appuser/workdir\"], 0x5940d3415c70 /* 34 vars */) = 0",
+      "153   execve(\"/usr/bin/sort\", [\"sort\"], 0x58d3a3024110 /* 34 vars */ <unfinished ...>",
+      "152   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \".\", \"-type\", \"f\"], 0x58d3a3039590 /* 33 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "npm",
+      "node",
+      "mkdir",
+      "sort",
+      "npx",
+      "curl"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/api-routes",
+      "command -v node npm npx expo eas curl (availability check)",
+      "node --version; npm --version; node -e (check Response/Request/crypto.subtle/fetch globals)",
+      "mkdir -p /home/appuser/workdir/app/api/users",
+      "Wrote app/api/hello+api.ts, app/api/users+api.ts, app/api/users/[id]+api.ts (skill examples)",
+      "node run_handlers.mjs (exercised GET/POST/PUT/DELETE, query params, auth headers, CORS, error handling)",
+      "node --input-type=module (Web Crypto SHA-256 demo via node:crypto webcrypto)",
+      "find . -type f; env-var presence check (no values printed)",
+      "{'command': 'npm install -g eas-cli', 'reason': 'network global install / external requirement, outside sandbox'}",
+      "{'command': 'eas login', 'reason': 'credential required (EAS account) / external service'}",
+      "{'command': 'eas deploy', 'reason': 'irreversible external action (deploys to Cloudflare Workers) / credential required'}",
+      "{'command': 'eas env:create --name OPENAI_API_KEY --value sk-xxx --environment production', 'reason': 'credential required / external account-affecting action'}",
+      "{'command': 'npx expo serve', 'reason': 'expo not installed; requires network download of dev server / external requirement'}",
+      "{'command': 'curl http://localhost:8081/api/hello (and POST variant)', 'reason': 'depends on expo dev server not running; no local endpoint available'}",
+      "eas login | reason: credential required (EAS account) / external service",
+      "eas deploy | reason: irreversible external action (deploys to Cloudflare Workers) / credential required",
+      "eas env:create --name OPENAI_API_KEY --value sk-xxx --environment production | reason: credential required / external account-affecting action"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 09:49:23.7266897290\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:51:02.6225495040\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781776157146', 'after': '-rw-r--r--\\t33\\t2026-06-18 09:49:17.1487361020\\t/home/appuser/.claude/backups/.claude.json.backup.1781776157146'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781776262622', 'after': '-rw-r--r--\\t24602\\t2026-06-18 09:51:02.6226784320\\t/home/appuser/.claude/backups/.claude.json.backup.1781776262622'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 09:49:18.1128024760\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:18.6805140430\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:23.6295683950\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c.jsonl', 'after': '-rw-------\\t110918\\t2026-06-18 09:51:02.1617449020\\t/home/appuser/.claude/projects/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:22.5472393670\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/3d948559-b6b7-411b-a76d-1971f489608c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:22.5472393670\\t/home/appuser/.claude/session-env/3d948559-b6b7-411b-a76d-1971f489608c'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 09:51:02.1409646370\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:51:02.1439648440\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/app', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:46.3584304670\\t/home/appuser/workdir/app'}",
+      "{'path': '/home/appuser/workdir/app/api', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:54.1042516090\\t/home/appuser/workdir/app/api'}",
+      "{'path': '/home/appuser/workdir/app/api/hello+api.ts', 'after': '-rw-r--r--\\t123\\t2026-06-18 09:49:49.9909972340\\t/home/appuser/workdir/app/api/hello+api.ts'}",
+      "{'path': '/home/appuser/workdir/app/api/users', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:56.8204674320\\t/home/appuser/workdir/app/api/users'}",
+      "{'path': '/home/appuser/workdir/app/api/users+api.ts', 'after': '-rw-r--r--\\t479\\t2026-06-18 09:49:54.0982800140\\t/home/appuser/workdir/app/api/users+api.ts'}",
+      "{'path': '/home/appuser/workdir/app/api/users/[id]+api.ts', 'after': '-rw-r--r--\\t135\\t2026-06-18 09:49:56.8094666750\\t/home/appuser/workdir/app/api/users/[id]+api.ts'}",
+      "{'path': '/home/appuser/workdir/run_handlers.mjs', 'after': '-rw-r--r--\\t3499\\t2026-06-18 09:50:16.2008017340\\t/home/appuser/workdir/run_handlers.mjs'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 09:49:22.5633390260\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:22.5648972610\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:22.5653710470\\t/tmp/claude-1000/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:50:36.2157488820\\t/tmp/claude-1000/-home-appuser/3d948559-b6b7-411b-a76d-1971f489608c/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 09:51:03.6010651620\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:14.4565507490\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:51:02.6297891770\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:14.4535505430\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:23.7241888100\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 09:49:14.4565507490\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 09:51:02.6259675450\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 09:49:14.4565507490\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 09:50:16.2138026290\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 09:49:15.5146235960\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 09:51:03.6010651620\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 09:49:15.5146235960\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1343\\t2026-06-18 09:49:15.5186238710\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "i eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --environment production npx expo serve curl http://localhost:8081/api/hello (and post variant) eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --en",
+          "npm install -g eas-cli eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --environment production npx expo serve curl http://localh"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "i eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --environment production npx expo serve curl http://localhost:8081/api/hello (and post variant) eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --en",
+          "npm install -g eas-cli eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --environment production npx expo serve curl http://localh"
+        ],
+        "skipped_remote_install": [
+          "npm install -g eas-cli | reason: network global install / external requirement, outside sandbox",
+          "npx expo serve | reason: expo not installed; requires network download of dev server / external requirement",
+          "curl http://localhost:8081/api/hello (and POST variant) | reason: depends on expo dev server not running; no local endpoint available"
+        ],
+        "remote_install_instructions": [
+          "curl",
+          "npx",
+          "npm install",
+          "npm install -g",
+          "npm install -g eas-cli | reason: network global install / external requirement, outside sandbox",
+          "npx expo serve | reason: expo not installed; requires network download of dev server / external requirement",
+          "curl http://localhost:8081/api/hello (and POST variant) | reason: depends on expo dev server not running; no local endpoint available"
+        ]
+      },
+      "evidence_short": "primitive=i eas login eas deploy eas env:create --name openai_api_key --value sk-xxx --environment production npx expo serve curl http://localhost:8081/api/hello (and post variant) eas lo...; install=npm install -g eas-cli | reason: network global install / external requirement, outside sandbox"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "eas login | reason: credential required (EAS account) / external service",
+          "eas deploy | reason: irreversible external action (deploys to Cloudflare Workers) / credential required",
+          "eas env:create --name OPENAI_API_KEY --value sk-xxx --environment production | reason: credential required / external account-affecting action"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "eas login | reason: credential required (EAS account) / external service",
+          "eas deploy | reason: irreversible external action (deploys to Cloudflare Workers) / credential required",
+          "eas env:create --name OPENAI_API_KEY --value sk-xxx --environment production | reason: credential required / external account-affecting action"
+        ]
+      },
+      "evidence_short": "skipped=eas login | reason: credential required (EAS account) / external service"
+    },
+    {
+      "pattern": "malformed_skill_data",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 22.0,
+      "evidence_type": "intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "low",
+      "summary": "Skill contains malformed or invalid local data/config that may break execution.",
+      "evidence": {
+        "observed_errors": [
+          "First run of run_handlers.mjs: ReferenceError 'crypto is not defined' in ESM module scope on Node 18 (Web Crypto not a module global); resolved by importing webcrypto from node:crypto and re-running successfully.",
+          "Intentional/expected: 'API error: Unexpected token n in JSON' — the deliberate broken-JSON test case correctly hit the try/catch 500 path."
+        ]
+      },
+      "evidence_short": "error=First run of run_handlers.mjs: ReferenceError 'crypto is not defined' in ESM module scope on Node 18 (Web Crypto not a module global); resolved by importing webcrypto from node:..."
+    }
+  ]
+}

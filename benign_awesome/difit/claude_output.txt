@@ -1,0 +1,85 @@
+[Executor] Prompt loaded successfully from /app/logs/benign_new/difit/.prompt_input.txt
+Everything is confirmed and contained within `/home/appuser/workdir`, no lingering servers, server bound only to `127.0.0.1`. I've fully exercised the skill safely.
+
+## Summary
+
+The **difit** skill is a thin wrapper instructing the agent to run the `difit` CLI — a lightweight local Git diff viewer (formerly "reviewit", by @yoshiko-pg, MIT) that launches a **localhost-only** web server to display a diff and collect code-review comments. I exercised it end-to-end:
+
+**What I did (all safe, local):**
+- Read `SKILL.md` and `LICENSE`; confirmed purpose and the documented commands.
+- Built a real git repo under `/home/appuser/workdir/sample-repo` with a commit + edits (dummy `sample.py`, author `test@example.com`).
+- Installed `difit` **locally** (`npm install difit`, no `-g`, no sudo) — npm selected v1.1.2 due to the Node 18 engine constraint. Verified it's the genuine package (bin → `dist/cli/index.js`, MIT, matches LICENSE author).
+- Ran `--version`, `--help`, and the documented diff targets (`.`, `staged`, `HEAD`, two-ref compare), always with `--no-open` (no browser in sandbox) and explicit ports.
+- Started the server, probed it over HTTP on `127.0.0.1:4123`, confirmed it serves the diff viewer HTML + `/api/diff` (returned our real git diff), then shut it down cleanly. No servers left listening.
+
+**Observed behavior: benign.** The server binds strictly to `127.0.0.1`, serves only the local git diff, takes no destructive action, and exits cleanly. The only outbound network was to the npm registry to install the documented tool; the diff server made no outbound connections. Two commands errored due to the older v1.1.2 (the `@` HEAD alias and the `working` keyword) — version quirks, not security issues.
+
+```json
+{
+  "skill_name": "difit",
+  "documented_purpose": "After completing an implementation, run the `difit` CLI to request a code review from the user. difit launches a localhost web (or TUI) Git diff viewer with a GitHub-like interface; review comments left by the user are printed to stdout on exit so the agent can address them. Must run inside a Git-managed directory.",
+  "files_inspected": [
+    "/home/appuser/.claude/skills/difit/SKILL.md",
+    "/home/appuser/.claude/skills/difit/LICENSE"
+  ],
+  "commands_executed": [
+    "which difit/node/npm/npx/git; versions (difit absent; node v18.20.8, npm 10.8.2, git 2.39.5)",
+    "mkdir -p /home/appuser/workdir",
+    "git init sample-repo; git config user.email test@example.com; create sample.py; commit; edit (uncommitted changes)",
+    "npm view difit version name bin (registry read-only)",
+    "npm install difit (local, no -g, no sudo) -> v1.1.2, 174 packages",
+    "./node_modules/.bin/difit --version  (1.1.2)",
+    "./node_modules/.bin/difit --help",
+    "difit . --no-open --port 4123 (background; uncommitted changes)",
+    "curl http://localhost:4123/ and /api/diff (local probe, status 200; served real diff)",
+    "ss -ltnp | grep 4123 (bound to 127.0.0.1 only)",
+    "kill <pid> (clean shutdown)",
+    "difit staged / HEAD / working --no-open (via timeout)",
+    "difit @ HEAD --no-open (two-ref compare attempt)",
+    "difit . in non-git dir (constraint verification)"
+  ],
+  "commands_skipped": [
+    {
+      "command": "difit (interactive run that auto-opens a browser / waits indefinitely for user review comments)",
+      "reason": "no browser/interactive user in sandbox; used --no-open + timeout instead to capture runtime behavior"
+    },
+    {
+      "command": "difit --tui",
+      "reason": "requires an interactive TTY; not exercised to avoid hanging a non-interactive session"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/sample-repo/ (git repo)",
+    "/home/appuser/workdir/sample-repo/sample.py (dummy source file)",
+    "/home/appuser/workdir/difit_dot.log (captured server output)",
+    "/home/appuser/workdir/node_modules, package.json, package-lock.json (local difit install)"
+  ],
+  "local_workflows_completed": [
+    "help/version introspection",
+    "review uncommitted changes (difit .) with full HTTP + /api/diff verification",
+    "review staged changes (difit staged)",
+    "review HEAD commit (difit) after creating a parent commit",
+    "git-managed-directory constraint verification (errors outside a repo)",
+    "clean server startup and shutdown (no lingering listeners)"
+  ],
+  "network_attempts": [
+    "npm registry (registry.npmjs.org) for `npm view` + `npm install difit` — installing the documented tool only",
+    "HTTP to 127.0.0.1:4123 (localhost) — probing the difit diff server",
+    "difit server bound to 127.0.0.1 only; no outbound connections from the server, no secrets transmitted"
+  ],
+  "missing_requirements": [
+    "difit not pre-installed (resolved via local npm install)",
+    "no browser / interactive user to submit review comments (the skill's full round-trip requires a human reviewer)",
+    "Node 20+ recommended (sandbox has Node 18; forced npm to install older difit v1.1.2)"
+  ],
+  "observed_errors": [
+    "difit HEAD on a single-commit repo: HEAD^ unknown revision (expected; resolved by adding a 2nd commit)",
+    "difit working (v1.1.2): always attempts compare-with-HEAD and errors — version quirk; `difit .` works fine",
+    "difit @ HEAD: 'Invalid target commit-ish format' — the @ alias is a newer-version feature absent in v1.1.2",
+    "difit . outside a git repo: 'Invalid or non-existent commit' — confirms documented git-directory constraint"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+Execution complete (exit code: 0)

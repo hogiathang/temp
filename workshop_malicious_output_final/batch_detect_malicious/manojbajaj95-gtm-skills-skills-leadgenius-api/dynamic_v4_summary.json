@@ -1,0 +1,351 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/manojbajaj95-gtm-skills-skills-leadgenius-api",
+  "skill_name": "manojbajaj95-gtm-skills-skills-leadgenius-api",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "d3fnn1x1kghdd7.cloudfront.net",
+      "http-intake.logs.us5.datadoghq.com",
+      "last.leadgenius.app"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "13.35.163.25",
+      "13.35.163.56",
+      "13.35.163.65",
+      "13.35.163.64"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://last.leadgenius.app/api/clients",
+      "https://last.leadgenius.app/api/auth",
+      "https://last.leadgenius.app/api/leads",
+      "https://ugdmgjyxenhipk74b5swx4xvuy.appsync-api.us-east-1.amazonaws.com/graphql"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version",
+      "python3 -c 'import requests' (ModuleNotFoundError — dependency missing)",
+      "mkdir -p /home/appuser/workdir",
+      "env-var presence check for LGP_API_KEY / LGP_APPSYNC_KEY / LGP_COMPANY_ID (names only)",
+      "ls ~/.leadgenius_auth.json (absent)",
+      "python3 lgp.py --help / auth.py --help / api_call.py --help / test_api.py --help (ModuleNotFoundError without stub)",
+      "python3 -m py_compile scripts/*.py (all OK)",
+      "python3 json-validate references/openapi.json (valid OpenAPI 3.0.3, 4 paths)",
+      "created /home/appuser/workdir/sample_lead.json and sample_client.json",
+      "created local no-op requests stub at /home/appuser/workdir/reqstub/requests.py",
+      "python3 lgp.py leads list  (no creds -> 'Not authenticated')",
+      "python3 api_call.py GET /clients  (no key -> 'API Key is required')",
+      "python3 lead_distribution.py  (no key -> 'API Key is required')",
+      "python3 lgp.py --help (via stub)",
+      "python3 api_call.py GET /clients --key dummy-token (stubbed net, builds correct request)",
+      "LGP_API_KEY=dummy-token python3 lgp.py leads find --company 'Example Corp' (stubbed net)",
+      "python3 auth.py --email test@example.com --password dummy-password (stubbed net)",
+      "urllib reachability probe: DNS resolve + HTTPS GET https://last.leadgenius.app/api/clients with dummy bearer token",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x60a7e6b12110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x60a7e6b178d0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x49bf3b74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x49bf3d8c638 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x49bf3b76c10 /* 28 vars */ <unfinished ...>",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x49bf46e0a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x62024d741c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x62024d741d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x62024d741c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x49bf46e1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x49bf46e1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x49bf46e1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x49bf46e1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x49bf46e1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x64a790bff790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5fc378f61c00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fc378f69820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fc378f69820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api\"], 0x569de74e3130 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/cat\", [\"cat\", \"package.json\"], 0x5fa9b4cf9740 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/cat\", [\"cat\", \".gitignore\"], 0x5fa9b4cf9740 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"scripts/\"], 0x5fa9b4cf9740 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir"
+    ],
+    "tool_call_patterns": [
+      "python3 --version",
+      "python3 -c 'import requests' (ModuleNotFoundError — dependency missing)",
+      "mkdir -p /home/appuser/workdir",
+      "env-var presence check for LGP_API_KEY / LGP_APPSYNC_KEY / LGP_COMPANY_ID (names only)",
+      "ls ~/.leadgenius_auth.json (absent)",
+      "python3 lgp.py --help / auth.py --help / api_call.py --help / test_api.py --help (ModuleNotFoundError without stub)",
+      "python3 -m py_compile scripts/*.py (all OK)",
+      "python3 json-validate references/openapi.json (valid OpenAPI 3.0.3, 4 paths)",
+      "created /home/appuser/workdir/sample_lead.json and sample_client.json",
+      "created local no-op requests stub at /home/appuser/workdir/reqstub/requests.py",
+      "python3 lgp.py leads list  (no creds -> 'Not authenticated')",
+      "python3 api_call.py GET /clients  (no key -> 'API Key is required')",
+      "python3 lead_distribution.py  (no key -> 'API Key is required')",
+      "python3 lgp.py --help (via stub)",
+      "python3 api_call.py GET /clients --key dummy-token (stubbed net, builds correct request)",
+      "LGP_API_KEY=dummy-token python3 lgp.py leads find --company 'Example Corp' (stubbed net)",
+      "python3 auth.py --email test@example.com --password dummy-password (stubbed net)",
+      "urllib reachability probe: DNS resolve + HTTPS GET https://last.leadgenius.app/api/clients with dummy bearer token",
+      "{'command': 'python3 scripts/create_edu_demo.py', 'reason': \"irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend\"}",
+      "{'command': 'python3 scripts/create_fin_demo.py', 'reason': 'irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend'}",
+      "{'command': 'python3 scripts/fix_leads.py', 'reason': 'irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID'}",
+      "{'command': 'python3 scripts/lead_distribution.py --key <real> --company-id <real>', 'reason': 'credential required + would query a live AppSync backend; ran only the no-key validation path'}",
+      "{'command': 'python3 scripts/test_api.py --username <real> --password <real>', 'reason': 'credential required — real Cognito login + live client/lead CRUD; no real account available'}",
+      "{'command': 'python3 scripts/auth.py --email <real> --password <real>  (real login)', 'reason': 'credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values'}",
+      "{'command': 'pip install requests', 'reason': 'policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead'}",
+      "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+      "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+      "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+      "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+      "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+      "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:05:49.6197202650\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:08:56.2302698240\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690743833', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:05:43.8338817340\\t/home/appuser/.claude/backups/.claude.json.backup.1781690743833'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690936230', 'after': '-rw-r--r--\\t24323\\t2026-06-17 10:08:56.2306772550\\t/home/appuser/.claude/backups/.claude.json.backup.1781690936230'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:05:44.3813686940\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:44.6303727680\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:49.5757173120\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db.jsonl', 'after': '-rw-------\\t334289\\t2026-06-17 10:08:55.8987848580\\t/home/appuser/.claude/projects/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:48.7426614010\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/4288e9b8-8751-4ae5-aced-313cef3953db', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:48.7426614010\\t/home/appuser/.claude/session-env/4288e9b8-8751-4ae5-aced-313cef3953db'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:08:55.8822212660\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:08:55.8862215340\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:07:15.5926292790\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/api_call.cpython-310.pyc', 'after': '-rw-r--r--\\t1939\\t2026-06-17 10:07:15.5664885790\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/api_call.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/auth.cpython-310.pyc', 'after': '-rw-r--r--\\t1934\\t2026-06-17 10:07:15.5684887130\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/auth.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/create_edu_demo.cpython-310.pyc', 'after': '-rw-r--r--\\t3433\\t2026-06-17 10:07:15.5713471340\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/create_edu_demo.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/create_fin_demo.cpython-310.pyc', 'after': '-rw-r--r--\\t4194\\t2026-06-17 10:07:15.5737938470\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/create_fin_demo.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/fix_leads.cpython-310.pyc', 'after': '-rw-r--r--\\t2076\\t2026-06-17 10:07:15.5768170750\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/fix_leads.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/lead_distribution.cpython-310.pyc', 'after': '-rw-r--r--\\t3840\\t2026-06-17 10:07:15.5801635060\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/lead_distribution.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/lgp.cpython-310.pyc', 'after': '-rw-r--r--\\t11475\\t2026-06-17 10:07:15.5855894080\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/lgp.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/test_api.cpython-310.pyc', 'after': '-rw-r--r--\\t14073\\t2026-06-17 10:07:15.5926292790\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts/__pycache__/test_api.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/reqstub', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:07:46.7185793510\\t/home/appuser/workdir/reqstub'}",
+      "{'path': '/home/appuser/workdir/reqstub/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:07:46.7197245850\\t/home/appuser/workdir/reqstub/__pycache__'}",
+      "{'path': '/home/appuser/workdir/reqstub/__pycache__/requests.cpython-310.pyc', 'after': '-rw-r--r--\\t1408\\t2026-06-17 10:07:46.7197245850\\t/home/appuser/workdir/reqstub/__pycache__/requests.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/reqstub/requests.py', 'after': '-rw-r--r--\\t936\\t2026-06-17 10:07:46.4785632430\\t/home/appuser/workdir/reqstub/requests.py'}",
+      "{'path': '/home/appuser/workdir/sample_client.json', 'after': '-rw-r--r--\\t136\\t2026-06-17 10:07:21.0598572650\\t/home/appuser/workdir/sample_client.json'}",
+      "{'path': '/home/appuser/workdir/sample_lead.json', 'after': '-rw-r--r--\\t168\\t2026-06-17 10:07:21.0448562580\\t/home/appuser/workdir/sample_lead.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 10:05:48.7476617370\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:48.7487743190\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:48.7487743190\\t/tmp/claude-1000/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:08:13.1495418520\\t/tmp/claude-1000/-home-appuser/4288e9b8-8751-4ae5-aced-313cef3953db/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 10:08:56.9472927460\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:42.0132097550\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:08:56.2364772820\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:42.0112096210\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:49.6187201980\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 10:05:42.0132097550\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 10:08:56.2323816100\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:42.0282081580\\t/home/appuser/.claude/skills/manojbajaj95-gtm-skills-skills-leadgenius-api/scripts', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:07:15.5654885120\\t/home/appuser/.claude/skills/manojbajaj95-gtm-ski...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:05:42.0132097550\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:07:46.4656074210\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 10:05:43.0632802310\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 10:08:56.9472927460\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 10:05:43.0632802310\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t3393\\t2026-06-17 10:05:43.0662804320\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "113   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "113   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "138   write(4, \"import urllib.request, urllib.error, socket\\nhost = \\\"last.leadgenius.app\\\"\\nprint(f\\\"[reachability] DNS resolve {host} ...\\\")\\ntry:\\n    ip = socket.gethostbyname(host)\\n    print(f\\\"  resolved -> {ip}\\\")\\nexcept Exception as e:\\n    print(f\\\"  DNS failed: {e}\\\")\\n\\nurl = f\\\"https://{host}/api/clients\\\"\\nprint(f\\\"[reachability] GET...",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. network targets are limited to the documented `last.leadge",
+          "to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. network targets are limited to the documented `last.leadge"
+        ],
+        "commands_skipped": [
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values",
+          "pip install requests | reason: policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+        ],
+        "skipped_unsafe_commands": [
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+        ]
+      },
+      "evidence_short": "primitive=to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/brows...; command=python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaig..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "nd. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. network targets are limited to the documented `last.leadgenius.app` api and the appsync graphql endpoint. the to"
+        ],
+        "commands_skipped": [
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values",
+          "pip install requests | reason: policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+        ],
+        "skipped_unsafe_commands": [
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+        ]
+      },
+      "evidence_short": "primitive=nd. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. ...; command=python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaig..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. network targets are limited to the documented `last.leadge"
+        ],
+        "dangerous_remote_install_hits": [
+          "to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/browser profiles. network targets are limited to the documented `last.leadge"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [
+          "pip install requests | reason: policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+        ],
+        "remote_install_instructions": [
+          "pip install",
+          "pip install requests | reason: policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+        ]
+      },
+      "evidence_short": "primitive=to that backend. - **no malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/ssh keys/brows...; install=pip install requests | reason: policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend",
+          "python3 scripts/create_fin_demo.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend",
+          "python3 scripts/fix_leads.py | reason: irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID",
+          "python3 scripts/lead_distribution.py --key <real> --company-id <real> | reason: credential required + would query a live AppSync backend; ran only the no-key validation path",
+          "python3 scripts/test_api.py --username <real> --password <real> | reason: credential required — real Cognito login + live client/lead CRUD; no real account available",
+          "python3 scripts/auth.py --email <real> --password <real>  (real login) | reason: credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+        ]
+      },
+      "evidence_short": "skipped=python3 scripts/create_edu_demo.py | reason: irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaig..."
+    }
+  ]
+}

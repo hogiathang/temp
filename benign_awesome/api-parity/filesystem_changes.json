@@ -1,0 +1,273 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 09:47:34.3204986400\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:49:10.8453021220\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781776048528",
+      "after": "-rw-r--r--\t33\t2026-06-18 09:47:28.5296019270\t/home/appuser/.claude/backups/.claude.json.backup.1781776048528"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781776150843",
+      "after": "-rw-r--r--\t24602\t2026-06-18 09:49:10.8463021910\t/home/appuser/.claude/backups/.claude.json.backup.1781776150843"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 09:47:29.0643838880\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:29.2906207320\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:34.2393610530\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f.jsonl",
+      "after": "-rw-------\t117198\t2026-06-18 09:49:10.4184329420\t/home/appuser/.claude/projects/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:33.8155512860\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/5f4fafe1-a62b-4880-9108-822aabbeea7f",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:33.8155512860\t/home/appuser/.claude/session-env/5f4fafe1-a62b-4880-9108-822aabbeea7f"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 09:49:10.3822702420\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:49:10.3912708620\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/api-parity-full.sh",
+      "after": "-rwxr-xr-x\t1773\t2026-06-18 09:48:25.1031528500\t/home/appuser/workdir/api-parity-full.sh"
+    },
+    {
+      "path": "/home/appuser/workdir/api-parity-quick.sh",
+      "after": "-rwxr-xr-x\t561\t2026-06-18 09:48:13.0987599230\t/home/appuser/workdir/api-parity-quick.sh"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:58.4537355890\t/home/appuser/workdir/dli-mock"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:58.4508861750\t/home/appuser/workdir/dli-mock/src"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:58.4526158400\t/home/appuser/workdir/dli-mock/src/dli"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:48:42.5674573640\t/home/appuser/workdir/dli-mock/src/dli/api"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/__init__.py",
+      "after": "-rw-r--r--\t255\t2026-06-18 09:48:42.5312877870\t/home/appuser/workdir/dli-mock/src/dli/api/__init__.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/catalog.py",
+      "after": "-rw-r--r--\t70\t2026-06-18 09:47:58.5052294520\t/home/appuser/workdir/dli-mock/src/dli/api/catalog.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/config.py",
+      "after": "-rw-r--r--\t68\t2026-06-18 09:47:58.5297510080\t/home/appuser/workdir/dli-mock/src/dli/api/config.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/dataset.py",
+      "after": "-rw-r--r--\t70\t2026-06-18 09:47:58.5573322150\t/home/appuser/workdir/dli-mock/src/dli/api/dataset.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/metric.py",
+      "after": "-rw-r--r--\t28\t2026-06-18 09:48:42.5043508950\t/home/appuser/workdir/dli-mock/src/dli/api/metric.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/quality.py",
+      "after": "-rw-r--r--\t70\t2026-06-18 09:47:58.6154177600\t/home/appuser/workdir/dli-mock/src/dli/api/quality.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/transpile.py",
+      "after": "-rw-r--r--\t74\t2026-06-18 09:47:58.6397471170\t/home/appuser/workdir/dli-mock/src/dli/api/transpile.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/api/workflow.py",
+      "after": "-rw-r--r--\t149\t2026-06-18 09:48:36.0326125300\t/home/appuser/workdir/dli-mock/src/dli/api/workflow.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:58.4774234420\t/home/appuser/workdir/dli-mock/src/dli/commands"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/__init__.py",
+      "after": "-rw-r--r--\t23\t2026-06-18 09:47:58.4781467820\t/home/appuser/workdir/dli-mock/src/dli/commands/__init__.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/base.py",
+      "after": "-rw-r--r--\t19\t2026-06-18 09:47:58.4752776400\t/home/appuser/workdir/dli-mock/src/dli/commands/base.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/catalog.py",
+      "after": "-rw-r--r--\t68\t2026-06-18 09:47:58.4582383070\t/home/appuser/workdir/dli-mock/src/dli/commands/catalog.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/config.py",
+      "after": "-rw-r--r--\t66\t2026-06-18 09:47:58.4600992540\t/home/appuser/workdir/dli-mock/src/dli/commands/config.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/dataset.py",
+      "after": "-rw-r--r--\t68\t2026-06-18 09:47:58.4624529470\t/home/appuser/workdir/dli-mock/src/dli/commands/dataset.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/info.py",
+      "after": "-rw-r--r--\t19\t2026-06-18 09:47:58.4719452940\t/home/appuser/workdir/dli-mock/src/dli/commands/info.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/lineage.py",
+      "after": "-rw-r--r--\t68\t2026-06-18 09:47:58.4642599030\t/home/appuser/workdir/dli-mock/src/dli/commands/lineage.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/metric.py",
+      "after": "-rw-r--r--\t66\t2026-06-18 09:47:58.4661294140\t/home/appuser/workdir/dli-mock/src/dli/commands/metric.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/quality.py",
+      "after": "-rw-r--r--\t68\t2026-06-18 09:47:58.4677868810\t/home/appuser/workdir/dli-mock/src/dli/commands/quality.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/transpile.py",
+      "after": "-rw-r--r--\t72\t2026-06-18 09:47:58.4695709480\t/home/appuser/workdir/dli-mock/src/dli/commands/transpile.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/utils.py",
+      "after": "-rw-r--r--\t20\t2026-06-18 09:47:58.4766253650\t/home/appuser/workdir/dli-mock/src/dli/commands/utils.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/version.py",
+      "after": "-rw-r--r--\t22\t2026-06-18 09:47:58.4736162610\t/home/appuser/workdir/dli-mock/src/dli/commands/version.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/src/dli/commands/workflow.py",
+      "after": "-rw-r--r--\t166\t2026-06-18 09:48:35.9909024540\t/home/appuser/workdir/dli-mock/src/dli/commands/workflow.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:58.4544697340\t/home/appuser/workdir/dli-mock/tests"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:48:42.5883566790\t/home/appuser/workdir/dli-mock/tests/api"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_catalog_api.py",
+      "after": "-rw-r--r--\t29\t2026-06-18 09:47:58.8482368030\t/home/appuser/workdir/dli-mock/tests/api/test_catalog_api.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_config_api.py",
+      "after": "-rw-r--r--\t28\t2026-06-18 09:47:58.8502398850\t/home/appuser/workdir/dli-mock/tests/api/test_config_api.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_dataset_api.py",
+      "after": "-rw-r--r--\t29\t2026-06-18 09:47:58.8524266750\t/home/appuser/workdir/dli-mock/tests/api/test_dataset_api.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_metric_api.py",
+      "after": "-rw-r--r--\t28\t2026-06-18 09:47:58.8541380770\t/home/appuser/workdir/dli-mock/tests/api/test_metric_api.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_quality_api.py",
+      "after": "-rw-r--r--\t29\t2026-06-18 09:47:58.8552801440\t/home/appuser/workdir/dli-mock/tests/api/test_quality_api.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dli-mock/tests/api/test_workflow_api.py",
+      "after": "-rw-r--r--\t30\t2026-06-18 09:47:58.8577052590\t/home/appuser/workdir/dli-mock/tests/api/test_workflow_api.py"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 09:47:33.8276226080\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:33.8281752250\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:33.8287597610\t/tmp/claude-1000/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:48:50.9068573230\t/tmp/claude-1000/-home-appuser/5f4fafe1-a62b-4880-9108-822aabbeea7f/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 09:49:11.6233556890\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:47:26.6891311350\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:49:10.8558198080\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:47:26.6871309980\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:47:34.3196564830\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 09:47:26.6891311350\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24685\t2026-06-18 09:49:10.8503024660\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:47:26.6891311350\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:48:25.0181469980\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 09:47:27.7332030180\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 09:49:11.6233556890\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 09:47:27.7332030180\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1344\t2026-06-18 09:47:27.7372032940\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:47:26.6831307220\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/api-parity",
+    "/home/appuser/.claude/skills/api-parity/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 53,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

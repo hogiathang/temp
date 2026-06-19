@@ -1,0 +1,291 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/agentinsync-agentinsync-skill",
+  "skill_name": "agentinsync-agentinsync-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "agentinsync.com",
+      "agentinsync.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "agentinsync.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "agentinsync.com.google.internal",
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal",
+      "ns6.wixdns.net"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "5.78.162.192"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://agentinsync.com/connect",
+      "https://agentinsync.com/connect`)."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/agentinsync-agentinsync-skill/",
+      "mkdir -p /home/appuser/workdir",
+      "grep -rIl agentinsync /home/appuser/.claude*",
+      "python3 -c \"json.load(.claude.json) -> top-level keys / mcpServers\"",
+      "env | grep -iE agentinsync (names only, values hidden)",
+      "ToolSearch query for documented MCP tools (returned none)",
+      "getent hosts agentinsync.com  +  socket.gethostbyname('agentinsync.com')",
+      "which agentinsync agent-in-sync ais / which node npm npx",
+      "Write /home/appuser/workdir/sample.txt",
+      "cat /home/appuser/workdir/sample.txt",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x64d92cb9e0d0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x64d92cba3870 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x401c5774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x401c598c618 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x401c5776c10 /* 28 vars */ <unfinished ...>",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x401c62f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x55ae7df37c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x55ae7df37d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x55ae7df37c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x401c62f3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x401c62f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x401c62f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x401c62f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x401c62f3110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x62957c7a1750 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5cf5096ecbc0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cf5096f47c0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cf5096f47c0 /* 31 vars */ <unfinished ...>",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/agentinsync-agentinsync-skill/\"], 0x5a0a3e7c4ec0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5f8b462fbb80 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5f8b462fbb80 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/\"], 0x5f8b462fbb80 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude.json\"], 0x5f8b462fbb80 /* 34 vars */) = 0",
+      "99    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rIl\", \"agentinsync\", \"/home/appuser/.claude\", \"/home/appuser/.claude.json\"], 0x5f8b462fb...",
+      "104   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rIl\", \"agent-in-sync\", \"/home/appuser/.claude\", \"/home/appuser/.claude.json\"], 0x5f8b462...",
+      "112   execve(\"/usr/bin/head\", [\"head\", \"-c\", \"500\"], 0x5c1f283414d0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-o\", \"\\\"mcpServers\\\"[^}]*\", \"/home/appuser/.claude.json\"], 0x5c1f28343000 /* 33 vars */ <...",
+      "113   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import json;d=json.load(open('/home/appuser/.claude.json'));print('top-level keys:',list(d.keys()));print('mcpServers:',d.get('mcpServers',{}).keys() if isinstance(d.get('mcpServers'),dict) else d.get('mcpServers'))\"], 0x5c1f283414d0 /* 34 vars */) = 0",
+      "116   execve(\"/usr/bin/sed\", [\"sed\", \"s/=.*/=<hidden>/\"], 0x5c1f283414d0 /* 34 vars */ <unfinished ...>",
+      "114   execve(\"/usr/bin/env\", [\"env\"], 0x5c1f283414d0 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "python3",
+      "getent",
+      "which",
+      "node",
+      "npm",
+      "npx"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/agentinsync-agentinsync-skill/",
+      "mkdir -p /home/appuser/workdir",
+      "grep -rIl agentinsync /home/appuser/.claude*",
+      "python3 -c \"json.load(.claude.json) -> top-level keys / mcpServers\"",
+      "env | grep -iE agentinsync (names only, values hidden)",
+      "ToolSearch query for documented MCP tools (returned none)",
+      "getent hosts agentinsync.com  +  socket.gethostbyname('agentinsync.com')",
+      "which agentinsync agent-in-sync ais / which node npm npx",
+      "Write /home/appuser/workdir/sample.txt",
+      "cat /home/appuser/workdir/sample.txt",
+      "{'command': 'search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls)', 'reason': 'credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com'}",
+      "{'command': 'HTTP request to https://agentinsync.com/connect or the MCP API endpoint', 'reason': 'external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead'}",
+      "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+      "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:10:48.3874846770\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:12:13.0691695050\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683842573', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:10:42.5739486750\\t/home/appuser/.claude/backups/.claude.json.backup.1781683842573'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683933070', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:12:13.0691695050\\t/home/appuser/.claude/backups/.claude.json.backup.1781683933070'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:10:43.1181309360\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:43.3207007540\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.2664765530\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633.jsonl', 'after': '-rw-------\\t82309\\t2026-06-17 08:12:12.7757504930\\t/home/appuser/.claude/projects/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.2824776280\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/95e132df-a91a-4cf7-831d-2497bc345633', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.2824776280\\t/home/appuser/.claude/session-env/95e132df-a91a-4cf7-831d-2497bc345633'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:12:12.7591486910\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:12:12.7621488920\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t223\\t2026-06-17 08:11:41.6447444240\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:10:48.2967825450\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.2972417940\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.2972417940\\t/tmp/claude-1000/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:11:46.2243673660\\t/tmp/claude-1000/-home-appuser/95e132df-a91a-4cf7-831d-2497bc345633/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:12:13.8272203920\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:40.8979818930\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:12:13.0751699070\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:40.8959817590\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:48.3874846770\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:10:40.8979818930\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:12:13.0722449550\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:10:40.8979818930\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:11:41.6530604860\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:10:41.9390517830\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:12:13.8272203920\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:10:41.9390517830\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1381\\t2026-06-17 08:10:41.9420519840\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the skill, so none had to be skipped on those grounds. ```json { \"skill_nam",
+          "re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the skill, so none had to be skipped on those grounds. ```json { \"skill_nam"
+        ],
+        "commands_skipped": [
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ],
+        "skipped_unsafe_commands": [
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ]
+      },
+      "evidence_short": "primitive=re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the ski...; command=search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, to..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the skill, so none had to be skipped on those grounds. ```json { \"skill_name\": \"agentinsync-agentinsync-skill\","
+        ],
+        "commands_skipped": [
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ],
+        "skipped_unsafe_commands": [
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ]
+      },
+      "evidence_short": "primitive=re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the ski...; command=search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, to..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the skill, so none had to be skipped on those grounds. ```json { \"skill_nam"
+        ],
+        "dangerous_remote_install_hits": [
+          "re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the skill, so none had to be skipped on those grounds. ```json { \"skill_nam"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": [
+          "npx"
+        ]
+      },
+      "evidence_short": "primitive=re connecting the mcp server, not active exploits in the files themselves. no unsafe instructions (curl|bash, remote script execution, credential access) were present in the ski...; install=npx"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, tools not present in session; calling would require an API key and would send error/project data to external service agentinsync.com",
+          "HTTP request to https://agentinsync.com/connect or the MCP API endpoint | reason: external action requiring credentials; would transmit data to a third-party server — only harmless DNS resolution was performed instead"
+        ]
+      },
+      "evidence_short": "skipped=search_before_fixing / submit_after_solving / vote / get_my_badges / setup_agent_identity (MCP tool calls) | reason: credential + MCP server required — server not configured, to..."
+    }
+  ]
+}

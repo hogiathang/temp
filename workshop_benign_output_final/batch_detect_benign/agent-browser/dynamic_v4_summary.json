@@ -1,0 +1,291 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/agent-browser",
+  "skill_name": "agent-browser",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 92.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 92.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.8.34",
+      "104.16.11.34",
+      "104.16.4.34",
+      "104.16.3.34",
+      "104.16.9.34",
+      "104.16.1.34",
+      "104.16.2.34",
+      "104.16.6.34",
+      "104.16.7.34",
+      "104.16.5.34",
+      "104.16.10.34",
+      "104.16.0.34"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/agent-browser/",
+      "which/type/command -v agent-browser; echo $PATH",
+      "find / -iname '*agent-browser*'; which node npm npx; find playwright",
+      "mkdir -p /home/appuser/workdir; create sample.txt and form.html; node --version; npm --version",
+      "agent-browser --help (exit 127)",
+      "agent-browser --version (exit 127)",
+      "agent-browser session list (exit 127)",
+      "npm ls -g --depth=0; ls npm global bin; find node_modules for agent-browser",
+      "env | grep -iE 'BROWSER|PLAYWRIGHT|CHROM|...' (names only, values masked); which chromium/chrome; ls ~/.config/agent-browser",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5c8699c64080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5c8699c69800 /* 22 vars */) = 0",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x36116774510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3611698c5f8 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x36116776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x36117332310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x62294898ac38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x62294898ac68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x62294898ad18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x36117332a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x36117332d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x36117333110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x36117333110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x36117332d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5cfbdc493700 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d71e5ddeb70 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d71e5de6750 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d71e5de6750 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d71e5de6750 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d71e5de6750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d71e5de6750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d71e5de6750 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/agent-browser/\"], 0x6435d25b4ce0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/which\", [\"which\", \"agent-browser\"], 0x56f3045c7ef0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/head\", [\"head\", \"-50\"], 0x5dc025695540 /* 34 vars */) = 0",
+      "98    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/\", \"-iname\", \"*agent-browser*\"], 0x5dc0256abd80 /* 33 vars */ <unfinished ...>",
+      "103   execve(\"/usr/bin/which\", [\"which\", \"node\", \"npm\", \"npx\"], 0x5dc025695540 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/which\", [\"which\", \"playwright\"], 0x5dc025695540 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/head\", [\"head\", \"-20\"], 0x5dc025695540 /* 34 vars */ <unfinished ...>",
+      "105   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/\", \"-iname\", \"*playwright*\", \"-maxdepth\", \"6\"], 0x5dc0256ac850 /* 33 vars */ <unfinished ...>",
+      "112   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x577659fb9830 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/cat\", [\"cat\"], 0x577659fb9830 /* 34 vars */) = 0",
+      "114   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/\"], 0x577659fb9830 /* 34 vars */) = 0",
+      "116   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x577659fb9830 /* 34 vars */) = 0",
+      "116   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffc348dd340 /* 34 vars */) = -1 ENOENT (No such file or directory)"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "which",
+      "mkdir",
+      "npm",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/agent-browser/",
+      "which/type/command -v agent-browser; echo $PATH",
+      "find / -iname '*agent-browser*'; which node npm npx; find playwright",
+      "mkdir -p /home/appuser/workdir; create sample.txt and form.html; node --version; npm --version",
+      "agent-browser --help (exit 127)",
+      "agent-browser --version (exit 127)",
+      "agent-browser session list (exit 127)",
+      "npm ls -g --depth=0; ls npm global bin; find node_modules for agent-browser",
+      "env | grep -iE 'BROWSER|PLAYWRIGHT|CHROM|...' (names only, values masked); which chromium/chrome; ls ~/.config/agent-browser",
+      "{'command': 'npx agent-browser <subcommand>', 'reason': 'unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally'}",
+      "{'command': 'agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow)', 'reason': 'credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally'}",
+      "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally",
+      "agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) | reason: credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:23:33.1951561310\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:25:00.3290055070\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781681007335', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:23:27.3367628510\\t/home/appuser/.claude/backups/.claude.json.backup.1781681007335'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781681100330', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:25:00.3305179180\\t/home/appuser/.claude/backups/.claude.json.backup.1781681100330'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:23:28.0088079660\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:28.2063802400\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:33.1458134560\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893.jsonl', 'after': '-rw-------\\t86480\\t2026-06-17 07:25:00.0344978080\\t/home/appuser/.claude/projects/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:31.8970066310\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/efd57953-dbb4-4fca-834a-70a14b705893', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:31.8970066310\\t/home/appuser/.claude/session-env/efd57953-dbb4-4fca-834a-70a14b705893'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:25:00.0159844930\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:25:00.0199847610\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:24:19.1172389250\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:24:20.0813036440\\t/home/appuser/.npm/_logs'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-17T07_24_17_603Z-debug-0.log', 'after': '-rw-r--r--\\t1055\\t2026-06-17 07:24:19.7265350740\\t/home/appuser/.npm/_logs/2026-06-17T07_24_17_603Z-debug-0.log'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-17T07_24_19_994Z-debug-0.log', 'after': '-rw-r--r--\\t613\\t2026-06-17 07:24:20.1019439400\\t/home/appuser/.npm/_logs/2026-06-17T07_24_19_994Z-debug-0.log'}",
+      "{'path': '/home/appuser/.npm/_update-notifier-last-checked', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:24:19.1172389250\\t/home/appuser/.npm/_update-notifier-last-checked'}",
+      "{'path': '/home/appuser/workdir/form.html', 'after': '-rw-r--r--\\t164\\t2026-06-17 07:23:59.6033036930\\t/home/appuser/workdir/form.html'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t42\\t2026-06-17 07:23:59.5912673430\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:23:31.9014065770\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:31.9014065770\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:31.9020178550\\t/tmp/claude-1000/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:24:33.4812031910\\t/tmp/claude-1000/-home-appuser/efd57953-dbb4-4fca-834a-70a14b705893/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:25:01.0820560590\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:23.9805375430\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:25:00.3366429130\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:23.9775373420\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:33.1951561310\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:23:23.9805375430\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:25:00.3328440470\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:23.9805375430\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:23:59.5929282400\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:23:25.0376085060\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:25:01.0820560590\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:23:25.0376085060\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1349\\t2026-06-17 07:23:25.0509243340\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "101   openat(19, \"cisco-ai-defense-skill-scanner-environment-secrets\", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 162",
+      "100   openat(299, \"secretmem\", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 446",
+      "102   openat(57, \"libsecret\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "109   openat(55, \"cisco-ai-defense-skill-scanner-environment-secrets\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "107   openat(59, \"secretmem\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "134   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "134   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "163   openat(50, \"cisco-ai-defense-skill-scanner-environment-secrets\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "163   openat(59, \"secretmem\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "161   openat(159, \"libsecret\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "166   openat(50, \"cisco-ai-defense-skill-scanner-environment-secrets\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "168   openat(63, \"secretmem\", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 650",
+      "167   openat(53, \"libsecret\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "173   openat(56, \"secretmem\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "172   openat(52, \"cisco-ai-defense-skill-scanner-environment-secrets\", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 652",
+      "172   openat(153, \"libsecret\", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "**no setup scripts, no install instructions, no embedded directives** attempting to bypass safety, exfiltrate data, run remote scripts, or access credentials. the skill directory holds only `skill.md` (4.3 kb) — nothing else. **runtime reality:** the `agent-browser` binary is **not installed** a"
+        ],
+        "commands_skipped": [
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally",
+          "agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) | reason: credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally"
+        ],
+        "skipped_unsafe_commands": [
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally",
+          "agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) | reason: credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally"
+        ]
+      },
+      "evidence_short": "primitive=**no setup scripts, no install instructions, no embedded directives** attempting to bypass safety, exfiltrate data, run remote scripts, or access credentials. the skill director...; command=npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) npx agent-browser <sub",
+          "t-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) remote script credenti",
+          "apshot / click / fill / screenshot / state save (full documented workflow) remote script credential npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow)"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) npx agent-browser <sub",
+          "t-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) remote script credenti",
+          "apshot / click / fill / screenshot / state save (full documented workflow) remote script credential npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow)"
+        ],
+        "skipped_remote_install": [
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally"
+        ],
+        "remote_install_instructions": [
+          "npx",
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally"
+        ]
+      },
+      "evidence_short": "primitive=npx agent-browser <subcommand> agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) npx agent-browser <sub; install=npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally",
+          "agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) | reason: credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "credential",
+          "npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally",
+          "agent-browser open <url> / snapshot / click / fill / screenshot / state save (full documented workflow) | reason: credential/external dependency missing — agent-browser CLI and any browser engine (Chromium/Playwright) are not installed; cannot run locally"
+        ]
+      },
+      "evidence_short": "skipped=npx agent-browser <subcommand> | reason: unsafe remote script / would fetch+execute an unverified package from the network; tool not present locally"
+    }
+  ]
+}

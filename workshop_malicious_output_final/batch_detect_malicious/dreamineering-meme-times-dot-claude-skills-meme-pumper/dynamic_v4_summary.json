@@ -1,0 +1,253 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/dreamineering-meme-times-dot-claude-skills-meme-pumper",
+  "skill_name": "dreamineering-meme-times-dot-claude-skills-meme-pumper",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 91.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 91.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill dir, references, scripts)",
+      "grep -rinE network/exec/fs/secret patterns across all files",
+      "node/npm/npx --version; which tsx",
+      "node -e require.resolve(...) dependency check for tsx/typescript/ts-node/esbuild/commander/zod/vitest",
+      "mkdir -p /home/appuser/workdir; create sample.txt",
+      "node content-generator.ts --action viral_hooks --token $TESTMEME  (real script, failed on missing deps as expected, no network)",
+      "node /home/appuser/workdir/local-port.js $TESTMEME  (faithful local port; produced viral_hooks, fud_response, meme_brief output)",
+      "grep -rinE prompt-injection/exfil patterns across all files",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5cf92c715120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5cf92c71a8f0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x439d4f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x439d518c648 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x439d4f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x439d5af2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x60e6a4f71c38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x60e6a4f71d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x60e6a4f71c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x439d5af3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x439d5af2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x439d5af2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x439d5af3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x439d5af3110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5af195c1b7a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e10e7179c10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e10e7181840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e10e7181840 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper\"], 0x64848bc831a0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/references\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/scripts\"], 0x5af5d5c35260 /* 34 vars */) = 0",
+      "98    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rinE\", \"fetch|http|https|axios|require\\\\(['\\\"]child_process|exec\\\\(|execSync|spawn|curl|...",
+      "106   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x59057d30c8e0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffdf1dcdd20 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "117   execve(\"/usr/bin/npx\", [\"npx\", \"--version\"], 0x59057d30c8e0 /* 34 vars */) = 0",
+      "117   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npx\", \"--version\"], 0x7ffd56fe2f10 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "128   execve(\"/usr/bin/which\", [\"which\", \"tsx\"], 0x59057d30c8e0 /* 34 vars */) = 0",
+      "130   execve(\"/usr/bin/head\", [\"head\"], 0x59057d30c8e0 /* 34 vars */ <unfinished ...>",
+      "129   execve(\"/usr/bin/ls\", [\"ls\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/node_modules\"], 0x59057d30c8e0 /* 34 vars */ <unfinished ...>",
+      "131   execve(\"/usr/bin/ls\", [\"ls\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/package.json\", \"/home/appuser/package.json\"], 0x59057d30c8e0 /* 34 vars */) = 0",
+      "185   execve(\"/usr/bin/npm\", [\"npm\", \"root\", \"-g\"], 0x62f840b20560 /* 34 vars */) = 0",
+      "185   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"root\", \"-g\"], 0x7fffd9c9bd78 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "197   execve(\"/usr/bin/head\", [\"head\"], 0x62f840b20560 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "npm",
+      "node",
+      "npx",
+      "which",
+      "mkdir"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill dir, references, scripts)",
+      "grep -rinE network/exec/fs/secret patterns across all files",
+      "node/npm/npx --version; which tsx",
+      "node -e require.resolve(...) dependency check for tsx/typescript/ts-node/esbuild/commander/zod/vitest",
+      "mkdir -p /home/appuser/workdir; create sample.txt",
+      "node content-generator.ts --action viral_hooks --token $TESTMEME  (real script, failed on missing deps as expected, no network)",
+      "node /home/appuser/workdir/local-port.js $TESTMEME  (faithful local port; produced viral_hooks, fud_response, meme_brief output)",
+      "grep -rinE prompt-injection/exfil patterns across all files",
+      "{'command': 'npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ...', 'reason': 'requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install'}",
+      "{'command': 'npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts', 'reason': 'requires downloading+executing remote npm packages (vitest + deps) — remote code execution / package install'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:29:57.9142982900\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:49.1494255190\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688592152', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:29:52.1523996960\\t/home/appuser/.claude/backups/.claude.json.backup.1781688592152'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688769149', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:32:49.1497935290\\t/home/appuser/.claude/backups/.claude.json.backup.1781688769149'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:29:52.7127313600\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:52.9479648940\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.8671648230\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6.jsonl', 'after': '-rw-------\\t221209\\t2026-06-17 09:32:48.8877759410\\t/home/appuser/.claude/projects/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.1872494820\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/1e243183-9a4b-4f65-9a58-97b21ff0aed6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.1872494820\\t/home/appuser/.claude/session-env/1e243183-9a4b-4f65-9a58-97b21ff0aed6'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:32:48.8467731900\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:48.8507734580\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:31:02.4439013740\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:31:02.4476304980\\t/home/appuser/.npm/_logs'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-17T09_31_02_348Z-debug-0.log', 'after': '-rw-r--r--\\t671\\t2026-06-17 09:31:02.4706320420\\t/home/appuser/.npm/_logs/2026-06-17T09_31_02_348Z-debug-0.log'}",
+      "{'path': '/home/appuser/workdir/local-port.js', 'after': '-rw-r--r--\\t2644\\t2026-06-17 09:32:04.0347649090\\t/home/appuser/workdir/local-port.js'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t64\\t2026-06-17 09:31:40.3476821570\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:29:57.1922498170\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.1932498850\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.1940638520\\t/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:20.4218649910\\t/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:32:49.8638414640\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:50.4017939680\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:49.1557939320\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:50.3997938340\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:57.9142982900\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:29:50.4017939680\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:32:49.1517936630\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:50.4017939680\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:04.0397652450\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:29:51.4478641910\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:32:49.8638414640\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:29:51.4478641910\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2715\\t2026-06-17 09:29:51.4518644600\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "52    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "\"reason\": \"requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install\" }, { \"command\": \"npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts\", \"reason\": \"r",
+          "per-skill.test.ts\", \"reason\": \"requires downloading+executing remote npm packages (vitest + deps) — remote code execution / package install\" } ], \"dummy_inputs_created\": [ \"/home/appuser/workdir/sample.txt\", \"/home/appuser/workdir/local-port.js\" ]"
+        ],
+        "commands_skipped": [
+          "npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ... | reason: requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install",
+          "npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts | reason: requires downloading+executing remote npm packages (vitest + deps) — remote code execution / package install"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=\"reason\": \"requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install\" }, { \"command\": \"npx vitest run .cla...; command=npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ... | reason: requires downloading+executing remote npm packages (tsx, commande..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $meme --action meme_brief ... npx vitest run .claude/skills/meme-pumper/scr",
+          "x tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $meme --action meme_brief ... npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $meme --action meme_brief ... npx vitest run .claude/skills/meme-pumper/scr",
+          "x tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $meme --action meme_brief ... npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts"
+        ],
+        "skipped_remote_install": [
+          "npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ... | reason: requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install",
+          "npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts | reason: requires downloading+executing remote npm packages (vitest + deps) — remote code execution / package install"
+        ],
+        "remote_install_instructions": [
+          "npx",
+          "npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ... | reason: requires downloading+executing remote npm packages (tsx, commander, zod) from registry — remote code execution / package install",
+          "npx vitest run .claude/skills/meme-pumper/scripts/validate-meme-pumper-skill.test.ts | reason: requires downloading+executing remote npm packages (vitest + deps) — remote code execution / package install"
+        ]
+      },
+      "evidence_short": "primitive=npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $meme --action meme_brief ... npx vitest run .claude/skills/meme-pumper/scr; install=npx tsx .claude/skills/meme-pumper/scripts/content-generator.ts --token $MEME --action meme_brief ... | reason: requires downloading+executing remote npm packages (tsx, commande..."
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "226   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rinE\", \"ignore (previous|above|all)|disregard|exfiltrat|send (the |your )?(key|token|secret|password)|api[_-]?key|private key|seed phrase|\\\\.env|sudo|chmod \\\\+x|base64 -d|/etc/passwd|ssh|wallet\", \".\"], 0x6437e90f6d00 /* 33 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "226   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rinE\", \"ignore (previous|above|all)|disregard|exfiltrat|send (the |your )?(key|token|secret|password)|api[_-]?key|private key|seed phrase|\\\\.env|sudo|chmod \\\\+x|base64 -d|/etc/passwd|ssh|wallet\", \".\"], 0x6437e90f6d00 /* 33 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=226   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--e..."
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/Charpup-skill-security-auditor-command-injection-skill",
+  "skill_name": "Charpup-skill-security-auditor-command-injection-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 97.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 97.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "mkdir -p /home/appuser/workdir && ls -la && python3 --version",
+      "python3 driver.py  (calls execute_tool('hello-placeholder'), process_file('/home/appuser/workdir/sample.txt'), run_user_script('/home/appuser/workdir/harmless_script.py'))",
+      "python3 -m py_compile TOOL.py  (syntax validation)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x568eb3c54120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x568eb3c598f0 /* 22 vars */ <unfinished ...>",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x34620774510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3462098c648 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x34620776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x34621301f90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x60cd3af67c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x60cd3af67d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x60cd3af67c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x34621302a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x34621302d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x34621303110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x34621303490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x34621303490 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6009a575a7a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x649117febc10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x649117ff3840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x649117ff3840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x649117ff3840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x649117ff3840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x649117ff3840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x649117ff3840 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x5b3133d08d00 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill\", \"-type\", \"f\"], 0x5b3133d1df90 /* 33 vars */) = 0",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x56959c347e00 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x56959c347e00 /* 34 vars */) = 0",
+      "101   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x56959c347e00 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"driver.py\"], 0x63412f92bd80 /* 34 vars */) = 0",
+      "105   execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"echo hello-placeholder\"], 0x7ffdd5d1f520 /* 34 vars */) = 0",
+      "106   execve(\"/bin/sh\", [\"sh\", \"-c\", \"cat /home/appuser/workdir/sample.txt\"], 0x7ffdd5d1f520 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/workdir/sample.txt\"], 0x59fa8949bae8 /* 34 vars */) = 0",
+      "110   execve(\"/usr/local/bin/python3\", [\"python3\", \"-m\", \"py_compile\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill/TOOL.py\"], 0x5daba0034910 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x5daba0034910 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "mkdir",
+      "ls",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "mkdir -p /home/appuser/workdir && ls -la && python3 --version",
+      "python3 driver.py  (calls execute_tool('hello-placeholder'), process_file('/home/appuser/workdir/sample.txt'), run_user_script('/home/appuser/workdir/harmless_script.py'))",
+      "python3 -m py_compile TOOL.py  (syntax validation)",
+      "{'command': \"Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks)\", 'reason': 'irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely'}",
+      "{'command': 'run_user_script() with a remote or untrusted script', 'reason': 'unsafe remote script / arbitrary code execution — used a harmless local print-only script instead'}",
+      "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+      "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:44:12.0023186470\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:45:09.5326900690\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682246181', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:44:06.1829279840\\t/home/appuser/.claude/backups/.claude.json.backup.1781682246181'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682309532', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:45:09.5330652180\\t/home/appuser/.claude/backups/.claude.json.backup.1781682309532'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:44:06.7569665200\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:07.0409855870\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:11.9446987080\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e.jsonl', 'after': '-rw-------\\t67921\\t2026-06-17 07:45:09.2442832330\\t/home/appuser/.claude/projects/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:11.1974905670\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/f8d66aa5-7796-406e-9076-19d7f06af88e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:11.1974905670\\t/home/appuser/.claude/session-env/f8d66aa5-7796-406e-9076-19d7f06af88e'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:45:09.2291603540\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:45:09.2321605550\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:49.6590841940\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill/__pycache__'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill/__pycache__/TOOL.cpython-310.pyc', 'after': '-rw-r--r--\\t1018\\t2026-06-17 07:44:49.6590841940\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill/__pycache__/TOOL.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/driver.py', 'after': '-rw-r--r--\\t1005\\t2026-06-17 07:44:38.4678144180\\t/home/appuser/workdir/driver.py'}",
+      "{'path': '/home/appuser/workdir/harmless_script.py', 'after': '-rw-r--r--\\t210\\t2026-06-17 07:44:34.2755126160\\t/home/appuser/workdir/harmless_script.py'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t81\\t2026-06-17 07:44:32.9087221180\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:44:11.2022649390\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:11.2032650060\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:11.2047289570\\t/tmp/claude-1000/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:49.7147599070\\t/tmp/claude-1000/-home-appuser/f8d66aa5-7796-406e-9076-19d7f06af88e/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:45:10.2522290340\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:04.1917943170\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:45:09.5392590800\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:04.1897941830\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:12.0023186470\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:44:04.1917943170\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:45:09.5345879470\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:04.1971732240\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-command-injection-skill', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:42.6153737380\\t/home/appuser/.claude/skills/Charpup-skill-secu...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:04.1917943170\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:38.4723234090\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:44:05.2308640710\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:45:10.2522290340\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:44:05.2308640710\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1568\\t2026-06-17 07:44:05.2348643400\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "110   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "110   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ss.run(f\"echo {command}\", shell=true)` — **shell command injection**. - `process_file(filename)` → `os.system(f\"cat {filename}\")` — **command injection via filename**. - `run_user_script(script_path)` → `exec(open(script_path).read())` — **arbitrary",
+          "es three functions, each demonstrating a classic code-execution flaw: - `execute_tool(command)` → `subprocess.run(f\"echo {command}\", shell=true)` — **shell command injection**. - `process_file(filename)` → `os.system(f\"cat {filename}\")` — **command injection via filename**. - `run_u"
+        ],
+        "commands_skipped": [
+          "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+          "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+        ],
+        "skipped_unsafe_commands": [
+          "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+          "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+        ]
+      },
+      "evidence_short": "primitive=ss.run(f\"echo {command}\", shell=true)` — **shell command injection**. - `process_file(filename)` → `os.system(f\"cat {filename}\")` — **command injection via filename**. - `run_us...; command=Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessar..."
+    },
+    {
+      "pattern": "unsafe_eval_exec_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Suspicious correlated behavior detected.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "ercise the same code path safely\" }, { \"command\": \"run_user_script() with a remote or untrusted script\", \"reason\": \"unsafe remote script / arbitrary code execution — used a harmless local print-only script instead\" } ], \"dummy_inputs_created\": [ \"/home/appuser/workdir/sample.txt\", \"/hom",
+          "ntime behavior; benign inputs exercise the same code path safely run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(",
+          "ntime behavior; benign inputs exercise the same code path safely run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead find ... -type f (enumerate skill files) mkdir -p /home/appuser/workdir && ls -la && pyth"
+        ],
+        "commands_skipped": [
+          "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+          "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+        ]
+      },
+      "evidence_short": "source=claude_output.txt"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+          "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "irreversible",
+          "credential",
+          "Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessary to observe runtime behavior; benign inputs exercise the same code path safely",
+          "run_user_script() with a remote or untrusted script | reason: unsafe remote script / arbitrary code execution — used a harmless local print-only script instead"
+        ]
+      },
+      "evidence_short": "skipped=Calling execute_tool()/process_file() with shell-injection payloads (e.g. '; whoami', '$(...)', backticks) | reason: irreversible action / demonstrates exploitation — unnecessar..."
+    }
+  ]
+}

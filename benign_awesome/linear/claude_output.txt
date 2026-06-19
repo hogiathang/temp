@@ -1,0 +1,78 @@
+[Executor] Prompt loaded successfully from /app/logs/benign_new/linear/.prompt_input.txt
+The scan found no `curl|bash` remote-execution patterns. The only flagged lines are standard, benign tool documentation (placeholder API-key setup, config reset, chmod) — none were executed. I've completed all safely-runnable local execution.
+
+## Execution Report
+
+I inspected the `linear` skill — a documentation wrapper around the third-party `@0xbigboss/linear-cli` (`linear` command) for Linear issue tracking. The CLI binary is **not installed**, and **no API key or config** exists in this sandbox, so all network/account-affecting commands were impossible by design. I ran every part that can execute locally: environment/dependency checks, a non-executing npm reachability dry-run, recreation of the documented GraphQL query files, and validation of all documented jq parsing patterns and `--vars` JSON payloads against mock data.
+
+**Notable safety decisions:**
+- Skipped `npm install -g @0xbigboss/linear-cli` (real install runs third-party postinstall scripts = remote code execution). Replaced with `npm install --dry-run --ignore-scripts`, which confirmed the package exists (v0.2.11) and the registry is reachable without executing anything.
+- Skipped all auth, mutation, upload (`curl -X PUT` to signed URL), and download commands — they require real credentials and perform external/irreversible actions.
+
+**Observed behavior: BENIGN.** The skill is plain documentation for a legitimate CLI. No obfuscation, no pipe-to-shell, no exfiltration, no hidden instructions. The only network behavior I triggered was an npm-registry metadata fetch during the dry-run.
+
+```json
+{
+  "skill_name": "linear",
+  "documented_purpose": "Manage Linear issues, teams, and projects via the `linear` CLI (@0xbigboss/linear-cli): list/search/create/view/update/link/comment on issues, manage projects, and run raw GraphQL via `linear gql`.",
+  "files_inspected": [
+    "/home/appuser/.claude/skills/linear/SKILL.md",
+    "/home/appuser/.claude/skills/linear/graphql-recipes.md",
+    "/home/appuser/.claude/skills/linear/troubleshooting.md",
+    "/home/appuser/.claude/skills/linear/QA.md"
+  ],
+  "commands_executed": [
+    "find/ls/wc on skill dir",
+    "command -v linear|node|npm|jq|git|curl (dependency check)",
+    "check LINEAR_API_KEY / LINEAR_CONFIG presence (names only, no values)",
+    "ls ~/.config/linear/config.json (absent)",
+    "npm ls -g @0xbigboss/linear-cli (not installed)",
+    "linear --version / linear auth test / linear me (all exit 127, binary absent)",
+    "npm install -g @0xbigboss/linear-cli --dry-run --ignore-scripts",
+    "heredoc creation of link-issues.graphql and issue-relations.graphql in workdir",
+    "jq validation of all documented SKILL.md jq patterns against mock JSON",
+    "jq -e validation of documented --vars JSON payloads",
+    "brace-balance check on .graphql files",
+    "grep scan of skill files for unsafe patterns"
+  ],
+  "commands_skipped": [
+    {"command": "npm install -g @0xbigboss/linear-cli", "reason": "unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)"},
+    {"command": "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=...", "reason": "credential required — no real Linear API key available, and providing one is disallowed"},
+    {"command": "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes", "reason": "real account-affecting / irreversible actions requiring credentials"},
+    {"command": "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2)", "reason": "sends data to external signed URL; requires credentials and external service"},
+    {"command": "linear download / linear gql / linear me / teams list / issues list", "reason": "network + credential required; binary not installed"},
+    {"command": "rm ~/.config/linear/config.json (troubleshooting reset)", "reason": "destructive to user config outside workdir; no config present anyway"}
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/link-issues.graphql",
+    "/home/appuser/workdir/issue-relations.graphql",
+    "/home/appuser/workdir/mock-projects.json",
+    "/home/appuser/workdir/mock-issues.json",
+    "/home/appuser/workdir/mock-issue-view.json",
+    "/home/appuser/workdir/sample.txt"
+  ],
+  "local_workflows_completed": [
+    "Environment & dependency inventory (node 18.20.8, npm 10.8.2, jq 1.6, git, curl present; linear absent)",
+    "Secret-safe env/config presence checks (LINEAR_API_KEY unset, no config file)",
+    "npm registry reachability via dry-run with scripts disabled (package v0.2.11 resolved)",
+    "Recreated documented GraphQL query files and verified brace balance",
+    "Validated every documented jq pattern incl. null-safe filters against mock JSON",
+    "Validated documented --vars JSON payloads as well-formed JSON",
+    "Static safety scan of all skill files"
+  ],
+  "network_attempts": [
+    "registry.npmjs.org — npm dry-run metadata fetch (--ignore-scripts, no code executed, no secrets sent)"
+  ],
+  "missing_requirements": [
+    "linear CLI binary not installed (would require `npm install -g @0xbigboss/linear-cli`)",
+    "No LINEAR_API_KEY / no ~/.config/linear/config.json (no Linear auth)",
+    "No Linear workspace/team access — all live API, mutation, upload, and download workflows unrunnable"
+  ],
+  "observed_errors": [
+    "linear: command not found (exit 127) for --version, auth test, me — expected, binary absent"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+Execution complete (exit code: 0)

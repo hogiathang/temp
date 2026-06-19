@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/orchestrate",
+  "skill_name": "orchestrate",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 85.0,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 1,
+  "num_raw_patterns": 1,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 1,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 85.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/orchestrate",
+      "ls -la /home/appuser/workdir",
+      "ls -la /home/appuser/.claude/skills",
+      "ls -la /home/appuser/.claude/agents (not found)",
+      "grep -rl 'claude-router' /home/appuser/.claude",
+      "ls -la /home/appuser/.claude",
+      "cat /home/appuser/.claude/settings.json (not found)",
+      "find /home/appuser/.claude -iname '*router*'",
+      "printf ... > /home/appuser/workdir/sample.txt",
+      "cat /home/appuser/workdir/sample.txt",
+      "wc -l < /home/appuser/workdir/sample.txt",
+      "Skill(orchestrate) invoked with a safe local line-count task (forked execution)",
+      "42    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x611b42d2c070 /* 22 vars */) = 0",
+      "43    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x611b42d317e0 /* 22 vars */ <unfinished ...>",
+      "55    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x54ea1b74510 /* 28 vars */) = 0",
+      "57    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x54ea1d8c5f0 /* 24 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x54ea1b76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x54ea2700710 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5ba860a9fc38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5ba860a9fc68 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5ba860a9fd18 /* 29 vars */ <unfinished ...>",
+      "65    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x54ea2700e10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "66    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x54ea2701190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x54ea2701510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x54ea2701510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x54ea270a110 /* 32 vars */) = 0",
+      "69    execve(\"/usr/bin/env\", [\"env\"], 0x55598a76a6f0 /* 32 vars */) = 0",
+      "71    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x56c17db54b60 /* 31 vars */) = 0",
+      "73    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "77    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "79    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "83    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x56c17db5c730 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/cat\", [\"cat\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x56c17db5c730 /* 31 vars */) = 0",
+      "91    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/orchestrate\"], 0x5ab1a11aec90 /* 34 vars */) = 0",
+      "94    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5bb68cef3d00 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills\"], 0x5bb68cef3d00 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/agents\"], 0x5bb68cef3d00 /* 34 vars */) = 0",
+      "97    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rl\", \"claude-router\", \"/home/appuser/.claude\"], 0x5bb68cef3d00 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude\"], 0x619eec1ca850 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/.claude/settings.json\"], 0x619eec1ca850 /* 34 vars */) = 0",
+      "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude\", \"-iname\", \"*router*\"], 0x619eec1ca850 /* 34 vars */) = 0",
+      "112   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x57f77c832230 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/workdir/sample.txt\"], 0x57f77c832230 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "wc"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/orchestrate",
+      "ls -la /home/appuser/workdir",
+      "ls -la /home/appuser/.claude/skills",
+      "ls -la /home/appuser/.claude/agents (not found)",
+      "grep -rl 'claude-router' /home/appuser/.claude",
+      "ls -la /home/appuser/.claude",
+      "cat /home/appuser/.claude/settings.json (not found)",
+      "find /home/appuser/.claude -iname '*router*'",
+      "printf ... > /home/appuser/workdir/sample.txt",
+      "cat /home/appuser/workdir/sample.txt",
+      "wc -l < /home/appuser/workdir/sample.txt",
+      "Skill(orchestrate) invoked with a safe local line-count task (forked execution)",
+      "{'command': '/orchestrate Refactor the authentication system to use JWT tokens (and other example tasks)', 'reason': \"Example tasks require a real target codebase and would invoke the missing 'claude-router:opus-orchestrator' agent; substituted with a harmless local validation task instead. No unsafe commands were present in the skill.\"}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 12:20:08.4449651150\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:21:15.6055496460\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785202533', 'after': '-rw-r--r--\\t33\\t2026-06-18 12:20:02.5345079540\\t/home/appuser/.claude/backups/.claude.json.backup.1781785202533'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785275605', 'after': '-rw-r--r--\\t24675\\t2026-06-18 12:21:15.6055898260\\t/home/appuser/.claude/backups/.claude.json.backup.1781785275605'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 12:20:03.1109169880\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:03.4166188600\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:40.9432029600\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:40.9442030290\\t/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119.jsonl', 'after': '-rw-------\\t67237\\t2026-06-18 12:21:15.2090623160\\t/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119.jsonl'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:41.0532105350\\t/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents/agent-aec424677316df8d3.jsonl', 'after': '-rw-------\\t15760\\t2026-06-18 12:20:49.4947918260\\t/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents/agent-aec424677316df8d3.jsonl'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents/agent-aec424677316df8d3.meta.json', 'after': '-rw-r--r--\\t31\\t2026-06-18 12:20:40.9562038550\\t/home/appuser/.claude/projects/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/subagents/agent-aec424677316df8d3.meta.json'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:07.9212112510\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/e1d38823-dc1e-4cb9-b2c0-24941996d119', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:07.9212112510\\t/home/appuser/.claude/session-env/e1d38823-dc1e-4cb9-b2c0-24941996d119'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 12:21:15.1885611090\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:21:15.1925613840\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t29\\t2026-06-18 12:20:37.2897505860\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 12:20:07.9259675850\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:07.9260929350\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:07.9262123300\\t/tmp/claude-1000/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:56.0458929490\\t/tmp/claude-1000/-home-appuser/e1d38823-dc1e-4cb9-b2c0-24941996d119/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 12:21:16.4906507720\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:00.7564356790\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:21:15.6134126060\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:00.7534354720\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:08.4439650470\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 12:20:00.7564356790\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24758\\t2026-06-18 12:21:15.6085900320\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:00.7564356790\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:20:37.2885060260\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 12:20:01.8035077810\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 12:21:16.4906507720\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 12:20:01.8035077810\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1345\\t2026-06-18 12:20:01.8075080560\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "45    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "skill contains no prompt-injection, no instructions to disable safety, no remote-code-execution, no exfiltration, and no credential access. the single observable runtime behavior was harmless local file inspection inside `/home/appuser/workdir`. no network connections, n"
+        ],
+        "commands_skipped": [
+          "/orchestrate Refactor the authentication system to use JWT tokens (and other example tasks) | reason: Example tasks require a real target codebase and would invoke the missing 'claude-router:opus-orchestrator' agent; substituted with a harmless local validation task instead. No unsafe commands were present in the skill."
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=skill contains no prompt-injection, no instructions to disable safety, no remote-code-execution, no exfiltration, and no credential access. the single observable runtime behavio...; command=/orchestrate Refactor the authentication system to use JWT tokens (and other example tasks) | reason: Example tasks require a real target codebase and would invoke the missing '..."
+    }
+  ]
+}

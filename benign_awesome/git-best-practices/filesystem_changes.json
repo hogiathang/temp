@@ -1,0 +1,697 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 11:13:43.6972809810\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:15:01.7233718750\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781781217810",
+      "after": "-rw-r--r--\t33\t2026-06-18 11:13:37.8115189530\t/home/appuser/.claude/backups/.claude.json.backup.1781781217810"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781781301722",
+      "after": "-rw-r--r--\t24602\t2026-06-18 11:15:01.7236389660\t/home/appuser/.claude/backups/.claude.json.backup.1781781301722"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 11:13:38.4105612820\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:38.6782036020\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:43.6149731830\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e.jsonl",
+      "after": "-rw-------\t98646\t2026-06-18 11:15:01.4310557530\t/home/appuser/.claude/projects/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:42.3515782720\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/43d77595-d57f-4717-ad55-501f247f091e",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:42.3515782720\t/home/appuser/.claude/session-env/43d77595-d57f-4717-ad55-501f247f091e"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 11:15:01.4089337410\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:15:01.4137605900\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.6325775430\t/home/appuser/workdir/demo-repo"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.env",
+      "after": "-rw-r--r--\t25\t2026-06-18 11:13:58.0014654470\t/home/appuser/workdir/demo-repo/.env"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.9199159170\t/home/appuser/workdir/demo-repo/.git"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/COMMIT_EDITMSG",
+      "after": "-rw-r--r--\t44\t2026-06-18 11:14:37.9072116870\t/home/appuser/workdir/demo-repo/.git/COMMIT_EDITMSG"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/HEAD",
+      "after": "-rw-r--r--\t39\t2026-06-18 11:14:20.5085733450\t/home/appuser/workdir/demo-repo/.git/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/ORIG_HEAD",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:27.3967816890\t/home/appuser/workdir/demo-repo/.git/ORIG_HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/branches",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9286948840\t/home/appuser/workdir/demo-repo/.git/branches"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/config",
+      "after": "-rw-r--r--\t251\t2026-06-18 11:14:37.2782715800\t/home/appuser/workdir/demo-repo/.git/config"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/description",
+      "after": "-rw-r--r--\t73\t2026-06-18 11:13:57.9325613830\t/home/appuser/workdir/demo-repo/.git/description"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9273139110\t/home/appuser/workdir/demo-repo/.git/hooks"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/applypatch-msg.sample",
+      "after": "-rwxr-xr-x\t478\t2026-06-18 11:13:57.9266981820\t/home/appuser/workdir/demo-repo/.git/hooks/applypatch-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/commit-msg.sample",
+      "after": "-rwxr-xr-x\t896\t2026-06-18 11:13:57.9275370790\t/home/appuser/workdir/demo-repo/.git/hooks/commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/fsmonitor-watchman.sample",
+      "after": "-rwxr-xr-x\t4726\t2026-06-18 11:13:57.9237748910\t/home/appuser/workdir/demo-repo/.git/hooks/fsmonitor-watchman.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/post-update.sample",
+      "after": "-rwxr-xr-x\t189\t2026-06-18 11:13:57.9155523920\t/home/appuser/workdir/demo-repo/.git/hooks/post-update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-applypatch.sample",
+      "after": "-rwxr-xr-x\t424\t2026-06-18 11:13:57.9224111990\t/home/appuser/workdir/demo-repo/.git/hooks/pre-applypatch.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-commit.sample",
+      "after": "-rwxr-xr-x\t1643\t2026-06-18 11:13:57.9256971280\t/home/appuser/workdir/demo-repo/.git/hooks/pre-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-merge-commit.sample",
+      "after": "-rwxr-xr-x\t416\t2026-06-18 11:13:57.9171751180\t/home/appuser/workdir/demo-repo/.git/hooks/pre-merge-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-push.sample",
+      "after": "-rwxr-xr-x\t1374\t2026-06-18 11:13:57.9149171980\t/home/appuser/workdir/demo-repo/.git/hooks/pre-push.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-rebase.sample",
+      "after": "-rwxr-xr-x\t4898\t2026-06-18 11:13:57.9164203370\t/home/appuser/workdir/demo-repo/.git/hooks/pre-rebase.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/pre-receive.sample",
+      "after": "-rwxr-xr-x\t544\t2026-06-18 11:13:57.9183888980\t/home/appuser/workdir/demo-repo/.git/hooks/pre-receive.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/prepare-commit-msg.sample",
+      "after": "-rwxr-xr-x\t1492\t2026-06-18 11:13:57.9247308820\t/home/appuser/workdir/demo-repo/.git/hooks/prepare-commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/push-to-checkout.sample",
+      "after": "-rwxr-xr-x\t2783\t2026-06-18 11:13:57.9212575450\t/home/appuser/workdir/demo-repo/.git/hooks/push-to-checkout.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/hooks/update.sample",
+      "after": "-rwxr-xr-x\t3650\t2026-06-18 11:13:57.9198842490\t/home/appuser/workdir/demo-repo/.git/hooks/update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/index",
+      "after": "-rw-r--r--\t369\t2026-06-18 11:14:27.5652256320\t/home/appuser/workdir/demo-repo/.git/index"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9309690550\t/home/appuser/workdir/demo-repo/.git/info"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/info/exclude",
+      "after": "-rw-r--r--\t240\t2026-06-18 11:13:57.9311576090\t/home/appuser/workdir/demo-repo/.git/info/exclude"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:04.8389821920\t/home/appuser/workdir/demo-repo/.git/logs"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/HEAD",
+      "after": "-rw-r--r--\t1549\t2026-06-18 11:14:37.9191537910\t/home/appuser/workdir/demo-repo/.git/logs/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5560067550\t/home/appuser/workdir/demo-repo/.git/logs/refs"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.7944921360\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads/backup",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.7946168290\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads/backup"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads/backup/feat-add-login-SEND-77",
+      "after": "-rw-r--r--\t177\t2026-06-18 11:14:20.7955243220\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads/backup/feat-add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads/feat",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.5026283350\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads/feat"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads/feat/add-login-SEND-77",
+      "after": "-rw-r--r--\t1175\t2026-06-18 11:14:37.9193948130\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads/feat/add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/heads/master",
+      "after": "-rw-r--r--\t190\t2026-06-18 11:14:04.8402111320\t/home/appuser/workdir/demo-repo/.git/logs/refs/heads/master"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5562707430\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.2814515750\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/HEAD",
+      "after": "-rw-r--r--\t153\t2026-06-18 11:14:38.2900648530\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/feat",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.8599021870\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/feat"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/feat/add-login-SEND-77",
+      "after": "-rw-r--r--\t296\t2026-06-18 11:14:38.2071569800\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/feat/add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/master",
+      "after": "-rw-r--r--\t148\t2026-06-18 11:14:37.5570821230\t/home/appuser/workdir/demo-repo/.git/logs/refs/remotes/origin/master"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.9474680710\t/home/appuser/workdir/demo-repo/.git/objects"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/07",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:04.7642281480\t/home/appuser/workdir/demo-repo/.git/objects/07"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/07/968ad500419cc0ebd3bc0ff12192271ee7d572",
+      "after": "-r--r--r--\t28\t2026-06-18 11:14:04.7632791820\t/home/appuser/workdir/demo-repo/.git/objects/07/968ad500419cc0ebd3bc0ff12192271ee7d572"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/37",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.5591053960\t/home/appuser/workdir/demo-repo/.git/objects/37"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/37/777101fadd01261d695bb6963b60677ec946b1",
+      "after": "-r--r--r--\t43\t2026-06-18 11:14:27.4285931170\t/home/appuser/workdir/demo-repo/.git/objects/37/777101fadd01261d695bb6963b60677ec946b1"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/63",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.9123152540\t/home/appuser/workdir/demo-repo/.git/objects/63"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/63/2186c41fdc8bbc622cf71fa485c0b7e607ae5d",
+      "after": "-r--r--r--\t188\t2026-06-18 11:14:37.9122913300\t/home/appuser/workdir/demo-repo/.git/objects/63/2186c41fdc8bbc622cf71fa485c0b7e607ae5d"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/88",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:27.4756210500\t/home/appuser/workdir/demo-repo/.git/objects/88"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/88/2239acfb557c0a3e8fd7432638b911f11c8daf",
+      "after": "-r--r--r--\t177\t2026-06-18 11:14:27.4752062400\t/home/appuser/workdir/demo-repo/.git/objects/88/2239acfb557c0a3e8fd7432638b911f11c8daf"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/a9",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.5993409560\t/home/appuser/workdir/demo-repo/.git/objects/a9"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/a9/b233d218e5292eaebf141c5781c749a6e65391",
+      "after": "-r--r--r--\t172\t2026-06-18 11:14:20.5985969680\t/home/appuser/workdir/demo-repo/.git/objects/a9/b233d218e5292eaebf141c5781c749a6e65391"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:27.5707528310\t/home/appuser/workdir/demo-repo/.git/objects/c6"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/c6/1e61f5c8ca3cf7889786b19dbc0ad2a3c8d699",
+      "after": "-r--r--r--\t178\t2026-06-18 11:14:27.5704691090\t/home/appuser/workdir/demo-repo/.git/objects/c6/1e61f5c8ca3cf7889786b19dbc0ad2a3c8d699"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/c7",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.6617798000\t/home/appuser/workdir/demo-repo/.git/objects/c7"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/c7/747099cf9e073babc68f52cdfb4d280ba5689f",
+      "after": "-r--r--r--\t20\t2026-06-18 11:14:27.5392318200\t/home/appuser/workdir/demo-repo/.git/objects/c7/747099cf9e073babc68f52cdfb4d280ba5689f"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/cc",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.7071799720\t/home/appuser/workdir/demo-repo/.git/objects/cc"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/cc/1c5f5a9e723069f234247cf36ff3a3b794c3f0",
+      "after": "-r--r--r--\t160\t2026-06-18 11:14:20.7065038510\t/home/appuser/workdir/demo-repo/.git/objects/cc/1c5f5a9e723069f234247cf36ff3a3b794c3f0"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/ce",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:04.7664152840\t/home/appuser/workdir/demo-repo/.git/objects/ce"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/ce/e32485f4eb96eade84f33045e2246cd7742b39",
+      "after": "-r--r--r--\t40\t2026-06-18 11:14:04.7660466130\t/home/appuser/workdir/demo-repo/.git/objects/ce/e32485f4eb96eade84f33045e2246cd7742b39"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/f1",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:04.8237452210\t/home/appuser/workdir/demo-repo/.git/objects/f1"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/f1/a672ccbb76c702b8ed5a9c8221496771a572a5",
+      "after": "-r--r--r--\t117\t2026-06-18 11:14:04.8229389830\t/home/appuser/workdir/demo-repo/.git/objects/f1/a672ccbb76c702b8ed5a9c8221496771a572a5"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/fb",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:04.8325937690\t/home/appuser/workdir/demo-repo/.git/objects/fb"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/fb/43c0b5f62180d19c3b169048a9def925b3d865",
+      "after": "-r--r--r--\t174\t2026-06-18 11:14:04.8315078730\t/home/appuser/workdir/demo-repo/.git/objects/fb/43c0b5f62180d19c3b169048a9def925b3d865"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/fd",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.5881366580\t/home/appuser/workdir/demo-repo/.git/objects/fd"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/fd/21b65fd99bc0c2066b159006d93ed5e11ef377",
+      "after": "-r--r--r--\t116\t2026-06-18 11:14:27.4607853500\t/home/appuser/workdir/demo-repo/.git/objects/fd/21b65fd99bc0c2066b159006d93ed5e11ef377"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/fd/58fda9d7b8b0fed6c68415a23d19bf763d49bc",
+      "after": "-r--r--r--\t37\t2026-06-18 11:14:04.7673267360\t/home/appuser/workdir/demo-repo/.git/objects/fd/58fda9d7b8b0fed6c68415a23d19bf763d49bc"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/ff",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.6952116720\t/home/appuser/workdir/demo-repo/.git/objects/ff"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/ff/4e433cc4eb8fc4650e6d097cb94174b05e4a53",
+      "after": "-r--r--r--\t151\t2026-06-18 11:14:27.5646425110\t/home/appuser/workdir/demo-repo/.git/objects/ff/4e433cc4eb8fc4650e6d097cb94174b05e4a53"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9525584820\t/home/appuser/workdir/demo-repo/.git/objects/info"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/objects/pack",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9516854550\t/home/appuser/workdir/demo-repo/.git/objects/pack"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5494758710\t/home/appuser/workdir/demo-repo/.git/refs"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.7924984740\t/home/appuser/workdir/demo-repo/.git/refs/heads"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads/backup",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:20.7960776310\t/home/appuser/workdir/demo-repo/.git/refs/heads/backup"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads/backup/feat-add-login-SEND-77",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:20.7938445370\t/home/appuser/workdir/demo-repo/.git/refs/heads/backup/feat-add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads/feat",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.9196732400\t/home/appuser/workdir/demo-repo/.git/refs/heads/feat"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads/feat/add-login-SEND-77",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:37.9186314030\t/home/appuser/workdir/demo-repo/.git/refs/heads/feat/add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/heads/master",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:04.8379215660\t/home/appuser/workdir/demo-repo/.git/refs/heads/master"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5498627100\t/home/appuser/workdir/demo-repo/.git/refs/remotes"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes/origin",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.2908014530\t/home/appuser/workdir/demo-repo/.git/refs/remotes/origin"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/HEAD",
+      "after": "-rw-r--r--\t32\t2026-06-18 11:14:38.2908014530\t/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/feat",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.2076993120\t/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/feat"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/feat/add-login-SEND-77",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:38.2062660960\t/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/feat/add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/master",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:37.5548902400\t/home/appuser/workdir/demo-repo/.git/refs/remotes/origin/master"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/.git/refs/tags",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:57.9346185500\t/home/appuser/workdir/demo-repo/.git/refs/tags"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/README.md",
+      "after": "-rw-r--r--\t12\t2026-06-18 11:13:57.9985659300\t/home/appuser/workdir/demo-repo/README.md"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/auth.test.ts",
+      "after": "-rw-r--r--\t24\t2026-06-18 11:13:58.0007128810\t/home/appuser/workdir/demo-repo/auth.test.ts"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/auth.ts",
+      "after": "-rw-r--r--\t29\t2026-06-18 11:14:20.5355708470\t/home/appuser/workdir/demo-repo/auth.ts"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-repo/feature.txt",
+      "after": "-rw-r--r--\t5\t2026-06-18 11:14:20.6330044050\t/home/appuser/workdir/demo-repo/feature.txt"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5190843000\t/home/appuser/workdir/remote.git"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/HEAD",
+      "after": "-rw-r--r--\t23\t2026-06-18 11:14:37.2402689630\t/home/appuser/workdir/remote.git/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/branches",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2319153610\t/home/appuser/workdir/remote.git/branches"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/config",
+      "after": "-rw-r--r--\t66\t2026-06-18 11:14:37.2452693070\t/home/appuser/workdir/remote.git/config"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/description",
+      "after": "-rw-r--r--\t73\t2026-06-18 11:14:37.2364139890\t/home/appuser/workdir/remote.git/description"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2313168620\t/home/appuser/workdir/remote.git/hooks"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/applypatch-msg.sample",
+      "after": "-rwxr-xr-x\t478\t2026-06-18 11:14:37.2309705810\t/home/appuser/workdir/remote.git/hooks/applypatch-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/commit-msg.sample",
+      "after": "-rwxr-xr-x\t896\t2026-06-18 11:14:37.2314685570\t/home/appuser/workdir/remote.git/hooks/commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/fsmonitor-watchman.sample",
+      "after": "-rwxr-xr-x\t4726\t2026-06-18 11:14:37.2294524450\t/home/appuser/workdir/remote.git/hooks/fsmonitor-watchman.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/post-update.sample",
+      "after": "-rwxr-xr-x\t189\t2026-06-18 11:14:37.2191961830\t/home/appuser/workdir/remote.git/hooks/post-update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-applypatch.sample",
+      "after": "-rwxr-xr-x\t424\t2026-06-18 11:14:37.2286501370\t/home/appuser/workdir/remote.git/hooks/pre-applypatch.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-commit.sample",
+      "after": "-rwxr-xr-x\t1643\t2026-06-18 11:14:37.2303088610\t/home/appuser/workdir/remote.git/hooks/pre-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-merge-commit.sample",
+      "after": "-rwxr-xr-x\t416\t2026-06-18 11:14:37.2215755680\t/home/appuser/workdir/remote.git/hooks/pre-merge-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-push.sample",
+      "after": "-rwxr-xr-x\t1374\t2026-06-18 11:14:37.2178880540\t/home/appuser/workdir/remote.git/hooks/pre-push.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-rebase.sample",
+      "after": "-rwxr-xr-x\t4898\t2026-06-18 11:14:37.2203861890\t/home/appuser/workdir/remote.git/hooks/pre-rebase.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/pre-receive.sample",
+      "after": "-rwxr-xr-x\t544\t2026-06-18 11:14:37.2227925560\t/home/appuser/workdir/remote.git/hooks/pre-receive.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/prepare-commit-msg.sample",
+      "after": "-rwxr-xr-x\t1492\t2026-06-18 11:14:37.2298882860\t/home/appuser/workdir/remote.git/hooks/prepare-commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/push-to-checkout.sample",
+      "after": "-rwxr-xr-x\t2783\t2026-06-18 11:14:37.2270297210\t/home/appuser/workdir/remote.git/hooks/push-to-checkout.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/hooks/update.sample",
+      "after": "-rwxr-xr-x\t3650\t2026-06-18 11:14:37.2240264620\t/home/appuser/workdir/remote.git/hooks/update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2335599940\t/home/appuser/workdir/remote.git/info"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/info/exclude",
+      "after": "-rw-r--r--\t240\t2026-06-18 11:14:37.2339976850\t/home/appuser/workdir/remote.git/info/exclude"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.1601719140\t/home/appuser/workdir/remote.git/objects"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/07",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5046006520\t/home/appuser/workdir/remote.git/objects/07"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/07/968ad500419cc0ebd3bc0ff12192271ee7d572",
+      "after": "-r--r--r--\t28\t2026-06-18 11:14:37.4263749070\t/home/appuser/workdir/remote.git/objects/07/968ad500419cc0ebd3bc0ff12192271ee7d572"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/37",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7893920790\t/home/appuser/workdir/remote.git/objects/37"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/37/777101fadd01261d695bb6963b60677ec946b1",
+      "after": "-r--r--r--\t43\t2026-06-18 11:14:37.7134566890\t/home/appuser/workdir/remote.git/objects/37/777101fadd01261d695bb6963b60677ec946b1"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/63",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.1550787870\t/home/appuser/workdir/remote.git/objects/63"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/63/2186c41fdc8bbc622cf71fa485c0b7e607ae5d",
+      "after": "-r--r--r--\t188\t2026-06-18 11:14:38.0783856860\t/home/appuser/workdir/remote.git/objects/63/2186c41fdc8bbc622cf71fa485c0b7e607ae5d"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/88",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7923339960\t/home/appuser/workdir/remote.git/objects/88"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/88/2239acfb557c0a3e8fd7432638b911f11c8daf",
+      "after": "-r--r--r--\t177\t2026-06-18 11:14:37.7071451500\t/home/appuser/workdir/remote.git/objects/88/2239acfb557c0a3e8fd7432638b911f11c8daf"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7913215700\t/home/appuser/workdir/remote.git/objects/c6"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/c6/1e61f5c8ca3cf7889786b19dbc0ad2a3c8d699",
+      "after": "-r--r--r--\t178\t2026-06-18 11:14:37.7042992460\t/home/appuser/workdir/remote.git/objects/c6/1e61f5c8ca3cf7889786b19dbc0ad2a3c8d699"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/c7",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7875939990\t/home/appuser/workdir/remote.git/objects/c7"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/c7/747099cf9e073babc68f52cdfb4d280ba5689f",
+      "after": "-r--r--r--\t20\t2026-06-18 11:14:38.0791635930\t/home/appuser/workdir/remote.git/objects/c7/747099cf9e073babc68f52cdfb4d280ba5689f"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/ce",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5039130510\t/home/appuser/workdir/remote.git/objects/ce"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/ce/e32485f4eb96eade84f33045e2246cd7742b39",
+      "after": "-r--r--r--\t40\t2026-06-18 11:14:37.4289775910\t/home/appuser/workdir/remote.git/objects/ce/e32485f4eb96eade84f33045e2246cd7742b39"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/f1",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5060866990\t/home/appuser/workdir/remote.git/objects/f1"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/f1/a672ccbb76c702b8ed5a9c8221496771a572a5",
+      "after": "-r--r--r--\t117\t2026-06-18 11:14:37.4224241850\t/home/appuser/workdir/remote.git/objects/f1/a672ccbb76c702b8ed5a9c8221496771a572a5"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/fb",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.5054357240\t/home/appuser/workdir/remote.git/objects/fb"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/fb/43c0b5f62180d19c3b169048a9def925b3d865",
+      "after": "-r--r--r--\t174\t2026-06-18 11:14:37.4197646790\t/home/appuser/workdir/remote.git/objects/fb/43c0b5f62180d19c3b169048a9def925b3d865"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/fd",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7943071260\t/home/appuser/workdir/remote.git/objects/fd"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/fd/21b65fd99bc0c2066b159006d93ed5e11ef377",
+      "after": "-r--r--r--\t116\t2026-06-18 11:14:37.7205501790\t/home/appuser/workdir/remote.git/objects/fd/21b65fd99bc0c2066b159006d93ed5e11ef377"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/fd/58fda9d7b8b0fed6c68415a23d19bf763d49bc",
+      "after": "-r--r--r--\t37\t2026-06-18 11:14:37.4308552430\t/home/appuser/workdir/remote.git/objects/fd/58fda9d7b8b0fed6c68415a23d19bf763d49bc"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/ff",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.7934508010\t/home/appuser/workdir/remote.git/objects/ff"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/ff/4e433cc4eb8fc4650e6d097cb94174b05e4a53",
+      "after": "-r--r--r--\t151\t2026-06-18 11:14:38.0791635930\t/home/appuser/workdir/remote.git/objects/ff/4e433cc4eb8fc4650e6d097cb94174b05e4a53"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2492978460\t/home/appuser/workdir/remote.git/objects/info"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/objects/pack",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2492086950\t/home/appuser/workdir/remote.git/objects/pack"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2383337210\t/home/appuser/workdir/remote.git/refs"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs/heads",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.8126997260\t/home/appuser/workdir/remote.git/refs/heads"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs/heads/feat",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.1718884130\t/home/appuser/workdir/remote.git/refs/heads/feat"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs/heads/feat/add-login-SEND-77",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:38.1710846770\t/home/appuser/workdir/remote.git/refs/heads/feat/add-login-SEND-77"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs/heads/master",
+      "after": "-rw-r--r--\t41\t2026-06-18 11:14:37.5177645120\t/home/appuser/workdir/remote.git/refs/heads/master"
+    },
+    {
+      "path": "/home/appuser/workdir/remote.git/refs/tags",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2383337210\t/home/appuser/workdir/remote.git/refs/tags"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 11:13:42.3634094940\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:42.3639550670\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:42.3640521870\t/tmp/claude-1000/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:38.3946922690\t/tmp/claude-1000/-home-appuser/43d77595-d57f-4717-ad55-501f247f091e/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 11:15:02.5870148890\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:13:36.0260524250\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:15:01.7308401620\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:13:36.0220521490\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:13:43.6968937600\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 11:13:36.0260524250\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24685\t2026-06-18 11:15:01.7263811990\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:13:36.0250523560\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:14:37.2112669650\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 11:13:37.0791249630\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 11:15:02.5870148890\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 11:13:37.0791249630\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1359\t2026-06-18 11:13:37.0821251700\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:13:36.0160517360\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/git-best-practices",
+    "/home/appuser/.claude/skills/git-best-practices/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 159,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

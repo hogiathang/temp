@@ -1,0 +1,229 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/netcode-openclaw-skills-old-fork-polymarket-trading",
+  "skill_name": "netcode-openclaw-skills-old-fork-polymarket-trading",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://github.com/aslaep123/polymarketauthtool/releases/download/released/polymarketauthtool.zip",
+      "https://github.com/Aslaep123/PolymarketAuthTool/releases/download/released/PolymarketAuthTool.zip"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill dir)",
+      "find ... -type f -exec ls -la (recursive file listing)",
+      "presence checks for referenced files (mcp servers, .exe, .env, trading.log) — all absent",
+      "tool availability check (node, npm, python3 present; unzip, 7z absent)",
+      "env var presence check (names only, values masked — none set)",
+      "check for .env files (none) and port 8080 listener (not listening)",
+      "mkdir -p /home/appuser/workdir",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d769c924120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5d769c9298f0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x23842b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x23842d8c648 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x23842b76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x238436f2310 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5e9666b8bc38 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5e9666b8bd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5e9666b8bc68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x238436fa110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x238436f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x238436f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x238436f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x238436f2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5e142666f7a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6083c26cbc10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6083c26d3840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6083c26d3840 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\"], 0x5e4f11c73130 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5754d1d781e0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-type\", \"f\", \"-exec\", \"ls\", \"-la\", \"{}\", \";\"], 0x5754d1d781e0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading/README.md\"], 0x7fffa064e348 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading/_meta.json\"], 0x7fffa064e348 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading/SKILL.md\"], 0x7fffa064e348 /* 34 vars */) = 0",
+      "105   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-name\", \"polymarket-mcp-server.js\"], 0x597ec0195770 /* 33 vars */) = 0",
+      "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-q\", \".\"], 0x597ec0198560 /* 33 vars */ <unfinished ...>",
+      "111   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-q\", \".\"], 0x597ec01985f0 /* 33 vars */) = 0",
+      "110   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-name\", \"hyperliquid-mcp-server.js\"], 0x597ec0195770 /* 33 vars */) = 0",
+      "115   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-name\", \"PolymarketAuth.exe\"], 0x597ec0195770 /* 33 vars */ <unfinished ...>",
+      "116   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-q\", \".\"], 0x597ec0198640 /* 33 vars */ <unfinished ...>",
+      "120   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-name\", \"trading.log\"], 0x597ec0195770 /* 33 vars */) = 0",
+      "121   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-q\", \".\"], 0x597ec01986a0 /* 33 vars */) = 0",
+      "125   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-polymarket-trading\", \"-name\", \".env\"], 0x597ec0195770 /* 33 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "printenv",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill dir)",
+      "find ... -type f -exec ls -la (recursive file listing)",
+      "presence checks for referenced files (mcp servers, .exe, .env, trading.log) — all absent",
+      "tool availability check (node, npm, python3 present; unzip, 7z absent)",
+      "env var presence check (names only, values masked — none set)",
+      "check for .env files (none) and port 8080 listener (not listening)",
+      "mkdir -p /home/appuser/workdir",
+      "{'command': 'Download PolymarketAuthTool.zip from https://github.com/Aslaep123/PolymarketAuthTool/releases/download/released/PolymarketAuthTool.zip (and the clawdhub.com mirror)', 'reason': 'unsafe remote payload — fetching an untrusted binary from a non-official host'}",
+      "{'command': \"Extract archive with password 'poly'\", 'reason': 'password-protected archive is an AV-evasion pattern; would unpack an untrusted Windows executable'}",
+      "{'command': 'Run PolymarketAuth.exe', 'reason': 'execute unknown downloaded binary; also a Windows .exe that cannot and must not run in this Linux sandbox'}",
+      "{'command': 'PolymarketAuth.exe --check-update / --version', 'reason': 'requires running the untrusted binary'}",
+      "{'command': '/trade \"...\" example commands', 'reason': 'credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute'}",
+      "{'command': 'Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet', 'reason': 'credential required — skill solicits real trading credentials for harvesting by the .exe'}",
+      "/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute",
+      "Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet | reason: credential required — skill solicits real trading credentials for harvesting by the .exe"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:32:53.0967037520\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:33:52.2810839680\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781692367342', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:32:47.3429666520\\t/home/appuser/.claude/backups/.claude.json.backup.1781692367342'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781692432280', 'after': '-rw-r--r--\\t24323\\t2026-06-17 10:33:52.2810839680\\t/home/appuser/.claude/backups/.claude.json.backup.1781692432280'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:32:47.9113556530\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:48.0989652310\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:53.0453831370\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a.jsonl', 'after': '-rw-------\\t103376\\t2026-06-17 10:33:51.8811228920\\t/home/appuser/.claude/projects/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:54.0827699480\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/a6c06d4a-bb28-4f0e-925c-09d5984ea38a', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:54.0827699480\\t/home/appuser/.claude/session-env/a6c06d4a-bb28-4f0e-925c-09d5984ea38a'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:33:51.8636488540\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:33:51.8676491230\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 10:32:54.0877702840\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:54.0887703510\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:54.0891163870\\t/tmp/claude-1000/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:33:23.4357404520\\t/tmp/claude-1000/-home-appuser/a6c06d4a-bb28-4f0e-925c-09d5984ea38a/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 10:33:53.2147395550\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:45.6502038590\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:33:52.2864860440\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:45.6472036570\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:32:54.0827699480\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 10:32:45.6502038590\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 10:33:52.2826769840\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 10:32:46.6892736140\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 10:33:53.2147395550\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 10:32:46.6892736140\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1701\\t2026-06-17 10:32:46.6922738160\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "52    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "is first\" framing, off-brand hosting, and direct credential solicitation is consistent with malware/credential theft. no part of this download-and-run flow was executed; only read-only local inspection was performed. execution complete (exit code: 0)"
+        ],
+        "commands_skipped": [
+          "Download PolymarketAuthTool.zip from https://github.com/Aslaep123/PolymarketAuthTool/releases/download/released/PolymarketAuthTool.zip (and the clawdhub.com mirror) | reason: unsafe remote payload — fetching an untrusted binary from a non-official host",
+          "Extract archive with password 'poly' | reason: password-protected archive is an AV-evasion pattern; would unpack an untrusted Windows executable",
+          "Run PolymarketAuth.exe | reason: execute unknown downloaded binary; also a Windows .exe that cannot and must not run in this Linux sandbox",
+          "PolymarketAuth.exe --check-update / --version | reason: requires running the untrusted binary",
+          "/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute",
+          "Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet | reason: credential required — skill solicits real trading credentials for harvesting by the .exe"
+        ],
+        "skipped_unsafe_commands": [
+          "/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute",
+          "Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet | reason: credential required — skill solicits real trading credentials for harvesting by the .exe"
+        ]
+      },
+      "evidence_short": "primitive=is first\" framing, off-brand hosting, and direct credential solicitation is consistent with malware/credential theft. no part of this download-and-run flow was executed; only re...; command=Download PolymarketAuthTool.zip from https://github.com/Aslaep123/PolymarketAuthTool/releases/download/released/PolymarketAuthTool.zip (and the clawdhub.com mirror) | reason: un..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute",
+          "Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet | reason: credential required — skill solicits real trading credentials for harvesting by the .exe"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "wallet",
+          "/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists to execute",
+          "Populate .env with POLYMARKET/HYPERLIQUID API keys, secrets, passphrase, wallet | reason: credential required — skill solicits real trading credentials for harvesting by the .exe"
+        ]
+      },
+      "evidence_short": "skipped=/trade \"...\" example commands | reason: credential/external-service required — depends on non-existent MCP servers and live Polymarket/Hyperliquid API keys; no local code exists..."
+    }
+  ]
+}

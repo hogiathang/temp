@@ -1,0 +1,255 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/jira-search",
+  "skill_name": "jira-search",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 97.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 97.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "http://127.0.0.1:9,",
+      "http://127.0.0.1:9999,",
+      "http://127.0.0.1:9"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la / find of skill directory",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "env var presence check (JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL/JIRA_PROJECT_KEY all UNSET)",
+      "checked for .env config files (none present)",
+      "mkdir -p /home/appuser/workdir",
+      "python3 check-issues.py  (no creds -> validation error, exit 1)",
+      "node check-issues.mjs  (no creds -> validation error, exit 1)",
+      "python3 check-issues.py 5 all  (dummy creds -> http://127.0.0.1:9, Connection refused)",
+      "node check-issues.mjs  (dummy creds -> http://127.0.0.1:9, undici 'bad port')",
+      "node check-issues.mjs  (dummy creds -> http://127.0.0.1:9999, ECONNREFUSED)",
+      "grep audit for file-write/spawn/eval primitives and hardcoded URLs",
+      "wrote /home/appuser/workdir/jira-search-eval-note.txt",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x647598735070 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x64759873a7e0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x350a9b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x350a9d8c5f0 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x350a9b76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x350aa6f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x61c6f5ccdc38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x61c6f5ccdc68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x61c6f5ccdd18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x350aa6f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x350aa6f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x350aa6f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x350aa6f3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x350aa6f3490 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5c38717a86f0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b53a77c2b60 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5b53a77ca730 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b53a77ca730 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5b53a77ca730 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5b53a77ca730 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b53a77ca730 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b53a77ca730 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-search/\"], 0x5d2153d88cb0 /* 34 vars */) = 0",
+      "93    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/jira-search/\", \"-type\", \"f\"], 0x5d2153d88cb0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5d37f2528ba0 /* 34 vars */ <unfinished ...>",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira/.env\"], 0x5d37f2528ba0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/.env\"], 0x5d37f2528ba0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5d37f2528ba0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/local/bin/python3\", [\"python3\", \"/home/appuser/.claude/skills/jira-search/scripts/check-issues.py\"], 0x5a616b98ea60 /* 34 vars */) = 0",
+      "121   execve(\"/usr/local/bin/python3\", [\"python3\", \"/home/appuser/.claude/skills/jira-search/scripts/check-issues.py\", \"5\", \"all\"], 0x7ffdaba345e0 /* 38 vars */) = 0",
+      "125   execve(\"/usr/local/bin/node\", [\"node\", \"/home/appuser/.claude/skills/jira-search/scripts/check-issues.mjs\"], 0x7ffe6b72dfd0 /* 37 vars */) = -1 ENOENT (No such file or directory)",
+      "139   execve(\"/usr/bin/head\", [\"head\", \"-20\"], 0x59d5d6f72240 /* 37 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "ls -la / find of skill directory",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "env var presence check (JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL/JIRA_PROJECT_KEY all UNSET)",
+      "checked for .env config files (none present)",
+      "mkdir -p /home/appuser/workdir",
+      "python3 check-issues.py  (no creds -> validation error, exit 1)",
+      "node check-issues.mjs  (no creds -> validation error, exit 1)",
+      "python3 check-issues.py 5 all  (dummy creds -> http://127.0.0.1:9, Connection refused)",
+      "node check-issues.mjs  (dummy creds -> http://127.0.0.1:9, undici 'bad port')",
+      "node check-issues.mjs  (dummy creds -> http://127.0.0.1:9999, ECONNREFUSED)",
+      "grep audit for file-write/spawn/eval primitives and hardcoded URLs",
+      "wrote /home/appuser/workdir/jira-search-eval-note.txt",
+      "{'command': 'Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token)', 'reason': 'credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead'}",
+      "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:50:47.3638510930\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:09.3683800820\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783441562', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:50:41.5628602650\\t/home/appuser/.claude/backups/.claude.json.backup.1781783441562'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783529368', 'after': '-rw-r--r--\\t24568\\t2026-06-18 11:52:09.3687741520\\t/home/appuser/.claude/backups/.claude.json.backup.1781783529368'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:50:42.1183427520\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:42.3538925300\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:47.2916109080\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2.jsonl', 'after': '-rw-------\\t116103\\t2026-06-18 11:52:09.0515743610\\t/home/appuser/.claude/projects/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:46.7582051020\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:46.7582051020\\t/home/appuser/.claude/session-env/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:52:09.0313264180\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:09.0353266940\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/jira-search-eval-note.txt', 'after': '-rw-r--r--\\t39\\t2026-06-18 11:51:41.3725734760\\t/home/appuser/workdir/jira-search-eval-note.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:50:46.7630991910\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:46.7642428130\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:46.7646626350\\t/tmp/claude-1000/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:51:41.4275822960\\t/tmp/claude-1000/-home-appuser/91c8559d-d3e0-43a7-884c-a8d6b2cbdab2/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:52:10.1344023610\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:39.8171843250\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:09.3756858680\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:39.8141841180\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:47.3627038090\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:50:39.8171843250\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24651\\t2026-06-18 11:52:09.3713694690\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:50:39.8171843250\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:51:41.3716456930\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:50:40.8702568250\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:52:10.1344023610\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:50:40.8702568250\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1666\\t2026-06-18 11:50:40.8732570320\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "53    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "v`; there are no hardcoded endpoints, no data exfiltration, no file writes, no process spawning, no remote code execution, and no obfuscation. it fails closed without credentials. the only data sent in testing was placeholder values to a local loopback address."
+        ],
+        "commands_skipped": [
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ],
+        "skipped_unsafe_commands": [
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ]
+      },
+      "evidence_short": "primitive=v`; there are no hardcoded endpoints, no data exfiltration, no file writes, no process spawning, no remote code execution, and no obfuscation. it fails closed without credential...; command=Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting ac..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) credential real jira a",
+          "ra_base_url/rest/api/3/search ... with real email:token) real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) credential real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token)",
+          "/rest/api/3/search ... with real email:token) credential real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token)",
+          "real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead real jira",
+          "dbox; used dummy values against a local endpoint instead real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead credentia",
+          "dummy values against a local endpoint instead credential real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead",
+          "host using credentials the user supplies via env/`.env`; there are no hardcoded endpoints, no data exfiltration, no file writes, no process spawning, no remote code execution, and no obfuscation. it fails closed without credentials. the only data sent in testing was placeholder values to a local loopback address. execution complete (exit code: 0)",
+          "s read credentials from env vars (`jira_email`, `jira_api_token`, `jira_base_url`) and optionally a read-only `.env` file two levels up. they build an http basic auth header and `get` the jira `/rest/api/3/search/jql` endpoint, printing issue keys/summari",
+          "uery a jira instance via its rest api. **behavior observed:** - both scripts read credentials from env vars (`jira_email`, `jira_api_token`, `jira_base_url`) and optionally a read-only `.env` file two levels up. they build an http basic auth header and `get` the jira `/rest/api/3/search/jql` endpoint, printing issue keys/summaries/links. - with no credentials, both **"
+        ],
+        "commands_skipped": [
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ],
+        "skipped_unsafe_commands": [
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ]
+      },
+      "evidence_short": "primitive=real jira api calls with live credentials (curl -x post $jira_base_url/rest/api/3/search ... with real email:token) real jira api calls with live credentials (curl -x post $jira...; command=Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting ac..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting action — no real credentials in sandbox; used dummy values against a local endpoint instead"
+        ]
+      },
+      "evidence_short": "skipped=Real Jira API calls with live credentials (curl -X POST $JIRA_BASE_URL/rest/api/3/search ... with real email:token) | reason: credential required / external account-affecting ac..."
+    }
+  ]
+}

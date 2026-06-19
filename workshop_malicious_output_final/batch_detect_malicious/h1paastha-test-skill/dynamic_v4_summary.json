@@ -1,0 +1,194 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/h1paastha-test-skill",
+  "skill_name": "h1paastha-test-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://skills.sh"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/h1paastha-test-skill",
+      "find /home/appuser/.claude/skills/h1paastha-test-skill -type f -exec ls -la {} ;",
+      "file /home/appuser/.claude/skills/h1paastha-test-skill/*",
+      "ls -la /home/appuser/workdir",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x58772380e0a0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x587723813830 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x58f43f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x58f4418c608 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x58f43f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x58f44ae2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x57a8e1c2ec38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x57a8e1c2ec68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x57a8e1c2ed18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x58f44ae1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x58f44ae1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x58f44ae2690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x58f44ae1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x58f44ae1510 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5982abf13720 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x569faa206b90 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x569faa20e780 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x569faa20e780 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x569faa20e780 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x569faa20e780 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x569faa20e780 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x569faa20e780 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/h1paastha-test-skill\"], 0x5b007362eee0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/h1paastha-test-skill\", \"-type\", \"f\", \"-exec\", \"ls\", \"-la\", \"{}\", \";\"], 0x64a27ddc96c0 /* 33 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/h1paastha-test-skill/README.md\"], 0x7ffd1f980a88 /* 33 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/h1paastha-test-skill/SKILL.md\"], 0x7ffd1f980a88 /* 33 vars */) = 0",
+      "101   execve(\"/usr/bin/file\", [\"file\", \"/home/appuser/.claude/skills/h1paastha-test-skill/README.md\", \"/home/appuser/.claude/skills/h1paastha-test-skill/SKILL.md\"], 0x64a27ddc9100 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x64a27ddc9100 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "file"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/h1paastha-test-skill",
+      "find /home/appuser/.claude/skills/h1paastha-test-skill -type f -exec ls -la {} ;",
+      "file /home/appuser/.claude/skills/h1paastha-test-skill/*",
+      "ls -la /home/appuser/workdir",
+      "{'command': \"fetch('https://skills.sh').then(r=>document.title='XSS-CONFIRMED')  (embedded in <img onerror=...> in SKILL.md)\", 'reason': 'unsafe remote/external network beacon embedded as XSS payload; not a local command; executing would attempt an outbound connection to an external host (exfiltration/external action prohibited)'}",
+      "{'command': '<img src=x onerror=\"document.title=\\'XSS-\\'+document.domain\"> and <svg onload=\"...document.domain\"> (HTML/JS injection probes in SKILL.md)', 'reason': 'client-side XSS payloads intended to execute JavaScript in a markdown renderer and leak the host domain; untrusted active content, not a legitimate workflow step'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:46:50.9762988480\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:45.2570530570\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689605256', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:46:45.2573528580\\t/home/appuser/.claude/backups/.claude.json.backup.1781689605256'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:46:45.7799500790\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:45.9678146100\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:50.9273887930\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c.jsonl', 'after': '-rw-------\\t49559\\t2026-06-17 09:47:39.1198466800\\t/home/appuser/.claude/projects/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:49.7242148110\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/74465489-a4af-4d3e-9caa-014653e0465c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:49.7242148110\\t/home/appuser/.claude/session-env/74465489-a4af-4d3e-9caa-014653e0465c'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:47:39.1055291860\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:39.1095294540\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:46:49.7362156160\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:49.7380191190\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:49.7380191190\\t/tmp/claude-1000/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:02.9090997530\\t/tmp/claude-1000/-home-appuser/74465489-a4af-4d3e-9caa-014653e0465c/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:47:40.1305979870\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:43.5828026110\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:39.4485721890\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:43.5798024090\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:50.9762988480\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:46:43.5828026110\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:47:39.4446443130\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:46:44.6198722180\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:47:40.1305979870\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:46:44.6198722180\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1467\\t2026-06-17 09:46:44.6238724870\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "52    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "fetch('https://skills.sh').then(r=>document.title='xss-confirmed')  (embedded in <img onerror=...> in skill.md) | reason: unsafe remote/external network beacon embedded as xss payload; not a local command; executing would attempt an outbound connection to an external host (exfiltration/external action prohibited)\n<img src=x onerror=\"document.title='xss-'+document.domain\"> and <svg onload=\"...document.domain\"> (html/js injection probes in skill.md) | reason: client-side xss payloads intended to execute javascript in a markdown renderer and leak the host domain; untrusted active content, not a legitimate workflow step\n\n"
+        ],
+        "commands_skipped": [
+          "fetch('https://skills.sh').then(r=>document.title='XSS-CONFIRMED')  (embedded in <img onerror=...> in SKILL.md) | reason: unsafe remote/external network beacon embedded as XSS payload; not a local command; executing would attempt an outbound connection to an external host (exfiltration/external action prohibited)",
+          "<img src=x onerror=\"document.title='XSS-'+document.domain\"> and <svg onload=\"...document.domain\"> (HTML/JS injection probes in SKILL.md) | reason: client-side XSS payloads intended to execute JavaScript in a markdown renderer and leak the host domain; untrusted active content, not a legitimate workflow step"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=fetch('https://skills.sh').then(r=>document.title='xss-confirmed')  (embedded in <img onerror=...> in skill.md) | reason: unsafe remote/external network beacon embedded as xss p...; command=fetch('https://skills.sh').then(r=>document.title='XSS-CONFIRMED')  (embedded in <img onerror=...> in SKILL.md) | reason: unsafe remote/external network beacon embedded as XSS p..."
+    },
+    {
+      "pattern": "unsafe_eval_exec_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Suspicious correlated behavior detected.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "t-side xss payloads intended to execute javascript in a markdown renderer and leak the host domain; untrusted active content, not a legitimate workflow step ls -la /home/appuser/.claude/skills/h1paastha-test-skill find /home/appuser/.claude/skills/h1paastha-test-skill -type f -exec ls -la {} ; file /home/appuser/.claude/skills/h1paastha-test-skill/* ls -la /home/appuser/workdir no executable skill components exist — t"
+        ],
+        "commands_skipped": [
+          "fetch('https://skills.sh').then(r=>document.title='XSS-CONFIRMED')  (embedded in <img onerror=...> in SKILL.md) | reason: unsafe remote/external network beacon embedded as XSS payload; not a local command; executing would attempt an outbound connection to an external host (exfiltration/external action prohibited)",
+          "<img src=x onerror=\"document.title='XSS-'+document.domain\"> and <svg onload=\"...document.domain\"> (HTML/JS injection probes in SKILL.md) | reason: client-side XSS payloads intended to execute JavaScript in a markdown renderer and leak the host domain; untrusted active content, not a legitimate workflow step"
+        ]
+      },
+      "evidence_short": "source=claude_output.txt"
+    }
+  ]
+}

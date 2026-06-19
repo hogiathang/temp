@@ -1,0 +1,286 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/blessonism-openclaw-skills-gitclaw-backup",
+  "skill_name": "blessonism-openclaw-skills-gitclaw-backup",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 91.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 91.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "dns1.p08.nsone.net",
+      "github.com",
+      "github.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "github.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "github.com.google.internal",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "20.205.243.166"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://github.com/blessonism/openclaw-backup.git"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls/find/getent — env & path discovery (referenced /home/node/.openclaw absent; github.com DNS resolved)",
+      "test -f ~/.git-credentials (ABSENT) ; git config --global --list (no config)",
+      "mkdir mock-openclaw tree + dummy files + .gitignore mirroring documented exclusions",
+      "git init --bare mock-remote.git (local stand-in for the real GitHub remote)",
+      "git init -b main; git config user.email/name (placeholders); git remote add origin <local bare>",
+      "mkdir lock (lock acquire); git add -A; git commit; git push origin main (to local remote); rmdir lock",
+      "tail -5 backup.log; git status --short; git log --oneline -5; git log --oneline -1 (post-sync hash)",
+      "stale-lock recovery: mkdir gitclaw/lock then rmdir gitclaw/lock; git log --oneline -5 origin/main",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62be16e520f0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x62be16e578a0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3164cb74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3164cd8c630 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3164cb76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3164d6f0a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5f8ff4973c38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5f8ff4973d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5f8ff4973c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3164d6f1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3164d6f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3164d6f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3164d6f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3164d6f1510 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5a021fe7f770 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5848b4a66be0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5848b4a6e7f0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5848b4a6e7f0 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5848b4a6e7f0 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5848b4a6e7f0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5848b4a6e7f0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5848b4a6e7f0 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/blessonism-openclaw-skills-gitclaw-backup/\"], 0x555f3c859fb0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x5fa27831c860 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/head\", [\"head\"], 0x5fa27831c860 /* 34 vars */ <unfinished ...>",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/node/.openclaw/\"], 0x5fa27831c860 /* 34 vars */ <unfinished ...>",
+      "98    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/node\"], 0x5fa27831c860 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/head\", [\"head\"], 0x5fa27831c860 /* 34 vars */ <unfinished ...>",
+      "101   execve(\"/usr/bin/head\", [\"head\"], 0x5fa27831c860 /* 34 vars */ <unfinished ...>",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.openclaw\"], 0x5fa27831c860 /* 34 vars */ <unfinished ...>",
+      "102   execve(\"/usr/bin/git\", [\"git\", \"--version\"], 0x5fa27831c860 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5fa27831c860 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/head\", [\"head\"], 0x62e7d1a94000 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/git\", [\"git\", \"config\", \"--global\", \"--list\"], 0x62e7d1a94000 /* 34 vars */ <unfinished ...>",
+      "108   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser\", \"-name\", \"auto_backup.sh\"], 0x62e7d1a94000 /* 33 vars */) = 0",
+      "112   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser\", \"-iname\", \"*gitclaw*\"], 0x62e7d1a94000 /* 33 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "whoami",
+      "getent",
+      "mkdir",
+      "sort",
+      "tee",
+      "date",
+      "git-receive-pack",
+      "rmdir",
+      "tail"
+    ],
+    "tool_call_patterns": [
+      "ls/find/getent — env & path discovery (referenced /home/node/.openclaw absent; github.com DNS resolved)",
+      "test -f ~/.git-credentials (ABSENT) ; git config --global --list (no config)",
+      "mkdir mock-openclaw tree + dummy files + .gitignore mirroring documented exclusions",
+      "git init --bare mock-remote.git (local stand-in for the real GitHub remote)",
+      "git init -b main; git config user.email/name (placeholders); git remote add origin <local bare>",
+      "mkdir lock (lock acquire); git add -A; git commit; git push origin main (to local remote); rmdir lock",
+      "tail -5 backup.log; git status --short; git log --oneline -5; git log --oneline -1 (post-sync hash)",
+      "stale-lock recovery: mkdir gitclaw/lock then rmdir gitclaw/lock; git log --oneline -5 origin/main",
+      "{'command': 'bash /home/node/.openclaw/gitclaw/auto_backup.sh', 'reason': 'script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action'}",
+      "{'command': 'git push to https://github.com/blessonism/openclaw-backup.git', 'reason': 'real account-affecting external action; replaced with push to a local bare stand-in remote'}",
+      "{'command': 'git credential fill <<< \"host=github.com\"', 'reason': 'credential required / accesses real stored credentials — prohibited (and none present)'}",
+      "bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action",
+      "git credential fill <<< \"host=github.com\" | reason: credential required / accesses real stored credentials — prohibited (and none present)"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:26:23.2212402860\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:28:07.0654946230\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781684777417', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:26:17.4178507150\\t/home/appuser/.claude/backups/.claude.json.backup.1781684777417'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781684887065', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:28:07.0654946230\\t/home/appuser/.claude/backups/.claude.json.backup.1781684887065'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:26:17.9288850200\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:26:18.2028175040\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:26:23.1743950520\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/518a6e21-7018-41ae-820e-1e8de2f79c5b.jsonl', 'after': '-rw-------\\t90258\\t2026-06-17 08:28:06.7692285880\\t/home/appuser/.claude/projects/-home-appuser/518a6e21-7018-41ae-820e-1e8de2f79c5b.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:26:24.2747814700\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/518a6e21-7018-41ae-820e-1e8de2f79c5b', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:26:24.2747814700\\t/home/appuser/.claude/session-env/518a6e21-7018-41ae-820e-1e8de2f79c5b'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:28:06.7511900380\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:28:06.7551903070\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:13.1665930160\\t/home/appuser/workdir/mock-openclaw'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:28.7057703960\\t/home/appuser/workdir/mock-openclaw/.git'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/COMMIT_EDITMSG', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:27:20.3063687000\\t/home/appuser/workdir/mock-openclaw/.git/COMMIT_EDITMSG'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/HEAD', 'after': '-rw-r--r--\\t21\\t2026-06-17 08:27:13.1795915990\\t/home/appuser/workdir/mock-openclaw/.git/HEAD'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/branches', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:13.1760421880\\t/home/appuser/workdir/mock-openclaw/.git/branches'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/config', 'after': '-rw-r--r--\\t250\\t2026-06-17 08:27:13.2335975140\\t/home/appuser/workdir/mock-openclaw/.git/config'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/description', 'after': '-rw-r--r--\\t73\\t2026-06-17 08:27:13.1775456240\\t/home/appuser/workdir/mock-openclaw/.git/description'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:13.1751865810\\t/home/appuser/workdir/mock-openclaw/.git/hooks'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/applypatch-msg.sample', 'after': '-rwxr-xr-x\\t478\\t2026-06-17 08:27:13.1746927610\\t/home/appuser/workdir/mock-openclaw/.git/hooks/applypatch-msg.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/commit-msg.sample', 'after': '-rwxr-xr-x\\t896\\t2026-06-17 08:27:13.1751865810\\t/home/appuser/workdir/mock-openclaw/.git/hooks/commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/fsmonitor-watchman.sample', 'after': '-rwxr-xr-x\\t4726\\t2026-06-17 08:27:13.1730848310\\t/home/appuser/workdir/mock-openclaw/.git/hooks/fsmonitor-watchman.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/post-update.sample', 'after': '-rwxr-xr-x\\t189\\t2026-06-17 08:27:13.1685931500\\t/home/appuser/workdir/mock-openclaw/.git/hooks/post-update.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-applypatch.sample', 'after': '-rwxr-xr-x\\t424\\t2026-06-17 08:27:13.1722725970\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-applypatch.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-commit.sample', 'after': '-rwxr-xr-x\\t1643\\t2026-06-17 08:27:13.1741693470\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-commit.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-merge-commit.sample', 'after': '-rwxr-xr-x\\t416\\t2026-06-17 08:27:13.1695932170\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-merge-commit.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-push.sample', 'after': '-rwxr-xr-x\\t1374\\t2026-06-17 08:27:13.1685466630\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-push.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-rebase.sample', 'after': '-rwxr-xr-x\\t4898\\t2026-06-17 08:27:13.1695554740\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-rebase.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/pre-receive.sample', 'after': '-rwxr-xr-x\\t544\\t2026-06-17 08:27:13.1706911170\\t/home/appuser/workdir/mock-openclaw/.git/hooks/pre-receive.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/prepare-commit-msg.sample', 'after': '-rwxr-xr-x\\t1492\\t2026-06-17 08:27:13.1736179300\\t/home/appuser/workdir/mock-openclaw/.git/hooks/prepare-commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/push-to-checkout.sample', 'after': '-rwxr-xr-x\\t2783\\t2026-06-17 08:27:13.1717313250\\t/home/appuser/workdir/mock-openclaw/.git/hooks/push-to-checkout.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/hooks/update.sample', 'after': '-rwxr-xr-x\\t3650\\t2026-06-17 08:27:13.1712014070\\t/home/appuser/workdir/mock-openclaw/.git/hooks/update.sample'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/index', 'after': '-rw-r--r--\\t429\\t2026-06-17 08:27:28.7054746430\\t/home/appuser/workdir/mock-openclaw/.git/index'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/info', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:13.1770133160\\t/home/appuser/workdir/mock-openclaw/.git/info'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/info/exclude', 'after': '-rw-r--r--\\t240\\t2026-06-17 08:27:13.1770133160\\t/home/appuser/workdir/mock-openclaw/.git/info/exclude'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.3126850360\\t/home/appuser/workdir/mock-openclaw/.git/logs'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/HEAD', 'after': '-rw-r--r--\\t178\\t2026-06-17 08:27:20.3121099560\\t/home/appuser/workdir/mock-openclaw/.git/logs/HEAD'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.5294462500\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs/heads', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.3126850360\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs/heads'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs/heads/main', 'after': '-rw-r--r--\\t178\\t2026-06-17 08:27:20.3126850360\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs/heads/main'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.5298778670\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes/origin', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.5298778670\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes/origin'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes/origin/main', 'after': '-rw-r--r--\\t142\\t2026-06-17 08:27:20.5303267790\\t/home/appuser/workdir/mock-openclaw/.git/logs/refs/remotes/origin/main'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.3312352980\\t/home/appuser/workdir/mock-openclaw/.git/objects'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects/03', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.3038464640\\t/home/appuser/workdir/mock-openclaw/.git/objects/03'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects/03/2162b7a38eafb23a10a6aeb78d375808a85de5', 'after': '-r--r--r--\\t156\\t2026-06-17 08:27:20.3038464640\\t/home/appuser/workdir/mock-openclaw/.git/objects/03/2162b7a38eafb23a10a6aeb78d375808a85de5'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects/0c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.2415309320\\t/home/appuser/workdir/mock-openclaw/.git/objects/0c'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects/0c/907006c48ed0718a7b77eac6c3d7dc97e5fec6', 'after': '-r--r--r--\\t60\\t2026-06-17 08:27:20.2410726040\\t/home/appuser/workdir/mock-openclaw/.git/objects/0c/907006c48ed0718a7b77eac6c3d7dc97e5fec6'}",
+      "{'path': '/home/appuser/workdir/mock-openclaw/.git/objects/7a', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:27:20.2458016280\\t/home/appuser/workdir/mock-openclaw/.git/objects/7a'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "git credential fill` to read stored github credentials) is for legitimate auth troubleshooting, not exfiltration; i skipped it as a precaution and because no credentials exist. no remote script execution, no obfuscation, no destructive operations, and no attempt to reach unexpected hosts were present. execu"
+        ],
+        "commands_skipped": [
+          "bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action",
+          "git push to https://github.com/blessonism/openclaw-backup.git | reason: real account-affecting external action; replaced with push to a local bare stand-in remote",
+          "git credential fill <<< \"host=github.com\" | reason: credential required / accesses real stored credentials — prohibited (and none present)"
+        ],
+        "skipped_unsafe_commands": [
+          "bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action",
+          "git credential fill <<< \"host=github.com\" | reason: credential required / accesses real stored credentials — prohibited (and none present)"
+        ]
+      },
+      "evidence_short": "primitive=git credential fill` to read stored github credentials) is for legitimate auth troubleshooting, not exfiltration; i skipped it as a precaution and because no credentials exist. ...; command=bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credential..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action",
+          "git credential fill <<< \"host=github.com\" | reason: credential required / accesses real stored credentials — prohibited (and none present)"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credentials — external/irreversible action",
+          "git credential fill <<< \"host=github.com\" | reason: credential required / accesses real stored credentials — prohibited (and none present)"
+        ]
+      },
+      "evidence_short": "skipped=bash /home/node/.openclaw/gitclaw/auto_backup.sh | reason: script and ~/.openclaw workspace do not exist in sandbox; real run would push to a real GitHub repo and use credential..."
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x5fa27831c860 /* 34 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x5fa27831c860 /* 34 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x5fa27831c860 /* 34 vars */) = 0"
+    }
+  ]
+}

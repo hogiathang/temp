@@ -1,0 +1,280 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/boshu2-agentops-skills-update",
+  "skill_name": "boshu2-agentops-skills-update",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "which node npm npx; node --version; npm --version",
+      "bash scripts/validate.sh  (-> FAIL exit 1, tier mismatch)",
+      "ls /home/appuser/.claude/skills/",
+      "printenv checks for NPM_TOKEN/GITHUB_TOKEN/HTTP_PROXY/HTTPS_PROXY/npm_config_registry (names only)",
+      "ls -d /home/appuser/skills ./skills (not found)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x59a2cadf80d0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x59a2cadfd870 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x420c0374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x420c058c618 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x420c0376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x420c0f02310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5f942448ec38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5f942448ec68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5f942448ed18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x420c0f02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x420c0f02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x420c0f03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x420c0f03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x420c0f02d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x632cda896750 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5c871608bbc0 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5c87160937c0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5c87160937c0 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5c87160937c0 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5c87160937c0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5c87160937c0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5c87160937c0 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/\"], 0x64399c989ec0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/scripts/\"], 0x6548e7f03f70 /* 34 vars */ <unfinished ...>",
+      "98    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x55a9dd242db0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/which\", [\"which\", \"node\", \"npm\", \"npx\"], 0x55a9dd242db0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x55a9dd242db0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffc9a750b90 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "114   execve(\"/usr/bin/bash\", [\"bash\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/scripts/validate.sh\"], 0x6178dfd322e0 /* 34 vars */) = 0",
+      "116   execve(\"/usr/bin/dirname\", [\"dirname\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/scripts/validate.sh\"], 0x60c617c34980 /* 34 vars */) = 0",
+      "117   execve(\"/usr/bin/grep\", [\"grep\", \"-q\", \"^name: update\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/SKILL.md\"], 0x60c617c34980 /* 34 vars */) = 0",
+      "118   execve(\"/usr/bin/grep\", [\"grep\", \"-q\", \"tier: solo\", \"/home/appuser/.claude/skills/boshu2-agentops-skills-update/SKILL.md\"], 0x60c617c34980 /* 34 vars */) = 0",
+      "122   execve(\"/usr/bin/head\", [\"head\", \"-50\"], 0x5b345ee72db0 /* 34 vars */ <unfinished ...>",
+      "121   execve(\"/usr/bin/ls\", [\"ls\", \"/home/appuser/.claude/skills/\"], 0x5b345ee72db0 /* 34 vars */ <unfinished ...>",
+      "123   execve(\"/usr/bin/printenv\", [\"printenv\", \"NPM_TOKEN\"], 0x5b345ee72db0 /* 34 vars */) = 0",
+      "124   execve(\"/usr/bin/printenv\", [\"printenv\", \"GITHUB_TOKEN\"], 0x5b345ee72db0 /* 34 vars */) = 0",
+      "125   execve(\"/usr/bin/printenv\", [\"printenv\", \"HTTP_PROXY\"], 0x5b345ee72db0 /* 34 vars */) = 0",
+      "126   execve(\"/usr/bin/printenv\", [\"printenv\", \"HTTPS_PROXY\"], 0x5b345ee72db0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "which",
+      "npm",
+      "node",
+      "dirname",
+      "printenv"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "which node npm npx; node --version; npm --version",
+      "bash scripts/validate.sh  (-> FAIL exit 1, tier mismatch)",
+      "ls /home/appuser/.claude/skills/",
+      "printenv checks for NPM_TOKEN/GITHUB_TOKEN/HTTP_PROXY/HTTPS_PROXY/npm_config_registry (names only)",
+      "ls -d /home/appuser/skills ./skills (not found)",
+      "{'command': 'npx skills@latest add boshu2/agentops --all -g', 'reason': 'unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills'}",
+      "{'command': 'yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/', 'reason': 'no local source dir present and would overwrite global skill files; irreversible global mutation'}",
+      "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+      "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:35:44.0868900560\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:36:38.5013819450\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685338368', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:35:38.3691924850\\t/home/appuser/.claude/backups/.claude.json.backup.1781685338368'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685398501', 'after': '-rw-r--r--\\t24322\\t2026-06-17 08:36:38.5013819450\\t/home/appuser/.claude/backups/.claude.json.backup.1781685398501'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:35:38.9115426470\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:39.1025227080\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:44.0377348210\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca.jsonl', 'after': '-rw-------\\t59231\\t2026-06-17 08:36:38.1386379170\\t/home/appuser/.claude/projects/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:43.8248724670\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/53184bcd-9587-408b-9ab8-166b90a9afca', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:43.8248724670\\t/home/appuser/.claude/session-env/53184bcd-9587-408b-9ab8-166b90a9afca'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:36:38.1235174230\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:36:38.1265176240\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:35:43.8288727360\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:43.8288727360\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:43.8293211530\\t/tmp/claude-1000/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:36:13.2308464300\\t/tmp/claude-1000/-home-appuser/53184bcd-9587-408b-9ab8-166b90a9afca/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:36:39.5516132880\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:36.6853932100\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:36:38.5055430670\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:36.6823930080\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:35:44.0866044460\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:35:36.6853932100\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24405\\t2026-06-17 08:36:38.5025428660\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:35:37.7254630280\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:36:39.5516132880\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:35:37.7254630280\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1619\\t2026-06-17 08:35:37.7284632290\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "loads and executes an unknown remote npm package and installs unverified code globally. prohibited (remote code execution / install unknown remote code / modifies global config). no real network call was made by me. - **`yes | cp -r skills/<skill-name>/ ~/.clau"
+        ],
+        "commands_skipped": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ],
+        "skipped_unsafe_commands": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ]
+      },
+      "evidence_short": "primitive=loads and executes an unknown remote npm package and installs unverified code globally. prohibited (remote code execution / install unknown remote code / modifies global config)...; command=npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "havior classification: **benign but dual-use / low-risk** the skill itself contains no obfuscation, exfiltration, secret access, or destructive commands. its risk is inherent to its purpose: it pulls and runs remote code (`npx ...@latest`) and writes globally"
+        ],
+        "commands_skipped": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ],
+        "skipped_unsafe_commands": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ]
+      },
+      "evidence_short": "primitive=havior classification: **benign but dual-use / low-risk** the skill itself contains no obfuscation, exfiltration, secret access, or destructive commands. its risk is inherent to...; command=npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ npx skills@latest add boshu2/agentops --all -g",
+          "latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ remote script irreversible npx skills@latest a",
+          "--all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ remote script irreversible npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ npx skills@latest add boshu2/agentops --all -g",
+          "latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ remote script irreversible npx skills@latest a",
+          "--all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ remote script irreversible npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/"
+        ],
+        "skipped_remote_install": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+        ],
+        "remote_install_instructions": [
+          "npx",
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+        ]
+      },
+      "evidence_short": "primitive=npx skills@latest add boshu2/agentops --all -g yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ npx skills@latest add boshu2/agentops --all -g; install=npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "irreversible",
+          "npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills",
+          "yes | cp -r skills/<skill-name>/ ~/.claude/skills/<skill-name>/ | reason: no local source dir present and would overwrite global skill files; irreversible global mutation"
+        ]
+      },
+      "evidence_short": "skipped=npx skills@latest add boshu2/agentops --all -g | reason: unsafe remote script / install unknown remote code from network + modifies global ~/.claude/skills"
+    }
+  ]
+}

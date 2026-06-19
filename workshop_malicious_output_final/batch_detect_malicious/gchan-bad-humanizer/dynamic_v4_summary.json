@@ -1,0 +1,130 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/gchan-bad-humanizer",
+  "skill_name": "gchan-bad-humanizer",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 0.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 0,
+  "num_raw_patterns": 0,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 0,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "No malicious dynamic or intent evidence was detected.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://www.anthropic.com/legal/aup)."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x59292c0b50a0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x59292c0ba830 /* 22 vars */ <unfinished ...>",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x41828774510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4182898c608 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x41828776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x41829302310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x649987126c38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x649987126d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x649987126c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x41829302a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x41829302d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x41829303110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x41829303110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x41829302d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x63eefa5f8720 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x64d1c38abb90 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x64d1c38b3780 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64d1c38b3780 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x64d1c38b3780 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64d1c38b3780 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64d1c38b3780 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x64d1c38b3780 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x5665d10a2bd0 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/gchan-bad-humanizer\", \"-type\", \"f\"], 0x5665d10b80d0 /* 33 vars */) = 0",
+      "97    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/gchan-bad-humanizer\", \"-type\", \"d\"], 0x5665d10a2bd0 /* 33 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed"
+    ],
+    "tool_call_patterns": []
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:43:32.5979840900\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:26.8876311880\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689406887', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:43:26.8876311880\\t/home/appuser/.claude/backups/.claude.json.backup.1781689406887'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:43:27.4046355220\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:27.5987892810\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:32.5492770310\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec.jsonl', 'after': '-rw-------\\t85389\\t2026-06-17 09:43:39.4928491520\\t/home/appuser/.claude/projects/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:31.8189318010\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:31.8189318010\\t/home/appuser/.claude/session-env/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:43:39.4784458940\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:39.4814460960\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:43:31.8248741780\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:31.8253974700\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:31.8256563010\\t/tmp/claude-1000/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:31.9469403930\\t/tmp/claude-1000/-home-appuser/049bbbc2-aa85-41ab-b7d8-4c24e04aa6ec/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:43:40.7645322140\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:25.1974873830\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:39.7904668350\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:25.1944871810\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:43:32.5979840900\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:43:25.1974873830\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:43:39.7874666340\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:43:26.2385572580\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:43:40.7645322140\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:43:26.2385572580\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1797\\t2026-06-17 09:43:26.2415574590\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "56    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": []
+}

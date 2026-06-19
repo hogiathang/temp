@@ -1,0 +1,355 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/manaflow-ai-cloudrouter-dot-agents-skills-cloudrouter",
+  "skill_name": "manaflow-ai-cloudrouter-dot-agents-skills-cloudrouter",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 5,
+  "num_raw_patterns": 5,
+  "num_executed_patterns": 2,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 1,
+  "num_high_executed_patterns": 1,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.2.34",
+      "104.16.9.34",
+      "104.16.11.34",
+      "104.16.4.34",
+      "104.16.10.34",
+      "104.16.0.34",
+      "104.16.6.34",
+      "104.16.5.34",
+      "104.16.3.34",
+      "104.16.7.34",
+      "104.16.1.34",
+      "104.16.8.34"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find/ls on skill dir",
+      "which node/npm/cloudrouter; node --version; npm --version; npm config get prefix",
+      "npm view @manaflow-ai/cloudrouter version dist.tarball bin",
+      "npm install --prefix /home/appuser/workdir/cr-local --ignore-scripts @manaflow-ai/cloudrouter",
+      "file lib/cloudrouter (Mach-O arm64 — mismatch); file bin/cloudrouter linux-x64 (ELF x86-64)",
+      "cloudrouter --version  (-> 0.9.30)",
+      "cloudrouter --help / start --help / auth --help / upload --help / browser --help",
+      "cloudrouter whoami  (-> 'Not logged in')",
+      "cloudrouter ls  (-> error: not logged in)",
+      "cloudrouter status dummy-id  (-> error: not logged in)",
+      "cloudrouter upload dummy-id /home/appuser/workdir/sample.txt --dry-run  (-> error: not logged in; no file sent)",
+      "env | grep (presence-only, values hidden); checked ~/.config/cloudrouter & ~/.cloudrouter",
+      "{'payload': '/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js', 'command': '174   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"lib/cloudrouter\", \"lib/postinstall.js\"], 0x5a853fe2e450 /* 34 vars */) = 0'}",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5f22b3e94120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5f22b3e998f0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x36df9774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x36df998c648 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x36df9776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x36dfa300a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x581aa1c72c38 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x581aa1c72c68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x581aa1c72d18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x36dfa301190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x36dfa301510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x36dfa301890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x36dfa301c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x36dfa301f90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6379dfa117a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x63a17eb72c10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x63a17eb7a840 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x63a17eb7a840 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63a17eb7a840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x63a17eb7a840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x63a17eb7a840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x63a17eb7a840 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x5cbc9e671b50 /* 34 vars */ <unfinished ...>",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/manaflow-ai-cloudrouter-dot-agents-skills-cloudrouter\", \"-type\", \"f\"], 0x5cbc9e686dd0 /* 33 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/which\", [\"which\", \"node\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/which\", [\"which\", \"npm\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffc94484dc0 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "114   execve(\"/usr/bin/which\", [\"which\", \"cloudrouter\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0",
+      "115   execve(\"/usr/bin/which\", [\"which\", \"cr\"], 0x5b7a5b1ecde0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "which",
+      "npm",
+      "node",
+      "mkdir",
+      "tail",
+      "wc",
+      "cloudrouter",
+      "file",
+      "uname"
+    ],
+    "tool_call_patterns": [
+      "find/ls on skill dir",
+      "which node/npm/cloudrouter; node --version; npm --version; npm config get prefix",
+      "npm view @manaflow-ai/cloudrouter version dist.tarball bin",
+      "npm install --prefix /home/appuser/workdir/cr-local --ignore-scripts @manaflow-ai/cloudrouter",
+      "file lib/cloudrouter (Mach-O arm64 — mismatch); file bin/cloudrouter linux-x64 (ELF x86-64)",
+      "cloudrouter --version  (-> 0.9.30)",
+      "cloudrouter --help / start --help / auth --help / upload --help / browser --help",
+      "cloudrouter whoami  (-> 'Not logged in')",
+      "cloudrouter ls  (-> error: not logged in)",
+      "cloudrouter status dummy-id  (-> error: not logged in)",
+      "cloudrouter upload dummy-id /home/appuser/workdir/sample.txt --dry-run  (-> error: not logged in; no file sent)",
+      "env | grep (presence-only, values hidden); checked ~/.config/cloudrouter & ~/.cloudrouter",
+      "{'command': 'npm install -g @manaflow-ai/cloudrouter', 'reason': 'global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead'}",
+      "{'command': 'cloudrouter login', 'reason': 'opens a browser for external OAuth and stores real credentials — external action requiring real account access'}",
+      "{'command': 'cloudrouter start / create / new (any sandbox creation)', 'reason': 'creates real external cloud VMs; requires auth and incurs external resource/cost'}",
+      "{'command': 'cloudrouter ssh / pty / upload(real) / download / code / jupyter / vnc / browser *', 'reason': 'operate on real remote sandboxes; require authentication and external services'}",
+      "{'command': 'node lib/postinstall.js (via default npm postinstall)', 'reason': 'untrusted install-time code — skipped via --ignore-scripts; later read it and confirmed benign (file copy only)'}",
+      "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead",
+      "cloudrouter login | reason: opens a browser for external OAuth and stores real credentials — external action requiring real account access"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:00:18.1754753970\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:03:45.4318458080\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690412016', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:00:12.0172199480\\t/home/appuser/.claude/backups/.claude.json.backup.1781690412016'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690625431', 'after': '-rw-r--r--\\t24323\\t2026-06-17 10:03:45.4318458080\\t/home/appuser/.claude/backups/.claude.json.backup.1781690625431'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:00:12.5480977160\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:00:13.1500048550\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:00:18.1213938430\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6.jsonl', 'after': '-rw-------\\t236980\\t2026-06-17 10:03:45.1353717070\\t/home/appuser/.claude/projects/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:00:17.7674480120\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/fb95745a-8993-426b-ab53-fc584dc330b6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:00:17.7674480120\\t/home/appuser/.claude/session-env/fb95745a-8993-426b-ab53-fc584dc330b6'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:03:45.1183643600\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:03:45.1213645610\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:14.1112295250\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_cacache', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:14.1331248800\\t/home/appuser/.npm/_cacache'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:14.1260012690\\t/home/appuser/.npm/_cacache/content-v2'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6591601830\\t/home/appuser/.npm/_cacache/content-v2/sha512'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/1e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6598635840\\t/home/appuser/.npm/_cacache/content-v2/sha512/1e'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/1e/77', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6631894030\\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/77'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/1e/77/b39c76f89ee90e455f37a47d29b90d03a9c7fbbfd23a2560195a65554674089ae9654dba054352bf0ed56697611281a2b18decbb574373d88d0d3a48f13d', 'after': '-rw-r--r--\\t3597501\\t2026-06-17 10:01:28.6565432210\\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/77/b39c76f89ee90e455f37a47d29b90d03a9c7fbbfd23a25...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/22', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:27.9801603360\\t/home/appuser/.npm/_cacache/content-v2/sha512/22'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/22/ae', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:27.9837461370\\t/home/appuser/.npm/_cacache/content-v2/sha512/22/ae'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/22/ae/c315f67a52b140ddda1288bcb0948cadfca443deb00e277d9b0b784d887b2edac7ca976e1c7b84859225fc2267229e659fbe968a4d9f7cfeb7f7b9b4624c', 'after': '-rw-r--r--\\t3388913\\t2026-06-17 10:01:27.9751600000\\t/home/appuser/.npm/_cacache/content-v2/sha512/22/ae/c315f67a52b140ddda1288bcb0948cadfca443deb00e27...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/a0', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.8223163450\\t/home/appuser/.npm/_cacache/content-v2/sha512/a0'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/a0/db', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.8237267580\\t/home/appuser/.npm/_cacache/content-v2/sha512/a0/db'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/a0/db/4004f3a918f831bb3f5237c850c4bcf450b954fd1c73dff7aa51297ad12b53274247b3078b2c5903540de953ff20fbd4f265375845271b4ae77aa35f5839', 'after': '-rw-r--r--\\t39219\\t2026-06-17 10:01:26.8198808440\\t/home/appuser/.npm/_cacache/content-v2/sha512/a0/db/4004f3a918f831bb3f5237c850c4bcf450b954fd1c73dff7...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/c6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.0880333470\\t/home/appuser/.npm/_cacache/content-v2/sha512/c6'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/c6/55', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.0940337490\\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/55'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/c6/55/e41549d5e1e5afcb90a941844b1e279cbb85c4713aee006eaa3664461c23a7871010ef81d46623fcba0710f78501e91cf95efa89df29746ccf45808ca041', 'after': '-rw-r--r--\\t39405\\t2026-06-17 10:01:26.0810328770\\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/55/e41549d5e1e5afcb90a941844b1e279cbb85c4713aee006e...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/cf', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:14.1270220250\\t/home/appuser/.npm/_cacache/content-v2/sha512/cf'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:14.1295850200\\t/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9/3c6763b2eada99dffc7add885159961a33454fe4ea9d5c8f2abc6564697f137a43125a07c83c2f98d8e069825c8bdd1b31604654d3996b319f753d52b8ba', 'after': '-rw-r--r--\\t62134\\t2026-06-17 10:01:14.1211593240\\t/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9/3c6763b2eada99dffc7add885159961a33454fe4ea9d5c8f...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/e9', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.1047188450\\t/home/appuser/.npm/_cacache/content-v2/sha512/e9'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/e9/08', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.1224209470\\t/home/appuser/.npm/_cacache/content-v2/sha512/e9/08'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/e9/08/bd83a04c69b2e44eb04b47a953116e668e0def3516d5ae5a229bb371d142e81e15e016fde8176f16fb10db51e16713ab75bfc14914093d08855b9dd2699b', 'after': '-rw-r--r--\\t39658\\t2026-06-17 10:01:26.1012229020\\t/home/appuser/.npm/_cacache/content-v2/sha512/e9/08/bd83a04c69b2e44eb04b47a953116e668e0def3516d5ae5a...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/eb', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.0880333470\\t/home/appuser/.npm/_cacache/content-v2/sha512/eb'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.0954436410\\t/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e/cdaec6f6b7866ebc9fdd4dd5c44a9cb73a3ebecc527ee0b8716915ed1c17a9174b9a4ec886f3deb83c4841f9953891a6d9284356e6f4dcfc403d384f4d01', 'after': '-rw-r--r--\\t39843\\t2026-06-17 10:01:26.0823194320\\t/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e/cdaec6f6b7866ebc9fdd4dd5c44a9cb73a3ebecc527ee0b8...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/f3', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.7694069180\\t/home/appuser/.npm/_cacache/content-v2/sha512/f3'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/f3/da', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.7716568180\\t/home/appuser/.npm/_cacache/content-v2/sha512/f3/da'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/f3/da/112b3f179cf38bb1c342a367f6640cb8adda9dee3349ba1de3975aa2ad275cabd1cf03f840b3fdd58f7a7d105b432cf1ce035b82641f33de3171ed05d047', 'after': '-rw-r--r--\\t39274\\t2026-06-17 10:01:26.7671680640\\t/home/appuser/.npm/_cacache/content-v2/sha512/f3/da/112b3f179cf38bb1c342a367f6640cb8adda9dee3349ba1d...",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6665600370\\t/home/appuser/.npm/_cacache/index-v5'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/25', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.8273616560\\t/home/appuser/.npm/_cacache/index-v5/25'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/25/97', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.8273616560\\t/home/appuser/.npm/_cacache/index-v5/25/97'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/25/97/a974e56e94043b3f3613b5a37c74e89392d9a282386f34bfdb299b1cda4c', 'after': '-rw-r--r--\\t749\\t2026-06-17 10:01:26.8280830140\\t/home/appuser/.npm/_cacache/index-v5/25/97/a974e56e94043b3f3613b5a37c74e89392d9a282386f34bfdb299b1cda4c'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/35', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.1006023880\\t/home/appuser/.npm/_cacache/index-v5/35'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/35/5e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:26.1025717910\\t/home/appuser/.npm/_cacache/index-v5/35/5e'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/35/5e/395503e57de196037814cdb428bc8f35abcdea1a3ac9e7247d1884415390', 'after': '-rw-r--r--\\t755\\t2026-06-17 10:01:26.1038337920\\t/home/appuser/.npm/_cacache/index-v5/35/5e/395503e57de196037814cdb428bc8f35abcdea1a3ac9e7247d1884415390'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6670749210\\t/home/appuser/.npm/_cacache/index-v5/4f'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4f/a9', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:01:28.6672064470\\t/home/appuser/.npm/_cacache/index-v5/4f/a9'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4f/a9/21a661cf706ab0ec55c0ab3c0d796f4e2f4e64969261815fa5481cb0995d', 'after': '-rw-r--r--\\t784\\t2026-06-17 10:01:28.6684818300\\t/home/appuser/.npm/_cacache/index-v5/4f/a9/21a661cf706ab0ec55c0ab3c0d796f4e2f4e64969261815fa5481cb0995d'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "147   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "147   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "{'payload': '/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js', 'command': '174   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"lib/cloudrouter\", \"lib/postinstall.js\"], 0x5a853fe2e450 /* 34 vars */) = 0'}",
+      "/home/appuser/.claude/shell-snapshots",
+      "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "payload_execution",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 100.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "high",
+      "summary": "Suspicious payload/script was created and correlated with actual execution.",
+      "evidence": {
+        "executed_suspicious_payloads": [
+          {
+            "payload": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js",
+            "command": "174   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"lib/cloudrouter\", \"lib/postinstall.js\"], 0x5a853fe2e450 /* 34 vars */) = 0"
+          }
+        ]
+      },
+      "evidence_short": "payload={'payload': '/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js', 'command': '174   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"lib/cloudrouter\", \"l..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "secret/environment harvesting with outbound transmission context"
+        ],
+        "commands_skipped": [
+          "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead",
+          "cloudrouter login | reason: opens a browser for external OAuth and stores real credentials — external action requiring real account access",
+          "cloudrouter start / create / new (any sandbox creation) | reason: creates real external cloud VMs; requires auth and incurs external resource/cost",
+          "cloudrouter ssh / pty / upload(real) / download / code / jupyter / vnc / browser * | reason: operate on real remote sandboxes; require authentication and external services",
+          "node lib/postinstall.js (via default npm postinstall) | reason: untrusted install-time code — skipped via --ignore-scripts; later read it and confirmed benign (file copy only)"
+        ]
+      },
+      "evidence_short": "primitive=secret/environment harvesting with outbound transmission context; command=npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npm install -g @manaflow-ai/cloudrouter cloudrouter login cloudrouter start / create / new (any sandbox creation) cloudrouter ssh / pty / upload(real) / d",
+          "/ download / code / jupyter / vnc / browser * node lib/postinstall.js (via default npm postinstall) npm install -g @manaflow-ai/cloudrouter cloudrouter login sudo credential npm install -g @manaflow-ai/cloudrouter cloudrouter login",
+          "default npm postinstall) npm install -g @manaflow-ai/cloudrouter cloudrouter login sudo credential npm install -g @manaflow-ai/cloudrouter cloudrouter login"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npm install -g @manaflow-ai/cloudrouter cloudrouter login cloudrouter start / create / new (any sandbox creation) cloudrouter ssh / pty / upload(real) / d",
+          "/ download / code / jupyter / vnc / browser * node lib/postinstall.js (via default npm postinstall) npm install -g @manaflow-ai/cloudrouter cloudrouter login sudo credential npm install -g @manaflow-ai/cloudrouter cloudrouter login",
+          "default npm postinstall) npm install -g @manaflow-ai/cloudrouter cloudrouter login sudo credential npm install -g @manaflow-ai/cloudrouter cloudrouter login"
+        ],
+        "skipped_remote_install": [
+          "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead"
+        ],
+        "remote_install_instructions": [
+          "npm install",
+          "npm install -g",
+          "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead"
+        ]
+      },
+      "evidence_short": "primitive=npm install -g @manaflow-ai/cloudrouter cloudrouter login cloudrouter start / create / new (any sandbox creation) cloudrouter ssh / pty / upload(real) / d; install=npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead",
+          "cloudrouter login | reason: opens a browser for external OAuth and stores real credentials — external action requiring real account access"
+        ],
+        "unsafe_command_instructions": [
+          "sudo",
+          "credential",
+          "npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead",
+          "cloudrouter login | reason: opens a browser for external OAuth and stores real credentials — external action requiring real account access"
+        ]
+      },
+      "evidence_short": "skipped=npm install -g @manaflow-ai/cloudrouter | reason: global prefix is /usr -> requires sudo / system modification; substituted a local --ignore-scripts install instead"
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "227   execve(\"./bin/cloudrouter\", [\"./bin/cloudrouter\", \"whoami\"], 0x7fff49a9a240 /* 34 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "227   execve(\"./bin/cloudrouter\", [\"./bin/cloudrouter\", \"whoami\"], 0x7fff49a9a240 /* 34 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=227   execve(\"./bin/cloudrouter\", [\"./bin/cloudrouter\", \"whoami\"], 0x7fff49a9a240 /* 34 vars */) = 0"
+    }
+  ]
+}

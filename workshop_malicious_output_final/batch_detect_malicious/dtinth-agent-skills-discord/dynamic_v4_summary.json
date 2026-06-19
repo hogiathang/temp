@@ -1,0 +1,202 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/dtinth-agent-skills-discord",
+  "skill_name": "dtinth-agent-skills-discord",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 85.0,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 1,
+  "num_raw_patterns": 1,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 1,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 85.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "122   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-m\", \"2\", \"-X\", \"POST\", \"-F\", \"content=hello from sandbox test\", \"http://127.0.0.1:9/skill-mock-webhook\"], 0x55a1e8d2a1a0 /* 34 vars */) = 0",
+      "124   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-m\", \"2\", \"-X\", \"POST\", \"-F\", \"content=hello\", \"-F\", \"files[0]=@/home/appuser/workdir/sample.txt\", \"http://127.0.0.1:9/skill-mock-webhook\"], 0x60ef361d54b0 /* 34 vars */) = 0",
+      "http://127.0.0.1:9/skill-mock-webhook"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/dtinth-agent-skills-discord",
+      "ls -la ~/.local/bin/discord-curl (not found)",
+      "which discord-curl (not found)",
+      "which curl; curl --version",
+      "env | grep -iE 'discord|webhook|token' (names only, values redacted)",
+      "echo > /home/appuser/workdir/sample.txt (create dummy input)",
+      "create + chmod /home/appuser/workdir/bin/discord-curl (safe local mock targeting 127.0.0.1:9)",
+      "/home/appuser/workdir/bin/discord-curl -F 'content=hello from sandbox test' (mock -> localhost, failed exit 7)",
+      "/home/appuser/workdir/bin/discord-curl -F 'content=hello' -F 'files[0]=@/home/appuser/workdir/sample.txt' (mock -> localhost, failed exit 7)",
+      "find /home/appuser/workdir -type f (verify state)",
+      "122   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-m\", \"2\", \"-X\", \"POST\", \"-F\", \"content=hello from sandbox test\", \"http://127.0.0.1:9/skill-mock-webhook\"], 0x55a1e8d2a1a0 /* 34 vars */) = 0",
+      "124   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-m\", \"2\", \"-X\", \"POST\", \"-F\", \"content=hello\", \"-F\", \"files[0]=@/home/appuser/workdir/sample.txt\", \"http://127.0.0.1:9/skill-mock-webhook\"], 0x60ef361d54b0 /* 34 vars */) = 0",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6271e31da0b0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x6271e31df840 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x35e83774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x35e8398c618 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x35e83776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x35e842f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5e9f27317c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5e9f27317d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5e9f27317c68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x35e842f3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x35e842f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x35e842f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x35e842f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x35e842f3110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x564ba40b2730 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5bd817941ba0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5bd817949790 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5bd817949790 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5bd817949790 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5bd817949790 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5bd817949790 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5bd817949790 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/dtinth-agent-skills-discord\"], 0x58ce754b9f00 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.local/bin/discord-curl\"], 0x5f56cba43f30 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/which\", [\"which\", \"discord-curl\"], 0x5f56cba43f30 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.local/bin\"], 0x5f56cba43f30 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/which\", [\"which\", \"curl\"], 0x6237c73adb70 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x6237c73adb70 /* 34 vars */ <unfinished ...>",
+      "101   execve(\"/usr/bin/curl\", [\"curl\", \"--version\"], 0x6237c73adb70 /* 34 vars */ <unfinished ...>",
+      "105   execve(\"/usr/bin/sed\", [\"sed\", \"s/=.*/=<redacted>/\"], 0x6237c73adb70 /* 34 vars */ <unfinished ...>",
+      "103   execve(\"/usr/bin/env\", [\"env\"], 0x6237c73adb70 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "which",
+      "curl",
+      "mkdir",
+      "chmod",
+      "discord-curl"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/dtinth-agent-skills-discord",
+      "ls -la ~/.local/bin/discord-curl (not found)",
+      "which discord-curl (not found)",
+      "which curl; curl --version",
+      "env | grep -iE 'discord|webhook|token' (names only, values redacted)",
+      "echo > /home/appuser/workdir/sample.txt (create dummy input)",
+      "create + chmod /home/appuser/workdir/bin/discord-curl (safe local mock targeting 127.0.0.1:9)",
+      "/home/appuser/workdir/bin/discord-curl -F 'content=hello from sandbox test' (mock -> localhost, failed exit 7)",
+      "/home/appuser/workdir/bin/discord-curl -F 'content=hello' -F 'files[0]=@/home/appuser/workdir/sample.txt' (mock -> localhost, failed exit 7)",
+      "find /home/appuser/workdir -type f (verify state)",
+      "{'command': \"~/.local/bin/discord-curl -F 'content=hello'  (against the real hardcoded Discord webhook)\", 'reason': 'external action to a real service + script not installed; would send a message to an external Discord endpoint'}",
+      "{'command': \"~/.local/bin/discord-curl -F 'content=hello' -F 'files[0]=@/etc/os-release'  (against the real webhook)\", 'reason': 'exfiltration of host system info (/etc/os-release) to an external service; substituted with a harmless dummy file against localhost instead'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:32:59.1334637440\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:19.4378546620\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688773422', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:32:53.4236244110\\t/home/appuser/.claude/backups/.claude.json.backup.1781688773422'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688859438', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:34:19.4378546620\\t/home/appuser/.claude/backups/.claude.json.backup.1781688859438'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:32:53.9321145710\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:54.1283850390\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:59.0834604510\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb.jsonl', 'after': '-rw-------\\t73469\\t2026-06-17 09:34:19.1618361330\\t/home/appuser/.claude/projects/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:57.3213420940\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/c02f5163-fc32-4e79-a573-a6cf9e7edbeb', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:57.3213420940\\t/home/appuser/.claude/session-env/c02f5163-fc32-4e79-a573-a6cf9e7edbeb'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:34:19.1328341860\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:19.1358343870\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/bin', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:33:37.9300682010\\t/home/appuser/workdir/bin'}",
+      "{'path': '/home/appuser/workdir/bin/discord-curl', 'after': '-rwxr-xr-x\\t390\\t2026-06-17 09:33:37.9394325780\\t/home/appuser/workdir/bin/discord-curl'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t36\\t2026-06-17 09:33:31.0074303090\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:32:57.3256139460\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:57.3261394140\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:57.3261394140\\t/tmp/claude-1000/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:33:55.7492644220\\t/tmp/claude-1000/-home-appuser/c02f5163-fc32-4e79-a573-a6cf9e7edbeb/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:34:20.2949121970\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:51.7099653960\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:19.4438550650\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:51.7079652620\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:59.1334637440\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:32:51.7099653960\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:34:19.4398547960\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:32:51.7089653290\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:33:37.9269133070\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:32:52.7520353520\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:34:20.2949121970\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:32:52.7520353520\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1376\\t2026-06-17 09:32:52.7540354860\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ings:** - the referenced `discord-curl` script is **not installed** in this sandbox, and no discord webhook/token env vars are configured — so the real skill cannot run as-is. - the skill targets an **external service (discord)** via a hardcoded webhook",
+          "ple** (`files[0]=@/etc/os-release`) demonstrates uploading host system information to that external webhook. i treated this as a data-exfiltration pattern and refused to reproduce it against any real endpoint, and even in my local mock i substituted a harmless dummy file.",
+          "\"which discord-curl (not found)\", \"which curl; curl --version\", \"env | grep -ie 'discord|webhook|token' (names only, values redacted)\", \"echo > /home/appuser/workdir/sample.txt (create dummy input)\", \"create + chmod /home/appuser/work",
+          "ord-curl (not found)\", \"which discord-curl (not found)\", \"which curl; curl --version\", \"env | grep -ie 'discord|webhook|token' (names only, values redacted)\", \"echo > /home/appuser/workdir/sample.txt (create dummy input)\", \"create + chmod /home/appuse"
+        ],
+        "commands_skipped": [
+          "~/.local/bin/discord-curl -F 'content=hello'  (against the real hardcoded Discord webhook) | reason: external action to a real service + script not installed; would send a message to an external Discord endpoint",
+          "~/.local/bin/discord-curl -F 'content=hello' -F 'files[0]=@/etc/os-release'  (against the real webhook) | reason: exfiltration of host system info (/etc/os-release) to an external service; substituted with a harmless dummy file against localhost instead"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=ings:** - the referenced `discord-curl` script is **not installed** in this sandbox, and no discord webhook/token env vars are configured — so the real skill cannot run as-is. -...; command=~/.local/bin/discord-curl -F 'content=hello'  (against the real hardcoded Discord webhook) | reason: external action to a real service + script not installed; would send a messa..."
+    }
+  ]
+}

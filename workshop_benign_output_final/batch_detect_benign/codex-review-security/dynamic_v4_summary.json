@@ -1,0 +1,247 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/codex-review-security",
+  "skill_name": "codex-review-security",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 38.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 38.5 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/codex-review-security/",
+      "mkdir -p /home/appuser/workdir",
+      "command -v git && git --version",
+      "command -v codex && codex --version (codex not found)",
+      "command -v npm/node (present)",
+      "git init + sample repo with main and feature/sample branches (under workdir)",
+      "git branch --show-current  (documented Step 1)",
+      "git branch -r | grep -E 'origin/(develop|main|master)$' | head -1  (documented Step 1)",
+      "git branch",
+      "git diff main..feature/sample",
+      "codex review --base main \"...\"  (documented Step 2 — attempted, exit 127 not installed)",
+      "env presence check for OPENAI_API_KEY/CODEX_API_KEY/OPENAI_BASE_URL (names only)",
+      "ls -la /home/appuser/.codex (absent)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d8a94c0a090 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5d8a94c0f810 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x52b7df74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x52b7e18c600 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x52b7df76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x52b7eaf1f90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5f1a0d45fc38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5f1a0d45fd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5f1a0d45fc68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x52b7eaf2690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x52b7eaf2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x52b7eaf2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x52b7eaf3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x52b7eaf3110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x622222d26710 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x64031ab71b80 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x64031ab79760 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64031ab79760 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x64031ab79760 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x64031ab79760 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64031ab79760 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x64031ab79760 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/codex-review-security/\"], 0x5a4f4e82fec0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x652f2e124a90 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x652f2e124a90 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/git\", [\"git\", \"--version\"], 0x652f2e124a90 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x652f2e124a90 /* 34 vars */) = 0",
+      "98    execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7fff3b66ef40 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "112   execve(\"/usr/bin/rm\", [\"rm\", \"-rf\", \"sample-repo\"], 0x5eb4d00f47f0 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"sample-repo\"], 0x5eb4d00f47f0 /* 34 vars */) = 0",
+      "114   execve(\"/usr/bin/git\", [\"git\", \"init\", \"-q\"], 0x5eb4d00f47f0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "npm",
+      "node",
+      "rm"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/codex-review-security/",
+      "mkdir -p /home/appuser/workdir",
+      "command -v git && git --version",
+      "command -v codex && codex --version (codex not found)",
+      "command -v npm/node (present)",
+      "git init + sample repo with main and feature/sample branches (under workdir)",
+      "git branch --show-current  (documented Step 1)",
+      "git branch -r | grep -E 'origin/(develop|main|master)$' | head -1  (documented Step 1)",
+      "git branch",
+      "git diff main..feature/sample",
+      "codex review --base main \"...\"  (documented Step 2 — attempted, exit 127 not installed)",
+      "env presence check for OPENAI_API_KEY/CODEX_API_KEY/OPENAI_BASE_URL (names only)",
+      "ls -la /home/appuser/.codex (absent)",
+      "{'command': 'npm install -g @openai/codex', 'reason': 'installs remote/global package code — prohibited by sandbox policy; it is only a documentation fallback hint, not an auto-executed step'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:16:00.8156681070\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:17:01.0236066510\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777754944', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:15:54.9457365520\\t/home/appuser/.claude/backups/.claude.json.backup.1781777754944'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777821023', 'after': '-rw-r--r--\\t24602\\t2026-06-18 10:17:01.0237359250\\t/home/appuser/.claude/backups/.claude.json.backup.1781777821023'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:15:55.5477780030\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:55.8007954240\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:00.7454362750\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/e91e9e63-c6d8-4cb0-84ae-89fc9207935f.jsonl', 'after': '-rw-------\\t69411\\t2026-06-18 10:17:00.7021093290\\t/home/appuser/.claude/projects/-home-appuser/e91e9e63-c6d8-4cb0-84ae-89fc9207935f.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:59.6556960450\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/e91e9e63-c6d8-4cb0-84ae-89fc9207935f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:59.6556960450\\t/home/appuser/.claude/session-env/e91e9e63-c6d8-4cb0-84ae-89fc9207935f'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:17:00.6822625610\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:17:00.6862628360\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample-repo', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.2437421440\\t/home/appuser/workdir/sample-repo'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.4545617050\\t/home/appuser/workdir/sample-repo/.git'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/COMMIT_EDITMSG', 'after': '-rw-r--r--\\t17\\t2026-06-18 10:16:21.4425582950\\t/home/appuser/workdir/sample-repo/.git/COMMIT_EDITMSG'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/HEAD', 'after': '-rw-r--r--\\t31\\t2026-06-18 10:16:21.3655141010\\t/home/appuser/workdir/sample-repo/.git/HEAD'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/branches', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.1571586520\\t/home/appuser/workdir/sample-repo/.git/branches'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/config', 'after': '-rw-r--r--\\t143\\t2026-06-18 10:16:21.2195455240\\t/home/appuser/workdir/sample-repo/.git/config'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/description', 'after': '-rw-r--r--\\t73\\t2026-06-18 10:16:21.1603023620\\t/home/appuser/workdir/sample-repo/.git/description'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.1560069630\\t/home/appuser/workdir/sample-repo/.git/hooks'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/applypatch-msg.sample', 'after': '-rwxr-xr-x\\t478\\t2026-06-18 10:16:21.1554405630\\t/home/appuser/workdir/sample-repo/.git/hooks/applypatch-msg.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/commit-msg.sample', 'after': '-rwxr-xr-x\\t896\\t2026-06-18 10:16:21.1561342000\\t/home/appuser/workdir/sample-repo/.git/hooks/commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/fsmonitor-watchman.sample', 'after': '-rwxr-xr-x\\t4726\\t2026-06-18 10:16:21.1515330010\\t/home/appuser/workdir/sample-repo/.git/hooks/fsmonitor-watchman.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/post-update.sample', 'after': '-rwxr-xr-x\\t189\\t2026-06-18 10:16:21.1465278770\\t/home/appuser/workdir/sample-repo/.git/hooks/post-update.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-applypatch.sample', 'after': '-rwxr-xr-x\\t424\\t2026-06-18 10:16:21.1509163670\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-applypatch.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-commit.sample', 'after': '-rwxr-xr-x\\t1643\\t2026-06-18 10:16:21.1547301150\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-commit.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-merge-commit.sample', 'after': '-rwxr-xr-x\\t416\\t2026-06-18 10:16:21.1486595290\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-merge-commit.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-push.sample', 'after': '-rwxr-xr-x\\t1374\\t2026-06-18 10:16:21.1457636650\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-push.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-rebase.sample', 'after': '-rwxr-xr-x\\t4898\\t2026-06-18 10:16:21.1481109280\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-rebase.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/pre-receive.sample', 'after': '-rwxr-xr-x\\t544\\t2026-06-18 10:16:21.1492055150\\t/home/appuser/workdir/sample-repo/.git/hooks/pre-receive.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/prepare-commit-msg.sample', 'after': '-rwxr-xr-x\\t1492\\t2026-06-18 10:16:21.1528058410\\t/home/appuser/workdir/sample-repo/.git/hooks/prepare-commit-msg.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/push-to-checkout.sample', 'after': '-rwxr-xr-x\\t2783\\t2026-06-18 10:16:21.1503890710\\t/home/appuser/workdir/sample-repo/.git/hooks/push-to-checkout.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/hooks/update.sample', 'after': '-rwxr-xr-x\\t3650\\t2026-06-18 10:16:21.1497173020\\t/home/appuser/workdir/sample-repo/.git/hooks/update.sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/index', 'after': '-rw-r--r--\\t137\\t2026-06-18 10:16:21.4356273580\\t/home/appuser/workdir/sample-repo/.git/index'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/info', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.1593534140\\t/home/appuser/workdir/sample-repo/.git/info'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/info/exclude', 'after': '-rw-r--r--\\t240\\t2026-06-18 10:16:21.1595179180\\t/home/appuser/workdir/sample-repo/.git/info/exclude'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3066973410\\t/home/appuser/workdir/sample-repo/.git/logs'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/HEAD', 'after': '-rw-r--r--\\t487\\t2026-06-18 10:16:21.4536963160\\t/home/appuser/workdir/sample-repo/.git/logs/HEAD'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/refs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3074446070\\t/home/appuser/workdir/sample-repo/.git/logs/refs'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/refs/heads', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3621174210\\t/home/appuser/workdir/sample-repo/.git/logs/refs/heads'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/refs/heads/feature', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3622036300\\t/home/appuser/workdir/sample-repo/.git/logs/refs/heads/feature'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/refs/heads/feature/sample', 'after': '-rw-r--r--\\t307\\t2026-06-18 10:16:21.4539492100\\t/home/appuser/workdir/sample-repo/.git/logs/refs/heads/feature/sample'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/logs/refs/heads/main', 'after': '-rw-r--r--\\t161\\t2026-06-18 10:16:21.3077979900\\t/home/appuser/workdir/sample-repo/.git/logs/refs/heads/main'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.4809081230\\t/home/appuser/workdir/sample-repo/.git/objects'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/06', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3023929040\\t/home/appuser/workdir/sample-repo/.git/objects/06'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/06/1e98122aeaca543b77555633160d443285f1e9', 'after': '-r--r--r--\\t127\\t2026-06-18 10:16:21.3019609780\\t/home/appuser/workdir/sample-repo/.git/objects/06/1e98122aeaca543b77555633160d443285f1e9'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/11', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.2687877080\\t/home/appuser/workdir/sample-repo/.git/objects/11'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/11/b15b1a4584b08fa423a57964bdbf018b0da0d5', 'after': '-r--r--r--\\t31\\t2026-06-18 10:16:21.2683317640\\t/home/appuser/workdir/sample-repo/.git/objects/11/b15b1a4584b08fa423a57964bdbf018b0da0d5'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/47', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:16:21.3985578490\\t/home/appuser/workdir/sample-repo/.git/objects/47'}",
+      "{'path': '/home/appuser/workdir/sample-repo/.git/objects/47/bdda15a8ba807e67213c6d7357061c1de2a884', 'after': '-r--r--r--\\t80\\t2026-06-18 10:16:21.3985265700\\t/home/appuser/workdir/sample-repo/.git/objects/47/bdda15a8ba807e67213c6d7357061c1de2a884'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npm install -g @openai/codex credential"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npm install -g @openai/codex credential"
+        ],
+        "skipped_remote_install": [
+          "npm install -g @openai/codex | reason: installs remote/global package code — prohibited by sandbox policy; it is only a documentation fallback hint, not an auto-executed step"
+        ],
+        "remote_install_instructions": [
+          "npm install",
+          "npm install -g",
+          "npm install -g @openai/codex | reason: installs remote/global package code — prohibited by sandbox policy; it is only a documentation fallback hint, not an auto-executed step"
+        ]
+      },
+      "evidence_short": "primitive=npm install -g @openai/codex credential; install=npm install -g @openai/codex | reason: installs remote/global package code — prohibited by sandbox policy; it is only a documentation fallback hint, not an auto-executed step"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "credential"
+        ]
+      },
+      "evidence_short": "skipped=credential"
+    }
+  ]
+}

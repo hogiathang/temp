@@ -1,0 +1,528 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.cache",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3201890680\t/home/appuser/.cache"
+    },
+    {
+      "path": "/home/appuser/.cache/pip",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.5246237130\t/home/appuser/.cache/pip"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4126160000\t/home/appuser/.cache/pip/http"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4134562210\t/home/appuser/.cache/pip/http/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4139135960\t/home/appuser/.cache/pip/http/a/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4141856640\t/home/appuser/.cache/pip/http/a/1/9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4143064130\t/home/appuser/.cache/pip/http/a/1/9/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.4176163440\t/home/appuser/.cache/pip/http/a/1/9/5/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a",
+      "after": "-rw-------\t39703\t2026-06-18 12:14:58.4151241340\t/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3215328770\t/home/appuser/.cache/pip/http/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b/8",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3215408670\t/home/appuser/.cache/pip/http/b/8"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b/8/6",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3221831240\t/home/appuser/.cache/pip/http/b/8/6"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b/8/6/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3225409360\t/home/appuser/.cache/pip/http/b/8/6/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b/8/6/2/6",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.3305414870\t/home/appuser/.cache/pip/http/b/8/6/2/6"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/b/8/6/2/6/b862637a242a4033f1ba3be874e038f3a95ab29277da4c878f7c162d",
+      "after": "-rw-------\t66495\t2026-06-18 12:14:57.3250628170\t/home/appuser/.cache/pip/http/b/8/6/2/6/b862637a242a4033f1ba3be874e038f3a95ab29277da4c878f7c162d"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.8814697730\t/home/appuser/.cache/pip/http/c"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.8817294560\t/home/appuser/.cache/pip/http/c/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/b/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.8817294560\t/home/appuser/.cache/pip/http/c/b/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/b/0/8",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.8820469570\t/home/appuser/.cache/pip/http/c/b/0/8"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/b/0/8/c",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:57.8915801210\t/home/appuser/.cache/pip/http/c/b/0/8/c"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/b/0/8/c/cb08c12c298fdf748f88e96b6c66d9291d7fd8c0794043f514f41367",
+      "after": "-rw-------\t771569\t2026-06-18 12:14:57.8835795700\t/home/appuser/.cache/pip/http/c/b/0/8/c/cb08c12c298fdf748f88e96b6c66d9291d7fd8c0794043f514f41367"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.5296240570\t/home/appuser/.cache/pip/selfcheck"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b",
+      "after": "-rw-------\t80\t2026-06-18 12:14:58.5266238500\t/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b"
+    },
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 12:13:43.9674896190\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:16:05.4066284830\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781784818169",
+      "after": "-rw-r--r--\t33\t2026-06-18 12:13:38.1699876770\t/home/appuser/.claude/backups/.claude.json.backup.1781784818169"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781784965406",
+      "after": "-rw-r--r--\t24568\t2026-06-18 12:16:05.4068070630\t/home/appuser/.claude/backups/.claude.json.backup.1781784965406"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 12:13:38.7133121300\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:38.9601384150\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:43.8786747560\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2.jsonl",
+      "after": "-rw-------\t270131\t2026-06-18 12:16:05.0829000890\t/home/appuser/.claude/projects/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:42.9964227490\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/2ea91b95-dd7a-4f1c-a873-93a0889810a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:42.9964227490\t/home/appuser/.claude/session-env/2ea91b95-dd7a-4f1c-a873-93a0889810a2"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 12:16:05.0612055000\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:16:05.0662058440\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/meta-skill-creator/scripts/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:22.7298067040\t/home/appuser/.claude/skills/meta-skill-creator/scripts/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/meta-skill-creator/scripts/__pycache__/quick_validate.cpython-310.pyc",
+      "after": "-rw-r--r--\t2482\t2026-06-18 12:15:22.7294616870\t/home/appuser/.claude/skills/meta-skill-creator/scripts/__pycache__/quick_validate.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.0214714970\t/home/appuser/.local"
+    },
+    {
+      "path": "/home/appuser/.local/lib",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.0217053500\t/home/appuser/.local/lib"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.0218418460\t/home/appuser/.local/lib/python3.10"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.1181105000\t/home/appuser/.local/lib/python3.10/site-packages"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_yaml",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.1245961660\t/home/appuser/.local/lib/python3.10/site-packages/_yaml"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_yaml/__init__.py",
+      "after": "-rw-r--r--\t1402\t2026-06-18 12:14:58.0245384040\t/home/appuser/.local/lib/python3.10/site-packages/_yaml/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_yaml/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.1272960580\t/home/appuser/.local/lib/python3.10/site-packages/_yaml/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/_yaml/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t722\t2026-06-18 12:14:58.1266595590\t/home/appuser/.local/lib/python3.10/site-packages/_yaml/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.2586053940\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-18 12:14:58.2476046370\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/METADATA",
+      "after": "-rw-r--r--\t2351\t2026-06-18 12:14:58.1185957530\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/RECORD",
+      "after": "-rw-r--r--\t2793\t2026-06-18 12:14:58.2564490090\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/REQUESTED",
+      "after": "-rw-r--r--\t0\t2026-06-18 12:14:58.2516049120\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/REQUESTED"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/WHEEL",
+      "after": "-rw-r--r--\t190\t2026-06-18 12:14:58.1195958220\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.1225646060\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/licenses/LICENSE",
+      "after": "-rw-r--r--\t1101\t2026-06-18 12:14:58.1225960290\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/licenses/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/top_level.txt",
+      "after": "-rw-r--r--\t11\t2026-06-18 12:14:58.1208945740\t/home/appuser/.local/lib/python3.10/site-packages/pyyaml-6.0.3.dist-info/top_level.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.1315966490\t/home/appuser/.local/lib/python3.10/site-packages/yaml"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__init__.py",
+      "after": "-rw-r--r--\t12311\t2026-06-18 12:14:58.0265894180\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:58.2464488170\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t10696\t2026-06-18 12:14:58.1331499960\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/composer.cpython-310.pyc",
+      "after": "-rw-r--r--\t3602\t2026-06-18 12:14:58.1373816030\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/composer.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/constructor.cpython-310.pyc",
+      "after": "-rw-r--r--\t20209\t2026-06-18 12:14:58.1487524700\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/constructor.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/cyaml.cpython-310.pyc",
+      "after": "-rw-r--r--\t2864\t2026-06-18 12:14:58.1535981640\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/cyaml.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/dumper.cpython-310.pyc",
+      "after": "-rw-r--r--\t1505\t2026-06-18 12:14:58.1579019390\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/dumper.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/emitter.cpython-310.pyc",
+      "after": "-rw-r--r--\t25114\t2026-06-18 12:14:58.1722111470\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/emitter.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/error.cpython-310.pyc",
+      "after": "-rw-r--r--\t2388\t2026-06-18 12:14:58.1765997470\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/error.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/events.cpython-310.pyc",
+      "after": "-rw-r--r--\t3796\t2026-06-18 12:14:58.1821712160\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/events.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/loader.cpython-310.pyc",
+      "after": "-rw-r--r--\t1812\t2026-06-18 12:14:58.1865934230\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/loader.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/nodes.cpython-310.pyc",
+      "after": "-rw-r--r--\t1692\t2026-06-18 12:14:58.1906007120\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/nodes.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/parser.cpython-310.pyc",
+      "after": "-rw-r--r--\t11679\t2026-06-18 12:14:58.1996013310\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/parser.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/reader.cpython-310.pyc",
+      "after": "-rw-r--r--\t4585\t2026-06-18 12:14:58.2086019510\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/reader.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/representer.cpython-310.pyc",
+      "after": "-rw-r--r--\t10040\t2026-06-18 12:14:58.2165927110\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/representer.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/resolver.cpython-310.pyc",
+      "after": "-rw-r--r--\t5513\t2026-06-18 12:14:58.2214267010\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/resolver.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/scanner.cpython-310.pyc",
+      "after": "-rw-r--r--\t25559\t2026-06-18 12:14:58.2348168820\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/scanner.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/serializer.cpython-310.pyc",
+      "after": "-rw-r--r--\t3357\t2026-06-18 12:14:58.2406041550\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/serializer.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/tokens.cpython-310.pyc",
+      "after": "-rw-r--r--\t4582\t2026-06-18 12:14:58.2456044990\t/home/appuser/.local/lib/python3.10/site-packages/yaml/__pycache__/tokens.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/_yaml.cpython-310-x86_64-linux-gnu.so",
+      "after": "-rwxr-xr-x\t2508080\t2026-06-18 12:14:58.0837912670\t/home/appuser/.local/lib/python3.10/site-packages/yaml/_yaml.cpython-310-x86_64-linux-gnu.so"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/composer.py",
+      "after": "-rw-r--r--\t4883\t2026-06-18 12:14:58.0867138580\t/home/appuser/.local/lib/python3.10/site-packages/yaml/composer.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/constructor.py",
+      "after": "-rw-r--r--\t28639\t2026-06-18 12:14:58.0885936870\t/home/appuser/.local/lib/python3.10/site-packages/yaml/constructor.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/cyaml.py",
+      "after": "-rw-r--r--\t3851\t2026-06-18 12:14:58.0915938940\t/home/appuser/.local/lib/python3.10/site-packages/yaml/cyaml.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/dumper.py",
+      "after": "-rw-r--r--\t2837\t2026-06-18 12:14:58.0946366540\t/home/appuser/.local/lib/python3.10/site-packages/yaml/dumper.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/emitter.py",
+      "after": "-rw-r--r--\t43006\t2026-06-18 12:14:58.0975976480\t/home/appuser/.local/lib/python3.10/site-packages/yaml/emitter.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/error.py",
+      "after": "-rw-r--r--\t2533\t2026-06-18 12:14:58.1004196040\t/home/appuser/.local/lib/python3.10/site-packages/yaml/error.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/events.py",
+      "after": "-rw-r--r--\t2445\t2026-06-18 12:14:58.1025946510\t/home/appuser/.local/lib/python3.10/site-packages/yaml/events.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/loader.py",
+      "after": "-rw-r--r--\t2061\t2026-06-18 12:14:58.1049317040\t/home/appuser/.local/lib/python3.10/site-packages/yaml/loader.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/nodes.py",
+      "after": "-rw-r--r--\t1440\t2026-06-18 12:14:58.1061588900\t/home/appuser/.local/lib/python3.10/site-packages/yaml/nodes.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/parser.py",
+      "after": "-rw-r--r--\t25495\t2026-06-18 12:14:58.1076822170\t/home/appuser/.local/lib/python3.10/site-packages/yaml/parser.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/reader.py",
+      "after": "-rw-r--r--\t6794\t2026-06-18 12:14:58.1095951330\t/home/appuser/.local/lib/python3.10/site-packages/yaml/reader.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/representer.py",
+      "after": "-rw-r--r--\t14190\t2026-06-18 12:14:58.1127983530\t/home/appuser/.local/lib/python3.10/site-packages/yaml/representer.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/resolver.py",
+      "after": "-rw-r--r--\t9004\t2026-06-18 12:14:58.1141981900\t/home/appuser/.local/lib/python3.10/site-packages/yaml/resolver.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/scanner.py",
+      "after": "-rw-r--r--\t51279\t2026-06-18 12:14:58.1156174080\t/home/appuser/.local/lib/python3.10/site-packages/yaml/scanner.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/serializer.py",
+      "after": "-rw-r--r--\t4165\t2026-06-18 12:14:58.1167431340\t/home/appuser/.local/lib/python3.10/site-packages/yaml/serializer.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/yaml/tokens.py",
+      "after": "-rw-r--r--\t2573\t2026-06-18 12:14:58.1177633770\t/home/appuser/.local/lib/python3.10/site-packages/yaml/tokens.py"
+    },
+    {
+      "path": "/home/appuser/workdir/bad-skill",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:35.5878860780\t/home/appuser/workdir/bad-skill"
+    },
+    {
+      "path": "/home/appuser/workdir/bad-skill/SKILL.md",
+      "after": "-rw-r--r--\t89\t2026-06-18 12:15:35.5907302170\t/home/appuser/workdir/bad-skill/SKILL.md"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:16.2314466160\t/home/appuser/workdir/demo-test-skill"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/SKILL.md",
+      "after": "-rw-r--r--\t4007\t2026-06-18 12:15:16.1968406420\t/home/appuser/workdir/demo-test-skill/SKILL.md"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/assets",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:47.7783166910\t/home/appuser/workdir/demo-test-skill/assets"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/assets/example_asset.txt",
+      "after": "-rw-r--r--\t868\t2026-06-18 12:14:47.7788002120\t/home/appuser/workdir/demo-test-skill/assets/example_asset.txt"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/references",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:47.7774928530\t/home/appuser/workdir/demo-test-skill/references"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/references/api_reference.md",
+      "after": "-rw-r--r--\t966\t2026-06-18 12:14:47.7778187340\t/home/appuser/workdir/demo-test-skill/references/api_reference.md"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/scripts",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:14:47.7765915360\t/home/appuser/workdir/demo-test-skill/scripts"
+    },
+    {
+      "path": "/home/appuser/workdir/demo-test-skill/scripts/example.py",
+      "after": "-rwxr-xr-x\t589\t2026-06-18 12:14:47.7769408870\t/home/appuser/workdir/demo-test-skill/scripts/example.py"
+    },
+    {
+      "path": "/home/appuser/workdir/dist",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:23.3140015040\t/home/appuser/workdir/dist"
+    },
+    {
+      "path": "/home/appuser/workdir/dist/demo-test-skill.skill",
+      "after": "-rw-r--r--\t3669\t2026-06-18 12:15:23.3323320010\t/home/appuser/workdir/dist/demo-test-skill.skill"
+    },
+    {
+      "path": "/home/appuser/workdir/empty-skill",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:36.0122023700\t/home/appuser/workdir/empty-skill"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 12:13:43.0025239300\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:43.0031342850\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:43.0031342850\t/tmp/claude-1000/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:36.5196248560\t/tmp/claude-1000/-home-appuser/2ea91b95-dd7a-4f1c-a873-93a0889810a2/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 12:16:06.1022771900\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 12:13:36.3969683030\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:16:05.4122296720\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 12:13:36.3949681660\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:13:43.9664895500\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 12:13:36.3969683030\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24651\t2026-06-18 12:16:05.4090261740\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/meta-skill-creator/scripts",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 12:13:36.4171658790\t/home/appuser/.claude/skills/meta-skill-creator/scripts",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:22.7272903370\t/home/appuser/.claude/skills/meta-skill-creator/scripts"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 12:13:36.3969683030\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 12:15:36.0122023700\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 12:13:37.4540410950\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 12:16:06.1022771900\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 12:13:37.4540410950\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t4815\t2026-06-18 12:13:37.4590414390\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 12:13:36.3909678900\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/meta-skill-creator",
+    "/home/appuser/.claude/skills/meta-skill-creator/LICENSE.txt",
+    "/home/appuser/.claude/skills/meta-skill-creator/SKILL.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/agentic-orchestration",
+    "/home/appuser/.claude/skills/meta-skill-creator/agentic-orchestration.skill",
+    "/home/appuser/.claude/skills/meta-skill-creator/agentic-orchestration/SKILL.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/agentic-orchestration/references",
+    "/home/appuser/.claude/skills/meta-skill-creator/agentic-orchestration/references/framework_architecture.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/references",
+    "/home/appuser/.claude/skills/meta-skill-creator/references/output-patterns.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/references/workflows.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/scripts/init_skill.py",
+    "/home/appuser/.claude/skills/meta-skill-creator/scripts/package_skill.py",
+    "/home/appuser/.claude/skills/meta-skill-creator/scripts/quick_validate.py",
+    "/home/appuser/.claude/skills/meta-skill-creator/skill-creator.skill",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-001-add-reference-implementations.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-002-add-configuration-templates.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-003-expand-reference-documentation.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-004-enhance-skill-md.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-005-add-visual-assets.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-011-automated-meta-skill-evaluation.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-012-agentic-meta-skill-synthesis.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-013-protocol-as-code-runtime-enforcement.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-014-skill-aware-kernel-dynamic-injection.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-015-self-healing-auditor-mesh.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-COMPLETION-SUMMARY-TEMPLATE.md",
+    "/home/appuser/.claude/skills/meta-skill-creator/tasks/TASK-TEMPLATE.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 109,
+  "num_modified": 7,
+  "num_deleted": 1,
+  "num_unchanged": 38,
+  "monitor": "find_based_no_smart_monitor"
+}

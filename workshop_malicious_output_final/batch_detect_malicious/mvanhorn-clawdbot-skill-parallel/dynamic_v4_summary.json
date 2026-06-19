@@ -1,0 +1,253 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/mvanhorn-clawdbot-skill-parallel",
+  "skill_name": "mvanhorn-clawdbot-skill-parallel",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "142   execve(\"/usr/local/bin/python3\", [\"python3\", \"monitor.py\", \"create\", \"Track AI funding news\", \"--cadence\", \"daily\", \"--webhook\", \"https://localhost/hook\"], 0x5a74b6625860 /* 36 vars */) = 0",
+      "https://localhost/hook",
+      "https://api.browser-use.com/mcp)",
+      "https://api.parallel.ai/v1",
+      "https://api.parallel.ai/v1alpha",
+      "https://api.browser-use.com/mcp",
+      "https://api.parallel.ai/*`.",
+      "https://api.browser-use.com/mcp`"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version",
+      "python3 -c 'import parallel' (ModuleNotFoundError - not installed)",
+      "python3 -c 'import requests' (ModuleNotFoundError - not installed)",
+      "command -v jq / curl (both present)",
+      "env-var existence checks for PARALLEL_API_KEY and BROWSERUSE_API_KEY (both unset; values not printed)",
+      "python3 search.py            (natural run -> import error)",
+      "python3 search.py 'test query' (natural run -> import error)",
+      "python3 extract.py --help    (natural run -> import error)",
+      "python3 monitor.py list      (natural run -> import error)",
+      "bash parallel.sh help        (exits at PARALLEL_API_KEY required-var guard, no network)",
+      "PYTHONPATH=mock python3 search.py 'Who is the CEO of Anthropic?' --max-results 5  (offline mock)",
+      "PYTHONPATH=mock python3 search.py 'latest AI news' --mode fast --json             (offline mock)",
+      "PYTHONPATH=mock python3 search.py 'compare transformer architectures' --mode agentic (offline mock)",
+      "PYTHONPATH=mock (no env key) python3 search.py 'test'  (confirmed 40-char hardcoded key fallback, length only)",
+      "PYTHONPATH=mock python3 monitor.py list      (offline mock requests -> recorded GET api.parallel.ai/v1alpha/monitors)",
+      "PYTHONPATH=mock python3 monitor.py create ... --webhook https://localhost/hook (offline mock -> recorded POST)",
+      "python3 monitor.py --help",
+      "142   execve(\"/usr/local/bin/python3\", [\"python3\", \"monitor.py\", \"create\", \"Track AI funding news\", \"--cadence\", \"daily\", \"--webhook\", \"https://localhost/hook\"], 0x5a74b6625860 /* 36 vars */) = 0",
+      "Remote download command observed in strace",
+      "44    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5a049a00e0d0 /* 22 vars */) = 0",
+      "45    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5a049a013870 /* 22 vars */ <unfinished ...>",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3f737b74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3f737d8c620 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3f737b76c10 /* 28 vars */) = 0",
+      "62    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3f738720a90 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5a9a5c98ec38 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5a9a5c98ed18 /* 29 vars */ <unfinished ...>",
+      "65    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5a9a5c98ec68 /* 29 vars */ <unfinished ...>",
+      "67    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3f738721190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3f738721510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3f738721890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3f738721890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "71    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3f738721510 /* 32 vars */) = 0",
+      "71    execve(\"/usr/bin/env\", [\"env\"], 0x5c961d77a750 /* 32 vars */) = 0",
+      "73    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x64faf8f04bc0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "76    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "79    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64faf8f0c7c0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x64faf8f0c7c0 /* 31 vars */ <unfinished ...>",
+      "83    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x64faf8f0c7c0 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x64faf8f0c7c0 /* 31 vars */ <unfinished ...>",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "90    execve(\"/usr/bin/cat\", [\"cat\"], 0x64faf8f0c7c0 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/mvanhorn-clawdbot-skill-parallel/\"], 0x5814ad3a3f60 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/mvanhorn-clawdbot-skill-parallel/scripts/\"], 0x5e0f6ffff420 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/.claude/skills/mvanhorn-clawdbot-skill-parallel/.gitignore\"], 0x5e0f6ffff420 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir",
+      "sort",
+      "curl"
+    ],
+    "tool_call_patterns": [
+      "python3 --version",
+      "python3 -c 'import parallel' (ModuleNotFoundError - not installed)",
+      "python3 -c 'import requests' (ModuleNotFoundError - not installed)",
+      "command -v jq / curl (both present)",
+      "env-var existence checks for PARALLEL_API_KEY and BROWSERUSE_API_KEY (both unset; values not printed)",
+      "python3 search.py            (natural run -> import error)",
+      "python3 search.py 'test query' (natural run -> import error)",
+      "python3 extract.py --help    (natural run -> import error)",
+      "python3 monitor.py list      (natural run -> import error)",
+      "bash parallel.sh help        (exits at PARALLEL_API_KEY required-var guard, no network)",
+      "PYTHONPATH=mock python3 search.py 'Who is the CEO of Anthropic?' --max-results 5  (offline mock)",
+      "PYTHONPATH=mock python3 search.py 'latest AI news' --mode fast --json             (offline mock)",
+      "PYTHONPATH=mock python3 search.py 'compare transformer architectures' --mode agentic (offline mock)",
+      "PYTHONPATH=mock (no env key) python3 search.py 'test'  (confirmed 40-char hardcoded key fallback, length only)",
+      "PYTHONPATH=mock python3 monitor.py list      (offline mock requests -> recorded GET api.parallel.ai/v1alpha/monitors)",
+      "PYTHONPATH=mock python3 monitor.py create ... --webhook https://localhost/hook (offline mock -> recorded POST)",
+      "python3 monitor.py --help",
+      "{'command': 'pip install parallel-web  (and pip install requests)', 'reason': 'fetches and executes remote code from PyPI / installs packages - skipped per sandbox policy; used a local offline mock instead'}",
+      "{'command': 'Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai', 'reason': 'credential required + would send query data to an external service; exercised offline with mocks instead'}",
+      "{'command': 'task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp)', 'reason': 'requires real browser-use.com API key and external authenticated browsing - credential required / external action'}",
+      "{'command': 'Using the hardcoded fallback key embedded in search.py:14', 'reason': 'real (leaked) credential - must not be used or transmitted'}",
+      "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead",
+      "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp) | reason: requires real browser-use.com API key and external authenticated browsing - credential required / external action",
+      "Using the hardcoded fallback key embedded in search.py:14 | reason: real (leaked) credential - must not be used or transmitted"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:20:21.5658700460\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:01.0849600600\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691615809', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:20:15.8098643810\\t/home/appuser/.claude/backups/.claude.json.backup.1781691615809'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691781086', 'after': '-rw-r--r--\\t24323\\t2026-06-17 10:23:01.0849600600\\t/home/appuser/.claude/backups/.claude.json.backup.1781691781086'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:20:16.3328994950\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:16.5527752150\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:21.5139817580\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea.jsonl', 'after': '-rw-------\\t216462\\t2026-06-17 10:23:00.7601755330\\t/home/appuser/.claude/projects/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:20.2528426910\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/ab2b2106-06fb-4fad-903c-8564733120ea', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:20.2528426910\\t/home/appuser/.claude/session-env/ab2b2106-06fb-4fad-903c-8564733120ea'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:23:00.7259359560\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:00.7299362250\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/mocklib', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:22:18.5621053040\\t/home/appuser/workdir/mocklib'}",
+      "{'path': '/home/appuser/workdir/mocklib/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:22:18.8178122430\\t/home/appuser/workdir/mocklib/__pycache__'}",
+      "{'path': '/home/appuser/workdir/mocklib/__pycache__/parallel.cpython-310.pyc', 'after': '-rw-r--r--\\t1675\\t2026-06-17 10:21:49.8144471420\\t/home/appuser/workdir/mocklib/__pycache__/parallel.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/mocklib/__pycache__/requests.cpython-310.pyc', 'after': '-rw-r--r--\\t1875\\t2026-06-17 10:22:18.8178122430\\t/home/appuser/workdir/mocklib/__pycache__/requests.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/mocklib/parallel.py', 'after': '-rw-r--r--\\t1084\\t2026-06-17 10:21:44.8198400280\\t/home/appuser/workdir/mocklib/parallel.py'}",
+      "{'path': '/home/appuser/workdir/mocklib/requests.py', 'after': '-rw-r--r--\\t794\\t2026-06-17 10:22:18.5726712110\\t/home/appuser/workdir/mocklib/requests.py'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 10:20:20.2551628150\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:20.2551628150\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:20.2563835530\\t/tmp/claude-1000/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:22:28.5117732700\\t/tmp/claude-1000/-home-appuser/ab2b2106-06fb-4fad-903c-8564733120ea/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 10:23:01.8010081320\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:14.1317517220\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:01.0922211670\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:14.1297515870\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:21.5657201620\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 10:20:14.1327517890\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 10:23:01.0878560310\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:20:14.1317517220\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:21:44.8081895380\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 10:20:15.1738216810\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 10:23:01.8010081320\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 10:20:15.1738216810\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2506\\t2026-06-17 10:20:15.1768218820\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "47    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ai calls: search.py/extract.py/findall.py/task.py via sdk; monitor.py via requests; parallel.sh via curl post/get to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead task.py with --browseruse-key / browseruse_ap",
+          "ly the documented parallel.ai vendor endpoints; no obfuscation, no remote-script execution, no data-exfiltration or anti-forensic logic. the single real concern is a **hardcoded api key embedded in `search.py`** (confirmed used as a fallback when the env var is unset), plus undocumented extra scripts beyond what skill.md de",
+          "risk. 2. **external network targets:** all scripts reach `api.parallel.ai` (`parallel.sh`→`/v1` via curl+`x-api-key`; `monitor.py`→`/v1alpha` via requests; others via the `parallel` sdk). `task.py` can additionally route through an mcp server at `https://"
+        ],
+        "commands_skipped": [
+          "pip install parallel-web  (and pip install requests) | reason: fetches and executes remote code from PyPI / installs packages - skipped per sandbox policy; used a local offline mock instead",
+          "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead",
+          "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp) | reason: requires real browser-use.com API key and external authenticated browsing - credential required / external action",
+          "Using the hardcoded fallback key embedded in search.py:14 | reason: real (leaked) credential - must not be used or transmitted"
+        ],
+        "skipped_unsafe_commands": [
+          "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead",
+          "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp) | reason: requires real browser-use.com API key and external authenticated browsing - credential required / external action",
+          "Using the hardcoded fallback key embedded in search.py:14 | reason: real (leaked) credential - must not be used or transmitted"
+        ]
+      },
+      "evidence_short": "primitive=ai calls: search.py/extract.py/findall.py/task.py via sdk; monitor.py via requests; parallel.sh via curl post/get to api.parallel.ai | reason: credential required + would send q...; command=pip install parallel-web  (and pip install requests) | reason: fetches and executes remote code from PyPI / installs packages - skipped per sandbox policy; used a local offline ..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead",
+          "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp) | reason: requires real browser-use.com API key and external authenticated browsing - credential required / external action",
+          "Using the hardcoded fallback key embedded in search.py:14 | reason: real (leaked) credential - must not be used or transmitted"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required + would send query data to an external service; exercised offline with mocks instead",
+          "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp) | reason: requires real browser-use.com API key and external authenticated browsing - credential required / external action",
+          "Using the hardcoded fallback key embedded in search.py:14 | reason: real (leaked) credential - must not be used or transmitted"
+        ]
+      },
+      "evidence_short": "skipped=Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai | reason: credential required ..."
+    }
+  ]
+}

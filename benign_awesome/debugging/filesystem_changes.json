@@ -1,0 +1,445 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 10:29:32.6238664940\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:45.0703602410\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781778566732",
+      "after": "-rw-r--r--\t33\t2026-06-18 10:29:26.7330823480\t/home/appuser/.claude/backups/.claude.json.backup.1781778566732"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781778645069",
+      "after": "-rw-r--r--\t24707\t2026-06-18 10:30:45.0707093720\t/home/appuser/.claude/backups/.claude.json.backup.1781778645069"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 10:29:27.3261476240\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:27.6136452510\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:32.5395633140\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e.jsonl",
+      "after": "-rw-------\t97355\t2026-06-18 10:30:44.7855195000\t/home/appuser/.claude/projects/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:31.7054423360\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:31.7054423360\t/home/appuser/.claude/session-env/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 10:30:44.7580038620\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:44.7640042750\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:13.4524517940\t/home/appuser/workdir/__pycache__"
+    },
+    {
+      "path": "/home/appuser/workdir/__pycache__/stats.cpython-310.pyc",
+      "after": "-rw-r--r--\t509\t2026-06-18 10:30:13.4519410380\t/home/appuser/workdir/__pycache__/stats.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/__pycache__/test_stats.cpython-310.pyc",
+      "after": "-rw-r--r--\t767\t2026-06-18 10:30:04.8478736010\t/home/appuser/workdir/__pycache__/test_stats.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:23.7527292170\t/home/appuser/workdir/bisect_demo"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:23.7687417730\t/home/appuser/workdir/bisect_demo/.git"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_ANCESTORS_OK",
+      "after": "-rw-------\t0\t2026-06-18 10:30:22.8354943990\t/home/appuser/workdir/bisect_demo/.git/BISECT_ANCESTORS_OK"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_EXPECTED_REV",
+      "after": "-rw-r--r--\t41\t2026-06-18 10:30:23.2677004920\t/home/appuser/workdir/bisect_demo/.git/BISECT_EXPECTED_REV"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_LOG",
+      "after": "-rw-r--r--\t444\t2026-06-18 10:30:23.4691440010\t/home/appuser/workdir/bisect_demo/.git/BISECT_LOG"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_NAMES",
+      "after": "-rw-r--r--\t1\t2026-06-18 10:30:22.8105978870\t/home/appuser/workdir/bisect_demo/.git/BISECT_NAMES"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_RUN",
+      "after": "-rw-r--r--\t263\t2026-06-18 10:30:23.4675414410\t/home/appuser/workdir/bisect_demo/.git/BISECT_RUN"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_START",
+      "after": "-rw-r--r--\t7\t2026-06-18 10:30:22.8102662320\t/home/appuser/workdir/bisect_demo/.git/BISECT_START"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/BISECT_TERMS",
+      "after": "-rw-r--r--\t9\t2026-06-18 10:30:22.8225239610\t/home/appuser/workdir/bisect_demo/.git/BISECT_TERMS"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/COMMIT_EDITMSG",
+      "after": "-rw-r--r--\t3\t2026-06-18 10:30:22.4749305570\t/home/appuser/workdir/bisect_demo/.git/COMMIT_EDITMSG"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/HEAD",
+      "after": "-rw-r--r--\t23\t2026-06-18 10:30:23.7685369010\t/home/appuser/workdir/bisect_demo/.git/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/branches",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1464466030\t/home/appuser/workdir/bisect_demo/.git/branches"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/config",
+      "after": "-rw-r--r--\t142\t2026-06-18 10:30:22.2066042640\t/home/appuser/workdir/bisect_demo/.git/config"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/description",
+      "after": "-rw-r--r--\t73\t2026-06-18 10:30:22.1495680700\t/home/appuser/workdir/bisect_demo/.git/description"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1451651360\t/home/appuser/workdir/bisect_demo/.git/hooks"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/applypatch-msg.sample",
+      "after": "-rwxr-xr-x\t478\t2026-06-18 10:30:22.1444933270\t/home/appuser/workdir/bisect_demo/.git/hooks/applypatch-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/commit-msg.sample",
+      "after": "-rwxr-xr-x\t896\t2026-06-18 10:30:22.1457809710\t/home/appuser/workdir/bisect_demo/.git/hooks/commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/fsmonitor-watchman.sample",
+      "after": "-rwxr-xr-x\t4726\t2026-06-18 10:30:22.1411709220\t/home/appuser/workdir/bisect_demo/.git/hooks/fsmonitor-watchman.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/post-update.sample",
+      "after": "-rwxr-xr-x\t189\t2026-06-18 10:30:22.1338845610\t/home/appuser/workdir/bisect_demo/.git/hooks/post-update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-applypatch.sample",
+      "after": "-rwxr-xr-x\t424\t2026-06-18 10:30:22.1404733000\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-applypatch.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-commit.sample",
+      "after": "-rwxr-xr-x\t1643\t2026-06-18 10:30:22.1434119750\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-merge-commit.sample",
+      "after": "-rwxr-xr-x\t416\t2026-06-18 10:30:22.1366872930\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-merge-commit.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-push.sample",
+      "after": "-rwxr-xr-x\t1374\t2026-06-18 10:30:22.1324485540\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-push.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-rebase.sample",
+      "after": "-rwxr-xr-x\t4898\t2026-06-18 10:30:22.1352884070\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-rebase.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/pre-receive.sample",
+      "after": "-rwxr-xr-x\t544\t2026-06-18 10:30:22.1373936280\t/home/appuser/workdir/bisect_demo/.git/hooks/pre-receive.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/prepare-commit-msg.sample",
+      "after": "-rwxr-xr-x\t1492\t2026-06-18 10:30:22.1423862360\t/home/appuser/workdir/bisect_demo/.git/hooks/prepare-commit-msg.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/push-to-checkout.sample",
+      "after": "-rwxr-xr-x\t2783\t2026-06-18 10:30:22.1397712190\t/home/appuser/workdir/bisect_demo/.git/hooks/push-to-checkout.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/hooks/update.sample",
+      "after": "-rwxr-xr-x\t3650\t2026-06-18 10:30:22.1384881570\t/home/appuser/workdir/bisect_demo/.git/hooks/update.sample"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/index",
+      "after": "-rw-r--r--\t137\t2026-06-18 10:30:23.7562394100\t/home/appuser/workdir/bisect_demo/.git/index"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1483340500\t/home/appuser/workdir/bisect_demo/.git/info"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/info/exclude",
+      "after": "-rw-r--r--\t240\t2026-06-18 10:30:22.1486533420\t/home/appuser/workdir/bisect_demo/.git/info/exclude"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/logs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.2694724970\t/home/appuser/workdir/bisect_demo/.git/logs"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/logs/HEAD",
+      "after": "-rw-r--r--\t1210\t2026-06-18 10:30:23.7675585760\t/home/appuser/workdir/bisect_demo/.git/logs/HEAD"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/logs/refs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.2697139400\t/home/appuser/workdir/bisect_demo/.git/logs/refs"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/logs/refs/heads",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.2698046910\t/home/appuser/workdir/bisect_demo/.git/logs/refs/heads"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/logs/refs/heads/master",
+      "after": "-rw-r--r--\t576\t2026-06-18 10:30:22.4839617040\t/home/appuser/workdir/bisect_demo/.git/logs/refs/heads/master"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.5057560510\t/home/appuser/workdir/bisect_demo/.git/objects"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/0f",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.4654689210\t/home/appuser/workdir/bisect_demo/.git/objects/0f"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/0f/549813e38e58df1875e25c4e119efec80da402",
+      "after": "-r--r--r--\t50\t2026-06-18 10:30:22.4650487050\t/home/appuser/workdir/bisect_demo/.git/objects/0f/549813e38e58df1875e25c4e119efec80da402"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/17",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.3304596250\t/home/appuser/workdir/bisect_demo/.git/objects/17"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/17/61997924dfe3808694afd2d37e9e05fbf94d4d",
+      "after": "-r--r--r--\t51\t2026-06-18 10:30:22.3301888940\t/home/appuser/workdir/bisect_demo/.git/objects/17/61997924dfe3808694afd2d37e9e05fbf94d4d"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/26",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.3405120550\t/home/appuser/workdir/bisect_demo/.git/objects/26"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/26/915a5747b364a7f2ecb765f6e02492d24531e1",
+      "after": "-r--r--r--\t152\t2026-06-18 10:30:22.3397119940\t/home/appuser/workdir/bisect_demo/.git/objects/26/915a5747b364a7f2ecb765f6e02492d24531e1"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/39",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.3946155650\t/home/appuser/workdir/bisect_demo/.git/objects/39"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/39/6e8931cb883745bac536de48c57c87f8ce5c11",
+      "after": "-r--r--r--\t55\t2026-06-18 10:30:22.3942355190\t/home/appuser/workdir/bisect_demo/.git/objects/39/6e8931cb883745bac536de48c57c87f8ce5c11"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5a",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.4684691280\t/home/appuser/workdir/bisect_demo/.git/objects/5a"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5a/2bed16163c43c3f7014b05b048b2490f5583ee",
+      "after": "-r--r--r--\t51\t2026-06-18 10:30:22.4681786830\t/home/appuser/workdir/bisect_demo/.git/objects/5a/2bed16163c43c3f7014b05b048b2490f5583ee"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5d",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.4061824910\t/home/appuser/workdir/bisect_demo/.git/objects/5d"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5d/5d2004dab061153ded5402c743d1a5ec0d0f5e",
+      "after": "-r--r--r--\t152\t2026-06-18 10:30:22.4054078290\t/home/appuser/workdir/bisect_demo/.git/objects/5d/5d2004dab061153ded5402c743d1a5ec0d0f5e"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5e",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.2635646470\t/home/appuser/workdir/bisect_demo/.git/objects/5e"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/5e/75fd2554adc9c2720bb78e85782819becb13ae",
+      "after": "-r--r--r--\t122\t2026-06-18 10:30:22.2628952450\t/home/appuser/workdir/bisect_demo/.git/objects/5e/75fd2554adc9c2720bb78e85782819becb13ae"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/7c",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.3964657820\t/home/appuser/workdir/bisect_demo/.git/objects/7c"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/7c/c2e4b57bea8305e22052f40a4ae92e69d370a9",
+      "after": "-r--r--r--\t51\t2026-06-18 10:30:22.3961035190\t/home/appuser/workdir/bisect_demo/.git/objects/7c/c2e4b57bea8305e22052f40a4ae92e69d370a9"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/84",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.4791145610\t/home/appuser/workdir/bisect_demo/.git/objects/84"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/84/aa2dd9842bd2bacea02e8c3a9e7bc9b3eb9013",
+      "after": "-r--r--r--\t147\t2026-06-18 10:30:22.4785296520\t/home/appuser/workdir/bisect_demo/.git/objects/84/aa2dd9842bd2bacea02e8c3a9e7bc9b3eb9013"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/b8",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.2544543920\t/home/appuser/workdir/bisect_demo/.git/objects/b8"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/b8/595995dba30b1cf7ee90f336b3e3356ee99e1b",
+      "after": "-r--r--r--\t36\t2026-06-18 10:30:22.2294006530\t/home/appuser/workdir/bisect_demo/.git/objects/b8/595995dba30b1cf7ee90f336b3e3356ee99e1b"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/b8/91929ee6ab55a6fe42d246bff462087233ebbb",
+      "after": "-r--r--r--\t51\t2026-06-18 10:30:22.2544240370\t/home/appuser/workdir/bisect_demo/.git/objects/b8/91929ee6ab55a6fe42d246bff462087233ebbb"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/ea",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.3264435320\t/home/appuser/workdir/bisect_demo/.git/objects/ea"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/ea/743618ff6e9efc040fe434725239c7c5ebf113",
+      "after": "-r--r--r--\t36\t2026-06-18 10:30:22.3260002220\t/home/appuser/workdir/bisect_demo/.git/objects/ea/743618ff6e9efc040fe434725239c7c5ebf113"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/info",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1662471770\t/home/appuser/workdir/bisect_demo/.git/objects/info"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/objects/pack",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1660874230\t/home/appuser/workdir/bisect_demo/.git/objects/pack"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/packed-refs",
+      "after": "-rw-r--r--\t46\t2026-06-18 10:30:22.8045191150\t/home/appuser/workdir/bisect_demo/.git/packed-refs"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.8126581600\t/home/appuser/workdir/bisect_demo/.git/refs"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/bisect",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:23.4484138870\t/home/appuser/workdir/bisect_demo/.git/refs/bisect"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/bisect/bad",
+      "after": "-rw-r--r--\t41\t2026-06-18 10:30:23.2554425260\t/home/appuser/workdir/bisect_demo/.git/refs/bisect/bad"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/bisect/good-26915a5747b364a7f2ecb765f6e02492d24531e1",
+      "after": "-rw-r--r--\t41\t2026-06-18 10:30:23.4478940150\t/home/appuser/workdir/bisect_demo/.git/refs/bisect/good-26915a5747b364a7f2ecb765f6e02492d24531e1"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/bisect/good-5e75fd2554adc9c2720bb78e85782819becb13ae",
+      "after": "-rw-r--r--\t41\t2026-06-18 10:30:22.8200342440\t/home/appuser/workdir/bisect_demo/.git/refs/bisect/good-5e75fd2554adc9c2720bb78e85782819becb13ae"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/heads",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.4842001720\t/home/appuser/workdir/bisect_demo/.git/refs/heads"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/heads/master",
+      "after": "-rw-r--r--\t41\t2026-06-18 10:30:22.4834888810\t/home/appuser/workdir/bisect_demo/.git/refs/heads/master"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/.git/refs/tags",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1511257640\t/home/appuser/workdir/bisect_demo/.git/refs/tags"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:23.4356944020\t/home/appuser/workdir/bisect_demo/__pycache__"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/__pycache__/mod.cpython-310.pyc",
+      "after": "-rw-r--r--\t229\t2026-06-18 10:30:23.4354481460\t/home/appuser/workdir/bisect_demo/__pycache__/mod.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/bisect_demo/mod.py",
+      "after": "-rw-r--r--\t36\t2026-06-18 10:30:23.7545870700\t/home/appuser/workdir/bisect_demo/mod.py"
+    },
+    {
+      "path": "/home/appuser/workdir/stats.py",
+      "after": "-rw-r--r--\t403\t2026-06-18 10:30:09.2144904260\t/home/appuser/workdir/stats.py"
+    },
+    {
+      "path": "/home/appuser/workdir/test_stats.py",
+      "after": "-rw-r--r--\t359\t2026-06-18 10:30:00.7663240440\t/home/appuser/workdir/test_stats.py"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 10:29:31.7110251010\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:31.7112048100\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:31.7113242470\t/tmp/claude-1000/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:23.8446603430\t/tmp/claude-1000/-home-appuser/df6b04b0-5cc1-44db-81c5-db1e4bdfa09e/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 10:30:45.7650732040\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:29:24.9775106130\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:45.0785935000\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:29:24.9745104070\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:29:32.6220369750\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 10:29:24.9775106130\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24790\t2026-06-18 10:30:45.0737371490\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:29:24.9765105440\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:30:22.1132281270\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 10:29:26.0195823650\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 10:30:45.7650732040\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 10:29:26.0195823650\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1341\t2026-06-18 10:29:26.0225825720\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:29:24.9705101310\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/debugging",
+    "/home/appuser/.claude/skills/debugging/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 96,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

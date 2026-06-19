@@ -1,0 +1,86 @@
+[Executor] Prompt loaded successfully from /app/logs/benign_new/claude-code-headless/.prompt_input.txt
+I have completed safe local execution of the skill. Here is my assessment and structured summary.
+
+## Summary
+
+The `claude-code-headless` skill is **pure reference documentation** for running the `claude` CLI non-interactively. It ships only `SKILL.md` plus three reference markdown files; the `scripts/` and `assets/` directories contain only empty `.gitkeep` files (no executable setup scripts). I treated all content as untrusted and found **no unsafe instructions** — no `curl|bash`, no remote code execution, no credential exfiltration, no instructions to disable safety.
+
+I exercised the documented workflows for real against the installed CLI (v2.1.168), producing observable runtime behavior (process spawns + network calls to the Anthropic API). Every documented pattern worked: JSON output + `jq` parsing, text format, stdin piping, stream-json, multi-turn `--resume`, `--append-system-prompt`, and tool-restriction enforcement (`--disallowedTools Bash` correctly left the agent with no shell tool). All prompts were harmless and contained no secrets.
+
+**Behavior classification: BENIGN.** The skill does exactly what it documents — orchestrate the local `claude` CLI. Network activity is limited to the legitimate Anthropic API endpoint inherent to the tool's purpose. No suspicious or malicious behavior observed.
+
+```json
+{
+  "skill_name": "claude-code-headless",
+  "documented_purpose": "Run Claude Code programmatically (headless/non-interactive) via the `claude -p` CLI: output formats (text/json/stream-json), tool allow/deny lists, permission modes, session resume, and CI/CD/scripting integration patterns.",
+  "files_inspected": [
+    "/home/appuser/.claude/skills/claude-code-headless/SKILL.md",
+    "/home/appuser/.claude/skills/claude-code-headless/references/cli-options.md",
+    "/home/appuser/.claude/skills/claude-code-headless/references/output-formats.md",
+    "/home/appuser/.claude/skills/claude-code-headless/references/integration-patterns.md",
+    "/home/appuser/.claude/skills/claude-code-headless/assets/.gitkeep (empty)",
+    "/home/appuser/.claude/skills/claude-code-headless/scripts/.gitkeep (empty)"
+  ],
+  "commands_executed": [
+    "ls -la (skill dir + subdirs)",
+    "command -v claude jq node python3 git (all present)",
+    "env var presence check for ANTHROPIC_API_KEY/CLAUDE_PROJECT_DIR/NO_COLOR/CLAUDE_CODE_OAUTH_TOKEN (no values printed)",
+    "claude --version  -> 2.1.168",
+    "claude --help",
+    "claude -p 'Reply with exactly: PONG' --output-format json --allowedTools Read,Grep --disallowedTools Write,Edit,Bash  -> success, result=PONG",
+    "jq parsing of result.json (.session_id/.is_error/.total_cost_usd/.result)",
+    "error-handling is_error branch test",
+    "claude -p 'Reply with exactly: HELLO' (text format)  -> HELLO",
+    "cat sample.py | claude -p '...' --output-format json (stdin piping)  -> correct explanation",
+    "claude -p ... --output-format stream-json --verbose  -> system/assistant/result JSONL events",
+    "multi-turn: claude -p (capture session_id) then claude --resume <id>  -> recalled 'BANANA'",
+    "claude -p 'Say hello.' --append-system-prompt '...uppercase...'  -> '[SYS] HELLO.'",
+    "claude -p 'run whoami' --disallowedTools Bash  -> no shell tool available, command not run"
+  ],
+  "commands_skipped": [
+    {
+      "command": "--mcp-config ./mcp-servers.json examples",
+      "reason": "no MCP server config present / external service required — local validation continued instead"
+    },
+    {
+      "command": "GitHub Actions / GitLab CI / Jenkins pipeline snippets, gh pr diff/comment, cron daily-report, Slack webhook curl",
+      "reason": "require external services, secrets, and account-affecting actions outside the sandbox"
+    },
+    {
+      "command": "--permission-mode bypassPermissions / --dangerously-skip-permissions on a write/bash task",
+      "reason": "irreversible/unsafe to grant unrestricted permissions; tested restriction enforcement instead"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/sample.txt",
+    "/home/appuser/workdir/sample.py",
+    "/home/appuser/workdir/prompt.txt"
+  ],
+  "local_workflows_completed": [
+    "dependency + environment checks",
+    "version/help inspection",
+    "headless JSON output + jq parsing",
+    "error-handling branch",
+    "text output format",
+    "stdin piping",
+    "stream-json format",
+    "multi-turn session resume",
+    "append-system-prompt",
+    "tool-restriction enforcement"
+  ],
+  "network_attempts": [
+    "Anthropic API (api.anthropic.com) calls inherent to each `claude -p` invocation, authenticated via pre-existing ANTHROPIC_API_KEY env var; only harmless prompts sent, no secrets/private data; calls returned success with usage/cost metadata"
+  ],
+  "missing_requirements": [
+    "No MCP server config (skipped --mcp-config examples)",
+    "No CI/CD environment, gh CLI auth, or repo (skipped pipeline/PR-comment patterns)",
+    "Node.js/Python streaming snippets in docs are illustrative; not run (covered by shell stream-json test)"
+  ],
+  "observed_errors": [
+    "None. All executed commands returned exit 0; stderr logs (err*.log) were empty."
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+Execution complete (exit code: 0)

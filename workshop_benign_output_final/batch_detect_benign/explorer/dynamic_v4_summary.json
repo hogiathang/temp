@@ -1,0 +1,283 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/explorer",
+  "skill_name": "explorer",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/explorer/",
+      "mkdir -p /home/appuser/workdir/sample_project/{src,tests} + create dummy .py/.txt files",
+      "find . -name '*.py'",
+      "grep -rn 'def |class ' --include='*.py' .",
+      "grep -rn 'greet' --include='*.py' .",
+      "find /home/appuser/.claude/skills/explorer -type f",
+      "env | grep -iE 'zhipu|glm|api_key|token' (names only, values redacted)",
+      "grep -iE 'curl|wget|http|bash|...' SKILL.md (negative check)",
+      "grep -rnE '^\\s*(def|class) ' --include='*.py' . | sort",
+      "Skill tool invocation: explorer (launched and exercised)",
+      "42    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x61f4c5bc5060 /* 22 vars */) = 0",
+      "43    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x61f4c5bca7c0 /* 22 vars */) = 0",
+      "55    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3b82af74510 /* 28 vars */) = 0",
+      "57    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3b82b18c5e8 /* 24 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3b82af76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3b82bae0a90 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5725bd3a7c38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5725bd3a7c68 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5725bd3a7d18 /* 29 vars */ <unfinished ...>",
+      "65    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3b82bae1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "66    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3b82bae1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3b82bae1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3b82bae1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3b82bae1c10 /* 32 vars */) = 0",
+      "69    execve(\"/usr/bin/env\", [\"env\"], 0x573cfd6056e0 /* 32 vars */) = 0",
+      "71    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x593dd72e7b50 /* 31 vars */) = 0",
+      "73    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x593dd72ef710 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "77    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "79    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "83    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x593dd72ef710 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x593dd72ef710 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/cat\", [\"cat\"], 0x593dd72ef710 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x593dd72ef710 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x593dd72ef710 /* 31 vars */) = 0",
+      "91    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/explorer/\"], 0x5d5c52b02c70 /* 34 vars */) = 0",
+      "94    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"sample_project/src\", \"sample_project/tests\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/cat\", [\"cat\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "97    execve(\"/usr/bin/cat\", [\"cat\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/cat\", [\"cat\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-R\", \"/home/appuser/workdir\"], 0x618fa584e500 /* 34 vars */) = 0",
+      "102   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \".\", \"-name\", \"*.py\"], 0x5f43e81dc460 /* 33 vars */) = 0",
+      "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rn\", \"def \\\\|class \", \"--include=*.py\", \".\"], 0x5f43e81f3930 /* 33 vars */) = 0",
+      "111   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rn\", \"greet\", \"--include=*.py\", \".\"], 0x5f43e81f3c30 /* 33 vars */) = 0",
+      "118   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/explorer\", \"-type\", \"f\"], 0x63e056861f60 /* 33 vars */) = 0",
+      "124   execve(\"/usr/bin/sed\", [\"sed\", \"-E\", \"s/=.*/=<redacted>/\"], 0x63e056861f60 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "sort"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/explorer/",
+      "mkdir -p /home/appuser/workdir/sample_project/{src,tests} + create dummy .py/.txt files",
+      "find . -name '*.py'",
+      "grep -rn 'def |class ' --include='*.py' .",
+      "grep -rn 'greet' --include='*.py' .",
+      "find /home/appuser/.claude/skills/explorer -type f",
+      "env | grep -iE 'zhipu|glm|api_key|token' (names only, values redacted)",
+      "grep -iE 'curl|wget|http|bash|...' SKILL.md (negative check)",
+      "grep -rnE '^\\s*(def|class) ' --include='*.py' . | sort",
+      "Skill tool invocation: explorer (launched and exercised)",
+      "{'command': '(none)', 'reason': 'Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping.'}",
+      "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:59:32.9834527170\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:00:34.4337157320\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781780366878', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:59:26.8796046990\\t/home/appuser/.claude/backups/.claude.json.backup.1781780366878'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781780434433', 'after': '-rw-r--r--\\t24706\\t2026-06-18 11:00:34.4338543280\\t/home/appuser/.claude/backups/.claude.json.backup.1781780434433'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:59:27.4788114670\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:27.9441277720\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:32.8987924460\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6.jsonl', 'after': '-rw-------\\t69351\\t2026-06-18 11:00:34.1777508130\\t/home/appuser/.claude/projects/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:31.6179389080\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/6c9003b0-5819-4a3b-889b-0226957f8ba6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:31.6179389080\\t/home/appuser/.claude/session-env/6c9003b0-5819-4a3b-889b-0226957f8ba6'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:00:34.1282070420\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:00:34.1327007090\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t49\\t2026-06-18 10:59:48.0541850360\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/home/appuser/workdir/sample_project', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:47.9955206790\\t/home/appuser/workdir/sample_project'}",
+      "{'path': '/home/appuser/workdir/sample_project/src', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:48.0160319460\\t/home/appuser/workdir/sample_project/src'}",
+      "{'path': '/home/appuser/workdir/sample_project/src/main.py', 'after': '-rw-r--r--\\t105\\t2026-06-18 10:59:48.0131626120\\t/home/appuser/workdir/sample_project/src/main.py'}",
+      "{'path': '/home/appuser/workdir/sample_project/src/utils.py', 'after': '-rw-r--r--\\t28\\t2026-06-18 10:59:48.0327011840\\t/home/appuser/workdir/sample_project/src/utils.py'}",
+      "{'path': '/home/appuser/workdir/sample_project/tests', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:48.0350332540\\t/home/appuser/workdir/sample_project/tests'}",
+      "{'path': '/home/appuser/workdir/sample_project/tests/test_main.py', 'after': '-rw-r--r--\\t80\\t2026-06-18 10:59:48.0507869880\\t/home/appuser/workdir/sample_project/tests/test_main.py'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:59:31.6240542260\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:31.6250595200\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:31.6256218690\\t/tmp/claude-1000/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:00:12.4835403930\\t/tmp/claude-1000/-home-appuser/6c9003b0-5819-4a3b-889b-0226957f8ba6/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:00:35.2582848550\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:25.1234556560\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:00:34.4453835000\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:25.1204554500\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:32.9827483440\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:59:25.1234556560\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24789\\t2026-06-18 11:00:34.4371624760\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:25.1224555870\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:59:48.0520344250\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:59:26.1705277530\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:00:35.2582848550\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:59:26.1705277530\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1338\\t2026-06-18 10:59:26.1735279600\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "45    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer (launc",
+          "with **no** setup scripts, binaries, network calls, or remote-fetch directives (negative grep for `curl|wget|http|bash|pip|npm|exec|socket` returned nothing). - frontmatter explicitly enforces read-only operation (`write: false`, `edit: false`) and isolates",
+          "s/explorer -type f env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted) grep -ie 'curl|wget|http|bash|...' skill.md (negative check) grep -rne '^\\s*(def|class) ' --include='*.py' . | sort skill tool invocation: explorer (launched and exercis",
+          "lorer -type f env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted) grep -ie 'curl|wget|http|bash|...' skill.md (negative check) grep -rne '^\\s*(def|class) ' --include='*.py' . | sort skill tool invocation: explorer (launched and exercis",
+          "pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer (launc",
+          "with **no** setup scripts, binaries, network calls, or remote-fetch directives (negative grep for `curl|wget|http|bash|pip|npm|exec|socket` returned nothing). - frontmatter explicitly enforces read-only operation (`write: false`, `edit: false`) and isolates",
+          ", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer (launc",
+          "**no** setup scripts, binaries, network calls, or remote-fetch directives (negative grep for `curl|wget|http|bash|pip|npm|exec|socket` returned nothing). - frontmatter explicitly enforces read-only operation (`write: false`, `edit: false`) and isolates"
+        ],
+        "commands_skipped": [
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ],
+        "skipped_unsafe_commands": [
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ]
+      },
+      "evidence_short": "primitive=pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' -...; command=(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "rep -rn 'greet' --include='*.py' .\", \"find /home/appuser/.claude/skills/explorer -type f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer ("
+        ],
+        "commands_skipped": [
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ],
+        "skipped_unsafe_commands": [
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ]
+      },
+      "evidence_short": "primitive=rep -rn 'greet' --include='*.py' .\", \"find /home/appuser/.claude/skills/explorer -type f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'c...; command=(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer (launc",
+          "with **no** setup scripts, binaries, network calls, or remote-fetch directives (negative grep for `curl|wget|http|bash|pip|npm|exec|socket` returned nothing). - frontmatter explicitly enforces read-only operation (`write: false`, `edit: false`) and isolates"
+        ],
+        "dangerous_remote_install_hits": [
+          "pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' --include='*.py' . | sort\", \"skill tool invocation: explorer (launc",
+          "with **no** setup scripts, binaries, network calls, or remote-fetch directives (negative grep for `curl|wget|http|bash|pip|npm|exec|socket` returned nothing). - frontmatter explicitly enforces read-only operation (`write: false`, `edit: false`) and isolates"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": [
+          "curl",
+          "wget"
+        ]
+      },
+      "evidence_short": "primitive=pe f\", \"env | grep -ie 'zhipu|glm|api_key|token' (names only, values redacted)\", \"grep -ie 'curl|wget|http|bash|...' skill.md (negative check)\", \"grep -rne '^\\\\s*(def|class) ' -...; install=curl"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+        ]
+      },
+      "evidence_short": "skipped=(none) | reason: Skill contains no setup scripts, network calls, remote downloads, or privileged/irreversible operations — nothing required skipping."
+    }
+  ]
+}

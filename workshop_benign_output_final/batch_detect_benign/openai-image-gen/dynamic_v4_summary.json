@@ -1,0 +1,247 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/openai-image-gen",
+  "skill_name": "openai-image-gen",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "api.openai.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns1-01.azure-dns.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "172.66.0.243",
+      "162.159.140.245"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "120   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"https://api.openai.com/v1/images/generations\", \"-H\", \"Content-Type: application/json\", \"-H\", \"Authorization: Bearer dummy-token\", \"-d\", \"{\\n    \\\"model\\\": \\\"dall-e-3\\\",\\n    \\\"prompt\\\": \\\"a simple test placeholder image\\\\n\\\",\\n    \\\"n\\\": 1,\\n    \\\"size\\\": \\\"1024x1024\\\",\\n    \\\"quality\\\": \\\"standard\\\",\\n...",
+      "https://api.openai.com/v1/images/generations",
+      "https://api.openai.com/v1/images/generations`,"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la / find on skill directory",
+      "command -v bash/curl/jq + version checks",
+      "OPENAI_API_KEY presence check (value not printed)",
+      "bash generate.sh   (no args -> usage guard, exit 1)",
+      "bash generate.sh \"a friendly test cat\" sample.png 1024x1024 standard   (no key -> key guard, exit 1)",
+      "echo '...' | jq -Rs .   (local JSON prompt-encoding transformation)",
+      "echo 'n' | bash batch-gothic.sh   (confirmation prompt declined, no network)",
+      "OPENAI_API_KEY=dummy-token timeout 30 bash generate.sh \"a simple test placeholder image\" sample.png 1024x1024 standard   (network call; API rejected dummy key)",
+      "120   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"https://api.openai.com/v1/images/generations\", \"-H\", \"Content-Type: application/json\", \"-H\", \"Authorization: Bearer dummy-token\", \"-d\", \"{\\n    \\\"model\\\": \\\"dall-e-3\\\",\\n    \\\"prompt\\\": \\\"a simple test placeholder image\\\\n\\\",\\n    \\\"n\\\": 1,\\n    \\\"size\\\": \\\"1024x1024\\\",\\n    \\\"quality\\\": \\\"standard\\\",\\n...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5afe1b16a080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5afe1b16f800 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x59a87b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x59a87d8c5f8 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x59a87b76c10 /* 28 vars */ <unfinished ...>",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x59a87b76c10 /* 28 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x63aee0e8ac08 /* 28 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x63aee0e8ace8 /* 28 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x63aee0e8ac38 /* 28 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x59a886f0e10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x59a886f1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x59a886f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x59a886f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x59a886f1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x571982162700 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6370bf6beb70 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6370bf6c6750 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6370bf6c6750 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/openai-image-gen/\"], 0x5884b9ea6cd0 /* 34 vars */) = 0",
+      "93    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/openai-image-gen/\", \"-type\", \"f\"], 0x5884b9ea6cd0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x61b8f6a837b0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x61b8f6a837b0 /* 34 vars */ <unfinished ...>",
+      "100   execve(\"/usr/bin/bash\", [\"bash\", \"--version\"], 0x61b8f6a837b0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/curl\", [\"curl\", \"--version\"], 0x61b8f6a837b0 /* 34 vars */ <unfinished ...>",
+      "103   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x61b8f6a837b0 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/jq\", [\"jq\", \"--version\"], 0x61b8f6a837b0 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/bash\", [\"bash\", \"/home/appuser/.claude/skills/openai-image-gen/generate.sh\"], 0x5d79db7df720 /* 34 vars */) = 0",
+      "108   execve(\"/usr/bin/bash\", [\"bash\", \"/home/appuser/.claude/skills/openai-image-gen/generate.sh\", \"a friendly test cat\", \"/home/appuser/workdir/sample.png\", \"1024x1024\", \"standard\"], 0x5d79db7df720 /* 34 vars */) = 0",
+      "112   execve(\"/usr/bin/jq\", [\"jq\", \"-Rs\", \".\"], 0x6444b05494d0 /* 34 vars */ <unfinished ...>",
+      "114   execve(\"/usr/bin/bash\", [\"bash\", \"/home/appuser/.claude/skills/openai-image-gen/batch-gothic.sh\"], 0x6444b05494d0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "curl",
+      "jq",
+      "dirname"
+    ],
+    "tool_call_patterns": [
+      "ls -la / find on skill directory",
+      "command -v bash/curl/jq + version checks",
+      "OPENAI_API_KEY presence check (value not printed)",
+      "bash generate.sh   (no args -> usage guard, exit 1)",
+      "bash generate.sh \"a friendly test cat\" sample.png 1024x1024 standard   (no key -> key guard, exit 1)",
+      "echo '...' | jq -Rs .   (local JSON prompt-encoding transformation)",
+      "echo 'n' | bash batch-gothic.sh   (confirmation prompt declined, no network)",
+      "OPENAI_API_KEY=dummy-token timeout 30 bash generate.sh \"a simple test placeholder image\" sample.png 1024x1024 standard   (network call; API rejected dummy key)",
+      "{'command': 'bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with \\'y\\')', 'reason': 'credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions'}",
+      "bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 12:18:51.2996115620\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:19:58.0631127240\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785125515', 'after': '-rw-r--r--\\t33\\t2026-06-18 12:18:45.5168058320\\t/home/appuser/.claude/backups/.claude.json.backup.1781785125515'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785198062', 'after': '-rw-r--r--\\t24568\\t2026-06-18 12:19:58.0632644470\\t/home/appuser/.claude/backups/.claude.json.backup.1781785198062'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 12:18:46.0467922890\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:46.2924222220\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:51.2296480260\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7.jsonl', 'after': '-rw-------\\t97597\\t2026-06-18 12:19:57.8018997910\\t/home/appuser/.claude/projects/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:50.3155850830\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/46604a69-39be-4c0e-8700-2bab72b1f7a7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:50.3155850830\\t/home/appuser/.claude/session-env/46604a69-39be-4c0e-8700-2bab72b1f7a7'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 12:19:57.7512287380\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:19:57.7562290820\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 12:18:50.3215854960\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:50.3226222310\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:50.3226222310\\t/tmp/claude-1000/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:19:30.0434292260\\t/tmp/claude-1000/-home-appuser/46604a69-39be-4c0e-8700-2bab72b1f7a7/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 12:19:58.7762993250\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:43.7461327070\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:19:58.0704210660\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:43.7431325000\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:51.2986909310\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 12:18:43.7461327070\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24651\\t2026-06-18 12:19:58.0662976430\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 12:18:44.7912046710\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 12:19:58.7762993250\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 12:18:44.7912046710\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1569\\t2026-06-18 12:18:44.7942048780\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logic, no data exfiltration. - guard clauses correctly block execution when",
+          "ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logic, no data exfiltration. - guard clauses correctly block execution when"
+        ],
+        "commands_skipped": [
+          "bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions"
+        ],
+        "skipped_unsafe_commands": [
+          "bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions"
+        ]
+      },
+      "evidence_short": "primitive=ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logi...; command=bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logic, no data exfiltration. - guard clauses correctly block execution when"
+        ],
+        "dangerous_remote_install_hits": [
+          "ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logic, no data exfiltration. - guard clauses correctly block execution when"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": [
+          "curl"
+        ]
+      },
+      "evidence_short": "primitive=ad credential files, ssh keys, browser profiles, or other secrets. - no remote script execution (no curl|bash), no `sudo`, no system file modification, no hidden/obfuscated logi...; install=curl"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/billable action (would call DALL-E, incur cost, and download a remote image); no real key present and policy forbids real account-affecting actions"
+        ]
+      },
+      "evidence_short": "skipped=bash generate.sh \"<prompt>\" <out>  with a REAL OPENAI_API_KEY (any of the documented presets or batch-gothic.sh accepted with 'y') | reason: credential required + real external/..."
+    }
+  ]
+}

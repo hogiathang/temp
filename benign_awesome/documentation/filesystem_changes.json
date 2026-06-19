@@ -1,0 +1,157 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 10:54:49.2342616530\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:56:09.5584089620\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781780083364",
+      "after": "-rw-r--r--\t33\t2026-06-18 10:54:43.3651417910\t/home/appuser/.claude/backups/.claude.json.backup.1781780083364"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781780169558",
+      "after": "-rw-r--r--\t24601\t2026-06-18 10:56:09.5586066320\t/home/appuser/.claude/backups/.claude.json.backup.1781780169558"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 10:54:43.9678890800\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:44.2007887100\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:49.1483753850\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0.jsonl",
+      "after": "-rw-------\t88330\t2026-06-18 10:56:09.2629567000\t/home/appuser/.claude/projects/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:47.3034946360\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:47.3034946360\t/home/appuser/.claude/session-env/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 10:56:09.2399679200\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:56:09.2449682640\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/API.md",
+      "after": "-rw-r--r--\t713\t2026-06-18 10:55:27.5142330890\t/home/appuser/workdir/API.md"
+    },
+    {
+      "path": "/home/appuser/workdir/CHANGELOG.md",
+      "after": "-rw-r--r--\t282\t2026-06-18 10:55:43.4681933800\t/home/appuser/workdir/CHANGELOG.md"
+    },
+    {
+      "path": "/home/appuser/workdir/README.md",
+      "after": "-rw-r--r--\t745\t2026-06-18 10:55:39.6739321220\t/home/appuser/workdir/README.md"
+    },
+    {
+      "path": "/home/appuser/workdir/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:55:49.8909916630\t/home/appuser/workdir/__pycache__"
+    },
+    {
+      "path": "/home/appuser/workdir/__pycache__/sample_documented.cpython-310.pyc",
+      "after": "-rw-r--r--\t1383\t2026-06-18 10:55:49.8907736850\t/home/appuser/workdir/__pycache__/sample_documented.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.py",
+      "after": "-rw-r--r--\t312\t2026-06-18 10:55:06.1687670350\t/home/appuser/workdir/sample.py"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_documented.py",
+      "after": "-rw-r--r--\t980\t2026-06-18 10:55:22.4947492330\t/home/appuser/workdir/sample_documented.py"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 10:54:47.3104852090\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:47.3104852090\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:47.3109053390\t/tmp/claude-1000/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:55:50.3544845390\t/tmp/claude-1000/-home-appuser/869beb5b-71c1-4f55-b8e1-dfd2f446d7c0/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 10:56:10.3330431850\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:54:41.5149275270\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:56:09.5655800690\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:54:41.5109272520\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:54:49.2337349850\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 10:54:41.5159275960\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24684\t2026-06-18 10:56:09.5612865410\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:54:41.5149275270\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:55:49.8886354650\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 10:54:42.5760005880\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 10:56:10.3330431850\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 10:54:42.5760005880\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1349\t2026-06-18 10:54:42.5810009320\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:54:41.5029267010\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/documentation",
+    "/home/appuser/.claude/skills/documentation/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 24,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

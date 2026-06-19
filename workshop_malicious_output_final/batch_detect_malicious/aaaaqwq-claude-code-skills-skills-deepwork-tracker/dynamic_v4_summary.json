@@ -1,0 +1,231 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/aaaaqwq-claude-code-skills-skills-deepwork-tracker",
+  "skill_name": "aaaaqwq-claude-code-skills-skills-deepwork-tracker",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "dns1.p08.nsone.net",
+      "github.com",
+      "github.com.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "github.com.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "github.com.google.internal",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "20.205.243.166"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "126   execve(\"/usr/local/bin/git\", [\"git\", \"ls-remote\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x7ffc0b33d4a8 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "126   execve(\"/usr/bin/git\", [\"git\", \"ls-remote\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x7ffc0b33d4a8 /* 34 vars */) = 0",
+      "127   execve(\"/usr/lib/git-core/git\", [\"/usr/lib/git-core/git\", \"remote-https\", \"https://github.com/adunne09/deepwork-tracker.git\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x587c112a9b30 /* 36 vars */) = 0",
+      "128   execve(\"/usr/lib/git-core/git-remote-https\", [\"/usr/lib/git-core/git-remote-https\", \"https://github.com/adunne09/deepwork-tracker.git\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x5f2eacdd9230 /* 36 vars */) = 0",
+      "https://github.com/adunne09/deepwork-tracker.git",
+      "https://clawhub.ai`)"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la <skill dir> and .clawhub",
+      "ls -la ~/clawd ~/clawd/deepwork ~/clawd/deepwork/deepwork.js (confirmed absent)",
+      "command -v node/git/sqlite3/npm + versions",
+      "mkdir -p /home/appuser/workdir",
+      "env-var presence check (TELEGRAM_*/BOT_TOKEN/HOME — names only, values masked)",
+      "getent hosts github.com",
+      "git ls-remote https://github.com/adunne09/deepwork-tracker.git (refs metadata only)",
+      "126   execve(\"/usr/local/bin/git\", [\"git\", \"ls-remote\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x7ffc0b33d4a8 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "126   execve(\"/usr/bin/git\", [\"git\", \"ls-remote\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x7ffc0b33d4a8 /* 34 vars */) = 0",
+      "127   execve(\"/usr/lib/git-core/git\", [\"/usr/lib/git-core/git\", \"remote-https\", \"https://github.com/adunne09/deepwork-tracker.git\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x587c112a9b30 /* 36 vars */) = 0",
+      "128   execve(\"/usr/lib/git-core/git-remote-https\", [\"/usr/lib/git-core/git-remote-https\", \"https://github.com/adunne09/deepwork-tracker.git\", \"https://github.com/adunne09/deepwork-tracker.git\"], 0x5f2eacdd9230 /* 36 vars */) = 0",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x645e40460110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x645e404658d0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x29e55774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x29e5598c640 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x29e55776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x29e562f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5bc7006b9c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5bc7006b9d18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5bc7006b9c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x29e562f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x29e562f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x29e562f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x29e562f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x29e562f1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5ca93f67b790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e39f40cbc00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5e39f40d3820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5e39f40d3820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e39f40d3820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5e39f40d3820 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e39f40d3820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e39f40d3820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/aaaaqwq-claude-code-skills-skills-deepwork-tracker\"], 0x623169c98110 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/aaaaqwq-claude-code-skills-skills-deepwork-tracker/.clawhub\"], 0x56526bf1f260 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/clawd\"], 0x605ec00fbd90 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/clawd/deepwork\"], 0x605ec00fbd90 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/clawd/deepwork/deepwork.js\"], 0x605ec00fbd90 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/git\", [\"git\", \"--version\"], 0x55a484080420 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x55a484080420 /* 34 vars */) = 0",
+      "105   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffe5926e6e0 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "118   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5609e5caf880 /* 34 vars */) = 0",
+      "119   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5609e5caf880 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "npm",
+      "node",
+      "mkdir",
+      "getent",
+      "git-remote-https"
+    ],
+    "tool_call_patterns": [
+      "ls -la <skill dir> and .clawhub",
+      "ls -la ~/clawd ~/clawd/deepwork ~/clawd/deepwork/deepwork.js (confirmed absent)",
+      "command -v node/git/sqlite3/npm + versions",
+      "mkdir -p /home/appuser/workdir",
+      "env-var presence check (TELEGRAM_*/BOT_TOKEN/HOME — names only, values masked)",
+      "getent hosts github.com",
+      "git ls-remote https://github.com/adunne09/deepwork-tracker.git (refs metadata only)",
+      "{'command': 'git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js', 'reason': 'unsafe remote script / installs and prepares unknown remote code for execution'}",
+      "{'command': '~/clawd/deepwork/deepwork.js start|stop|status|report ...', 'reason': 'binary absent; would require executing unbootstrapped unknown remote code'}",
+      "{'command': 'Send report output to Telegram id 8551040296 via the `message` tool', 'reason': 'data exfiltration to a hardcoded external recipient; unsafe external action, no authorization'}",
+      "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:05:44.1478450730\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:07:05.1144534350\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683538458', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:05:38.4591018800\\t/home/appuser/.claude/backups/.claude.json.backup.1781683538458'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683625114', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:07:05.1144534350\\t/home/appuser/.claude/backups/.claude.json.backup.1781683625114'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:05:38.9717130710\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:39.1567254910\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:44.0921375270\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/239e0244-937b-41a1-a906-d202a800767e.jsonl', 'after': '-rw-------\\t76882\\t2026-06-17 08:07:04.7754960430\\t/home/appuser/.claude/projects/-home-appuser/239e0244-937b-41a1-a906-d202a800767e.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:43.1469933640\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/239e0244-937b-41a1-a906-d202a800767e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:43.1469933640\\t/home/appuser/.claude/session-env/239e0244-937b-41a1-a906-d202a800767e'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:07:04.7444711400\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:07:04.7484714090\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:05:43.1522926880\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:43.1526933330\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/239e0244-937b-41a1-a906-d202a800767e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:43.1526933330\\t/tmp/claude-1000/-home-appuser/239e0244-937b-41a1-a906-d202a800767e'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/239e0244-937b-41a1-a906-d202a800767e/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:06:29.0300735730\\t/tmp/claude-1000/-home-appuser/239e0244-937b-41a1-a906-d202a800767e/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:07:05.8075425060\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:36.7575644310\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:07:05.1203307310\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:36.7545642300\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:44.1478450730\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:05:36.7575644310\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:07:05.1154960500\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:05:37.7966341860\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:07:05.8075425060\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:05:37.7966341860\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1843\\t2026-06-17 08:05:37.7996343870\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution\n~/clawd/deepwork/deepwork.js start|stop|status|report ... | reason: binary absent; would require executing unbootstrapped unknown remote code\nsend report output to telegram id 8551040296 via the `message` tool | reason: data exfiltration to a hardcoded external recipient; unsafe external action, no authorization\ngit clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution\nremote script\ngit clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js"
+        ],
+        "commands_skipped": [
+          "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution",
+          "~/clawd/deepwork/deepwork.js start|stop|status|report ... | reason: binary absent; would require executing unbootstrapped unknown remote code",
+          "Send report output to Telegram id 8551040296 via the `message` tool | reason: data exfiltration to a hardcoded external recipient; unsafe external action, no authorization"
+        ],
+        "skipped_unsafe_commands": [
+          "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution"
+        ]
+      },
+      "evidence_short": "primitive=git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: un...; command=git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: un..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: unsafe remote script / installs and prepares unknown remote code for execution"
+        ]
+      },
+      "evidence_short": "skipped=git clone https://github.com/adunne09/deepwork-tracker.git ~/clawd/deepwork-tracker && cp app/deepwork.js ~/clawd/deepwork/ && chmod +x ~/clawd/deepwork/deepwork.js | reason: un..."
+    }
+  ]
+}

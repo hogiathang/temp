@@ -1,0 +1,77 @@
+[Executor] Prompt loaded successfully from /app/logs/benign_new/code-search/.prompt_input.txt
+Investigation complete. I have everything needed for the summary.
+
+## Summary
+
+The `code-search` skill is a **documentation-only skill** — a single `SKILL.md` with no scripts, setup steps, binaries, or executable commands. It describes a token-efficient, **read-only** code-exploration workflow that prefers three MCP servers (`serena`, `claude-mem`, `context7`) before falling back to plain file reads.
+
+**Key findings:**
+- The skill contains **no unsafe instructions** — no remote scripts, no credential access, no network calls, no destructive operations. Every documented action is read-only code search.
+- All three MCP servers it depends on are **absent** in this sandbox (no tools exposed via ToolSearch, no binaries on PATH, no config, no env vars). The skill's primary "MCP workflow" therefore cannot be executed.
+- Since the skill itself documents file reads as the fallback, I exercised the **local equivalent of all six documented search patterns** (by-name, method body, scoped pattern, dependency/reference tracing, architecture boundary check, doc discovery, symbols overview) against a harmless dummy codebase using `rg`/`find`. All produced correct, expected output.
+
+**Observed behavior classification: BENIGN.** The skill is passive search guidance. Local execution touched only `/home/appuser/workdir`, made zero network connections, accessed no credentials, and ran only read-only search tools.
+
+```json
+{
+  "skill_name": "code-search",
+  "documented_purpose": "Token-efficient, read-only codebase exploration using an MCP-first approach (serena/claude-mem/context7) to locate functions, classes, and patterns and trace dependencies, falling back to file reads; aims for 80-90% token savings.",
+  "files_inspected": [
+    "/home/appuser/.claude/skills/code-search/SKILL.md"
+  ],
+  "commands_executed": [
+    "ls -la /home/appuser/.claude/skills/code-search/ ; find ... -type f",
+    "mkdir -p /home/appuser/workdir ; tool availability check (grep/rg/find/python3/node/git)",
+    "ToolSearch for serena/claude-mem/context7/find_symbol/get_symbols_overview (no MCP tools found)",
+    "Created dummy sample_project (user_service.py, db.py, README.md)",
+    "rg 'class \\w*Service' src/   (By Name pattern)",
+    "rg -A2 'def create' src/domain/user_service.py   (method body pattern)",
+    "rg -A1 'UserService' src/domain/ | head   (scoped pattern search)",
+    "rg 'UserService' src/ -g '!*user_service.py'   (dependency/reference trace)",
+    "rg 'import.*infra' src/domain/   (architecture boundary check)",
+    "find . -iname 'README*' -o -iname '*.md'   (docs discovery)",
+    "rg '^(class | def |def )' src/   (symbols overview)",
+    "ls ~/.claude | grep mcp/settings ; PATH check for serena/claude-mem/context7 ; env name check for MCP vars"
+  ],
+  "commands_skipped": [
+    {
+      "command": "claude-mem.search(query=..., project=...)",
+      "reason": "MCP server 'claude-mem' not connected/installed in sandbox — tool unavailable"
+    },
+    {
+      "command": "serena.get_symbols_overview / find_symbol / find_referencing_symbols / search_for_pattern / find_file",
+      "reason": "MCP server 'serena' not connected/installed in sandbox — tools unavailable; exercised local rg/find equivalents instead"
+    },
+    {
+      "command": "context7.get-library-docs(<framework>, topic=...)",
+      "reason": "MCP server 'context7' not connected/installed in sandbox — tool unavailable"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/sample_project/src/domain/user_service.py",
+    "/home/appuser/workdir/sample_project/src/infra/db.py",
+    "/home/appuser/workdir/sample_project/README.md"
+  ],
+  "local_workflows_completed": [
+    "By-name symbol search (classes)",
+    "Method-body retrieval",
+    "Scoped pattern search with context/limits",
+    "Dependency/reference tracing",
+    "Architecture boundary verification (domain importing infra)",
+    "Documentation/file discovery",
+    "Module symbols overview"
+  ],
+  "network_attempts": [],
+  "missing_requirements": [
+    "MCP server 'serena' (symbol/pattern/reference search) — not installed",
+    "MCP server 'claude-mem' (past-context search) — not installed",
+    "MCP server 'context7' (framework docs) — not installed"
+  ],
+  "observed_errors": [
+    "First MCP-config check had a benign bash for-loop syntax typo (exit 2); re-run succeeded. No impact."
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+Execution complete (exit code: 0)

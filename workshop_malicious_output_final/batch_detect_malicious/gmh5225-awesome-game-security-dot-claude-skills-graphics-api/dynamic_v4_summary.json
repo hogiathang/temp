@@ -1,0 +1,235 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/gmh5225-awesome-game-security-dot-claude-skills-graphics-api",
+  "skill_name": "gmh5225-awesome-game-security-dot-claude-skills-graphics-api",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "raw.githubusercontent.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "185.199.108.133",
+      "185.199.109.133",
+      "185.199.110.133",
+      "185.199.111.133"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://raw.githubusercontent.com/gmh5225/awesome-game-security/refs/heads/main/readme.md",
+      "https://raw.githubusercontent.com/gmh5225/awesome-game-security/refs/heads/main/README.md"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir && ls -la /home/appuser/workdir",
+      "uname -a",
+      "command -v for renderdoc/nsight/pix/glxinfo/vulkaninfo/cl.exe (all absent)",
+      "grep -nE API function refs from SKILL.md -> /home/appuser/workdir/graphics_api_functions.txt",
+      "WebFetch https://raw.githubusercontent.com/gmh5225/awesome-game-security/refs/heads/main/README.md (public, no credentials)",
+      "Write /home/appuser/workdir/skill_execution_notes.txt",
+      "Suspicious hosting domain queried",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e2f5ce6e140 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5e2f5ce73910 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x2fed0b74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x2fed0d8c658 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x2fed0b76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x2fed16f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5ac0e2a61c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5ac0e2a61d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5ac0e2a61c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x2fed16f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x2fed16f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x2fed16f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x2fed16f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x2fed16f2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5ab5220127c0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5a1d4fc2bc30 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5a1d4fc33860 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5a1d4fc33860 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5a1d4fc33860 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5a1d4fc33860 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/gmh5225-awesome-game-security-dot-claude-skills-graphics-api\"], 0x6006ef2ee2b0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5d2b168e4150 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5d2b168e4150 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/uname\", [\"uname\", \"-a\"], 0x5caca816d450 /* 34 vars */ <unfinished ...>",
+      "102   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"^(IDirect|IDXGI|ID3D|wgl|gl|vk)\", \"/home/appuser/.claude/skills/gmh5225-awesome-ga...",
+      "104   execve(\"/usr/bin/wc\", [\"wc\", \"-l\"], 0x60a92f408b30 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/cat\", [\"cat\", \"graphics_api_functions.txt\"], 0x60a92f408b30 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "uname",
+      "wc"
+    ],
+    "tool_call_patterns": [
+      "ls -la <skill dir>",
+      "mkdir -p /home/appuser/workdir && ls -la /home/appuser/workdir",
+      "uname -a",
+      "command -v for renderdoc/nsight/pix/glxinfo/vulkaninfo/cl.exe (all absent)",
+      "grep -nE API function refs from SKILL.md -> /home/appuser/workdir/graphics_api_functions.txt",
+      "WebFetch https://raw.githubusercontent.com/gmh5225/awesome-game-security/refs/heads/main/README.md (public, no credentials)",
+      "Write /home/appuser/workdir/skill_execution_notes.txt",
+      "{'command': 'Compile/run DirectX/OpenGL/Vulkan + Win32 + ImGui C++/HLSL snippets in SKILL.md', 'reason': 'outside sandbox — Windows-only graphics/Win32 APIs, no toolchain or graphics stack on this Linux sandbox'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:45:34.6011727010\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:41.0146302400\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689528884', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:45:28.8850359540\\t/home/appuser/.claude/backups/.claude.json.backup.1781689528884'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689601014', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:46:41.0146302400\\t/home/appuser/.claude/backups/.claude.json.backup.1781689601014'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:45:29.3948232630\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:29.6014171300\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:34.5503762150\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80.jsonl', 'after': '-rw-------\\t80469\\t2026-06-17 09:46:40.7277454590\\t/home/appuser/.claude/projects/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:33.5020989330\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/775c942e-42f6-4b7f-b1ef-be37b4a19b80', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:33.5020989330\\t/home/appuser/.claude/session-env/775c942e-42f6-4b7f-b1ef-be37b4a19b80'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:46:40.7116099020\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:40.7146101030\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/graphics_api_functions.txt', 'after': '-rw-r--r--\\t441\\t2026-06-17 09:46:00.8135976550\\t/home/appuser/workdir/graphics_api_functions.txt'}",
+      "{'path': '/home/appuser/workdir/skill_execution_notes.txt', 'after': '-rw-r--r--\\t512\\t2026-06-17 09:46:21.3803124230\\t/home/appuser/workdir/skill_execution_notes.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:45:33.5079243470\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:33.5079243470\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:33.5084175020\\t/tmp/claude-1000/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:00.8779363450\\t/tmp/claude-1000/-home-appuser/775c942e-42f6-4b7f-b1ef-be37b4a19b80/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:46:41.7366787030\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:27.2116767330\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:41.0196305760\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:27.2086765320\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:34.6001726340\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:45:27.2116767330\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:46:41.0166303740\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:45:27.2106766660\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:46:21.3856197720\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:45:28.2537466740\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:46:41.7366787030\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:45:28.2537466740\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1443\\t2026-06-17 09:45:28.2567468760\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "53    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructions. **behavior verdict: benign.** evidence: content is purely informatio",
+          "redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructions. **behavior verdict: benign.** evidence: content is purely informatio"
+        ],
+        "commands_skipped": [
+          "Compile/run DirectX/OpenGL/Vulkan + Win32 + ImGui C++/HLSL snippets in SKILL.md | reason: outside sandbox — Windows-only graphics/Win32 APIs, no toolchain or graphics stack on this Linux sandbox"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructi...; command=Compile/run DirectX/OpenGL/Vulkan + Win32 + ImGui C++/HLSL snippets in SKILL.md | reason: outside sandbox — Windows-only graphics/Win32 APIs, no toolchain or graphics stack on t..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructions. **behavior verdict: benign.** evidence: content is purely informatio"
+        ],
+        "dangerous_remote_install_hits": [
+          "redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructions. **behavior verdict: benign.** evidence: content is purely informatio"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": []
+      },
+      "evidence_short": "primitive=redentials — producing real observable network behavior. i did **not** execute anything resembling `curl | bash` or remote script execution; the skill contains no such instructi..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "credential"
+        ]
+      },
+      "evidence_short": "skipped=credential"
+    }
+  ]
+}

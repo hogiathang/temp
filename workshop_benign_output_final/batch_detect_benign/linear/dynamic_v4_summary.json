@@ -1,0 +1,371 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/linear",
+  "skill_name": "linear",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.8.34",
+      "104.16.0.34",
+      "104.16.6.34",
+      "104.16.1.34",
+      "104.16.7.34",
+      "104.16.4.34",
+      "104.16.5.34",
+      "104.16.10.34",
+      "104.16.11.34",
+      "104.16.9.34",
+      "104.16.3.34",
+      "104.16.2.34"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "201   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"curl .*\\\\| *(bash|sh)|wget .*\\\\| *(bash|sh)|sudo|eval |rm -rf /|chmod|api-key|expo..."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find/ls/wc on skill dir",
+      "command -v linear|node|npm|jq|git|curl (dependency check)",
+      "check LINEAR_API_KEY / LINEAR_CONFIG presence (names only, no values)",
+      "ls ~/.config/linear/config.json (absent)",
+      "npm ls -g @0xbigboss/linear-cli (not installed)",
+      "linear --version / linear auth test / linear me (all exit 127, binary absent)",
+      "npm install -g @0xbigboss/linear-cli --dry-run --ignore-scripts",
+      "heredoc creation of link-issues.graphql and issue-relations.graphql in workdir",
+      "jq validation of all documented SKILL.md jq patterns against mock JSON",
+      "jq -e validation of documented --vars JSON payloads",
+      "brace-balance check on .graphql files",
+      "grep scan of skill files for unsafe patterns",
+      "201   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"curl .*\\\\| *(bash|sh)|wget .*\\\\| *(bash|sh)|sudo|eval |rm -rf /|chmod|api-key|expo...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x63a832db4060 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x63a832db97c0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x263e5f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x263e618c5e8 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x263e5f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x263e6b02310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5c01f24a1c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5c01f24a1d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5c01f24a1c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x263e6b02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x263e6b02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x263e6b03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x263e6b03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x263e6b02d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x61ca14ff06e0 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x59e62f93cb50 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e62f944710 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e62f944710 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x63a750c84670 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/linear\", \"-type\", \"f\"], 0x63a750c85110 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/linear\"], 0x5e2cd0c68230 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"/home/appuser/.claude/skills/linear/QA.md\", \"/home/appuser/.claude/skills/linear/SKILL.md\", \"/home/appuser/.claude/skills/linear/graphql-recipes.md\", \"/home/appuser/.claude/skills/linear/troubleshooting.md\"], 0x5e2cd0c68230 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x55c25228be40 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x55c25228be40 /* 34 vars */ <unfinished ...>",
+      "105   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffd7618c940 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "116   execve(\"/usr/bin/jq\", [\"jq\", \"--version\"], 0x55c25228be40 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "wc",
+      "mkdir",
+      "npm",
+      "node",
+      "jq"
+    ],
+    "tool_call_patterns": [
+      "find/ls/wc on skill dir",
+      "command -v linear|node|npm|jq|git|curl (dependency check)",
+      "check LINEAR_API_KEY / LINEAR_CONFIG presence (names only, no values)",
+      "ls ~/.config/linear/config.json (absent)",
+      "npm ls -g @0xbigboss/linear-cli (not installed)",
+      "linear --version / linear auth test / linear me (all exit 127, binary absent)",
+      "npm install -g @0xbigboss/linear-cli --dry-run --ignore-scripts",
+      "heredoc creation of link-issues.graphql and issue-relations.graphql in workdir",
+      "jq validation of all documented SKILL.md jq patterns against mock JSON",
+      "jq -e validation of documented --vars JSON payloads",
+      "brace-balance check on .graphql files",
+      "grep scan of skill files for unsafe patterns",
+      "{'command': 'npm install -g @0xbigboss/linear-cli', 'reason': 'unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)'}",
+      "{'command': \"linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=...\", 'reason': 'credential required — no real Linear API key available, and providing one is disallowed'}",
+      "{'command': 'linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes', 'reason': 'real account-affecting / irreversible actions requiring credentials'}",
+      "{'command': \"curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2)\", 'reason': 'sends data to external signed URL; requires credentials and external service'}",
+      "{'command': 'linear download / linear gql / linear me / teams list / issues list', 'reason': 'network + credential required; binary not installed'}",
+      "{'command': 'rm ~/.config/linear/config.json (troubleshooting reset)', 'reason': 'destructive to user config outside workdir; no config present anyway'}",
+      "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+      "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+      "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+      "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+      "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+      "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 12:04:41.5566920700\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:06:55.8383264560\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781784275681', 'after': '-rw-r--r--\\t33\\t2026-06-18 12:04:35.6823307260\\t/home/appuser/.claude/backups/.claude.json.backup.1781784275681'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781784415837', 'after': '-rw-r--r--\\t24568\\t2026-06-18 12:06:55.8385174320\\t/home/appuser/.claude/backups/.claude.json.backup.1781784415837'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 12:04:36.2757748900\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:04:36.5407931400\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:04:41.4762202770\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/3472a472-4ad9-4bff-a6a9-4fd03de486a8.jsonl', 'after': '-rw-------\\t177090\\t2026-06-18 12:06:55.5195581870\\t/home/appuser/.claude/projects/-home-appuser/3472a472-4ad9-4bff-a6a9-4fd03de486a8.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:04:42.9080856820\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/3472a472-4ad9-4bff-a6a9-4fd03de486a8', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:04:42.9078881950\\t/home/appuser/.claude/session-env/3472a472-4ad9-4bff-a6a9-4fd03de486a8'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 12:06:55.5093626920\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:06:55.5133629670\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6153431160\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_cacache', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6445104420\\t/home/appuser/.npm/_cacache'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6319487110\\t/home/appuser/.npm/_cacache/content-v2'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3674563980\\t/home/appuser/.npm/_cacache/content-v2/sha512'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/3e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3682446250\\t/home/appuser/.npm/_cacache/content-v2/sha512/3e'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/3e/c5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3716060210\\t/home/appuser/.npm/_cacache/content-v2/sha512/3e/c5'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/3e/c5/2b3e981cb09af40791e55459f1a601d718fff451530e4780f43fde2544246b37acf209700deedbe35665fbee01dbcb5224a267f0d8b886ebfc4a584bb4c5', 'after': '-rw-r--r--\\t12567\\t2026-06-18 12:05:44.3653667820\\t/home/appuser/.npm/_cacache/content-v2/sha512/3e/c5/2b3e981cb09af40791e55459f1a601d718fff451530e4780...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/61', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.6737000080\\t/home/appuser/.npm/_cacache/content-v2/sha512/61'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/61/56', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.6771197620\\t/home/appuser/.npm/_cacache/content-v2/sha512/61/56'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/61/56/af7ed3a2d6f843303245a4dc1949c06099d0dda0141aaf31979d5226ce997d872dab3067d851fa47c98428d1649de07a21e665fb1a45f2b642da5fe52949', 'after': '-rw-r--r--\\t12622\\t2026-06-18 12:05:43.6707498510\\t/home/appuser/.npm/_cacache/content-v2/sha512/61/56/af7ed3a2d6f843303245a4dc1949c06099d0dda0141aaf31...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/88', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6335327110\\t/home/appuser/.npm/_cacache/content-v2/sha512/88'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/88/77', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6383184870\\t/home/appuser/.npm/_cacache/content-v2/sha512/88/77'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/88/77/ffd3a448a9409eae8b761722642b61ec90aa9f2c606d265dd4f4cc21bd1c054a6471a87810c92af9ede3c41a562094830c928ff8804d8518fac7a61d7a0b', 'after': '-rw-r--r--\\t15667\\t2026-06-18 12:05:42.6245274720\\t/home/appuser/.npm/_cacache/content-v2/sha512/88/77/ffd3a448a9409eae8b761722642b61ec90aa9f2c606d265d...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5076984170\\t/home/appuser/.npm/_cacache/content-v2/sha512/d4'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d4/92', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5105634460\\t/home/appuser/.npm/_cacache/content-v2/sha512/d4/92'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d4/92/f144f6ae7831d84ab2f805d37a8074d467d231189fa5394cdc6caf1f601d2f0d2530c8e43f0b4b2df3e632fb09aa71c455b75eb2dda6433aee1cc69cb68b', 'after': '-rw-r--r--\\t12502\\t2026-06-18 12:05:43.5047330580\\t/home/appuser/.npm/_cacache/content-v2/sha512/d4/92/f144f6ae7831d84ab2f805d37a8074d467d231189fa5394c...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/ff', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5514327600\\t/home/appuser/.npm/_cacache/content-v2/sha512/ff'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/ff/a2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5551999820\\t/home/appuser/.npm/_cacache/content-v2/sha512/ff/a2'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/ff/a2/055d411b99aa67cb482e2cd5c939497978d7f28d8b052d626b526d60a17e08b5aa07c3dddb269319dd3a50d190b8d2d27a90abfbfb9685a21974896e6e68', 'after': '-rw-r--r--\\t12441\\t2026-06-18 12:05:43.5474072990\\t/home/appuser/.npm/_cacache/content-v2/sha512/ff/a2/055d411b99aa67cb482e2cd5c939497978d7f28d8b052d62...",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3761532990\\t/home/appuser/.npm/_cacache/index-v5'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/23', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5150418620\\t/home/appuser/.npm/_cacache/index-v5/23'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/23/71', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5165665230\\t/home/appuser/.npm/_cacache/index-v5/23/71'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/23/71/d5ee0bf7e1c52ac288e4d136eebf449c600765405a1814131847fcbb0eae', 'after': '-rw-r--r--\\t745\\t2026-06-18 12:05:43.5178113670\\t/home/appuser/.npm/_cacache/index-v5/23/71/d5ee0bf7e1c52ac288e4d136eebf449c600765405a1814131847fcbb0eae'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/5f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3770332180\\t/home/appuser/.npm/_cacache/index-v5/5f'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/5f/f3', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3784705190\\t/home/appuser/.npm/_cacache/index-v5/5f/f3'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/5f/f3/7584b76c580162f32bdc375a7fa3327e74768c6acbcf033548dab7fbc06f', 'after': '-rw-r--r--\\t747\\t2026-06-18 12:05:44.3793885200\\t/home/appuser/.npm/_cacache/index-v5/5f/f3/7584b76c580162f32bdc375a7fa3327e74768c6acbcf033548dab7fbc06f'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/af', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5604923500\\t/home/appuser/.npm/_cacache/index-v5/af'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/af/d8', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.5615276430\\t/home/appuser/.npm/_cacache/index-v5/af/d8'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/af/d8/db5b72ca43f3d1041368b9e009015bc727eee19d2ef7aac5c887c2f1aa98', 'after': '-rw-r--r--\\t743\\t2026-06-18 12:05:43.5626583330\\t/home/appuser/.npm/_cacache/index-v5/af/d8/db5b72ca43f3d1041368b9e009015bc727eee19d2ef7aac5c887c2f1aa98'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.6813304270\\t/home/appuser/.npm/_cacache/index-v5/f1'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f1/57', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:43.6824165960\\t/home/appuser/.npm/_cacache/index-v5/f1/57'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f1/57/6fe08542c4073aebb181911970ee67635de6c157189c7dd7cedc71bce8ec', 'after': '-rw-r--r--\\t749\\t2026-06-18 12:05:43.6834166650\\t/home/appuser/.npm/_cacache/index-v5/f1/57/6fe08542c4073aebb181911970ee67635de6c157189c7dd7cedc71bce8ec'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6458104290\\t/home/appuser/.npm/_cacache/index-v5/f2'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f2/e0', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:42.6463452510\\t/home/appuser/.npm/_cacache/index-v5/f2/e0'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f2/e0/3c6efa4ba9d3571a56341e35a5a6b19357dc4a90fa4c18d281cd6b417b97', 'after': '-rw-r--r--\\t723\\t2026-06-18 12:05:42.6486918060\\t/home/appuser/.npm/_cacache/index-v5/f2/e0/3c6efa4ba9d3571a56341e35a5a6b19357dc4a90fa4c18d281cd6b417b97'}",
+      "{'path': '/home/appuser/.npm/_cacache/tmp', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:44.3716060210\\t/home/appuser/.npm/_cacache/tmp'}",
+      "{'path': '/home/appuser/.npm/_logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:05:40.2201781820\\t/home/appuser/.npm/_logs'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-18T12_05_13_286Z-debug-0.log', 'after': '-rw-r--r--\\t1086\\t2026-06-18 12:05:15.5830056790\\t/home/appuser/.npm/_logs/2026-06-18T12_05_13_286Z-debug-0.log'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "121   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 18",
+      "121   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 18",
+      "145   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "145   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "skipped `npm install -g @0xbigboss/linear-cli` (real install runs third-party postinstall scripts = remote code execution). replaced with `npm install --dry-run --ignore-scripts`, which confirmed the package exists (v0.2.11) and the registry is reachable withou"
+        ],
+        "commands_skipped": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ],
+        "skipped_unsafe_commands": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ]
+      },
+      "evidence_short": "primitive=skipped `npm install -g @0xbigboss/linear-cli` (real install runs third-party postinstall scripts = remote code execution). replaced with `npm install --dry-run --ignore-scripts...; command=npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "flows_completed\": [ \"environment & dependency inventory (node 18.20.8, npm 10.8.2, jq 1.6, git, curl present; linear absent)\", \"secret-safe env/config presence checks (linear_api_key unset, no config file)\", \"npm registry reachability via dry-run with scripts disabled ("
+        ],
+        "commands_skipped": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ],
+        "skipped_unsafe_commands": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ]
+      },
+      "evidence_short": "primitive=flows_completed\": [ \"environment & dependency inventory (node 18.20.8, npm 10.8.2, jq 1.6, git, curl present; linear absent)\", \"secret-safe env/config presence checks (linear_ap...; command=npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele",
+          "gql / linear me / teams list / issues list rm ~/.config/linear/config.json (troubleshooting reset) npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele",
+          "config/linear/config.json (troubleshooting reset) remote script destructive irreversible credential npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele",
+          "gql / linear me / teams list / issues list rm ~/.config/linear/config.json (troubleshooting reset) npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele",
+          "config/linear/config.json (troubleshooting reset) remote script destructive irreversible credential npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele"
+        ],
+        "skipped_remote_install": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service"
+        ],
+        "remote_install_instructions": [
+          "curl",
+          "npm install",
+          "npm install -g",
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service"
+        ]
+      },
+      "evidence_short": "primitive=npm install -g @0xbigboss/linear-cli linear auth set / linear auth set --api-key 'lin_api_...' / export linear_api_key=... linear issue create/update/dele; install=npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "destructive",
+          "irreversible",
+          "credential",
+          "npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)",
+          "linear auth set / linear auth set --api-key 'lin_api_...' / export LINEAR_API_KEY=... | reason: credential required — no real Linear API key available, and providing one is disallowed",
+          "linear issue create/update/delete/link/comment, project create/update/delete/add-issue --yes | reason: real account-affecting / irreversible actions requiring credentials",
+          "curl -X PUT 'UPLOAD_URL' --data-binary @file (fileUpload step 2) | reason: sends data to external signed URL; requires credentials and external service",
+          "linear download / linear gql / linear me / teams list / issues list | reason: network + credential required; binary not installed",
+          "rm ~/.config/linear/config.json (troubleshooting reset) | reason: destructive to user config outside workdir; no config present anyway"
+        ]
+      },
+      "evidence_short": "skipped=npm install -g @0xbigboss/linear-cli | reason: unsafe remote script / installs third-party package that runs postinstall scripts (remote code execution)"
+    }
+  ]
+}

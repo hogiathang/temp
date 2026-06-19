@@ -1,0 +1,256 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer",
+  "skill_name": "dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 97.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 97.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "186   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rniE\", \"curl|wget|http://|https://|socket|urllib|requests\\\\.|subprocess|os\\\\.system|eval...",
+      "http://`"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version; which jq bash pwsh",
+      "mkdir -p /home/appuser/workdir",
+      "python3 scripts/extract-structure.py --help",
+      "python3 scripts/extract-structure.py SAMPLE.rpgle",
+      "python3 scripts/extract-structure.py SAMPLE.rpgle --output structure.json",
+      "bash scripts/analyze-dependencies.sh /home/appuser/workdir",
+      "python3 scripts/generate-java-classes.py --help",
+      "python3 scripts/generate-java-classes.py SAMPLE.rpgle --package com.example.model",
+      "python3 scripts/generate-java-classes.py SAMPLE.rpgle --output-dir ./javaout --package com.example.model",
+      "python3 scripts/estimate-complexity.py --help",
+      "python3 scripts/estimate-complexity.py SAMPLE.rpgle",
+      "python3 scripts/estimate-complexity.py SAMPLE.rpgle --json",
+      "grep -rniE '<network/exec/credential patterns>' over skill files",
+      "186   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rniE\", \"curl|wget|http://|https://|socket|urllib|requests\\\\.|subprocess|os\\\\.system|eval...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e662275a130 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5e662275f900 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x40fc3f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x40fc418c650 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x40fc3f76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x40fc4af2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x61c4d0eb5c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x61c4d0eb5d18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x61c4d0eb5c68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x40fc4af2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x40fc4af2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x40fc4af3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x40fc4af3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x40fc4af2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5d74ee75d7b0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d1162ca2c20 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d1162caa850 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d1162caa850 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x58e7390abd10 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer\", \"-type\", \"f\"], 0x58e7390c0e50 /* 33 vars */) = 0",
+      "99    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5aea11ab5470 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/which\", [\"which\", \"jq\", \"bash\", \"pwsh\"], 0x5aea11ab5470 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5aea11ab5470 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/extract-structure.py\", \"--help\"], 0x5c831be76970 /* 34 vars */) = 0",
+      "105   execve(\"/usr/local/bin/python3\", [\"python3\", \"/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/extract-structure.py\", \"SAMPLE.rpgle\"], 0x5c831be76970 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "python3",
+      "which",
+      "mkdir",
+      "dirname",
+      "find",
+      "mktemp",
+      "basename",
+      "jq",
+      "xargs",
+      "wc",
+      "echo",
+      "sort",
+      "rm",
+      "diff",
+      "ls"
+    ],
+    "tool_call_patterns": [
+      "python3 --version; which jq bash pwsh",
+      "mkdir -p /home/appuser/workdir",
+      "python3 scripts/extract-structure.py --help",
+      "python3 scripts/extract-structure.py SAMPLE.rpgle",
+      "python3 scripts/extract-structure.py SAMPLE.rpgle --output structure.json",
+      "bash scripts/analyze-dependencies.sh /home/appuser/workdir",
+      "python3 scripts/generate-java-classes.py --help",
+      "python3 scripts/generate-java-classes.py SAMPLE.rpgle --package com.example.model",
+      "python3 scripts/generate-java-classes.py SAMPLE.rpgle --output-dir ./javaout --package com.example.model",
+      "python3 scripts/estimate-complexity.py --help",
+      "python3 scripts/estimate-complexity.py SAMPLE.rpgle",
+      "python3 scripts/estimate-complexity.py SAMPLE.rpgle --json",
+      "grep -rniE '<network/exec/credential patterns>' over skill files",
+      "{'command': 'pwsh scripts/analyze-dependencies.ps1 /home/appuser/workdir', 'reason': 'outside sandbox - PowerShell (pwsh) is not installed; the equivalent .sh was executed instead, covering the same logic'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:03:10.2820432260\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:05:01.3958466800\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781686984573', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:03:04.5742990240\\t/home/appuser/.claude/backups/.claude.json.backup.1781686984573'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781687101396', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:05:01.3965154150\\t/home/appuser/.claude/backups/.claude.json.backup.1781687101396'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:03:05.0900401970\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:05.2946927170\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:10.2332620780\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd.jsonl', 'after': '-rw-------\\t246719\\t2026-06-17 09:05:01.0861559640\\t/home/appuser/.claude/projects/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:09.5323383660\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/84129097-f969-48c5-ac1f-0dde9c2271bd', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:09.5323383660\\t/home/appuser/.claude/session-env/84129097-f969-48c5-ac1f-0dde9c2271bd'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:05:01.0668245960\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:05:01.0708248650\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/SAMPLE.rpgle', 'after': '-rw-r--r--\\t992\\t2026-06-17 09:03:41.0904565560\\t/home/appuser/workdir/SAMPLE.rpgle'}",
+      "{'path': '/home/appuser/workdir/dependencies.json', 'after': '-rw-r--r--\\t462\\t2026-06-17 09:03:55.1591099800\\t/home/appuser/workdir/dependencies.json'}",
+      "{'path': '/home/appuser/workdir/javaout', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:03.7080896010\\t/home/appuser/workdir/javaout'}",
+      "{'path': '/home/appuser/workdir/javaout/com', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:03.7080896010\\t/home/appuser/workdir/javaout/com'}",
+      "{'path': '/home/appuser/workdir/javaout/com/example', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:03.7084946100\\t/home/appuser/workdir/javaout/com/example'}",
+      "{'path': '/home/appuser/workdir/javaout/com/example/model', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:03.7084946100\\t/home/appuser/workdir/javaout/com/example/model'}",
+      "{'path': '/home/appuser/workdir/javaout/com/example/model/Root.java', 'after': '-rw-r--r--\\t143\\t2026-06-17 09:04:03.7090782660\\t/home/appuser/workdir/javaout/com/example/model/Root.java'}",
+      "{'path': '/home/appuser/workdir/structure.json', 'after': '-rw-r--r--\\t2153\\t2026-06-17 09:03:48.6075608520\\t/home/appuser/workdir/structure.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:03:09.5375939470\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:09.5381032670\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:09.5382557370\\t/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:32.2416886120\\t/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:05:02.0848929290\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:02.8598905090\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:05:01.4026818950\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:02.8568903070\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:10.2803885750\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:03:02.8598905090\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:05:01.3978468140\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:03:02.8598905090\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:04:03.7059745160\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:03:03.9129611920\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:05:02.0848929290\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:03:03.9129611920\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t5278\\t2026-06-17 09:03:03.9169614610\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "+ bash + a powershell variant). i read every script before running it; none perform network access, remote code execution, credential access, `subprocess`/`eval`/`base64`, or any destructive action. **what ran successfully:** `extract-structure.py` (stdout + `"
+        ],
+        "commands_skipped": [
+          "pwsh scripts/analyze-dependencies.ps1 /home/appuser/workdir | reason: outside sandbox - PowerShell (pwsh) is not installed; the equivalent .sh was executed instead, covering the same logic"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=+ bash + a powershell variant). i read every script before running it; none perform network access, remote code execution, credential access, `subprocess`/`eval`/`base64`, or an...; command=pwsh scripts/analyze-dependencies.ps1 /home/appuser/workdir | reason: outside sandbox - PowerShell (pwsh) is not installed; the equivalent .sh was executed instead, covering the..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "secret/environment harvesting with outbound transmission context"
+        ],
+        "commands_skipped": [
+          "pwsh scripts/analyze-dependencies.ps1 /home/appuser/workdir | reason: outside sandbox - PowerShell (pwsh) is not installed; the equivalent .sh was executed instead, covering the same logic"
+        ]
+      },
+      "evidence_short": "primitive=secret/environment harvesting with outbound transmission context; command=pwsh scripts/analyze-dependencies.ps1 /home/appuser/workdir | reason: outside sandbox - PowerShell (pwsh) is not installed; the equivalent .sh was executed instead, covering the..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "credential"
+        ]
+      },
+      "evidence_short": "skipped=credential"
+    }
+  ]
+}

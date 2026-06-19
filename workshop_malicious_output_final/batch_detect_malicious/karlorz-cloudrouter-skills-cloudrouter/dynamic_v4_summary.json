@@ -1,0 +1,313 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/karlorz-cloudrouter-skills-cloudrouter",
+  "skill_name": "karlorz-cloudrouter-skills-cloudrouter",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 41.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 41.5 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "02c5a3dab98f521b.vercel-dns-016.com",
+      "api.anthropic.com",
+      "api.stack-auth.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns1.vercel-dns-016.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.0.34",
+      "104.16.11.34",
+      "104.16.6.34",
+      "104.16.1.34",
+      "104.16.3.34",
+      "104.16.4.34",
+      "104.16.10.34",
+      "104.16.7.34",
+      "104.16.2.34",
+      "104.16.9.34",
+      "104.16.8.34",
+      "104.16.5.34",
+      "216.150.16.129",
+      "216.150.1.129"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://cmux-www.karldigi.dev"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "npm view @karlorz/cloudrouter / scripts / os / cpu / engines (read-only registry metadata)",
+      "npm install --ignore-scripts --no-fund --no-audit @karlorz/cloudrouter (local, postinstall skipped)",
+      "file/ls inspection of installed binaries and bin wrapper",
+      "cloudrouter --version  (-> 0.9.30, exit 0)",
+      "cloudrouter --help  (exit 0)",
+      "cloudrouter auth --help / start --help / skills --help / skills install --help / browser --help / login --help",
+      "cloudrouter whoami -v  (-> 'Not logged in')",
+      "cloudrouter ls -v  (-> not logged in, local gate)",
+      "cloudrouter templates -v  (-> not logged in, local gate)",
+      "cloudrouter start /home/appuser/workdir -v  (-> not logged in, exit 1)",
+      "cloudrouter upload dummy-id /home/appuser/workdir --dry-run -v  (-> not logged in)",
+      "cloudrouter status dummy-id -v  (-> not logged in)",
+      "cloudrouter login -v  (timeout 12s; reached backend, got login_code, terminated; no creds sent)",
+      "env|grep (names only) and ls of config dirs to check for credentials",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e6a43f5f0e0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5e6a43f64890 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x505d3374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x505d358c628 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x505d3376c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x505d3ef2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x558d621bcc38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x558d621bcd18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x558d621bcc68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x505d3ef2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x505d3ef2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x505d3ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x505d3ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x505d3ef2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x609c0d380760 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x59e1aeb10bd0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x59e1aeb187e0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x59e1aeb187e0 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x59e1aeb187e0 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e1aeb187e0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e1aeb187e0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x59e1aeb187e0 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/karlorz-cloudrouter-skills-cloudrouter\"], 0x5cb1e9c13f90 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x604f1e583020 /* 34 vars */ <unfinished ...>",
+      "96    execve(\"/usr/bin/which\", [\"which\", \"node\", \"node\"], 0x604f1e583020 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/which\", [\"which\", \"npm\"], 0x604f1e583020 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x604f1e583020 /* 34 vars */) = 0",
+      "99    execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffc22a8a5b0 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "110   execve(\"/usr/bin/which\", [\"which\", \"cloudrouter\", \"cr\"], 0x604f1e583020 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x604f1e583020 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "whoami",
+      "which",
+      "npm",
+      "node",
+      "mkdir",
+      "tail",
+      "file",
+      "cloudrouter",
+      "date"
+    ],
+    "tool_call_patterns": [
+      "npm view @karlorz/cloudrouter / scripts / os / cpu / engines (read-only registry metadata)",
+      "npm install --ignore-scripts --no-fund --no-audit @karlorz/cloudrouter (local, postinstall skipped)",
+      "file/ls inspection of installed binaries and bin wrapper",
+      "cloudrouter --version  (-> 0.9.30, exit 0)",
+      "cloudrouter --help  (exit 0)",
+      "cloudrouter auth --help / start --help / skills --help / skills install --help / browser --help / login --help",
+      "cloudrouter whoami -v  (-> 'Not logged in')",
+      "cloudrouter ls -v  (-> not logged in, local gate)",
+      "cloudrouter templates -v  (-> not logged in, local gate)",
+      "cloudrouter start /home/appuser/workdir -v  (-> not logged in, exit 1)",
+      "cloudrouter upload dummy-id /home/appuser/workdir --dry-run -v  (-> not logged in)",
+      "cloudrouter status dummy-id -v  (-> not logged in)",
+      "cloudrouter login -v  (timeout 12s; reached backend, got login_code, terminated; no creds sent)",
+      "env|grep (names only) and ls of config dirs to check for credentials",
+      "{'command': 'npm install -g @karlorz/cloudrouter (with postinstall enabled)', 'reason': 'untrusted package postinstall (node lib/postinstall.js) — ran local install with --ignore-scripts and invoked binary directly instead'}",
+      "{'command': 'cloudrouter skills install / skills update', 'reason': 'skills update fetches SKILL.md from remote and writes into ~/.claude/skills — avoided remote fetch and modifying the skills directory'}",
+      "{'command': 'completing cloudrouter login', 'reason': 'credential required / external account — no real account, cannot and must not complete external auth'}",
+      "{'command': 'cloudrouter ssh <id> \"sudo chown -R 1000:1000 /home/user/.npm\"', 'reason': 'uses sudo and requires a live remote sandbox — prohibited and outside sandbox'}",
+      "{'command': 'cloudrouter start --gpu / code / jupyter / vnc / pty / ssh / browser * / delete / stop', 'reason': 'require authenticated account + live remote VM — external service / real account-affecting actions'}",
+      "completing cloudrouter login | reason: credential required / external account — no real account, cannot and must not complete external auth",
+      "cloudrouter ssh <id> \"sudo chown -R 1000:1000 /home/user/.npm\" | reason: uses sudo and requires a live remote sandbox — prohibited and outside sandbox"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:51:25.5998082610\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:16.7810439030\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689879874', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:51:19.8752295750\\t/home/appuser/.claude/backups/.claude.json.backup.1781689879874'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690116780', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:55:16.7810439030\\t/home/appuser/.claude/backups/.claude.json.backup.1781690116780'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:51:20.3833809130\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:20.5753668480\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:25.5344273840\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/9cd7faf8-df79-4838-8d99-05e44da394af.jsonl', 'after': '-rw-------\\t272154\\t2026-06-17 09:55:16.4892277330\\t/home/appuser/.claude/projects/-home-appuser/9cd7faf8-df79-4838-8d99-05e44da394af.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:24.4276523560\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/9cd7faf8-df79-4838-8d99-05e44da394af', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:24.4276523560\\t/home/appuser/.claude/session-env/9cd7faf8-df79-4838-8d99-05e44da394af'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:55:16.4732266590\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:16.4762268610\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:54.1856496550\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_cacache', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:54.2026507960\\t/home/appuser/.npm/_cacache'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:54.1957846870\\t/home/appuser/.npm/_cacache/content-v2'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.3267610510\\t/home/appuser/.npm/_cacache/content-v2/sha512'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/01', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.3284182860\\t/home/appuser/.npm/_cacache/content-v2/sha512/01'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/01/95', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.3297583380\\t/home/appuser/.npm/_cacache/content-v2/sha512/01/95'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/01/95/c2971384051f4edbd15886a1800c083641225bd122e74c89d1d3fa2476be17d3952c4ab886bcc089871d6426dfdc41b9824d46713fd3ba79f76f6fd5430b', 'after': '-rw-r--r--\\t3938\\t2026-06-17 09:52:19.3266254070\\t/home/appuser/.npm/_cacache/content-v2/sha512/01/95/c2971384051f4edbd15886a1800c083641225bd122e74c89d...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/05', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.3270548110\\t/home/appuser/.npm/_cacache/content-v2/sha512/05'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/05/bf', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.3294714940\\t/home/appuser/.npm/_cacache/content-v2/sha512/05/bf'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/05/bf/950d50de585ea741c4e33f9e5636a2a732f8e200499ed2169eb492751b194df2e1903b652f2e42021b7bc5f688207d52482ae4f2ba9c2dd4f78ede58d8d2', 'after': '-rw-r--r--\\t3557474\\t2026-06-17 09:52:21.3244711580\\t/home/appuser/.npm/_cacache/content-v2/sha512/05/bf/950d50de585ea741c4e33f9e5636a2a732f8e200499ed2...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/40', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7096835080\\t/home/appuser/.npm/_cacache/content-v2/sha512/40'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/40/1a', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7120992890\\t/home/appuser/.npm/_cacache/content-v2/sha512/40/1a'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/40/1a/ee42b8d46047b6b6a6cbe8be02fb6ba6cd2f9d30600348811b451b9881315d3c228805df4d81d4259e99a07f314833cd330ba6da688062686edf24a38bdd', 'after': '-rw-r--r--\\t3964\\t2026-06-17 09:52:18.7072806520\\t/home/appuser/.npm/_cacache/content-v2/sha512/40/1a/ee42b8d46047b6b6a6cbe8be02fb6ba6cd2f9d30600348811...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/58', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4548733420\\t/home/appuser/.npm/_cacache/content-v2/sha512/58'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/58/96', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4570862120\\t/home/appuser/.npm/_cacache/content-v2/sha512/58/96'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/58/96/a081ff7e8257fb454210879593cbccf98dbdfb3a8dede26bad62078c95e8ef4c97a4fdf659c0b7d80bea4f2dbe1794bd32bd53e43f3f9bf7e1ab3bad0eb6', 'after': '-rw-r--r--\\t3917\\t2026-06-17 09:52:19.4493453040\\t/home/appuser/.npm/_cacache/content-v2/sha512/58/96/a081ff7e8257fb454210879593cbccf98dbdfb3a8dede26ba...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/5c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:54.1966123880\\t/home/appuser/.npm/_cacache/content-v2/sha512/5c'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/5c/26', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:51:54.1987386630\\t/home/appuser/.npm/_cacache/content-v2/sha512/5c/26'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/5c/26/361ca401ecadd1d0e45a958af63704b2e1f34cecd196c1577cee355c9d13d6263990453c2ee8a71f61f6900c11f4facf471c962035e8c44c9ef7653e8879', 'after': '-rw-r--r--\\t6188\\t2026-06-17 09:51:54.1906499910\\t/home/appuser/.npm/_cacache/content-v2/sha512/5c/26/361ca401ecadd1d0e45a958af63704b2e1f34cecd196c1577...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/62', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7096835080\\t/home/appuser/.npm/_cacache/content-v2/sha512/62'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/62/3e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7116285540\\t/home/appuser/.npm/_cacache/content-v2/sha512/62/3e'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/62/3e/f15921e6c1aa29fa8201187558871ef9a59288b5dc4593118ec850dc39f80af51087d90453c079ce901d9c60ec067c3159e338d1fa397d797bc0ef82c215', 'after': '-rw-r--r--\\t3984\\t2026-06-17 09:52:18.7067798540\\t/home/appuser/.npm/_cacache/content-v2/sha512/62/3e/f15921e6c1aa29fa8201187558871ef9a59288b5dc4593118...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/6e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.1709310850\\t/home/appuser/.npm/_cacache/content-v2/sha512/6e'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/6e/48', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.1740954200\\t/home/appuser/.npm/_cacache/content-v2/sha512/6e/48'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/6e/48/fde3162f366c3f7a8278b5ccaf25776da0803d9706bb0becab5b8a44b188f6852a67c041a7d5174669882da5c8950bfd4f0f90b99ce962b66600abab1abc', 'after': '-rw-r--r--\\t3335434\\t2026-06-17 09:52:21.1650784600\\t/home/appuser/.npm/_cacache/content-v2/sha512/6e/48/fde3162f366c3f7a8278b5ccaf25776da0803d9706bb0b...",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4548733420\\t/home/appuser/.npm/_cacache/content-v2/sha512/d1'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d1/9f', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4574853160\\t/home/appuser/.npm/_cacache/content-v2/sha512/d1/9f'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/d1/9f/41fe4d9be85e9d8ebab7188fa245913bf6dd60af1b7df4f68f50259acebf09d18785ab05215d7a8b691b7dcc7e6cbbdcbf88409c25e8a9ce671e426c9762', 'after': '-rw-r--r--\\t3925\\t2026-06-17 09:52:19.4513855810\\t/home/appuser/.npm/_cacache/content-v2/sha512/d1/9f/41fe4d9be85e9d8ebab7188fa245913bf6dd60af1b7df4f68...",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.3335659970\\t/home/appuser/.npm/_cacache/index-v5'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7163262380\\t/home/appuser/.npm/_cacache/index-v5/4e'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4e/9d', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:18.7172532960\\t/home/appuser/.npm/_cacache/index-v5/4e/9d'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/4e/9d/39dbcda78c82133e72aa722c84a6999e748bab6cf59513be8f48dad897f2', 'after': '-rw-r--r--\\t744\\t2026-06-17 09:52:18.7184207450\\t/home/appuser/.npm/_cacache/index-v5/4e/9d/39dbcda78c82133e72aa722c84a6999e748bab6cf59513be8f48dad897f2'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/68', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.1785495130\\t/home/appuser/.npm/_cacache/index-v5/68'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/68/1e', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:21.1794614260\\t/home/appuser/.npm/_cacache/index-v5/68/1e'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/68/1e/a24fde81c79b2da8f67378240a14b64f9f7fb3050f5abdb8990b8f77eb37', 'after': '-rw-r--r--\\t736\\t2026-06-17 09:52:21.1804614930\\t/home/appuser/.npm/_cacache/index-v5/68/1e/a24fde81c79b2da8f67378240a14b64f9f7fb3050f5abdb8990b8f77eb37'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/88', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4646456630\\t/home/appuser/.npm/_cacache/index-v5/88'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/88/2b', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:52:19.4658050570\\t/home/appuser/.npm/_cacache/index-v5/88/2b'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/88/2b/9f59a35f2122a7fd23365fac1449d05b7d58ab4bb403713b467b3d1b3777', 'after': '-rw-r--r--\\t740\\t2026-06-17 09:52:19.4667469520\\t/home/appuser/.npm/_cacache/index-v5/88/2b/9f59a35f2122a7fd23365fac1449d05b7d58ab4bb403713b467b3d1b3777'}"
+    ],
+    "file_patterns": [
+      "52    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "165   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "165   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "/home/appuser/.claude/shell-snapshots",
+      "/home/appuser/workdir/cr-test/node_modules/@karlorz/cloudrouter/lib/postinstall.js"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npm install -g @karlorz/cloudrouter (with postinstall enabled) cloudrouter skills install / skills update completing cloudrouter login cloudrouter ssh <id"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npm install -g @karlorz/cloudrouter (with postinstall enabled) cloudrouter skills install / skills update completing cloudrouter login cloudrouter ssh <id"
+        ],
+        "skipped_remote_install": [
+          "npm install -g @karlorz/cloudrouter (with postinstall enabled) | reason: untrusted package postinstall (node lib/postinstall.js) — ran local install with --ignore-scripts and invoked binary directly instead"
+        ],
+        "remote_install_instructions": [
+          "npm install",
+          "npm install -g",
+          "npm install -g @karlorz/cloudrouter (with postinstall enabled) | reason: untrusted package postinstall (node lib/postinstall.js) — ran local install with --ignore-scripts and invoked binary directly instead"
+        ]
+      },
+      "evidence_short": "primitive=npm install -g @karlorz/cloudrouter (with postinstall enabled) cloudrouter skills install / skills update completing cloudrouter login cloudrouter ssh <id; install=npm install -g @karlorz/cloudrouter (with postinstall enabled) | reason: untrusted package postinstall (node lib/postinstall.js) — ran local install with --ignore-scripts and in..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "completing cloudrouter login | reason: credential required / external account — no real account, cannot and must not complete external auth",
+          "cloudrouter ssh <id> \"sudo chown -R 1000:1000 /home/user/.npm\" | reason: uses sudo and requires a live remote sandbox — prohibited and outside sandbox"
+        ],
+        "unsafe_command_instructions": [
+          "sudo",
+          "credential",
+          "completing cloudrouter login | reason: credential required / external account — no real account, cannot and must not complete external auth",
+          "cloudrouter ssh <id> \"sudo chown -R 1000:1000 /home/user/.npm\" | reason: uses sudo and requires a live remote sandbox — prohibited and outside sandbox"
+        ]
+      },
+      "evidence_short": "skipped=completing cloudrouter login | reason: credential required / external account — no real account, cannot and must not complete external auth"
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x604f1e583020 /* 34 vars */ <unfinished ...>",
+          "246   execve(\"node_modules/@karlorz/cloudrouter-linux-x64/bin/cloudrouter\", [\"node_modules/@karlorz/cloudrouter-linux-x64/bin/cloudrouter\", \"whoami\", \"-v\"], 0x7ffde565a858 /* 34 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x604f1e583020 /* 34 vars */ <unfinished ...>",
+          "246   execve(\"node_modules/@karlorz/cloudrouter-linux-x64/bin/cloudrouter\", [\"node_modules/@karlorz/cloudrouter-linux-x64/bin/cloudrouter\", \"whoami\", \"-v\"], 0x7ffde565a858 /* 34 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=95    execve(\"/usr/bin/whoami\", [\"whoami\"], 0x604f1e583020 /* 34 vars */ <unfinished ...>"
+    }
+  ]
+}

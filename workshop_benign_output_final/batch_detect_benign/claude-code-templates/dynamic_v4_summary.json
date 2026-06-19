@@ -1,0 +1,239 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/claude-code-templates",
+  "skill_name": "claude-code-templates",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 37.2,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 37.2 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "166   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rnEi\", \"curl|wget|http://|https://|nc |ncat|/dev/tcp|ssh|token|password|api[_-]?key|secr...",
+      "https://`"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find /home/appuser/.claude/skills/claude-code-templates -type f",
+      "command -v jq && jq --version  (jq-1.6 present)",
+      "command -v just  (MISSING)",
+      "ls -la /home/appuser/.claude/",
+      "mkdir -p /home/appuser/workdir and test-claude/{agents,skills/my-skill,commands,hooks}",
+      "cp agent-template.md -> test-claude/agents/my-expert.md",
+      "cp skill-template.md -> test-claude/skills/my-skill/SKILL.md",
+      "cp command-template.md -> test-claude/commands/my-command.md",
+      "cp hook-script.sh -> test-claude/hooks/my-hook.sh && chmod +x",
+      "head -20 skills/my-skill/SKILL.md",
+      "grep '^name:' on generated files",
+      "bash -n hooks/my-hook.sh  (syntax OK)",
+      "echo '<valid mock JSON>' | ./hooks/my-hook.sh  (exit 0, log written)",
+      "echo 'not-json' | ./hooks/my-hook.sh  (exit 2, 'Invalid JSON input')",
+      "echo '' | ./hooks/my-hook.sh  (exit 0)",
+      "cat .claude/hook.log",
+      "echo dummy content > /home/appuser/workdir/sample.txt",
+      "grep -rnEi 'curl|wget|http|token|secret|eval|base64' over skill files",
+      "166   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rnEi\", \"curl|wget|http://|https://|nc |ncat|/dev/tcp|ssh|token|password|api[_-]?key|secr...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5cb94f77f090 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5cb94f784810 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x4d380374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4d38058c600 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x4d380376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x4d380ef0a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x58e33453fc38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x58e33453fd18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x58e33453fc68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x4d380ef1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x4d380ef1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x4d380ef1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x4d380ef1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x4d380ef1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6356550d8710 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b1fa82d3b80 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1fa82db760 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5b1fa82db760 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1fa82db760 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5b1fa82db760 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1fa82db760 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1fa82db760 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x63d102dbf700 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/claude-code-templates\", \"-type\", \"f\"], 0x63d102dd4b50 /* 33 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "mkdir",
+      "jq",
+      "ls",
+      "cp",
+      "chmod",
+      "my-hook.sh",
+      "dirname",
+      "date"
+    ],
+    "tool_call_patterns": [
+      "find /home/appuser/.claude/skills/claude-code-templates -type f",
+      "command -v jq && jq --version  (jq-1.6 present)",
+      "command -v just  (MISSING)",
+      "ls -la /home/appuser/.claude/",
+      "mkdir -p /home/appuser/workdir and test-claude/{agents,skills/my-skill,commands,hooks}",
+      "cp agent-template.md -> test-claude/agents/my-expert.md",
+      "cp skill-template.md -> test-claude/skills/my-skill/SKILL.md",
+      "cp command-template.md -> test-claude/commands/my-command.md",
+      "cp hook-script.sh -> test-claude/hooks/my-hook.sh && chmod +x",
+      "head -20 skills/my-skill/SKILL.md",
+      "grep '^name:' on generated files",
+      "bash -n hooks/my-hook.sh  (syntax OK)",
+      "echo '<valid mock JSON>' | ./hooks/my-hook.sh  (exit 0, log written)",
+      "echo 'not-json' | ./hooks/my-hook.sh  (exit 2, 'Invalid JSON input')",
+      "echo '' | ./hooks/my-hook.sh  (exit 0)",
+      "cat .claude/hook.log",
+      "echo dummy content > /home/appuser/workdir/sample.txt",
+      "grep -rnEi 'curl|wget|http|token|secret|eval|base64' over skill files",
+      "{'command': 'just test', 'reason': \"outside sandbox / not applicable — 'just' is not installed and there is no project to test; it is a generic placeholder in the skill's Validation section\"}",
+      "{'command': 'cp templates into the real ~/.claude/agents, ~/.claude/commands, ~/.claude/skills', 'reason': 'avoided modifying the live config tree; ran the identical workflow under /home/appuser/workdir/test-claude to keep it reversible (no destructive/irreversible action)'}",
+      "cp templates into the real ~/.claude/agents, ~/.claude/commands, ~/.claude/skills | reason: avoided modifying the live config tree; ran the identical workflow under /home/appuser/workdir/test-claude to keep it reversible (no destructive/irreversible action)"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:06:34.6782620380\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:54.4270723400\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777188742', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:06:28.7437541090\\t/home/appuser/.claude/backups/.claude.json.backup.1781777188742'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777274426', 'after': '-rw-r--r--\\t24602\\t2026-06-18 10:07:54.4273602090\\t/home/appuser/.claude/backups/.claude.json.backup.1781777274426'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:06:29.3263577870\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:29.6213215460\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:34.5957716450\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9.jsonl', 'after': '-rw-------\\t115006\\t2026-06-18 10:07:53.9945875350\\t/home/appuser/.claude/projects/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:37.2833635490\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:37.2833635490\\t/home/appuser/.claude/session-env/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:07:53.9716215540\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:53.9766218980\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t44\\t2026-06-18 10:07:27.4403495640\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/home/appuser/workdir/test-claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:16.2309305650\\t/home/appuser/workdir/test-claude'}",
+      "{'path': '/home/appuser/workdir/test-claude/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:16.2479865310\\t/home/appuser/workdir/test-claude/.claude'}",
+      "{'path': '/home/appuser/workdir/test-claude/.claude/hook.log', 'after': '-rw-r--r--\\t67\\t2026-06-18 10:07:16.6164454560\\t/home/appuser/workdir/test-claude/.claude/hook.log'}",
+      "{'path': '/home/appuser/workdir/test-claude/agents', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:03.7579421090\\t/home/appuser/workdir/test-claude/agents'}",
+      "{'path': '/home/appuser/workdir/test-claude/agents/my-expert.md', 'after': '-rw-r--r--\\t1990\\t2026-06-18 10:07:03.7580719360\\t/home/appuser/workdir/test-claude/agents/my-expert.md'}",
+      "{'path': '/home/appuser/workdir/test-claude/commands', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:03.8035004810\\t/home/appuser/workdir/test-claude/commands'}",
+      "{'path': '/home/appuser/workdir/test-claude/commands/my-command.md', 'after': '-rw-r--r--\\t1524\\t2026-06-18 10:07:03.8039040870\\t/home/appuser/workdir/test-claude/commands/my-command.md'}",
+      "{'path': '/home/appuser/workdir/test-claude/hooks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:03.8286122930\\t/home/appuser/workdir/test-claude/hooks'}",
+      "{'path': '/home/appuser/workdir/test-claude/hooks/my-hook.sh', 'after': '-rwxr-xr-x\\t2235\\t2026-06-18 10:07:03.8287624060\\t/home/appuser/workdir/test-claude/hooks/my-hook.sh'}",
+      "{'path': '/home/appuser/workdir/test-claude/skills', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:03.7321149710\\t/home/appuser/workdir/test-claude/skills'}",
+      "{'path': '/home/appuser/workdir/test-claude/skills/my-skill', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:03.7733584390\\t/home/appuser/workdir/test-claude/skills/my-skill'}",
+      "{'path': '/home/appuser/workdir/test-claude/skills/my-skill/SKILL.md', 'after': '-rw-r--r--\\t3902\\t2026-06-18 10:07:03.7745511250\\t/home/appuser/workdir/test-claude/skills/my-skill/SKILL.md'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:06:37.2978722080\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:37.2980554460\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:37.2984635150\\t/tmp/claude-1000/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:27.5272441610\\t/tmp/claude-1000/-home-appuser/d61eeeac-f126-44ae-b20f-4ab88f1cb8e9/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:07:55.1677038980\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:26.9506306640\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:54.4336533630\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:26.9476304570\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:37.2813418730\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:06:26.9506306640\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 10:07:54.4296530880\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:06:26.9506306640\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:07:27.4397949910\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:06:27.9987028170\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 10:07:55.1677038980\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:06:27.9987028170\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2403\\t2026-06-18 10:06:28.0027030920\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "cp templates into the real ~/.claude/agents, ~/.claude/commands, ~/.claude/skills | reason: avoided modifying the live config tree; ran the identical workflow under /home/appuser/workdir/test-claude to keep it reversible (no destructive/irreversible action)"
+        ],
+        "unsafe_command_instructions": [
+          "destructive",
+          "irreversible",
+          "cp templates into the real ~/.claude/agents, ~/.claude/commands, ~/.claude/skills | reason: avoided modifying the live config tree; ran the identical workflow under /home/appuser/workdir/test-claude to keep it reversible (no destructive/irreversible action)"
+        ]
+      },
+      "evidence_short": "skipped=cp templates into the real ~/.claude/agents, ~/.claude/commands, ~/.claude/skills | reason: avoided modifying the live config tree; ran the identical workflow under /home/appuse..."
+    },
+    {
+      "pattern": "malformed_skill_data",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 22.0,
+      "evidence_type": "intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "low",
+      "summary": "Skill contains malformed or invalid local data/config that may break execution.",
+      "evidence": {
+        "observed_errors": [
+          "Expected exit code 2 from hook on invalid JSON input ('Invalid JSON input') — correct documented behavior, not a fault",
+          "Initial 'ls' of ~/.claude/agents and ~/.claude/commands returned 'No such file or directory' — those dirs simply do not exist yet; benign"
+        ]
+      },
+      "evidence_short": "error=Expected exit code 2 from hook on invalid JSON input ('Invalid JSON input') — correct documented behavior, not a fault"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/knowledge",
+  "skill_name": "knowledge",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 37.2,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 37.2 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/knowledge/ ; find ... -type f",
+      "Read SKILL.md",
+      "pwd ; ls -la /home/appuser/knowledge ; ls -la ./knowledge ; ls -la /home/appuser/workdir",
+      "Skill(knowledge) — launched the actual skill",
+      "cat knowledge/state.json + 4 knowledge md files (confirmed all missing -> empty state)",
+      "mkdir + created dummy knowledge base under /home/appuser/workdir",
+      "grep -c '^## ...' to count entries; grep to extract recent learning headers",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x652bf3eec060 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x652bf3ef17c0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x21d93374510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x21d9358c5e8 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x21d93376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x21d93ef2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x59528ac17c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x59528ac17d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x59528ac17c68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x21d93ef2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x21d93ef2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x21d93ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x21d93ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x21d93ef2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x59c916ce96e0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d8cedfd6b50 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d8cedfde710 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d8cedfde710 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d8cedfde710 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d8cedfde710 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d8cedfde710 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/knowledge/\"], 0x63a738383c80 /* 34 vars */) = 0",
+      "93    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/knowledge/\", \"-type\", \"f\"], 0x63a738383c80 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/knowledge\"], 0x64e5c21ee0f0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"./knowledge\"], 0x64e5c21ee0f0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x64e5c21ee0f0 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/knowledge/state.json\"], 0x5e3b9d2f68f0 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/knowledge/cache/classifications.md\"], 0x5e3b9d2f68f0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/knowledge/learnings/patterns.md\"], 0x5e3b9d2f68f0 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/knowledge/learnings/quirks.md\"], 0x5e3b9d2f68f0 /* 34 vars */) = 0",
+      "108   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/knowledge/learnings/decisions.md\"], 0x5e3b9d2f68f0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"knowledge/cache\", \"knowledge/learnings\"], 0x58fc8fb95190 /* 34 vars */) = 0",
+      "112   execve(\"/usr/bin/cat\", [\"cat\"], 0x58fc8fb95190 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/cat\", [\"cat\"], 0x58fc8fb95190 /* 34 vars */) = 0",
+      "114   execve(\"/usr/bin/cat\", [\"cat\"], 0x58fc8fb95190 /* 34 vars */) = 0",
+      "115   execve(\"/usr/bin/cat\", [\"cat\"], 0x58fc8fb95190 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/knowledge/ ; find ... -type f",
+      "Read SKILL.md",
+      "pwd ; ls -la /home/appuser/knowledge ; ls -la ./knowledge ; ls -la /home/appuser/workdir",
+      "Skill(knowledge) — launched the actual skill",
+      "cat knowledge/state.json + 4 knowledge md files (confirmed all missing -> empty state)",
+      "mkdir + created dummy knowledge base under /home/appuser/workdir",
+      "grep -c '^## ...' to count entries; grep to extract recent learning headers"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:57:34.7397614490\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:30.7095056360\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783848911', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:57:28.9122385800\\t/home/appuser/.claude/backups/.claude.json.backup.1781783848911'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783910709', 'after': '-rw-r--r--\\t24672\\t2026-06-18 11:58:30.7097560020\\t/home/appuser/.claude/backups/.claude.json.backup.1781783910709'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:57:29.4693262430\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:29.7090891050\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:34.6477439890\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261.jsonl', 'after': '-rw-------\\t81881\\t2026-06-18 11:58:30.3888881680\\t/home/appuser/.claude/projects/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:33.9072044530\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/a2958f8d-67b5-43dc-967f-78f00b1c1261', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:33.9072044530\\t/home/appuser/.claude/session-env/a2958f8d-67b5-43dc-967f-78f00b1c1261'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:58:30.3665800380\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:30.3715803820\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/knowledge', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:04.6898122810\\t/home/appuser/workdir/knowledge'}",
+      "{'path': '/home/appuser/workdir/knowledge/cache', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:04.7058133820\\t/home/appuser/workdir/knowledge/cache'}",
+      "{'path': '/home/appuser/workdir/knowledge/cache/classifications.md', 'after': '-rw-r--r--\\t107\\t2026-06-18 11:58:04.7238146220\\t/home/appuser/workdir/knowledge/cache/classifications.md'}",
+      "{'path': '/home/appuser/workdir/knowledge/learnings', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:04.7618172380\\t/home/appuser/workdir/knowledge/learnings'}",
+      "{'path': '/home/appuser/workdir/knowledge/learnings/decisions.md', 'after': '-rw-r--r--\\t118\\t2026-06-18 11:58:04.7768182710\\t/home/appuser/workdir/knowledge/learnings/decisions.md'}",
+      "{'path': '/home/appuser/workdir/knowledge/learnings/patterns.md', 'after': '-rw-r--r--\\t193\\t2026-06-18 11:58:04.7438159990\\t/home/appuser/workdir/knowledge/learnings/patterns.md'}",
+      "{'path': '/home/appuser/workdir/knowledge/learnings/quirks.md', 'after': '-rw-r--r--\\t130\\t2026-06-18 11:58:04.7595562760\\t/home/appuser/workdir/knowledge/learnings/quirks.md'}",
+      "{'path': '/home/appuser/workdir/knowledge/state.json', 'after': '-rw-r--r--\\t138\\t2026-06-18 11:58:04.7028131760\\t/home/appuser/workdir/knowledge/state.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:57:33.9122418880\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:33.9126933830\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:33.9126933830\\t/tmp/claude-1000/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:10.1862638910\\t/tmp/claude-1000/-home-appuser/a2958f8d-67b5-43dc-967f-78f00b1c1261/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:58:31.4646556370\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:27.1092249890\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:30.7166836690\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:27.1062247830\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:34.7387502540\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:57:27.1092249890\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24755\\t2026-06-18 11:58:30.7124720940\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:57:27.1082249200\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:58:04.6838118680\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:57:28.1502966640\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:58:31.4646556370\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:57:28.1502966640\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1341\\t2026-06-18 11:57:28.1532968710\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "58    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "credential"
+        ]
+      },
+      "evidence_short": "skipped=credential"
+    },
+    {
+      "pattern": "malformed_skill_data",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 22.0,
+      "evidence_type": "intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "low",
+      "summary": "Skill contains malformed or invalid local data/config that may break execution.",
+      "evidence": {
+        "observed_errors": [
+          "cat: knowledge/state.json and 4 other files: No such file or directory (expected — confirms empty-state path; not a fault)"
+        ]
+      },
+      "evidence_short": "error=cat: knowledge/state.json and 4 other files: No such file or directory (expected — confirms empty-state path; not a fault)"
+    }
+  ]
+}

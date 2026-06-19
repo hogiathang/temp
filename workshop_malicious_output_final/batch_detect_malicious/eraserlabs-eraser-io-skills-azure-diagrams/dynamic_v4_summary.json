@@ -1,0 +1,246 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/eraserlabs-eraser-io-skills-azure-diagrams",
+  "skill_name": "eraserlabs-eraser-io-skills-azure-diagrams",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 91.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 91.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "app.eraser.io",
+      "fay.ns.cloudflare.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "34.8.177.196"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "116   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-m\", \"15\", \"-o\", \"/dev/null\", \"-w\", \"connect_ok http=%{http_code} ip=%{remote_ip}\\\\n\", \"-I\", \"https://app.eraser.io\"], 0x58c1d35ce640 /* 34 vars */) = 0",
+      "120   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-m\", \"30\", \"-X\", \"POST\", \"https://app.eraser.io/api/render/elements\", \"-H\", \"Content-Type: application/json\", \"-H\", \"X-Skill-Source: claude\", \"-H\", \"Authorization: Bearer dummy-token\", \"--data\", \"@request-payload.json\", \"-w\", \"\\\\n--- http_code=%{http_code} bytes=%{size_download} ---\\\\n\"], 0x65374e80f49...",
+      "https://app.eraser.io",
+      "https://app.eraser.io/api/render/elements",
+      "https://app.eraser.io/api/render/elements`"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill dir)",
+      "curl --version; jq --version; bash version; env presence check for ERASER_API_KEY/ERASER_THEME (no values printed)",
+      "jq validation + resource-type inventory of sample-arm-template.json",
+      "jq-based ARM->Eraser DSL transformation -> generated-diagram.eraser",
+      "jq -n build of request-payload.json + JSON validation",
+      "curl -I https://app.eraser.io (no auth, reachability) -> http 200",
+      "curl -X POST https://app.eraser.io/api/render/elements with X-Skill-Source: claude, Authorization: Bearer dummy-token, @request-payload.json -> http 401 Unauthenticated",
+      "116   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-m\", \"15\", \"-o\", \"/dev/null\", \"-w\", \"connect_ok http=%{http_code} ip=%{remote_ip}\\\\n\", \"-I\", \"https://app.eraser.io\"], 0x58c1d35ce640 /* 34 vars */) = 0",
+      "120   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-m\", \"30\", \"-X\", \"POST\", \"https://app.eraser.io/api/render/elements\", \"-H\", \"Content-Type: application/json\", \"-H\", \"X-Skill-Source: claude\", \"-H\", \"Authorization: Bearer dummy-token\", \"--data\", \"@request-payload.json\", \"-w\", \"\\\\n--- http_code=%{http_code} bytes=%{size_download} ---\\\\n\"], 0x65374e80f49...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6121689100f0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x6121689158a0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x58a43374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x58a4358c630 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x58a43376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x58a43ef2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5691d1bd0c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5691d1bd0d18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5691d1bd0c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x58a43ef2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x58a43ef2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x58a43ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x58a43ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x58a43ef2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x6221d43aa770 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x631c7b1b4be0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x631c7b1bc7f0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x631c7b1bc7f0 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x631c7b1bc7f0 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x631c7b1bc7f0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x631c7b1bc7f0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x631c7b1bc7f0 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/eraserlabs-eraser-io-skills-azure-diagrams/\"], 0x652fee196fb0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x5cecd023b810 /* 34 vars */ <unfinished ...>",
+      "95    execve(\"/usr/bin/curl\", [\"curl\", \"--version\"], 0x5cecd023b810 /* 34 vars */ <unfinished ...>",
+      "98    execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x5cecd023b810 /* 34 vars */ <unfinished ...>",
+      "97    execve(\"/usr/bin/jq\", [\"jq\", \"--version\"], 0x5cecd023b810 /* 34 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5cecd023b810 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/jq\", [\"jq\", \"-e\", \".resources | length\", \"sample-arm-template.json\"], 0x63832b37e590 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/jq\", [\"jq\", \"-r\", \".resources[].type\", \"sample-arm-template.json\"], 0x63832b37e590 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/tee\", [\"tee\", \"generated-diagram.eraser\"], 0x59bd1168c6f0 /* 34 vars */ <unfinished ...>",
+      "106   execve(\"/usr/bin/jq\", [\"jq\", \"-r\", \"\\n  def icon($t):\\n    if   $t==\\\"Microsoft.Compute/virtualMachines\\\" then \\\"azure-vm\\\"\\n    elif $t==\\\"Microsoft.Web/sites\\\"               then \\\"azure-app-service\\\"\\n    elif $t==\\\"Microsoft.Storage/storageAccounts\\\" then \\\"azure-storage\\\"\\n    elif $t==\\\"Microsoft.Sql/servers\\\"             then \\\"azure-s...",
+      "110   execve(\"/usr/bin/cat\", [\"cat\", \"generated-diagram.eraser\"], 0x6037cd0a6af0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/jq\", [\"jq\", \"-n\", \"--arg\", \"code\", \"resource-group [label: \\\"Resource Group rg-main\\\"] {\\n  myVNet [label: \\\"VNet 10.0.0.0/16\\\"] {\\n    subnet1 [label: \\\"Subnet subnet1 10.0.1.0/24\\\"] {\\n      myVM [icon: azure-vm, label: \\\"VM Standard_B1s\\\"]\\n    }\\n  }\\n  myAppService [icon: azure-app-service, label: \\\"myAppService\\\"]\\n  my..."
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "curl",
+      "jq",
+      "tee",
+      "wc"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill dir)",
+      "curl --version; jq --version; bash version; env presence check for ERASER_API_KEY/ERASER_THEME (no values printed)",
+      "jq validation + resource-type inventory of sample-arm-template.json",
+      "jq-based ARM->Eraser DSL transformation -> generated-diagram.eraser",
+      "jq -n build of request-payload.json + JSON validation",
+      "curl -I https://app.eraser.io (no auth, reachability) -> http 200",
+      "curl -X POST https://app.eraser.io/api/render/elements with X-Skill-Source: claude, Authorization: Bearer dummy-token, @request-payload.json -> http 401 Unauthenticated",
+      "{'command': 'Authenticated POST to /api/render/elements with a real ERASER_API_KEY', 'reason': 'credential required / would be a real external render action — no real key present, used dummy token instead'}",
+      "Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy token instead"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:34:29.6125914130\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:36:06.7100559550\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688863895', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:34:23.8958768200\\t/home/appuser/.claude/backups/.claude.json.backup.1781688863895'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688966711', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:36:06.7100559550\\t/home/appuser/.claude/backups/.claude.json.backup.1781688966711'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:34:24.4061881920\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:24.6054275520\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:29.5595605040\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1.jsonl', 'after': '-rw-------\\t104893\\t2026-06-17 09:36:06.3973499940\\t/home/appuser/.claude/projects/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:28.3364520360\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/54211aef-0333-4369-bc89-2d226705ead1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:28.3364520360\\t/home/appuser/.claude/session-env/54211aef-0333-4369-bc89-2d226705ead1'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:36:06.3810338680\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:36:06.3840340690\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/generated-diagram.eraser', 'after': '-rw-r--r--\\t448\\t2026-06-17 09:35:14.8576840830\\t/home/appuser/workdir/generated-diagram.eraser'}",
+      "{'path': '/home/appuser/workdir/request-payload.json', 'after': '-rw-r--r--\\t682\\t2026-06-17 09:35:23.3015333970\\t/home/appuser/workdir/request-payload.json'}",
+      "{'path': '/home/appuser/workdir/sample-arm-template.json', 'after': '-rw-r--r--\\t885\\t2026-06-17 09:35:00.3766029240\\t/home/appuser/workdir/sample-arm-template.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:34:28.3404523040\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:28.3416199790\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:28.3416199790\\t/tmp/claude-1000/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:35:47.0467359370\\t/tmp/claude-1000/-home-appuser/54211aef-0333-4369-bc89-2d226705ead1/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:36:07.4091028830\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:22.1590373380\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:36:06.7150562910\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:22.1560371370\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:29.6115376340\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:34:22.1590373380\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:36:06.7130844890\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:34:22.1580372710\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:35:23.2571389170\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:34:23.2041074950\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:36:07.4091028830\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:34:23.2041074950\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1407\\t2026-06-17 09:34:23.2071076970\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "# what i executed (all safe, local) 1. read `skill.md` (only file in the skill). 2. checked tooling/env: curl 7.88.1, jq 1.6, bash 5.2 present; `eraser_api_key`/`eraser_theme` **unset** (checked presence only, no values printed). 3. created a dummy"
+        ],
+        "commands_skipped": [
+          "Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy token instead"
+        ],
+        "skipped_unsafe_commands": [
+          "Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy token instead"
+        ]
+      },
+      "evidence_short": "primitive=# what i executed (all safe, local) 1. read `skill.md` (only file in the skill). 2. checked tooling/env: curl 7.88.1, jq 1.6, bash 5.2 present; `eraser_api_key`/`eraser_theme` *...; command=Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy to..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy token instead"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy token instead"
+        ]
+      },
+      "evidence_short": "skipped=Authenticated POST to /api/render/elements with a real ERASER_API_KEY | reason: credential required / would be a real external render action — no real key present, used dummy to..."
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "106   execve(\"/usr/bin/jq\", [\"jq\", \"-r\", \"\\n  def icon($t):\\n    if   $t==\\\"Microsoft.Compute/virtualMachines\\\" then \\\"azure-vm\\\"\\n    elif $t==\\\"Microsoft.Web/sites\\\"               then \\\"azure-app-service\\\"\\n    elif $t==\\\"Microsoft.Storage/storageAccounts\\\" then \\\"azure-storage\\\"\\n    elif $t==\\\"Microsoft.Sql/servers\\\"             then \\\"azure-sql\\\"\\n    else \\\"azure\\\" end;\\n\\n  ( [ .resources[] | select(.type==\\\"Microsoft.Network/virtualNetworks\\\") ][0] ) as $vnet\\n  | ( [ .resources[] | select(.type==\\\"Microsoft.Resources/resourceGroups\\\") ][0].name ) as $rg\\n  | ( $vnet.properties.addressSpace.addressPrefixes[0] ) as $cidr\\n  | ( $vnet.properties.subnets[0] ) as $sub\\n  | ( [ .resources[] | select(.type==\\\"Microsoft.Compute/virtualMachines\\\") ][0] ) as $vm\\n  | \\\"resource-group [label: \\\\\\\"Resource Group \\\\($rg)\\\\\\\"] {\\\",\\n    \\\"  \\\\($vnet.name) [label: \\\\\\\"VNet \\\\($cidr)\\\\\\\"] {\\\",\\n    \\\"    \\\\($sub.name) [label: \\\\\\\"Subnet \\\\($sub.name) \\\\($sub.properties.addressPrefix)\\\\\\\"] {\\\",\\n    \\\"      \\\\($vm.name) [icon: azure-vm, label: \\\\\\\"VM \\\\($vm.properties.hardwareProfile.vmSize)\\\\\\\"]\\\",\\n    \\\"    }\\\",\\n    \\\"  }\\\",\\n    ( [ .resources[]\\n        | select(.type|test(\\\"Microsoft.(Web/sites|Storage/storageAccounts|Sql/servers)\\\"))\\n        | \\\"  \\\\(.name) [icon: \\\\(icon(.type)), label: \\\\\\\"\\\\(.name)\\\\\\\"]\\\" ] | .[] ),\\n    \\\"}\\\",\\n    \\\"\\\",\\n    \\\"myAppService -> mystorageaccount\\\",\\n    \\\"myVM -> mysqlserver\\\"\\n\", \"sample-arm-template.json\"], 0x59bd1168c6f0 /* 34 vars */ <unfinished ...>"
+        ],
+        "process_enumeration": [
+          "106   execve(\"/usr/bin/jq\", [\"jq\", \"-r\", \"\\n  def icon($t):\\n    if   $t==\\\"Microsoft.Compute/virtualMachines\\\" then \\\"azure-vm\\\"\\n    elif $t==\\\"Microsoft.Web/sites\\\"               then \\\"azure-app-service\\\"\\n    elif $t==\\\"Microsoft.Storage/storageAccounts\\\" then \\\"azure-storage\\\"\\n    elif $t==\\\"Microsoft.Sql/servers\\\"             then \\\"azure-sql\\\"\\n    else \\\"azure\\\" end;\\n\\n  ( [ .resources[] | select(.type==\\\"Microsoft.Network/virtualNetworks\\\") ][0] ) as $vnet\\n  | ( [ .resources[] | select(.type==\\\"Microsoft.Resources/resourceGroups\\\") ][0].name ) as $rg\\n  | ( $vnet.properties.addressSpace.addressPrefixes[0] ) as $cidr\\n  | ( $vnet.properties.subnets[0] ) as $sub\\n  | ( [ .resources[] | select(.type==\\\"Microsoft.Compute/virtualMachines\\\") ][0] ) as $vm\\n  | \\\"resource-group [label: \\\\\\\"Resource Group \\\\($rg)\\\\\\\"] {\\\",\\n    \\\"  \\\\($vnet.name) [label: \\\\\\\"VNet \\\\($cidr)\\\\\\\"] {\\\",\\n    \\\"    \\\\($sub.name) [label: \\\\\\\"Subnet \\\\($sub.name) \\\\($sub.properties.addressPrefix)\\\\\\\"] {\\\",\\n    \\\"      \\\\($vm.name) [icon: azure-vm, label: \\\\\\\"VM \\\\($vm.properties.hardwareProfile.vmSize)\\\\\\\"]\\\",\\n    \\\"    }\\\",\\n    \\\"  }\\\",\\n    ( [ .resources[]\\n        | select(.type|test(\\\"Microsoft.(Web/sites|Storage/storageAccounts|Sql/servers)\\\"))\\n        | \\\"  \\\\(.name) [icon: \\\\(icon(.type)), label: \\\\\\\"\\\\(.name)\\\\\\\"]\\\" ] | .[] ),\\n    \\\"}\\\",\\n    \\\"\\\",\\n    \\\"myAppService -> mystorageaccount\\\",\\n    \\\"myVM -> mysqlserver\\\"\\n\", \"sample-arm-template.json\"], 0x59bd1168c6f0 /* 34 vars */ <unfinished ...>"
+        ]
+      },
+      "evidence_short": "strong=106   execve(\"/usr/bin/jq\", [\"jq\", \"-r\", \"\\n  def icon($t):\\n    if   $t==\\\"Microsoft.Compute/virtualMachines\\\" then \\\"azure-vm\\\"\\n    elif $t==\\\"Microsoft.W..."
+    }
+  ]
+}

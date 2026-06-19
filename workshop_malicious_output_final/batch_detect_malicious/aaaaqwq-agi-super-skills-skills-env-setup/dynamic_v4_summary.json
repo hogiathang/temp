@@ -1,0 +1,243 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/aaaaqwq-agi-super-skills-skills-env-setup",
+  "skill_name": "aaaaqwq-agi-super-skills-skills-env-setup",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 0,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://open.bigmodel.cn/api/anthropic`"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version",
+      "python3 sync_env.py --help",
+      "python3 backup_env.py --help",
+      "python3 restore_env.py --help",
+      "HOME=<sandbox> python3 sync_env.py --claude-dir <sandbox>/.claude",
+      "HOME=<sandbox> python3 backup_env.py --claude-dir <sandbox>/.claude --output-dir /home/appuser/workdir",
+      "HOME=<restore_sandbox> python3 restore_env.py <backup.zip> --claude-dir <restore_sandbox>/.claude --force",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b33700b90f0 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5b33700be8a0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x42b71f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x42b7218c630 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x42b71f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x42b72b02310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x607c2dc4bc38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x607c2dc4bd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x607c2dc4bc68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x42b72b02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x42b72b02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x42b72b03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x42b72b03490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x42b72b03490 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x574e7048f770 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d03d9936be0 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d03d993e7f0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d03d993e7f0 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x5613f66ce8c0 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/aaaaqwq-agi-super-skills-skills-env-setup\", \"-type\", \"f\"], 0x5613f66e3d40 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5bcf9af3fd30 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir/fake_claude\"], 0x5bcf9af3fd30 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5bcf9af3fd30 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"sync_env.py\", \"--help\"], 0x582d98a894e0 /* 34 vars */) = 0",
+      "105   execve(\"/usr/local/bin/python3\", [\"python3\", \"backup_env.py\", \"--help\"], 0x582d98a894e0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/local/bin/python3\", [\"python3\", \"restore_env.py\", \"--help\"], 0x582d98a894e0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir/sandbox_home/.claude\"], 0x5853dcaabf00 /* 34 vars */) = 0",
+      "112   execve(\"/usr/bin/cat\", [\"cat\"], 0x5853dcaabf00 /* 34 vars */) = 0",
+      "113   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/sandbox_home\"], 0x5853dcaabf00 /* 34 vars */) = 0",
+      "114   execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/workdir/sandbox_home/.claude.json\"], 0x5853dcaabf00 /* 34 vars */) = 0",
+      "117   execve(\"/usr/local/bin/python3\", [\"python3\", \"sync_env.py\", \"--claude-dir\", \"/home/appuser/workdir/sandbox_home/.claude\"], 0x59e4eaa54180 /* 34 vars */) = 0",
+      "120   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/sandbox_home/.claude/output-styles/\"], 0x565599c08090 /* 34 vars */) = 0",
+      "121   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"\\nimport json\\nd=json.load(open('/home/appuser/workdir/sandbox_home/.claude.json'))\\nprint('mcpServers:', list(d.get('mcpServers',{}).keys()))\\nctx=d.get('mcpServers',{}).get('context7',{})\\nprint('context7 args contains embedded key:', any('ctx7sk-' in str(a) for a in ctx.get('args',[])))\\n..."
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "python3",
+      "mkdir",
+      "ls",
+      "sort"
+    ],
+    "tool_call_patterns": [
+      "python3 --version",
+      "python3 sync_env.py --help",
+      "python3 backup_env.py --help",
+      "python3 restore_env.py --help",
+      "HOME=<sandbox> python3 sync_env.py --claude-dir <sandbox>/.claude",
+      "HOME=<sandbox> python3 backup_env.py --claude-dir <sandbox>/.claude --output-dir /home/appuser/workdir",
+      "HOME=<restore_sandbox> python3 restore_env.py <backup.zip> --claude-dir <restore_sandbox>/.claude --force",
+      "{'command': 'powershell config/servers/install_mcp.ps1', 'reason': 'outside sandbox / wrong platform (Windows-only) and modifies ~/.claude/settings.json'}",
+      "{'command': 'python3 sync_env.py  (default paths, real ~/.claude)', 'reason': 'would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against isolated HOME instead'}",
+      "{'command': 'npm install / build / launch config/servers chrome-devtools MCP', 'reason': 'would execute downloaded npm code and open network/browser connections; not required for validation'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:02:58.7405589640\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:34.1440998660\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683373031', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:02:53.0317630020\\t/home/appuser/.claude/backups/.claude.json.backup.1781683373031'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781683534143', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:05:34.1440998660\\t/home/appuser/.claude/backups/.claude.json.backup.1781683534143'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:02:53.5596087040\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:53.7403318950\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.6975592350\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7.jsonl', 'after': '-rw-------\\t295754\\t2026-06-17 08:05:33.8756549510\\t/home/appuser/.claude/projects/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.1144597090\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/b091a390-366f-4a67-8af1-90355823e3c7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.1144597090\\t/home/appuser/.claude/session-env/b091a390-366f-4a67-8af1-90355823e3c7'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:05:33.8423687290\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:33.8463689980\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/backup_record_20260617_080437.json', 'after': '-rw-r--r--\\t811\\t2026-06-17 08:04:37.0657723480\\t/home/appuser/workdir/backup_record_20260617_080437.json'}",
+      "{'path': '/home/appuser/workdir/claude_env_backup_20260617_080437.zip', 'after': '-rw-r--r--\\t15470\\t2026-06-17 08:04:37.0625207480\\t/home/appuser/workdir/claude_env_backup_20260617_080437.zip'}",
+      "{'path': '/home/appuser/workdir/fake_claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:03:50.2539662790\\t/home/appuser/workdir/fake_claude'}",
+      "{'path': '/home/appuser/workdir/restore_target', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:42.8302177690\\t/home/appuser/workdir/restore_target'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:42.8250020500\\t/home/appuser/workdir/restore_target/.claude'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/CLAUDE.md', 'after': '-rw-r--r--\\t3234\\t2026-06-17 08:04:42.8115287030\\t/home/appuser/workdir/restore_target/.claude/CLAUDE.md'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/output-styles', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:42.8219436420\\t/home/appuser/workdir/restore_target/.claude/output-styles'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/output-styles/engineer-professional.md', 'after': '-rw-r--r--\\t2835\\t2026-06-17 08:04:42.8143284290\\t/home/appuser/workdir/restore_target/.claude/output-styles/engineer-professional.md'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/output-styles/laowang-engineer.md', 'after': '-rw-r--r--\\t6573\\t2026-06-17 08:04:42.8135625140\\t/home/appuser/workdir/restore_target/.claude/output-styles/laowang-engineer.md'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/output-styles/nekomata-engineer.md', 'after': '-rw-r--r--\\t5343\\t2026-06-17 08:04:42.8152400940\\t/home/appuser/workdir/restore_target/.claude/output-styles/nekomata-engineer.md'}",
+      "{'path': '/home/appuser/workdir/restore_target/.claude/output-styles/ojousama-engineer.md', 'after': '-rw-r--r--\\t6810\\t2026-06-17 08:04:42.8125819100\\t/home/appuser/workdir/restore_target/.claude/output-styles/ojousama-engineer.md'}",
+      "{'path': '/home/appuser/workdir/restore_target/mcp_config_restore.json', 'after': '-rw-r--r--\\t3816\\t2026-06-17 08:04:42.8275534670\\t/home/appuser/workdir/restore_target/mcp_config_restore.json'}",
+      "{'path': '/home/appuser/workdir/restore_target/restore_record_080437.json', 'after': '-rw-r--r--\\t758\\t2026-06-17 08:04:42.8308730010\\t/home/appuser/workdir/restore_target/restore_record_080437.json'}",
+      "{'path': '/home/appuser/workdir/sandbox_home', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:23.5866523460\\t/home/appuser/workdir/sandbox_home'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:23.5514667430\\t/home/appuser/workdir/sandbox_home/.claude'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude.json', 'after': '-rw-r--r--\\t3841\\t2026-06-17 08:04:23.5566503320\\t/home/appuser/workdir/sandbox_home/.claude.json'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/CLAUDE.md', 'after': '-rw-r--r--\\t3234\\t2026-06-17 08:02:51.2707154940\\t/home/appuser/workdir/sandbox_home/.claude/CLAUDE.md'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/output-styles', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:23.5476497280\\t/home/appuser/workdir/sandbox_home/.claude/output-styles'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/output-styles/engineer-professional.md', 'after': '-rw-r--r--\\t2835\\t2026-06-17 08:02:51.2724209310\\t/home/appuser/workdir/sandbox_home/.claude/output-styles/engineer-professional.md'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/output-styles/laowang-engineer.md', 'after': '-rw-r--r--\\t6573\\t2026-06-17 08:02:51.2726254420\\t/home/appuser/workdir/sandbox_home/.claude/output-styles/laowang-engineer.md'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/output-styles/nekomata-engineer.md', 'after': '-rw-r--r--\\t5343\\t2026-06-17 08:02:51.2727642030\\t/home/appuser/workdir/sandbox_home/.claude/output-styles/nekomata-engineer.md'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/.claude/output-styles/ojousama-engineer.md', 'after': '-rw-r--r--\\t6810\\t2026-06-17 08:02:51.2731149160\\t/home/appuser/workdir/sandbox_home/.claude/output-styles/ojousama-engineer.md'}",
+      "{'path': '/home/appuser/workdir/sandbox_home/sync_record_20260617_080423.json', 'after': '-rw-r--r--\\t629\\t2026-06-17 08:04:23.5876524130\\t/home/appuser/workdir/sandbox_home/sync_record_20260617_080423.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:02:58.1189247430\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.1189247430\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.1193354730\\t/tmp/claude-1000/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:52.7606108410\\t/tmp/claude-1000/-home-appuser/b091a390-366f-4a67-8af1-90355823e3c7/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:05:34.8054333810\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:51.2654546980\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:05:34.1494115290\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:51.2624544970\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:58.7389563920\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:02:51.2654546980\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:05:34.1454890600\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:02:51.2644546310\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:04:42.3798472650\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:02:52.3805295530\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:05:34.8054333810\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:02:52.3805295530\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t79007\\t2026-06-17 08:02:52.3995308280\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "52    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "`restore_env.py` — unzips a backup and copies files back. the scripts make **no network calls, no remote code execution, no exfiltration**. they are mechanically benign. however, the **bundled config payload is concerning** (details below). **what i executed"
+        ],
+        "commands_skipped": [
+          "powershell config/servers/install_mcp.ps1 | reason: outside sandbox / wrong platform (Windows-only) and modifies ~/.claude/settings.json",
+          "python3 sync_env.py  (default paths, real ~/.claude) | reason: would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against isolated HOME instead",
+          "npm install / build / launch config/servers chrome-devtools MCP | reason: would execute downloaded npm code and open network/browser connections; not required for validation"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=`restore_env.py` — unzips a backup and copies files back. the scripts make **no network calls, no remote code execution, no exfiltration**. they are mechanically benign. however...; command=powershell config/servers/install_mcp.ps1 | reason: outside sandbox / wrong platform (Windows-only) and modifies ~/.claude/settings.json"
+    },
+    {
+      "pattern": "persistence_attempt",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill attempted or instructed persistence-related configuration changes.",
+      "evidence": {
+        "primitive_evidence": [
+          "l ~/.claude)\", \"reason\": \"would inject embedded context7 api key into real ~/.claude.json and install prompt-override claude.md; ran against isolated home instead\" }, { \"command\": \"npm install / build / launch config/servers chrome-devtools mcp\",",
+          "-looking context7 api key (`ctx7sk-…`) that **is** merged into `~/.claude.json` on sync. 3. `config/claude.md` is a global behavioral override (forces hidden \"thinking\" protocol, forces chinese-only responses, instructs \"禁止使用 edit 工具\") that gets written to `~/.claude/claude.md`. 4. by default the scripts target the **real** `~/.claude` and `~/.claude.json` — i deliber",
+          "ason\": \"would inject embedded context7 api key into real ~/.claude.json and install prompt-override claude.md; ran against isolated home instead\" }, { \"command\": \"npm install / build / launch config/servers chrome-devtools mcp\", \"reason\": \"would execute downloaded npm code and open network/browser connectio"
+        ],
+        "skipped_persistence": [
+          "python3 sync_env.py  (default paths, real ~/.claude) | reason: would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against isolated HOME instead"
+        ],
+        "persistence_instructions": [
+          "claude.md",
+          "python3 sync_env.py  (default paths, real ~/.claude) | reason: would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against isolated HOME instead"
+        ]
+      },
+      "evidence_short": "primitive=l ~/.claude)\", \"reason\": \"would inject embedded context7 api key into real ~/.claude.json and install prompt-override claude.md; ran against isolated home instead\" }, { \"command...; persistence=python3 sync_env.py  (default paths, real ~/.claude) | reason: would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against..."
+    }
+  ]
+}

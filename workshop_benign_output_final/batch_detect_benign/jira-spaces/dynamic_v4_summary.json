@@ -1,0 +1,201 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/jira-spaces",
+  "skill_name": "jira-spaces",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 35.0,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 1,
+  "num_raw_patterns": 1,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 1,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 35.0 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "http://127.0.0.1:9/wiki/rest/api/space?...",
+      "http://127.0.0.1:9/wiki/rest/api/space",
+      "http://127.0.0.1:9/wiki/rest/api/space/docs?...",
+      "http://127.0.0.1:9`",
+      "http://127.0.0.1:9/wiki/rest/api/space/DOCS?..."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version / node --version (env check)",
+      "python3 list-spaces.py (no env) -> env-guard exit 1",
+      "python3 create-space.py --help (no env) -> env-guard exit 1",
+      "node list-spaces.mjs (no env) -> env-guard exit 1",
+      "python3 create-space.py --help (dummy env) -> usage, exit 0",
+      "python3 create-space.py 'bad key!' 'Some Name' -> key validation error, no network",
+      "python3 create-space.py (no args) -> usage, exit 1",
+      "python3 list-spaces.py (dummy env, localhost) -> network GET attempt, connection refused",
+      "python3 create-space.py DOCS 'Documentation Space' 'Dummy desc' -> network POST attempt, connection refused",
+      "python3 delete-space.py DOCS --confirm -> getSpace network attempt failed -> 'not found', NO delete issued",
+      "node list-spaces.mjs (dummy env, localhost) -> network GET attempt, fetch failed",
+      "node create-space.mjs 'bad key' 'X' -> key validation error, no network",
+      "node create-space.mjs DOCS 'Documentation Space' -> network POST attempt, fetch failed",
+      "node delete-space.mjs --help -> usage, exit 0",
+      "printf 'no' | python3 delete-space.py DOCS -> lookup failed, 'not found'",
+      "42    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x59c4e767b070 /* 22 vars */) = 0",
+      "43    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x59c4e76807e0 /* 22 vars */ <unfinished ...>",
+      "55    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x45071f74510 /* 28 vars */) = 0",
+      "57    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4507218c5f0 /* 24 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x45071f76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x45072af2310 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x603be699dc38 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x603be699dd18 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x603be699dc68 /* 29 vars */) = 0",
+      "65    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x45072af2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "66    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x45072af2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x45072af3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x45072af3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x45072af3490 /* 32 vars */) = 0",
+      "69    execve(\"/usr/bin/env\", [\"env\"], 0x5e53019be6f0 /* 32 vars */) = 0",
+      "71    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5e73b920bb60 /* 31 vars */) = 0",
+      "73    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "77    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "79    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "83    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5e73b9213730 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5e73b9213730 /* 31 vars */) = 0",
+      "91    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-spaces/\"], 0x575870c05c70 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/jira-spaces/\", \"-type\", \"f\"], 0x575870c05c70 /* 34 vars */) = 0",
+      "99    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x644e407cced0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/.env\"], 0x644e407cced0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-spaces/run.js\"], 0x644e407cced0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x644e407cced0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/local/bin/python3\", [\"python3\", \"list-spaces.py\"], 0x61c68552d770 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3",
+      "mkdir",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "python3 --version / node --version (env check)",
+      "python3 list-spaces.py (no env) -> env-guard exit 1",
+      "python3 create-space.py --help (no env) -> env-guard exit 1",
+      "node list-spaces.mjs (no env) -> env-guard exit 1",
+      "python3 create-space.py --help (dummy env) -> usage, exit 0",
+      "python3 create-space.py 'bad key!' 'Some Name' -> key validation error, no network",
+      "python3 create-space.py (no args) -> usage, exit 1",
+      "python3 list-spaces.py (dummy env, localhost) -> network GET attempt, connection refused",
+      "python3 create-space.py DOCS 'Documentation Space' 'Dummy desc' -> network POST attempt, connection refused",
+      "python3 delete-space.py DOCS --confirm -> getSpace network attempt failed -> 'not found', NO delete issued",
+      "node list-spaces.mjs (dummy env, localhost) -> network GET attempt, fetch failed",
+      "node create-space.mjs 'bad key' 'X' -> key validation error, no network",
+      "node create-space.mjs DOCS 'Documentation Space' -> network POST attempt, fetch failed",
+      "node delete-space.mjs --help -> usage, exit 0",
+      "printf 'no' | python3 delete-space.py DOCS -> lookup failed, 'not found'",
+      "{'command': 'Real create/list/delete against a live Confluence instance (e.g. node run.js delete-space DOCS --confirm with real JIRA_BASE_URL/token)', 'reason': 'credential required / irreversible action — would require real Atlassian API token and could permanently delete a space; only localhost dummy-cred attempts were run'}",
+      "Real create/list/delete against a live Confluence instance (e.g. node run.js delete-space DOCS --confirm with real JIRA_BASE_URL/token) | reason: credential required / irreversible action — would require real Atlassian API token and could permanently delete a space; only localhost dummy-cred attempts were run"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:52:19.6958004960\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:54:10.3562054710\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783533881', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:52:13.8823757600\\t/home/appuser/.claude/backups/.claude.json.backup.1781783533881'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783650355', 'after': '-rw-r--r--\\t24568\\t2026-06-18 11:54:10.3563580610\\t/home/appuser/.claude/backups/.claude.json.backup.1781783650355'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:52:14.4301734100\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:14.6721905970\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:19.6101661310\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4.jsonl', 'after': '-rw-------\\t174054\\t2026-06-18 11:54:10.0648971250\\t/home/appuser/.claude/projects/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:18.7913529280\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/29e832b3-59e5-48c6-9331-17860ab2d6c4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:18.7913020200\\t/home/appuser/.claude/session-env/29e832b3-59e5-48c6-9331-17860ab2d6c4'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:54:10.0416575660\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:54:10.0466579100\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t27\\t2026-06-18 11:53:40.2176042810\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:52:18.7962277960\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:18.7964435210\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:18.7974148760\\t/tmp/claude-1000/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:53:41.3892760430\\t/tmp/claude-1000/-home-appuser/29e832b3-59e5-48c6-9331-17860ab2d6c4/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:54:11.0587275870\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:12.1065381360\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:54:10.3636797360\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:12.1035379300\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:19.6930604410\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:52:12.1065381360\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24651\\t2026-06-18 11:54:10.3590143220\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:52:12.1055380670\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:53:40.2156041430\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:52:13.1546102930\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:54:11.0587275870\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:52:13.1546102930\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2114\\t2026-06-18 11:52:13.1586105680\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Real create/list/delete against a live Confluence instance (e.g. node run.js delete-space DOCS --confirm with real JIRA_BASE_URL/token) | reason: credential required / irreversible action — would require real Atlassian API token and could permanently delete a space; only localhost dummy-cred attempts were run"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "Real create/list/delete against a live Confluence instance (e.g. node run.js delete-space DOCS --confirm with real JIRA_BASE_URL/token) | reason: credential required / irreversible action — would require real Atlassian API token and could permanently delete a space; only localhost dummy-cred attempts were run"
+        ]
+      },
+      "evidence_short": "skipped=Real create/list/delete against a live Confluence instance (e.g. node run.js delete-space DOCS --confirm with real JIRA_BASE_URL/token) | reason: credential required / irreversi..."
+    }
+  ]
+}

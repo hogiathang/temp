@@ -1,0 +1,205 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/cisco-ai-defense-skill-scanner-database-query",
+  "skill_name": "cisco-ai-defense-skill-scanner-database-query",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "python3 --version ; which python3",
+      "python3 -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+      "cp query.py ./query.py (into workdir)",
+      "python3 query.py  -> printed 'Database ready'",
+      "python3 driver: created dummy users.db, ran search_users/get_user_by_id with normal + injection-style dummy inputs",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x55d87663e110 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x55d8766438d0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x4a7ce374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4a7ce58c638 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x4a7ce376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x4a7ceef1f90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5d6dac426c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5d6dac426d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5d6dac426c68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x4a7ceef1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x4a7ceef1f90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x4a7ceefaf10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x4a7ceef1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x4a7ceef1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5e364f2ec790 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5cb5e0c31c00 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5cb5e0c39820 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5cb5e0c39820 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5cb5e0c39820 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cb5e0c39820 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cb5e0c39820 /* 31 vars */ <unfinished ...>",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5cb5e0c39820 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-database-query/\"], 0x5bb1f1c4a130 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5d4c09b5d4f0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5d4c09b5d4f0 /* 34 vars */ <unfinished ...>",
+      "97    execve(\"/usr/bin/which\", [\"which\", \"python3\"], 0x5d4c09b5d4f0 /* 34 vars */) = 0",
+      "98    execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import sqlite3; print('sqlite3 module OK', sqlite3.sqlite_version)\"], 0x5d4c09b5d4f0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/cp\", [\"cp\", \"/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-database-query/query.py\", \"./query.py\"], 0x5dfec8c6bdc0 /* 34 vars */) = 0",
+      "102   execve(\"/usr/local/bin/python3\", [\"python3\", \"query.py\"], 0x5dfec8c6bdc0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x5dfec8c6bdc0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x57edee374b00 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x57edee374b00 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "python3",
+      "which",
+      "cp"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "python3 --version ; which python3",
+      "python3 -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+      "cp query.py ./query.py (into workdir)",
+      "python3 query.py  -> printed 'Database ready'",
+      "python3 driver: created dummy users.db, ran search_users/get_user_by_id with normal + injection-style dummy inputs"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:42:01.7907721550\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:58.7370662130\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685715500', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:41:55.5008214870\\t/home/appuser/.claude/backups/.claude.json.backup.1781685715500'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685778737', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:42:58.7370662130\\t/home/appuser/.claude/backups/.claude.json.backup.1781685778737'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:41:56.2848741160\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:41:56.7034693200\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.6125575360\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65.jsonl', 'after': '-rw-------\\t64576\\t2026-06-17 08:42:58.4550328170\\t/home/appuser/.claude/projects/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.8232458780\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/d01d983b-4d61-4aa4-9acb-4c8dc633cf65', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.8232458780\\t/home/appuser/.claude/session-env/d01d983b-4d61-4aa4-9acb-4c8dc633cf65'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:42:58.4340458720\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:58.4380461410\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:35.6203249190\\t/home/appuser/workdir/__pycache__'}",
+      "{'path': '/home/appuser/workdir/__pycache__/query.cpython-310.pyc', 'after': '-rw-r--r--\\t816\\t2026-06-17 08:42:35.6203249190\\t/home/appuser/workdir/__pycache__/query.cpython-310.pyc'}",
+      "{'path': '/home/appuser/workdir/query.py', 'after': '-rw-r--r--\\t1312\\t2026-06-17 08:42:23.6054053280\\t/home/appuser/workdir/query.py'}",
+      "{'path': '/home/appuser/workdir/users.db', 'after': '-rw-r--r--\\t8192\\t2026-06-17 08:42:35.6435160630\\t/home/appuser/workdir/users.db'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:42:01.8412470860\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.8412470860\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.8422471530\\t/tmp/claude-1000/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:35.7215212990\\t/tmp/claude-1000/-home-appuser/d01d983b-4d61-4aa4-9acb-4c8dc633cf65/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:42:59.4601147470\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:41:52.8596441980\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:58.7420665480\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:41:52.8576440640\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:01.8232458780\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:41:52.8596441980\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:42:58.7402337580\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:41:52.8596441980\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:42:35.6445161300\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:41:53.9207154220\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:42:59.4601147470\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:41:53.9207154220\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1679\\t2026-06-17 08:41:53.9257157580\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "sql_injection_or_unsafe_query_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Suspicious correlated behavior detected.",
+      "evidence": {
+        "source": "claude_output.txt",
+        "primitive_evidence": [
+          "parameterized statements; in reality is an evaluation fixture whose query.py intentionally contains sql injection via string/f-string concatenation.\", \"files_inspected\": [ \"/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-database-query",
+          "parameterized statements; in reality is an evaluation fixture whose query.py intentionally contains sql injection via string/f-string concatenation. mkdir -p /home/appuser/workdir python3 --version ; which python3 python3 -c \"import sqlite3; print(sql",
+          "n reality is an evaluation fixture whose query.py intentionally contains sql injection via string/f-string concatenation.\", \"files_inspected\": [ \"/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-database-query/skill.md\", \"/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-database-query/query.py\", \"/home/appuser/.claude/skills/cis",
+          "n reality is an evaluation fixture whose query.py intentionally contains sql injection via string/f-string concatenation. mkdir -p /home/appuser/workdir python3 --version ; which python3 python3 -c \"import sqlite3; print(sqlite3.sqlite_version)\" cp query.py ./query.py (into workdir) python3 query.py -> printed 'database ready' python3 driver: created dummy users.db, ran search_users/get_user_by_id with normal + injection-style dummy",
+          "'1'='1` broke out of the `like` clause and returned **all** rows, and the numeric `id` accepted `1 or 1=1` — both proving the f-string concatenation (not parameterized queries) is exploitable. no network calls, no credentials, no system changes."
+        ],
+        "commands_skipped": []
+      },
+      "evidence_short": "source=claude_output.txt"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "credential"
+        ]
+      },
+      "evidence_short": "skipped=credential"
+    }
+  ]
+}

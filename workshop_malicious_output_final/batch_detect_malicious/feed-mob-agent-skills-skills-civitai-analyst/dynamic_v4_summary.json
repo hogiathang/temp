@@ -1,0 +1,248 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/feed-mob-agent-skills-skills-civitai-analyst",
+  "skill_name": "feed-mob-agent-skills-skills-civitai-analyst",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 88.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 88.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io",
+      "n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io.asia-southeast2-a.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io.c.cs-poc-t2pujzx25dhamp5fwmxhcwi.internal",
+      "n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io.google.internal",
+      "ns.asia-southeast2.gcedns-prod.internal",
+      "ns.global.gcedns-prod.internal"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "18.191.220.185"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "119   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"12\", \"https://n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io/\", \"-o\", \"/dev/null\", \"-w\", \"http_code=%{http_code} remote_ip=%{remote_ip} time_total=%{time_total}s\\\\n\"], 0x62f626ba4fb0 /* 34 vars */) = 0",
+      "https://n8n-...sslip.io/"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "env presence check for CIVITAI_RECORD_MCP_SERVER_TOKEN (NOT SET; value never printed)",
+      "tool availability check (psql MISSING; python3/node/jq/curl present)",
+      "getent hosts <mcp-host> (resolved 18.191.220.185)",
+      "curl -sS -I --max-time 12 https://<mcp-host>/ (HEAD, no auth header) -> http_code=200",
+      "python3 static structural lint of 7 SQL templates (all read-only SELECT)",
+      "generated generated_top10_this_week.sql from top-performing-assets template",
+      "python3 render weekly_report.json + weekly_report.html from templates with mock data",
+      "jq validation of weekly_report.json",
+      "119   execve(\"/usr/bin/curl\", [\"curl\", \"-sS\", \"-I\", \"--max-time\", \"12\", \"https://n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io/\", \"-o\", \"/dev/null\", \"-w\", \"http_code=%{http_code} remote_ip=%{remote_ip} time_total=%{time_total}s\\\\n\"], 0x62f626ba4fb0 /* 34 vars */) = 0",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62b1687ea100 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x62b1687ef8b0 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x2d72d774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x2d72d98c638 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x2d72d776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x2d72e2f2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5591d0680c38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5591d0680c68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5591d0680d18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x2d72e2f2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x2d72e2f2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x2d72e2f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x2d72e2f3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x2d72e2f2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x59c07d091780 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x635e1b207bf0 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x635e1b20f800 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x635e1b20f800 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x635e1b20f800 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x635e1b20f800 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x635e1b20f800 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x635e1b20f800 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst\"], 0x5c0c83705fd0 /* 34 vars */) = 0",
+      "96    execve(\"/usr/bin/sort\", [\"sort\"], 0x5a7b2fd35b10 /* 34 vars */ <unfinished ...>",
+      "95    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references\", \"-type\", \"f\"], 0x5a7b2fd4ad90 /* 33 vars */ <unfinished ...>",
+      "102   execve(\"/usr/bin/cat\", [\"cat\", \"content-theme-analysis.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/cat\", [\"cat\", \"quality-vs-engagement.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/cat\", [\"cat\", \"tag-performance.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/cat\", [\"cat\", \"top-performing-assets.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/cat\", [\"cat\", \"video-comparison.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/cat\", [\"cat\", \"week-over-week-comparison.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "108   execve(\"/usr/bin/cat\", [\"cat\", \"weekly-feedback-stats.sql\"], 0x6106a9c73ef0 /* 34 vars */) = 0",
+      "111   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x6071ca6ad460 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "sort",
+      "mkdir",
+      "getent",
+      "curl",
+      "python3",
+      "jq"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir",
+      "env presence check for CIVITAI_RECORD_MCP_SERVER_TOKEN (NOT SET; value never printed)",
+      "tool availability check (psql MISSING; python3/node/jq/curl present)",
+      "getent hosts <mcp-host> (resolved 18.191.220.185)",
+      "curl -sS -I --max-time 12 https://<mcp-host>/ (HEAD, no auth header) -> http_code=200",
+      "python3 static structural lint of 7 SQL templates (all read-only SELECT)",
+      "generated generated_top10_this_week.sql from top-performing-assets template",
+      "python3 render weekly_report.json + weekly_report.html from templates with mock data",
+      "jq validation of weekly_report.json",
+      "{'command': 'query_civitai_db(sql=\"SELECT ... top 10 this week\")', 'reason': 'MCP tool not registered in session and no auth token; real external query against production DB avoided'}",
+      "{'command': 'export CIVITAI_RECORD_MCP_SERVER_TOKEN=...', 'reason': 'credential required / no real token available; placeholder would not authenticate and could leak into logs'}",
+      "{'command': 'authenticated POST to the n8n MCP webhook', 'reason': 'would send a Bearer credential to an external service; prohibited'}",
+      "export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs",
+      "authenticated POST to the n8n MCP webhook | reason: would send a Bearer credential to an external service; prohibited"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:39:16.7178099200\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:41:59.1630692250\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689150956', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:39:10.9572097280\\t/home/appuser/.claude/backups/.claude.json.backup.1781689150956'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689250183', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:40:50.1820830600\\t/home/appuser/.claude/backups/.claude.json.backup.1781689250183'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689319162', 'after': '-rw-r--r--\\t24463\\t2026-06-17 09:41:59.1630692250\\t/home/appuser/.claude/backups/.claude.json.backup.1781689319162'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:39:11.4994596740\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:11.7520111960\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:16.6585078830\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609.jsonl', 'after': '-rw-------\\t228800\\t2026-06-17 09:41:58.8675605310\\t/home/appuser/.claude/projects/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:15.4837270900\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/181b0fd7-e386-48f8-88d8-e7aa41437609', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:15.4837270900\\t/home/appuser/.claude/session-env/181b0fd7-e386-48f8-88d8-e7aa41437609'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:41:58.8516920250\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:41:58.8556922930\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/generated_top10_this_week.sql', 'after': '-rw-r--r--\\t1040\\t2026-06-17 09:41:06.0123926190\\t/home/appuser/workdir/generated_top10_this_week.sql'}",
+      "{'path': '/home/appuser/workdir/weekly_report.html', 'after': '-rw-r--r--\\t680\\t2026-06-17 09:41:23.7124560460\\t/home/appuser/workdir/weekly_report.html'}",
+      "{'path': '/home/appuser/workdir/weekly_report.json', 'after': '-rw-r--r--\\t1196\\t2026-06-17 09:41:23.7116157960\\t/home/appuser/workdir/weekly_report.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:39:15.4877273590\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:15.4877273590\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:15.4882448360\\t/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:41:30.1607663470\\t/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:41:59.8897616970\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:09.2333075750\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:41:59.1677132350\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:09.2313074410\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:16.7178099200\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:39:09.2343076420\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24546\\t2026-06-17 09:41:59.1637129660\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:39:09.2333075750\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:41:23.7120204080\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:39:10.2803778520\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:41:59.8897616970\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:39:10.2803778520\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t3542\\t2026-06-17 09:39:10.2853781870\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "... top 10 this week\") export civitai_record_mcp_server_token=... authenticated post to the n8n mcp webhook export civitai_record_mcp_server_token=... authenticated post to the n8n mcp webhook credential export civitai_record_mcp_server_token=... authenticated post to the n8n mcp webhook",
+          "not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bearer credential to an external service; prohibited export civitai_record_mcp_server_token=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook |",
+          "not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bearer credential to an external service; prohibited credential export civitai_record_mcp_server_token=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook |",
+          "not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bearer credential to an external service; prohibited",
+          "able; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bearer credential to an external service; prohibited export civitai_record_mcp_server_token=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bea",
+          "able; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook | reason: would send a bearer credential to an external service; prohibited credential export civitai_record_mcp_server_token=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs authenticated post to the n8n mcp webhook |",
+          "grant`. the skill's prompt is data-analysis oriented and contains **no instruction to ignore rules, exfiltrate data, or run remote scripts**. - **execution path is unavailable here (by design):** the mcp tool `query_civitai_db` is not registered in this s",
+          "uld leak into logs\"}, {\"command\": \"authenticated post to the n8n mcp webhook\", \"reason\": \"would send a bearer credential to an external service; prohibited\"} ], \"dummy_inputs_created\": [ \"/home/appuser/workdir/generated_top10_this_week.sql\", \"/home",
+          "l query could (or should) run. - **one external endpoint:** `.mcp.json` points at a third-party n8n webhook on an aws ip (`18.191.220.185`, via sslip.io). i did a **credential-free head probe** (no authorization header, no query body) purely for reachability — it returned http 200. no secret or data was transmitte",
+          "uld not authenticate and could leak into logs\"}, {\"command\": \"authenticated post to the n8n mcp webhook\", \"reason\": \"would send a bearer credential to an external service; prohibited\"} ], \"dummy_inputs_created\": [ \"/home/appuser/workdir/generated_top10_this_week.sql\", \"/home",
+          "the one caveat worth flagging to a human reviewer is that `.mcp.json` hardcodes a **third-party n8n webhook on a raw aws ip (sslip.io)** as the data backend — operators should confirm that endpoint is trusted before supplying the bearer token, since all queries (and the token) would be sent there. in this sandbox no token was present, no query was executed, and the only network t"
+        ],
+        "commands_skipped": [
+          "query_civitai_db(sql=\"SELECT ... top 10 this week\") | reason: MCP tool not registered in session and no auth token; real external query against production DB avoided",
+          "export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs",
+          "authenticated POST to the n8n MCP webhook | reason: would send a Bearer credential to an external service; prohibited"
+        ],
+        "skipped_unsafe_commands": [
+          "export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs",
+          "authenticated POST to the n8n MCP webhook | reason: would send a Bearer credential to an external service; prohibited"
+        ]
+      },
+      "evidence_short": "primitive=... top 10 this week\") export civitai_record_mcp_server_token=... authenticated post to the n8n mcp webhook export civitai_record_mcp_server_token=... authenticated post to the ...; command=query_civitai_db(sql=\"SELECT ... top 10 this week\") | reason: MCP tool not registered in session and no auth token; real external query against production DB avoided"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs",
+          "authenticated POST to the n8n MCP webhook | reason: would send a Bearer credential to an external service; prohibited"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs",
+          "authenticated POST to the n8n MCP webhook | reason: would send a Bearer credential to an external service; prohibited"
+        ]
+      },
+      "evidence_short": "skipped=export CIVITAI_RECORD_MCP_SERVER_TOKEN=... | reason: credential required / no real token available; placeholder would not authenticate and could leak into logs"
+    }
+  ]
+}

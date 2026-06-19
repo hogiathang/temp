@@ -1,0 +1,291 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/data-fetching",
+  "skill_name": "data-fetching",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "http://127.0.0.1:9,",
+      "http://127.0.0.1:9",
+      "http://127.0.0.1:9)"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find /home/appuser/.claude/skills/data-fetching -type f",
+      "ls -la /home/appuser/.claude/skills/data-fetching/",
+      "file SKILL.md",
+      "grep -nE 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' SKILL.md",
+      "node/npm/npx version + workdir checks",
+      "write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs",
+      "node demo_data_fetching.mjs (against http://127.0.0.1:9, localhost only)",
+      "node require.resolve dependency check for @tanstack/react-query, swr, @react-native-community/netinfo, expo-secure-store, expo",
+      "ls -la /home/appuser/workdir",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5827a740e080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5827a7413800 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3d1d2b74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3d1d2d8c5f0 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3d1d2b76c10 /* 28 vars */ <unfinished ...>",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3d1d3700710 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5dbdbb890c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5dbdbb890d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5dbdbb890c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3d1d3700e10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3d1d3701190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3d1d3701510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3d1d3701890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3d1d3701890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x64070eb0a700 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d3e252cfb70 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5d3e252d7750 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5d3e252d7750 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d3e252d7750 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5d3e252d7750 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5d3e252d7750 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x591a3b964700 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/data-fetching\", \"-type\", \"f\"], 0x591a3b9651d0 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/data-fetching/\"], 0x63bd6541b1b0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/file\", [\"file\", \"/home/appuser/.claude/skills/data-fetching/SKILL.md\"], 0x63bd6541b1b0 /* 34 vars */) = 0",
+      "101   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-rEl\", \"\\\\.(sh|py|js|ts)$\", \"/home/appuser/.claude/skills/data-fetching/\"], 0x63bd6541b1b...",
+      "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"curl|wget|npm install|yarn add|npx|pip |sudo|bash |sh \", \"/home/appuser/.claude/sk...",
+      "110   execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x5b0848f54670 /* 34 vars */) = 0",
+      "110   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffe74629f50 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "121   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5b0848f54670 /* 34 vars */) = 0",
+      "125   execve(\"/usr/local/bin/node\", [\"node\", \"demo_data_fetching.mjs\"], 0x7fff300e9ba0 /* 36 vars */) = -1 ENOENT (No such file or directory)",
+      "175   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x60584dba1c90 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "file",
+      "npm",
+      "node",
+      "npx"
+    ],
+    "tool_call_patterns": [
+      "find /home/appuser/.claude/skills/data-fetching -type f",
+      "ls -la /home/appuser/.claude/skills/data-fetching/",
+      "file SKILL.md",
+      "grep -nE 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' SKILL.md",
+      "node/npm/npx version + workdir checks",
+      "write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs",
+      "node demo_data_fetching.mjs (against http://127.0.0.1:9, localhost only)",
+      "node require.resolve dependency check for @tanstack/react-query, swr, @react-native-community/netinfo, expo-secure-store, expo",
+      "ls -la /home/appuser/workdir",
+      "{'command': 'npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo', 'reason': 'would install external packages / out of scope for safe local execution; not requested by skill as a setup step and Expo RN runtime unavailable'}",
+      "{'command': 'Run React Query / SWR / NetInfo / SecureStore example snippets', 'reason': 'require React Native runtime and missing packages — cannot execute in this Node sandbox'}"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:26:02.9457059280\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:27:50.9858930930\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781778357006', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:25:57.0076248280\\t/home/appuser/.claude/backups/.claude.json.backup.1781778357006'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781778470985', 'after': '-rw-r--r--\\t24602\\t2026-06-18 10:27:50.9860388730\\t/home/appuser/.claude/backups/.claude.json.backup.1781778470985'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:25:57.5144886280\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:25:57.8905456920\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:02.8623867600\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3.jsonl', 'after': '-rw-------\\t118258\\t2026-06-18 10:27:50.6778501910\\t/home/appuser/.claude/projects/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:01.4999203670\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:01.4999203670\\t/home/appuser/.claude/session-env/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:27:50.6560161500\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:27:50.6600164250\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/.env', 'after': '-rw-r--r--\\t66\\t2026-06-18 10:26:53.4253616660\\t/home/appuser/workdir/.env'}",
+      "{'path': '/home/appuser/workdir/demo_data_fetching.mjs', 'after': '-rw-r--r--\\t2737\\t2026-06-18 10:27:10.2567656550\\t/home/appuser/workdir/demo_data_fetching.mjs'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t87\\t2026-06-18 10:26:45.8944961320\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:26:01.5085008440\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:01.5092023070\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:01.5092023070\\t/tmp/claude-1000/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:27:30.0896000560\\t/tmp/claude-1000/-home-appuser/d4b269db-89b3-4b5b-9a8d-cbf7b0f3cda3/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:27:51.7220895540\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:25:55.2070669620\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:27:50.9939771680\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:25:55.2050668240\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:26:02.9445997250\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:25:55.2070669620\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 10:27:50.9892475750\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:25:55.2060668930\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:27:10.2611706800\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:25:56.2491387130\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 10:27:51.7220895540\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:25:56.2491387130\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1350\\t2026-06-18 10:25:56.2521389200\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "58    openat(AT_FDCWD, \"/home/appuser/workdir/.env.tmp.46.376db866dd94\", O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW, 0666) = 23",
+      "46    openat(AT_FDCWD, \"/home/appuser/workdir/.env\", O_RDONLY|O_PATH) = 23",
+      "46    openat(AT_FDCWD, \"/home/appuser/workdir/.env\", O_RDONLY) = 23",
+      "46    openat(AT_FDCWD, \"/home/appuser/workdir/.env\", O_RDONLY|O_NOCTTY) = 23",
+      "52    openat(AT_FDCWD, \"/home/appuser/workdir/.env.tmp.46.f3dc0c851336\", O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW, 0666) = 23",
+      "122   openat(AT_FDCWD, \"./.env\", O_RDONLY) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json",
+          "e f\", \"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\",",
+          "\"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"n",
+          "ls/data-fetching -type f ls -la /home/appuser/.claude/skills/data-fetching/ file skill.md grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md node/npm/npx version + workdir checks write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs node demo_data_fetchin",
+          "ta-fetching -type f ls -la /home/appuser/.claude/skills/data-fetching/ file skill.md grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md node/npm/npx version + workdir checks write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs node demo_data_fetchin",
+          "ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json",
+          "e f\", \"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"n",
+          "\"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"n"
+        ],
+        "commands_skipped": [
+          "npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; not requested by skill as a setup step and Expo RN runtime unavailable",
+          "Run React Query / SWR / NetInfo / SecureStore example snippets | reason: require React Native runtime and missing packages — cannot execute in this Node sandbox"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep ...; command=npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; n..."
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json { \"skill_name\": \"data-fetching\", \"documented_purpose\": \"reference/router skill guiding implementation and debugging of network requests, api calls, and data fe",
+          "ill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"node demo_data_fetching.mjs (against http://127.0.0.1:9, localhost only)\", \"node require.resolve dependency check for @tanstack/react-query, swr, @react-native-community/netinfo",
+          "], \"dummy_inputs_created\": [ \"/home/appuser/workdir/sample.txt\", \"/home/appuser/workdir/.env (expo_public_api_url=http://127.0.0.1:9)\", \"/home/appuser/workdir/demo_data_fetching.mjs\" ], \"local_workflows_completed\": [ \"section 3: apierror-based fe",
+          "ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json { \"skill_name\": \"data-fetching\""
+        ],
+        "commands_skipped": [
+          "npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; not requested by skill as a setup step and Expo RN runtime unavailable",
+          "Run React Query / SWR / NetInfo / SecureStore example snippets | reason: require React Native runtime and missing packages — cannot execute in this Node sandbox"
+        ],
+        "skipped_unsafe_commands": []
+      },
+      "evidence_short": "primitive=instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"re...; command=npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; n..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json",
+          "e f\", \"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\",",
+          "\"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"n"
+        ],
+        "dangerous_remote_install_hits": [
+          "ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep hits for \"sh \" were false positives inside the word \"refresh\". ```json",
+          "e f\", \"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\",",
+          "\"ls -la /home/appuser/.claude/skills/data-fetching/\", \"file skill.md\", \"grep -ne 'curl|wget|npm install|yarn add|npx|pip|sudo|bash|sh' skill.md\", \"node/npm/npx version + workdir checks\", \"write /home/appuser/workdir/sample.txt, .env, demo_data_fetching.mjs\", \"n"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [
+          "npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; not requested by skill as a setup step and Expo RN runtime unavailable"
+        ],
+        "remote_install_instructions": [
+          "curl",
+          "wget",
+          "npx",
+          "npm install",
+          "npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; not requested by skill as a setup step and Expo RN runtime unavailable"
+        ]
+      },
+      "evidence_short": "primitive=ency check instead of installing anything. **no unsafe instructions were found in the skill** — no curl|bash, no remote scripts, no credential access, no exfiltration. the grep ...; install=npm install @tanstack/react-query swr @react-native-community/netinfo expo-secure-store expo | reason: would install external packages / out of scope for safe local execution; n..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [],
+        "unsafe_command_instructions": [
+          "sudo"
+        ]
+      },
+      "evidence_short": "skipped=sudo"
+    }
+  ]
+}

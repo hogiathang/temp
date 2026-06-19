@@ -1,0 +1,252 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/boomsystel-code-openclaw-workspace-skills-mia-twitter-stealth",
+  "skill_name": "boomsystel-code-openclaw-workspace-skills-mia-twitter-stealth",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 38.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 38.5 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.2.34",
+      "104.16.3.34",
+      "104.16.0.34",
+      "104.16.7.34",
+      "104.16.5.34",
+      "104.16.8.34",
+      "104.16.11.34",
+      "104.16.6.34",
+      "104.16.10.34",
+      "104.16.9.34",
+      "104.16.4.34",
+      "104.16.1.34"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find <skilldir> -type f",
+      "command -v mia-twitter (NOT FOUND)",
+      "node --version (v18.20.8)",
+      "command -v npx (present)",
+      "command -v playwright (NOT FOUND)",
+      "python3 --version (3.10.20)",
+      "test -n $X_AUTH_TOKEN / $X_CT0 (both unset, presence-only)",
+      "mkdir -p /home/appuser/workdir",
+      "ls -la <skilldir> and .clawhub",
+      "npm ls -g | grep playwright (no global playwright)",
+      "write /home/appuser/workdir/sample.txt",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b7dfd4d5150 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5b7dfd4da930 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x47a4c774510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x47a4c98c658 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x47a4c776c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x47a4d2f0a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x61d8d692dc38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x61d8d692dc68 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x61d8d692dd18 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x47a4d2f1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x47a4d2f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x47a4d2f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x47a4d2f1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x47a4d2f1c10 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x58f7779d37d0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5fd0bc8d2c40 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5fd0bc8da880 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5fd0bc8da880 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5fd0bc8da880 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fd0bc8da880 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fd0bc8da880 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5fd0bc8da880 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x555c6cabcb60 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-mia-twitter-stealth\", \"-type\", \"f\"], 0x555c6cad2110 /* 33 vars */) = 0",
+      "100   execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x5c3f2fc1c960 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5c3f2fc1c960 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-mia-twitter-stealth/\"], 0x55d1769b1bc0 /* 34 vars */) = 0",
+      "105   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-mia-twitter-stealth/.clawhub/\"], 0x55d1769b1bc0 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/ls\", [\"ls\", \"/usr/lib/node_modules\"], 0x55d1769b1bc0 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/npm\", [\"npm\", \"ls\", \"-g\"], 0x55d1769b1bc0 /* 34 vars */ <unfinished ...>",
+      "108   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-i\", \"playwright\"], 0x55d1769b3bf0 /* 33 vars */ <unfinished ...>",
+      "107   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"ls\", \"-g\"], 0x7ffc4110c858 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "121   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/sample.txt\"], 0x5996f030f300 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "python3",
+      "mkdir",
+      "ls",
+      "npm",
+      "node",
+      "npx"
+    ],
+    "tool_call_patterns": [
+      "find <skilldir> -type f",
+      "command -v mia-twitter (NOT FOUND)",
+      "node --version (v18.20.8)",
+      "command -v npx (present)",
+      "command -v playwright (NOT FOUND)",
+      "python3 --version (3.10.20)",
+      "test -n $X_AUTH_TOKEN / $X_CT0 (both unset, presence-only)",
+      "mkdir -p /home/appuser/workdir",
+      "ls -la <skilldir> and .clawhub",
+      "npm ls -g | grep playwright (no global playwright)",
+      "write /home/appuser/workdir/sample.txt",
+      "{'command': 'npx mia-twitter post \"Hello world\"', 'reason': 'unsafe remote script / would download and execute unknown remote npm package'}",
+      "{'command': 'mia-twitter post/reply/like/follow/notifications', 'reason': 'credential required (X_AUTH_TOKEN/X_CT0) + irreversible real account-affecting external action on Twitter/X; binary also does not exist'}",
+      "npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package",
+      "mia-twitter post/reply/like/follow/notifications | reason: credential required (X_AUTH_TOKEN/X_CT0) + irreversible real account-affecting external action on Twitter/X; binary also does not exist"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 08:32:01.5470862340\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:33:03.0705541290\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685115701', 'after': '-rw-r--r--\\t33\\t2026-06-17 08:31:55.7025098590\\t/home/appuser/.claude/backups/.claude.json.backup.1781685115701'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781685183070', 'after': '-rw-r--r--\\t24323\\t2026-06-17 08:33:03.0705541290\\t/home/appuser/.claude/backups/.claude.json.backup.1781685183070'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 08:31:56.2185937180\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:31:56.5257340870\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:01.4903218480\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c.jsonl', 'after': '-rw-------\\t65403\\t2026-06-17 08:33:02.7641252220\\t/home/appuser/.claude/projects/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:00.5108818510\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/82e2880b-a44c-4b98-a58a-90a453d87d7c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:00.5108818510\\t/home/appuser/.claude/session-env/82e2880b-a44c-4b98-a58a-90a453d87d7c'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 08:33:02.7490597740\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:33:02.7520599750\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:23.6404344910\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:22.5403606450\\t/home/appuser/.npm/_logs'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-17T08_32_22_456Z-debug-0.log', 'after': '-rw-r--r--\\t1033\\t2026-06-17 08:32:24.5111503360\\t/home/appuser/.npm/_logs/2026-06-17T08_32_22_456Z-debug-0.log'}",
+      "{'path': '/home/appuser/.npm/_update-notifier-last-checked', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:32:23.6404344910\\t/home/appuser/.npm/_update-notifier-last-checked'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t55\\t2026-06-17 08:32:38.2343895050\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 08:32:00.5148821190\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:00.5148821190\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:00.5148821190\\t/tmp/claude-1000/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:38.3044188550\\t/tmp/claude-1000/-home-appuser/82e2880b-a44c-4b98-a58a-90a453d87d7c/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 08:33:03.7891295920\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:31:54.0244464290\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:33:03.0750816590\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:31:54.0214462280\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:01.5459513330\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 08:31:54.0244464290\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 08:33:03.0722474020\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 08:31:54.0244464290\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 08:32:38.2338197560\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 08:31:55.0625161130\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 08:33:03.7891295920\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 08:31:55.0625161130\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1898\\t2026-06-17 08:31:55.0655163150\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "107   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenize.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "107   openat(AT_FDCWD, \"/usr/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/tokenTypes.js\", O_RDONLY|O_CLOEXEC) = 19",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/n",
+          "npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications remote script irreversible credential npx mia-twitter post \"hello world",
+          "hello world\" mia-twitter post/reply/like/follow/notifications remote script irreversible credential npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/n",
+          "npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications remote script irreversible credential npx mia-twitter post \"hello world",
+          "hello world\" mia-twitter post/reply/like/follow/notifications remote script irreversible credential npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications"
+        ],
+        "skipped_remote_install": [
+          "npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package"
+        ],
+        "remote_install_instructions": [
+          "npx",
+          "npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package"
+        ]
+      },
+      "evidence_short": "primitive=npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/notifications npx mia-twitter post \"hello world\" mia-twitter post/reply/like/follow/n; install=npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package",
+          "mia-twitter post/reply/like/follow/notifications | reason: credential required (X_AUTH_TOKEN/X_CT0) + irreversible real account-affecting external action on Twitter/X; binary also does not exist"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "irreversible",
+          "credential",
+          "npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package",
+          "mia-twitter post/reply/like/follow/notifications | reason: credential required (X_AUTH_TOKEN/X_CT0) + irreversible real account-affecting external action on Twitter/X; binary also does not exist"
+        ]
+      },
+      "evidence_short": "skipped=npx mia-twitter post \"Hello world\" | reason: unsafe remote script / would download and execute unknown remote npm package"
+    }
+  ]
+}

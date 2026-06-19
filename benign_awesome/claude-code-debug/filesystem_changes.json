@@ -1,0 +1,141 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 09:58:40.9585501760\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:00:26.8838421450\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781776714745",
+      "after": "-rw-r--r--\t33\t2026-06-18 09:58:34.7467316800\t/home/appuser/.claude/backups/.claude.json.backup.1781776714745"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781776826885",
+      "after": "-rw-r--r--\t24715\t2026-06-18 10:00:26.8848422140\t/home/appuser/.claude/backups/.claude.json.backup.1781776826885"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 09:58:35.3052287130\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:35.6101420210\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:40.6525291100\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d.jsonl",
+      "after": "-rw-------\t153468\t2026-06-18 10:00:26.5891152480\t/home/appuser/.claude/projects/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:39.5225550770\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/0e22a20c-c890-4055-b876-459a5532844d",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:39.5225550770\t/home/appuser/.claude/session-env/0e22a20c-c890-4055-b876-459a5532844d"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 10:00:26.5648201820\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:00:26.5708205950\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-hook.sh",
+      "after": "-rwxr-xr-x\t219\t2026-06-18 09:59:42.6978003360\t/home/appuser/workdir/sample-hook.sh"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 09:58:39.5460250020\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:39.5462096950\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:39.5465273380\t/tmp/claude-1000/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:00:01.8877816560\t/tmp/claude-1000/-home-appuser/0e22a20c-c890-4055-b876-459a5532844d/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 10:00:27.6278933690\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:58:32.9459985900\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:00:26.8983784170\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:58:32.9429983830\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:58:40.9555499700\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 09:58:32.9459985900\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24798\t2026-06-18 10:00:26.8878424210\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:58:32.9449985210\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 09:59:42.6797990970\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 09:58:33.9920706020\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 10:00:27.6278933690\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 09:58:33.9920706020\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2254\t2026-06-18 09:58:33.9950708080\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 09:58:32.9389981080\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/claude-code-debug",
+    "/home/appuser/.claude/skills/claude-code-debug/SKILL.md",
+    "/home/appuser/.claude/skills/claude-code-debug/assets",
+    "/home/appuser/.claude/skills/claude-code-debug/assets/.gitkeep",
+    "/home/appuser/.claude/skills/claude-code-debug/references",
+    "/home/appuser/.claude/skills/claude-code-debug/references/common-issues.md",
+    "/home/appuser/.claude/skills/claude-code-debug/references/debug-commands.md",
+    "/home/appuser/.claude/skills/claude-code-debug/references/troubleshooting-flow.md",
+    "/home/appuser/.claude/skills/claude-code-debug/scripts",
+    "/home/appuser/.claude/skills/claude-code-debug/scripts/.gitkeep",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 18,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 20,
+  "monitor": "find_based_no_smart_monitor"
+}

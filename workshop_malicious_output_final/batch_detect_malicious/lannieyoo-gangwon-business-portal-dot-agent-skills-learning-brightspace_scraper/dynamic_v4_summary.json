@@ -1,0 +1,278 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper",
+  "skill_name": "lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://brightspace.algonquincollege.com,"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "python3 --version",
+      "command -v uv / uv --version",
+      "python3 -c 'import playwright' (dependency check)",
+      "command -v chromium/chromium-browser/google-chrome",
+      "env var existence check (BRIGHTSPACE_USER/PASS, BS_USER/PASS) without printing values",
+      "created /home/appuser/workdir/sample_content.html and dummy data/ml tree",
+      "python3: helpers.sanitize_filename() and compute_content_hash() on dummy HTML",
+      "python3: extract_links.extract_urls_from_html() on dummy HTML",
+      "python3: extract_pdfs.extract_pdf_urls_from_html() on dummy HTML",
+      "python3: tools.init_hashes.init_hashes() with DATA_DIR overridden to workdir dummy tree (wrote .content_hashes.json)",
+      "python3: extract_pdfs walk over workdir dummy tree",
+      "python3 run.py --help (entrypoint/dependency check)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x57a21ed51190 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x57a21ed56990 /* 22 vars */) = 0",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3d70fb74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3d7106c8c10 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3d70fb76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3d7106f0a90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x56b878f2ac38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x56b878f2ad18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x56b878f2ac68 /* 29 vars */) = 0",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3d7106f1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3d7106f1190 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3d7106f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3d7106f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3d7106f1890 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5dce763eb810 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x63342113ac80 /* 31 vars */ <unfinished ...>",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6334211428e0 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6334211428e0 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6334211428e0 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6334211428e0 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6334211428e0 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6334211428e0 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x58fef9d22e40 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper\", \"-type\", \"f\"], 0x58fef9d38340 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/local/bin/python3\", [\"python3\", \"--version\"], 0x630a4e0c6be0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/local/bin/python3\", [\"python3\", \"-c\", \"import playwright; print('playwright', playwright.__version__ if hasattr(playwright,'__version__') else 'present')\"], 0x630a4e0c6be0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x61367c3ebe20 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/cat\", [\"cat\"], 0x61367c3ebe20 /* 34 vars */) = 0",
+      "106   execve(\"/usr/bin/wc\", [\"wc\", \"-c\"], 0x61367c3ebe20 /* 34 vars */) = 0",
+      "107   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir/\"], 0x61367c3ebe20 /* 34 vars */) = 0",
+      "110   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\"], 0x5f40efec1dc0 /* 34 vars */ <unfinished ...>",
+      "114   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir/data/ml/Week1\"], 0x5a04b8f3b860 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "python3",
+      "mkdir",
+      "wc",
+      "ls"
+    ],
+    "tool_call_patterns": [
+      "python3 --version",
+      "command -v uv / uv --version",
+      "python3 -c 'import playwright' (dependency check)",
+      "command -v chromium/chromium-browser/google-chrome",
+      "env var existence check (BRIGHTSPACE_USER/PASS, BS_USER/PASS) without printing values",
+      "created /home/appuser/workdir/sample_content.html and dummy data/ml tree",
+      "python3: helpers.sanitize_filename() and compute_content_hash() on dummy HTML",
+      "python3: extract_links.extract_urls_from_html() on dummy HTML",
+      "python3: extract_pdfs.extract_pdf_urls_from_html() on dummy HTML",
+      "python3: tools.init_hashes.init_hashes() with DATA_DIR overridden to workdir dummy tree (wrote .content_hashes.json)",
+      "python3: extract_pdfs walk over workdir dummy tree",
+      "python3 run.py --help (entrypoint/dependency check)",
+      "{'command': 'uv run python run.py --login-only', 'reason': 'launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action'}",
+      "{'command': 'uv run python run.py --list-courses', 'reason': 'real authenticated request to external LMS using bundled live session tokens'}",
+      "{'command': 'uv run python run.py --course 846088 [--module ...]', 'reason': 'real authenticated scraping/downloading from external service; account-affecting external action'}",
+      "{'command': 'uv run python run.py --dump-html', 'reason': 'navigates live external course URL with real credentials'}",
+      "{'command': 'rm .session.json (troubleshooting step)', 'reason': 'deletion outside /home/appuser/workdir (inside skill dir); not needed for safe validation'}",
+      "{'command': 'uv add playwright; uv run playwright install chromium', 'reason': 'installs packages/downloads a browser binary; outside allowed safe scope (no system package/remote binary install)'}",
+      "uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action",
+      "uv run python run.py --dump-html | reason: navigates live external course URL with real credentials"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:55:27.2089471870\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:50.9687088910\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690121429', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:55:21.4298471370\\t/home/appuser/.claude/backups/.claude.json.backup.1781690121429'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781690270968', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:57:50.9690317410\\t/home/appuser/.claude/backups/.claude.json.backup.1781690270968'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:55:21.9665953470\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:22.2176121940\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:27.1639441670\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4.jsonl', 'after': '-rw-------\\t264496\\t2026-06-17 09:57:50.6554160750\\t/home/appuser/.claude/projects/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:26.0958724830\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/fc4c6418-99fc-4d8c-8255-c29d50cfeca4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:26.0958724830\\t/home/appuser/.claude/session-env/fc4c6418-99fc-4d8c-8255-c29d50cfeca4'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:57:50.6385734620\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:50.6415736630\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:14.6437919490\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycach...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/__init__.cpython-310.pyc', 'after': '-rw-r--r--\\t402\\t2026-06-17 09:57:14.6356483660\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scri...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/helpers.cpython-310.pyc', 'after': '-rw-r--r--\\t1012\\t2026-06-17 09:56:46.0866009400\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scri...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/scraper.cpython-310.pyc', 'after': '-rw-r--r--\\t20898\\t2026-06-17 09:57:14.6437919490\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scr...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:07.0716494680\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/to...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/__init__.cpython-310.pyc', 'after': '-rw-r--r--\\t241\\t2026-06-17 09:57:07.0694479200\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scrape...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_links.cpython-310.pyc', 'after': '-rw-r--r--\\t2538\\t2026-06-17 09:56:46.1042422430\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_pdfs.cpython-310.pyc', 'after': '-rw-r--r--\\t1506\\t2026-06-17 09:56:46.1072424440\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_s...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/init_hashes.cpython-310.pyc', 'after': '-rw-r--r--\\t1054\\t2026-06-17 09:57:07.0716494680\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_sc...",
+      "{'path': '/home/appuser/workdir/data', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:06.7162679300\\t/home/appuser/workdir/data'}",
+      "{'path': '/home/appuser/workdir/data/ml', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:07.1133052380\\t/home/appuser/workdir/data/ml'}",
+      "{'path': '/home/appuser/workdir/data/ml/.content_hashes.json', 'after': '-rw-r--r--\\t127\\t2026-06-17 09:57:07.1137696900\\t/home/appuser/workdir/data/ml/.content_hashes.json'}",
+      "{'path': '/home/appuser/workdir/data/ml/Week1', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:06.7306265810\\t/home/appuser/workdir/data/ml/Week1'}",
+      "{'path': '/home/appuser/workdir/data/ml/Week1/99999_Lecture1.html', 'after': '-rw-r--r--\\t228\\t2026-06-17 09:57:06.7286264470\\t/home/appuser/workdir/data/ml/Week1/99999_Lecture1.html'}",
+      "{'path': '/home/appuser/workdir/data/ml/Week1/index.html', 'after': '-rw-r--r--\\t39\\t2026-06-17 09:57:06.7407341170\\t/home/appuser/workdir/data/ml/Week1/index.html'}",
+      "{'path': '/home/appuser/workdir/sample_content.html', 'after': '-rw-r--r--\\t421\\t2026-06-17 09:56:36.0194511620\\t/home/appuser/workdir/sample_content.html'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:55:26.1008728180\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:26.1028729530\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:26.1028729530\\t/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:14.7321636040\\t/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:57:51.7736496430\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:19.6454395620\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:50.9735959470\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:19.6424393610\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:27.2089471870\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:55:19.6454395620\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:57:50.9705957450\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:19.6554402330\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace', 'after': 'drwxr-x...",
+      "{'path': '/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:19.6590770460\\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools', 'afte...",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:55:19.6444394950\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:57:06.7156255740\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:55:20.6945099710\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:57:51.7736496430\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:55:20.6945099710\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t4460\\t2026-06-17 09:55:20.6985102390\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "129   openat(AT_FDCWD, \"/usr/local/lib/python3.10/tokenize.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "129   openat(AT_FDCWD, \"/usr/local/lib/python3.10/token.py\", O_RDONLY|O_CLOEXEC) = 3",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions were found in the skill. the local helper/tool code is straightforward",
+          "or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions were found in the skill. the local helper/tool code is straightforward"
+        ],
+        "commands_skipped": [
+          "uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action",
+          "uv run python run.py --list-courses | reason: real authenticated request to external LMS using bundled live session tokens",
+          "uv run python run.py --course 846088 [--module ...] | reason: real authenticated scraping/downloading from external service; account-affecting external action",
+          "uv run python run.py --dump-html | reason: navigates live external course URL with real credentials",
+          "rm .session.json (troubleshooting step) | reason: deletion outside /home/appuser/workdir (inside skill dir); not needed for safe validation",
+          "uv add playwright; uv run playwright install chromium | reason: installs packages/downloads a browser binary; outside allowed safe scope (no system package/remote binary install)"
+        ],
+        "skipped_unsafe_commands": [
+          "uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action",
+          "uv run python run.py --dump-html | reason: navigates live external course URL with real credentials"
+        ]
+      },
+      "evidence_short": "primitive=or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions w...; command=uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed ex..."
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions were found in the skill. the local helper/tool code is straightforward"
+        ],
+        "dangerous_remote_install_hits": [
+          "or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions were found in the skill. the local helper/tool code is straightforward"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": []
+      },
+      "evidence_short": "primitive=or exercise these credentials, and made **no** network connections. no remote-code-execution, no `curl|bash`, no obfuscation, no log tampering, and no destructive instructions w..."
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action",
+          "uv run python run.py --dump-html | reason: navigates live external course URL with real credentials"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed external action",
+          "uv run python run.py --dump-html | reason: navigates live external course URL with real credentials"
+        ]
+      },
+      "evidence_short": "skipped=uv run python run.py --login-only | reason: launches real Chromium and connects to live brightspace.algonquincollege.com using bundled real session credentials — credentialed ex..."
+    }
+  ]
+}

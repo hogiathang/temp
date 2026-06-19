@@ -1,0 +1,251 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/dreamineering-meme-times-dot-claude-skills-community-architect",
+  "skill_name": "dreamineering-meme-times-dot-claude-skills-community-architect",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 93.5,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 93.5 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "ls -laR (recursive listing incl. hidden)",
+      "find for *.sh/*.py/*.js/*.bin/executables (none found)",
+      "grep -nEi for URLs/curl/wget/eval/base64/tokens/keys (none relevant)",
+      "grep -nEi for prompt-injection phrases (none found)",
+      "mkdir -p /home/appuser/workdir",
+      "tool availability + env var name check (values redacted)",
+      "Skill invoke: community-architect (loaded into context)",
+      "Write SAMPLE_community_plan.md",
+      "Write SAMPLE_health_report.txt",
+      "ls -la + wc -c on workdir",
+      "110   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nEi\", \"https?://|curl|wget|bash|sh -c|eval|base64|token|api[_-]?key|secret|password|\\\\.o...",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5d06fdc0f150 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5d06fdc14930 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x58962f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x5896318c658 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x58962f76c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x58963b12310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x63ba2bf61c38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x63ba2bf61d18 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x63ba2bf61c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x58963b13490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x58963b12a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x58963b12d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x58963b13110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x58963b13110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x569640fa17d0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x6512a04ecc40 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6512a04f4880 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6512a04f4880 /* 31 vars */) = 0",
+      "93    execve(\"/usr/bin/head\", [\"head\", \"-200\"], 0x5617a9aa4eb0 /* 34 vars */ <unfinished ...>",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-community-architect\", \"-type\", \"f\"], 0x5617a9aba000 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-community-architect/\"], 0x5917e98e93b0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-community-architect/SKILL.md\"], 0x5917e98e93b0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-laR\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-community-architect/\"], 0x627b13818e20 /* 34 vars */) = 0",
+      "104   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-community-architect\", \"-type\", \"f\", \"(\", \"-name\", \"*.sh\", \"-o\", \"-name\", \"*.py\", \"-o\", \"-name\", \"*.js\", \"-o\", \"-name\", \"*.bin\", \"-o\", \"-perm\",...",
+      "111   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nEi\", \"ignore (previous|above|prior)|disregard|disable|override|exfiltrat|do not tell|hi...",
+      "114   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5be1dc72bfb0 /* 34 vars */) = 0",
+      "115   execve(\"/usr/bin/ls\", [\"ls\", \"-ld\", \"/home/appuser/workdir\"], 0x5be1dc72bfb0 /* 34 vars */) = 0",
+      "122   execve(\"/usr/bin/sed\", [\"sed\", \"-E\", \"s/=.*/=<redacted-present>/\"], 0x5be1dc72bfb0 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "wc",
+      "mkdir"
+    ],
+    "tool_call_patterns": [
+      "find ... -type f (enumerate skill files)",
+      "ls -laR (recursive listing incl. hidden)",
+      "find for *.sh/*.py/*.js/*.bin/executables (none found)",
+      "grep -nEi for URLs/curl/wget/eval/base64/tokens/keys (none relevant)",
+      "grep -nEi for prompt-injection phrases (none found)",
+      "mkdir -p /home/appuser/workdir",
+      "tool availability + env var name check (values redacted)",
+      "Skill invoke: community-architect (loaded into context)",
+      "Write SAMPLE_community_plan.md",
+      "Write SAMPLE_health_report.txt",
+      "ls -la + wc -c on workdir",
+      "{'command': 'WebSearch / WebFetch (telegram.org|discord.com|twitter.com|x.com)', 'reason': 'network egress not needed for local exercise; task mandates local/dry-run'}",
+      "{'command': 'mcp__perplexity-ask__search', 'reason': 'credential required / external service; no Perplexity key present'}",
+      "mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:28:18.0775961500\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:47.8427932660\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688492349', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:28:12.3501199310\\t/home/appuser/.claude/backups/.claude.json.backup.1781688492349'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781688587842', 'after': '-rw-r--r--\\t24480\\t2026-06-17 09:29:47.8431384300\\t/home/appuser/.claude/backups/.claude.json.backup.1781688587842'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:28:12.8862476490\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:13.0881938340\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:18.0256380670\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b.jsonl', 'after': '-rw-------\\t136314\\t2026-06-17 09:29:47.5548050950\\t/home/appuser/.claude/projects/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:17.0435267320\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/1baef729-52ae-43a2-bc2c-9f30caf7405b', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:17.0435267320\\t/home/appuser/.claude/session-env/1baef729-52ae-43a2-bc2c-9f30caf7405b'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:29:47.5396018270\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:47.5426020280\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/SAMPLE_community_plan.md', 'after': '-rw-r--r--\\t1411\\t2026-06-17 09:29:14.0773554720\\t/home/appuser/workdir/SAMPLE_community_plan.md'}",
+      "{'path': '/home/appuser/workdir/SAMPLE_health_report.txt', 'after': '-rw-r--r--\\t1041\\t2026-06-17 09:29:22.8099416970\\t/home/appuser/workdir/SAMPLE_health_report.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:28:17.0475270000\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:17.0475270000\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:17.0485239310\\t/tmp/claude-1000/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:25.9921553230\\t/tmp/claude-1000/-home-appuser/1baef729-52ae-43a2-bc2c-9f30caf7405b/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:29:48.5776715130\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:10.6480974010\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:47.8476225040\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:10.6450971990\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:18.0765960820\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:28:10.6480974010\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24563\\t2026-06-17 09:29:47.8436222350\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:28:10.6470973330\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:29:22.8149233340\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:28:11.6871671540\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:29:48.5776715130\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:28:11.6871671540\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1448\\t2026-06-17 09:28:11.6901673550\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **none found**. the only \"token\" matches refer to crypto tokens. - checked declar",
+          ", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nei\", \"https?://|curl|wget|bash|sh -c|eval|base64|token|api[_-]?key|secret|password|\\\\.onion|nc |ngrok\", \"skill.md\"], 0x57dd40882990 /* 33 vars */ <unfinished ...>",
+          "xclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nei\", \"https?://|curl|wget|bash|sh -c|eval|base64|token|api[_-]?key|secret|password|\\\\.onion|nc |ngrok\", \"skill.md\"], 0x57dd40882990 /* 33 vars */ <unfinished ...>",
+          "e-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nei\", \"https?://|curl|wget|bash|sh -c|eval|base64|token|api[_-]?key|secret|password|\\\\.onion|nc |ngrok\", \"skill.md\"], 0x57dd40882990 /* 33 vars */ <unfinished ...>",
+          "skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **none found**. the only \"token\" matches refer to crypto tokens. - checked declar",
+          "l directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **none found**. the only \"token\" matches refer to crypto tokens. - checked declar"
+        ],
+        "commands_skipped": [
+          "WebSearch / WebFetch (telegram.org|discord.com|twitter.com|x.com) | reason: network egress not needed for local exercise; task mandates local/dry-run",
+          "mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+        ],
+        "skipped_unsafe_commands": [
+          "mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+        ]
+      },
+      "evidence_short": "primitive=skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **non...; command=WebSearch / WebFetch (telegram.org|discord.com|twitter.com|x.com) | reason: network egress not needed for local exercise; task mandates local/dry-run"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **none found**. the only \"token\" matches refer to crypto tokens. - checked declar"
+        ],
+        "dangerous_remote_install_hits": [
+          "skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **none found**. the only \"token\" matches refer to crypto tokens. - checked declar"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": [
+          "curl",
+          "wget"
+        ]
+      },
+      "evidence_short": "primitive=skill directory (only `skill.md` exists; no hidden/executable files). - scanned content for urls, `curl|wget|bash|eval|base64`, credentials, and prompt-injection phrases — **non...; install=curl"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+        ]
+      },
+      "evidence_short": "skipped=mcp__perplexity-ask__search | reason: credential required / external service; no Perplexity key present"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/codex-review-file",
+  "skill_name": "codex-review-file",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 92.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 3,
+  "num_raw_patterns": 3,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 1,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 92.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "registry.npmjs.org"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "104.16.6.34",
+      "104.16.1.34",
+      "104.16.7.34",
+      "104.16.5.34",
+      "104.16.3.34",
+      "104.16.4.34",
+      "104.16.9.34",
+      "104.16.8.34",
+      "104.16.0.34",
+      "104.16.2.34",
+      "104.16.10.34",
+      "104.16.11.34"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/codex-review-file/ ; find ... -type f",
+      "command -v codex / codex --version (NOT FOUND)",
+      "command -v npm / npm --version (10.8.2)",
+      "command -v node / node --version (v18.20.8)",
+      "check OPENAI_API_KEY presence (NOT SET, value not printed)",
+      "ls -la /home/appuser/workdir (empty, exists)",
+      "Write /home/appuser/workdir/sample.go (dummy Go/Echo handler)",
+      "codex exec -m gpt-5.2-codex \"...review sample.go...\" (exit 127, command not found)",
+      "npm view @openai/codex version (read-only metadata: 0.141.0)",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x620add23d080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x620add242800 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x4ac10f74510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x4ac1118c5f8 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x4ac10f76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x4ac11b00710 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5fed4c568c38 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5fed4c568d18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5fed4c568c68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x4ac11b03490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x4ac11b02690 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x4ac11b02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x4ac11b02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x4ac11b03110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x55d1f7432700 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5b1cfb610b70 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x5b1cfb618750 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1cfb618750 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x5b1cfb618750 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1cfb618750 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x5b1cfb618750 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x5b1cfb618750 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/codex-review-file/\"], 0x5fe44842ecd0 /* 34 vars */) = 0",
+      "93    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/codex-review-file/\", \"-type\", \"f\"], 0x5fe44842ecd0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x5cf0f21e0dc0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffcf43a2df0 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "111   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5cf0f21e0dc0 /* 34 vars */) = 0",
+      "118   execve(\"/usr/bin/head\", [\"head\", \"-20\"], 0x556eece67850 /* 34 vars */ <unfinished ...>",
+      "117   execve(\"/usr/bin/npm\", [\"npm\", \"view\", \"@openai/codex\", \"version\"], 0x556eece67850 /* 34 vars */ <unfinished ...>",
+      "117   execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"view\", \"@openai/codex\", \"version\"], 0x7ffdc14704c0 /* 34 vars */) = -1 ENOENT (No such file or directory)"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "npm",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/codex-review-file/ ; find ... -type f",
+      "command -v codex / codex --version (NOT FOUND)",
+      "command -v npm / npm --version (10.8.2)",
+      "command -v node / node --version (v18.20.8)",
+      "check OPENAI_API_KEY presence (NOT SET, value not printed)",
+      "ls -la /home/appuser/workdir (empty, exists)",
+      "Write /home/appuser/workdir/sample.go (dummy Go/Echo handler)",
+      "codex exec -m gpt-5.2-codex \"...review sample.go...\" (exit 127, command not found)",
+      "npm view @openai/codex version (read-only metadata: 0.141.0)",
+      "{'command': 'npm install -g @openai/codex', 'reason': 'installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead'}",
+      "{'command': 'codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API)', 'reason': 'credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service'}",
+      "codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:14:48.0261667330\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:50.5347343080\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777682207', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:14:42.2082475780\\t/home/appuser/.claude/backups/.claude.json.backup.1781777682207'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781777750534', 'after': '-rw-r--r--\\t24601\\t2026-06-18 10:15:50.5348849060\\t/home/appuser/.claude/backups/.claude.json.backup.1781777750534'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:14:42.7741247160\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:43.0057834320\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:47.9484675490\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978.jsonl', 'after': '-rw-------\\t66056\\t2026-06-18 10:15:50.2328553740\\t/home/appuser/.claude/projects/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:47.3783580390\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/7d567f69-ed90-4eb6-b098-a1fb99d54978', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:47.3783580390\\t/home/appuser/.claude/session-env/7d567f69-ed90-4eb6-b098-a1fb99d54978'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:15:50.2134107290\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:50.2164109350\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/.npm', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.1020260460\\t/home/appuser/.npm'}",
+      "{'path': '/home/appuser/.npm/_cacache', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8130460420\\t/home/appuser/.npm/_cacache'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8036124880\\t/home/appuser/.npm/_cacache/content-v2'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8041936930\\t/home/appuser/.npm/_cacache/content-v2/sha512'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/4c', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8047792740\\t/home/appuser/.npm/_cacache/content-v2/sha512/4c'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/4c/37', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8079872530\\t/home/appuser/.npm/_cacache/content-v2/sha512/4c/37'}",
+      "{'path': '/home/appuser/.npm/_cacache/content-v2/sha512/4c/37/f3b20d5cfd92834fc74683b7c6fa36f8cf0799793c66d16f3b6acdece9ff13c0dfe1c683a6a32ad55a3989161fd6ff4975a9a0432b6e14dbdea545dea144', 'after': '-rw-r--r--\\t8666018\\t2026-06-18 10:15:30.7940736930\\t/home/appuser/.npm/_cacache/content-v2/sha512/4c/37/f3b20d5cfd92834fc74683b7c6fa36f8cf0799793c66d1...",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8137858510\\t/home/appuser/.npm/_cacache/index-v5'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f5', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8145137020\\t/home/appuser/.npm/_cacache/index-v5/f5'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f5/dc', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8161694110\\t/home/appuser/.npm/_cacache/index-v5/f5/dc'}",
+      "{'path': '/home/appuser/.npm/_cacache/index-v5/f5/dc/c4e113933dc9336af5ff67031ccabd30b60538026ed131d00e2087f9fd8a', 'after': '-rw-r--r--\\t709\\t2026-06-18 10:15:30.8173052330\\t/home/appuser/.npm/_cacache/index-v5/f5/dc/c4e113933dc9336af5ff67031ccabd30b60538026ed131d00e2087f9fd8a'}",
+      "{'path': '/home/appuser/.npm/_cacache/tmp', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:30.8079872530\\t/home/appuser/.npm/_cacache/tmp'}",
+      "{'path': '/home/appuser/.npm/_logs', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:28.1058886090\\t/home/appuser/.npm/_logs'}",
+      "{'path': '/home/appuser/.npm/_logs/2026-06-18T10_15_27_981Z-debug-0.log', 'after': '-rw-r--r--\\t1077\\t2026-06-18 10:15:31.2301932780\\t/home/appuser/.npm/_logs/2026-06-18T10_15_27_981Z-debug-0.log'}",
+      "{'path': '/home/appuser/.npm/_update-notifier-last-checked', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:15:29.6129923750\\t/home/appuser/.npm/_update-notifier-last-checked'}",
+      "{'path': '/home/appuser/workdir/sample.go', 'after': '-rw-r--r--\\t396\\t2026-06-18 10:15:11.4447414770\\t/home/appuser/workdir/sample.go'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:14:47.3940855720\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:47.3955567150\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:47.3956593310\\t/tmp/claude-1000/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:31.3051393010\\t/tmp/claude-1000/-home-appuser/7d567f69-ed90-4eb6-b098-a1fb99d54978/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:15:51.2364811680\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:40.4756092290\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:50.5419543880\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:40.4726090220\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:48.0251290200\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:14:40.4756092290\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24684\\t2026-06-18 10:15:50.5376679490\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:14:40.4746091600\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:15:11.4585616680\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:14:41.5166809070\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 10:15:51.2364811680\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:14:41.5166809070\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1357\\t2026-06-18 10:14:41.5196811140\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "enai api) | reason: credential required (openai_api_key not set) and codex cli not installed; would send file contents over network to an external service credential codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against openai api) | reason: credential required (openai_api_key not set) an"
+        ],
+        "commands_skipped": [
+          "npm install -g @openai/codex | reason: installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead",
+          "codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service"
+        ],
+        "skipped_unsafe_commands": [
+          "codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service"
+        ]
+      },
+      "evidence_short": "primitive=enai api) | reason: credential required (openai_api_key not set) and codex cli not installed; would send file contents over network to an external service credential codex exec ...; command=npm install -g @openai/codex | reason: installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "npm install -g @openai/codex codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against openai api) codex exec -m gpt-5.2-codex \"<review prompt"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "npm install -g @openai/codex codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against openai api) codex exec -m gpt-5.2-codex \"<review prompt"
+        ],
+        "skipped_remote_install": [
+          "npm install -g @openai/codex | reason: installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead"
+        ],
+        "remote_install_instructions": [
+          "npm install",
+          "npm install -g",
+          "npm install -g @openai/codex | reason: installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead"
+        ]
+      },
+      "evidence_short": "primitive=npm install -g @openai/codex codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against openai api) codex exec -m gpt-5.2-codex \"<review prompt; install=npm install -g @openai/codex | reason: installs remote code / system-global package — disallowed by sandbox policy; only a read-only metadata lookup was performed instead"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send file contents over network to an external service"
+        ]
+      },
+      "evidence_short": "skipped=codex exec -m gpt-5.2-codex \"<review prompt>\" (real execution against OpenAI API) | reason: credential required (OPENAI_API_KEY not set) and codex CLI not installed; would send ..."
+    }
+  ]
+}

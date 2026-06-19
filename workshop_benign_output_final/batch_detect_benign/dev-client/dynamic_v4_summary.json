@@ -1,0 +1,243 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/dev-client",
+  "skill_name": "dev-client",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 38.5,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 2,
+  "num_raw_patterns": 2,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 2,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 38.5 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find /home/appuser/.claude/skills/dev-client -type f",
+      "command -v node/npm/npx/eas/expo/adb/xcrun/ideviceinstaller/tar (+ --version)",
+      "eas --version (exit 127, not installed)",
+      "expo --version (exit 127, not installed)",
+      "mkdir -p /home/appuser/workdir",
+      "Write /home/appuser/workdir/eas.json (documented development profile)",
+      "node -e '<validate eas.json JSON + key fields>'",
+      "tar -czf build-dummy.tar.gz App.app (dummy data)",
+      "tar -xzf build-dummy.tar.gz (documented extraction step)",
+      "presence-only env var check for EXPO_TOKEN/APPLE_ID/etc (values not printed)",
+      "ls -la /home/appuser/workdir",
+      "42    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x58f6cdf69070 /* 22 vars */) = 0",
+      "43    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x58f6cdf6e7e0 /* 22 vars */) = 0",
+      "55    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x450f8774510 /* 28 vars */) = 0",
+      "57    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x450f898c5f0 /* 24 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x450f8776c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x450f8776c10 /* 28 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5ca5d375ec08 /* 28 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5ca5d375ec38 /* 28 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5ca5d375ece8 /* 28 vars */ <unfinished ...>",
+      "65    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x450f92f1890 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "66    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x450f92f1c10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x450f92f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x450f92f1510 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x450f92f1c10 /* 32 vars */) = 0",
+      "69    execve(\"/usr/bin/env\", [\"env\"], 0x6093b79256f0 /* 32 vars */ <unfinished ...>",
+      "71    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62e12db7bb60 /* 31 vars */ <unfinished ...>",
+      "73    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x62e12db83730 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "77    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "79    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "83    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x62e12db83730 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62e12db83730 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/cat\", [\"cat\"], 0x62e12db83730 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x62e12db83730 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x62e12db83730 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/head\", [\"head\", \"-100\"], 0x626704d44720 /* 34 vars */) = 0",
+      "91    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/dev-client\", \"-type\", \"f\"], 0x626704d451b0 /* 33 vars */ <unfinished ...>",
+      "99    execve(\"/usr/bin/npm\", [\"npm\", \"--version\"], 0x5fbd5bb56e20 /* 34 vars */) = 0",
+      "99    execve(\"/usr/local/bin/node\", [\"node\", \"/usr/bin/npm\", \"--version\"], 0x7ffc15176430 /* 34 vars */) = -1 ENOENT (No such file or directory)",
+      "114   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5b6176e2e860 /* 34 vars */) = 0",
+      "115   execve(\"/usr/bin/ls\", [\"ls\", \"-ld\", \"/home/appuser/workdir\"], 0x5b6176e2e860 /* 34 vars */) = 0",
+      "125   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"App.app\"], 0x6310a70582d0 /* 34 vars */) = 0",
+      "126   execve(\"/usr/bin/tar\", [\"tar\", \"-czf\", \"build-dummy.tar.gz\", \"App.app\"], 0x6310a70582d0 /* 34 vars */) = 0",
+      "127   execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"gzip\"], 0x7ffe7605db90 /* 34 vars */ <unfinished ...>",
+      "128   execve(\"/usr/bin/gzip\", [\"gzip\"], 0x615d484fa868 /* 34 vars */) = 0",
+      "129   execve(\"/usr/bin/ls\", [\"ls\", \"-l\", \"build-dummy.tar.gz\"], 0x6310a70582d0 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "npm",
+      "node",
+      "mkdir",
+      "ls",
+      "tar",
+      "gzip",
+      "rm"
+    ],
+    "tool_call_patterns": [
+      "find /home/appuser/.claude/skills/dev-client -type f",
+      "command -v node/npm/npx/eas/expo/adb/xcrun/ideviceinstaller/tar (+ --version)",
+      "eas --version (exit 127, not installed)",
+      "expo --version (exit 127, not installed)",
+      "mkdir -p /home/appuser/workdir",
+      "Write /home/appuser/workdir/eas.json (documented development profile)",
+      "node -e '<validate eas.json JSON + key fields>'",
+      "tar -czf build-dummy.tar.gz App.app (dummy data)",
+      "tar -xzf build-dummy.tar.gz (documented extraction step)",
+      "presence-only env var check for EXPO_TOKEN/APPLE_ID/etc (values not printed)",
+      "ls -la /home/appuser/workdir",
+      "{'command': 'eas build -p ios --profile development --submit', 'reason': 'credential required / irreversible external action (cloud build + TestFlight submission); eas CLI not installed'}",
+      "{'command': 'eas build -p ios --profile development --local', 'reason': 'eas CLI not installed; requires Xcode/macOS toolchain outside sandbox'}",
+      "{'command': 'eas build -p android --profile development --local', 'reason': 'eas CLI not installed; requires Android build toolchain'}",
+      "{'command': 'eas build:list / eas build:view', 'reason': 'credential required (Expo account); eas CLI not installed'}",
+      "{'command': 'eas credentials', 'reason': 'accesses real signing credentials; eas CLI not installed'}",
+      "{'command': 'eas update / eas --version (real)', 'reason': 'eas CLI not installed; update may fetch remote code'}",
+      "{'command': 'npx expo start --dev-client', 'reason': 'expo not installed; npx would fetch remote package (avoided remote code install) and starts a network bundler'}",
+      "{'command': 'xcrun simctl install booted ./App.app', 'reason': 'xcrun not installed (macOS-only); outside sandbox'}",
+      "{'command': 'ideviceinstaller -i build.ipa / adb install build.apk', 'reason': 'tools not installed; requires real connected device'}",
+      "eas build -p ios --profile development --submit | reason: credential required / irreversible external action (cloud build + TestFlight submission); eas CLI not installed",
+      "eas build:list / eas build:view | reason: credential required (Expo account); eas CLI not installed",
+      "eas credentials | reason: accesses real signing credentials; eas CLI not installed"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 10:40:30.0223322720\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:33.6971204070\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781779224207', 'after': '-rw-r--r--\\t33\\t2026-06-18 10:40:24.2079207640\\t/home/appuser/.claude/backups/.claude.json.backup.1781779224207'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781779293697', 'after': '-rw-r--r--\\t24602\\t2026-06-18 10:41:33.6976847760\\t/home/appuser/.claude/backups/.claude.json.backup.1781779293697'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 10:40:24.7464327370\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:24.9992557420\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:29.9363856050\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2.jsonl', 'after': '-rw-------\\t71526\\t2026-06-18 10:41:33.3842043460\\t/home/appuser/.claude/projects/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:28.4250281220\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:28.4250281220\\t/home/appuser/.claude/session-env/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 10:41:33.3486607450\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:33.3536610900\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/App.app', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:00.0000000000\\t/home/appuser/workdir/App.app'}",
+      "{'path': '/home/appuser/workdir/App.app/payload.txt', 'after': '-rw-r--r--\\t19\\t2026-06-18 10:41:00.0000000000\\t/home/appuser/workdir/App.app/payload.txt'}",
+      "{'path': '/home/appuser/workdir/build-dummy.tar.gz', 'after': '-rw-r--r--\\t178\\t2026-06-18 10:41:00.4413950530\\t/home/appuser/workdir/build-dummy.tar.gz'}",
+      "{'path': '/home/appuser/workdir/eas.json', 'after': '-rw-r--r--\\t304\\t2026-06-18 10:40:54.1760025170\\t/home/appuser/workdir/eas.json'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 10:40:28.4312183650\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:28.4316995070\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:28.4327395780\\t/tmp/claude-1000/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:09.8160405270\\t/tmp/claude-1000/-home-appuser/9cfaa02b-5f37-4f97-abbe-96714b3eaeb2/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 10:41:34.5157410990\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:22.4437788850\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:33.7042575860\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:22.4417787480\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:30.0214862820\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 10:40:22.4437788850\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 10:41:33.7002088080\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 10:40:22.4427788170\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 10:41:00.5122369080\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 10:40:23.4818503570\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 10:41:34.5157410990\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 10:40:23.4818503570\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1343\\t2026-06-18 10:40:23.4858506330\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "59    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "45    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "velopment --local eas build:list / eas build:view eas credentials eas update / eas --version (real) npx expo start --dev-client xcrun simctl install booted ./app.app ideviceinstaller -i build.ipa / adb install build.apk eas build -p ios --profile d"
+        ],
+        "dangerous_remote_install_hits": [],
+        "supporting_package_install_hits": [
+          "velopment --local eas build:list / eas build:view eas credentials eas update / eas --version (real) npx expo start --dev-client xcrun simctl install booted ./app.app ideviceinstaller -i build.ipa / adb install build.apk eas build -p ios --profile d"
+        ],
+        "skipped_remote_install": [
+          "npx expo start --dev-client | reason: expo not installed; npx would fetch remote package (avoided remote code install) and starts a network bundler"
+        ],
+        "remote_install_instructions": [
+          "npx",
+          "npx expo start --dev-client | reason: expo not installed; npx would fetch remote package (avoided remote code install) and starts a network bundler"
+        ]
+      },
+      "evidence_short": "primitive=velopment --local eas build:list / eas build:view eas credentials eas update / eas --version (real) npx expo start --dev-client xcrun simctl install booted ./app.app ideviceinst...; install=npx expo start --dev-client | reason: expo not installed; npx would fetch remote package (avoided remote code install) and starts a network bundler"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "eas build -p ios --profile development --submit | reason: credential required / irreversible external action (cloud build + TestFlight submission); eas CLI not installed",
+          "eas build:list / eas build:view | reason: credential required (Expo account); eas CLI not installed",
+          "eas credentials | reason: accesses real signing credentials; eas CLI not installed"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "eas build -p ios --profile development --submit | reason: credential required / irreversible external action (cloud build + TestFlight submission); eas CLI not installed",
+          "eas build:list / eas build:view | reason: credential required (Expo account); eas CLI not installed",
+          "eas credentials | reason: accesses real signing credentials; eas CLI not installed"
+        ]
+      },
+      "evidence_short": "skipped=eas build -p ios --profile development --submit | reason: credential required / irreversible external action (cloud build + TestFlight submission); eas CLI not installed"
+    }
+  ]
+}

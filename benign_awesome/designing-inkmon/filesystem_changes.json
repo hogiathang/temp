@@ -1,0 +1,165 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 10:38:16.3120946120\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:40:19.7889014090\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781779090373",
+      "after": "-rw-r--r--\t33\t2026-06-18 10:38:10.3746858160\t/home/appuser/.claude/backups/.claude.json.backup.1781779090373"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781779219788",
+      "after": "-rw-r--r--\t24602\t2026-06-18 10:40:19.7889014090\t/home/appuser/.claude/backups/.claude.json.backup.1781779219788"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 10:38:10.9582079400\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:11.2377452390\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:16.2247725450\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07.jsonl",
+      "after": "-rw-------\t180757\t2026-06-18 10:40:19.5045986750\t/home/appuser/.claude/projects/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:15.0898377590\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/39ef0f06-d152-4684-95d8-7d5f0df97c07",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:15.0898377590\t/home/appuser/.claude/session-env/39ef0f06-d152-4684-95d8-7d5f0df97c07"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 10:40:19.4675739700\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:40:19.4725743150\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/data",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:45.7653635920\t/home/appuser/workdir/data"
+    },
+    {
+      "path": "/home/appuser/workdir/data/inkmons",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:39:51.4246431910\t/home/appuser/workdir/data/inkmons"
+    },
+    {
+      "path": "/home/appuser/workdir/data/inkmons/BadMon.json",
+      "after": "-rw-r--r--\t847\t2026-06-18 10:39:02.4681965670\t/home/appuser/workdir/data/inkmons/BadMon.json"
+    },
+    {
+      "path": "/home/appuser/workdir/data/inkmons/DeepCheck.json",
+      "after": "-rw-r--r--\t712\t2026-06-18 10:39:51.4396442230\t/home/appuser/workdir/data/inkmons/DeepCheck.json"
+    },
+    {
+      "path": "/home/appuser/workdir/data/inkmons/Frostfox.json",
+      "after": "-rw-r--r--\t1339\t2026-06-18 10:38:58.3089861330\t/home/appuser/workdir/data/inkmons/Frostfox.json"
+    },
+    {
+      "path": "/home/appuser/workdir/data/inkmons/Malformed.json",
+      "after": "-rw-r--r--\t25\t2026-06-18 10:39:39.6494103390\t/home/appuser/workdir/data/inkmons/Malformed.json"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 10:38:15.0960517830\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:15.0965166060\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:15.0966651450\t/tmp/claude-1000/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:39:51.8776743820\t/tmp/claude-1000/-home-appuser/39ef0f06-d152-4684-95d8-7d5f0df97c07/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 10:40:20.4806437210\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:38:08.6125644920\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:40:19.7958542180\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:38:08.6075641480\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:16.3120946120\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 10:38:08.6125644920\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24685\t2026-06-18 10:40:19.7915962800\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:38:08.6115644240\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 10:38:45.7648972100\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 10:38:09.6616367220\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 10:40:20.4806437210\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 10:38:09.6616367220\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2649\t2026-06-18 10:38:09.6646369280\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 10:38:08.6005636660\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/designing-inkmon",
+    "/home/appuser/.claude/skills/designing-inkmon/CREATE-PROMPTS.md",
+    "/home/appuser/.claude/skills/designing-inkmon/DEVO-PROMPTS.md",
+    "/home/appuser/.claude/skills/designing-inkmon/ECOLOGY.md",
+    "/home/appuser/.claude/skills/designing-inkmon/ELEMENTS.md",
+    "/home/appuser/.claude/skills/designing-inkmon/EVO-PROMPTS.md",
+    "/home/appuser/.claude/skills/designing-inkmon/EVOLUTION.md",
+    "/home/appuser/.claude/skills/designing-inkmon/NAMING.md",
+    "/home/appuser/.claude/skills/designing-inkmon/SKILL.md",
+    "/home/appuser/.claude/skills/designing-inkmon/STATS.md",
+    "/home/appuser/.claude/skills/designing-inkmon/scripts",
+    "/home/appuser/.claude/skills/designing-inkmon/scripts/validate_inkmon.py",
+    "/home/appuser/.claude/skills/designing-inkmon/templates",
+    "/home/appuser/.claude/skills/designing-inkmon/templates/inkmon-schema.json",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 23,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 24,
+  "monitor": "find_based_no_smart_monitor"
+}

@@ -1,0 +1,312 @@
+{
+  "status": "ok",
+  "outdir": "workshop_malicious_output_final/batch_detect_malicious/henryxv-study-platform-dot-agent-skills-vercel-deploy",
+  "skill_name": "henryxv-study-platform-dot-agent-skills-vercel-deploy",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "claude-skills-deploy.vercel.com",
+      "http-intake.logs.us5.datadoghq.com",
+      "ns1.vercel-dns.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137",
+      "64.239.109.193",
+      "64.239.109.65"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "251   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-X\", \"POST\", \"https://claude-skills-deploy.vercel.com/api/deploy\", \"-F\", \"file=@/tmp/tmp.UnXXyAIW4a/project.tgz\", \"-F\", \"framework=nextjs\"], 0x5ab129d71530 /* 34 vars */) = 0",
+      "271   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-X\", \"POST\", \"https://claude-skills-deploy.vercel.com/api/deploy\", \"-F\", \"file=@/home/appuser/workdir/pkgtest.tgz\", \"-F\", \"framework=null\"], 0x5d7d01400d40 /* 34 vars */) = 0",
+      "https://claude-skills-deploy.vercel.com/api/deploy",
+      "https://claude-skills-deploy.vercel.com/api/deploy`."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la (skill dir and scripts dir)",
+      "tool/version checks: bash --version, curl --version, tar --version",
+      "env presence checks for VERCEL_TOKEN/VERCEL_ORG_ID/VERCEL_PROJECT_ID (no values printed; all unset)",
+      "created dummy projects: static-site (page.html), next-app (package.json+index.html), express-app (package.json)",
+      "sourced detect_framework() in isolation -> next-app=nextjs, express-app=express, static-site=null",
+      "replicated packaging/rename logic locally: renamed page.html->index.html, created pkgtest.tgz, listed contents",
+      "bash deploy.sh /home/appuser/workdir/next-app  (directory branch; real network POST; timeout 60)",
+      "bash deploy.sh /home/appuser/workdir/pkgtest.tgz  (.tgz branch; real network POST; timeout 60)",
+      "251   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-X\", \"POST\", \"https://claude-skills-deploy.vercel.com/api/deploy\", \"-F\", \"file=@/tmp/tmp.UnXXyAIW4a/project.tgz\", \"-F\", \"framework=nextjs\"], 0x5ab129d71530 /* 34 vars */) = 0",
+      "271   execve(\"/usr/bin/curl\", [\"curl\", \"-s\", \"-X\", \"POST\", \"https://claude-skills-deploy.vercel.com/api/deploy\", \"-F\", \"file=@/home/appuser/workdir/pkgtest.tgz\", \"-F\", \"framework=null\"], 0x5d7d01400d40 /* 34 vars */) = 0",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62f424ef8120 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x62f424efd8f0 /* 22 vars */ <unfinished ...>",
+      "56    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3ca2b374510 /* 28 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3ca2b58c648 /* 24 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3ca2b376c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3ca2bef2310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x58948b6fcc38 /* 29 vars */) = 0",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x58948b6fcd18 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x58948b6fcc68 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3ca2bef2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3ca2bef2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3ca2bef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3ca2bef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3ca2bef2d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x570dbed5c7a0 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x60149009ec10 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x6014900a6840 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x6014900a6840 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x6014900a6840 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x6014900a6840 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x6014900a6840 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/henryxv-study-platform-dot-agent-skills-vercel-deploy\"], 0x5b281281e1a0 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/henryxv-study-platform-dot-agent-skills-vercel-deploy/scripts\"], 0x5810a1e222b0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x6389e1100d70 /* 34 vars */) = 0",
+      "101   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "100   execve(\"/usr/bin/bash\", [\"bash\", \"--version\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "103   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "102   execve(\"/usr/bin/curl\", [\"curl\", \"--version\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "105   execve(\"/usr/bin/head\", [\"head\", \"-1\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "104   execve(\"/usr/bin/tar\", [\"tar\", \"--version\"], 0x6389e1100d70 /* 34 vars */ <unfinished ...>",
+      "108   execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"static-site\"], 0x6386ef859540 /* 34 vars */) = 0",
+      "109   execve(\"/usr/bin/cat\", [\"cat\"], 0x6386ef859540 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "curl",
+      "tar",
+      "sort",
+      "cp",
+      "basename",
+      "mv",
+      "gzip",
+      "mktemp",
+      "rm"
+    ],
+    "tool_call_patterns": [
+      "ls -la (skill dir and scripts dir)",
+      "tool/version checks: bash --version, curl --version, tar --version",
+      "env presence checks for VERCEL_TOKEN/VERCEL_ORG_ID/VERCEL_PROJECT_ID (no values printed; all unset)",
+      "created dummy projects: static-site (page.html), next-app (package.json+index.html), express-app (package.json)",
+      "sourced detect_framework() in isolation -> next-app=nextjs, express-app=express, static-site=null",
+      "replicated packaging/rename logic locally: renamed page.html->index.html, created pkgtest.tgz, listed contents",
+      "bash deploy.sh /home/appuser/workdir/next-app  (directory branch; real network POST; timeout 60)",
+      "bash deploy.sh /home/appuser/workdir/pkgtest.tgz  (.tgz branch; real network POST; timeout 60)",
+      "{'command': 'npm install -g vercel', 'reason': 'global package install instructed by server response; system-level change, not required for safe local validation'}",
+      "{'command': 'vercel login', 'reason': 'opens browser / requires real Vercel account authentication'}",
+      "{'command': 'vercel --token <YOUR_VERCEL_TOKEN>', 'reason': 'credential required; real account action'}",
+      "{'command': 'vercel --yes / vercel --yes --prod', 'reason': 'would create a real preview/production deployment (real external, account-affecting action)'}",
+      "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-17 09:47:49.3652177960\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:57.0457874610\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689663650', 'after': '-rw-r--r--\\t33\\t2026-06-17 09:47:43.6508342570\\t/home/appuser/.claude/backups/.claude.json.backup.1781689663650'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781689797045', 'after': '-rw-r--r--\\t24323\\t2026-06-17 09:49:57.0464214150\\t/home/appuser/.claude/backups/.claude.json.backup.1781689797045'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-17 09:47:44.1788696990\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:44.3638821160\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:49.3073625440\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81.jsonl', 'after': '-rw-------\\t121016\\t2026-06-17 09:49:56.7562140490\\t/home/appuser/.claude/projects/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:48.3521498010\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/612634b4-16ca-4384-b7d0-5280fa679f81', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:48.3521498010\\t/home/appuser/.claude/session-env/612634b4-16ca-4384-b7d0-5280fa679f81'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-17 09:49:56.7417670550\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:56.7457673240\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/express-app', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:48:34.5102478410\\t/home/appuser/workdir/express-app'}",
+      "{'path': '/home/appuser/workdir/express-app/package.json', 'after': '-rw-r--r--\\t69\\t2026-06-17 09:48:34.5196413730\\t/home/appuser/workdir/express-app/package.json'}",
+      "{'path': '/home/appuser/workdir/next-app', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:48:34.4882463650\\t/home/appuser/workdir/next-app'}",
+      "{'path': '/home/appuser/workdir/next-app/index.html', 'after': '-rw-r--r--\\t41\\t2026-06-17 09:48:34.4973689070\\t/home/appuser/workdir/next-app/index.html'}",
+      "{'path': '/home/appuser/workdir/next-app/package.json', 'after': '-rw-r--r--\\t112\\t2026-06-17 09:48:34.4865202370\\t/home/appuser/workdir/next-app/package.json'}",
+      "{'path': '/home/appuser/workdir/pkgtest.tgz', 'after': '-rw-r--r--\\t248\\t2026-06-17 09:49:01.2610433000\\t/home/appuser/workdir/pkgtest.tgz'}",
+      "{'path': '/home/appuser/workdir/static-site', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:48:34.4472436130\\t/home/appuser/workdir/static-site'}",
+      "{'path': '/home/appuser/workdir/static-site-pkgtest', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:01.2364023080\\t/home/appuser/workdir/static-site-pkgtest'}",
+      "{'path': '/home/appuser/workdir/static-site-pkgtest/index.html', 'after': '-rw-r--r--\\t128\\t2026-06-17 09:49:01.1488277660\\t/home/appuser/workdir/static-site-pkgtest/index.html'}",
+      "{'path': '/home/appuser/workdir/static-site/page.html', 'after': '-rw-r--r--\\t128\\t2026-06-17 09:48:34.4587127090\\t/home/appuser/workdir/static-site/page.html'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-17 09:47:48.3572624740\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:48.3572624740\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:48.3577988390\\t/tmp/claude-1000/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:31.4610702650\\t/tmp/claude-1000/-home-appuser/612634b4-16ca-4384-b7d0-5280fa679f81/tasks'}",
+      "{'path': '/tmp/detect_fn.sh', 'after': '-rw-r--r--\\t3783\\t2026-06-17 09:48:40.9166778280\\t/tmp/detect_fn.sh'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-17 09:49:57.7358337750\\t/tmp/fs_after.txt'}",
+      "{'path': '/tmp/tmp.WAjX2AK2Bj', 'after': 'drwx------\\t4096\\t2026-06-17 09:49:30.1818670120\\t/tmp/tmp.WAjX2AK2Bj'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:41.9567205520\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:57.0527879310\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:41.9547204180\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:49.3652177960\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-17 09:47:41.9577206190\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24406\\t2026-06-17 09:49:57.0487876630\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-17 09:47:41.9567205520\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-17 09:49:01.2500425610\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-17 09:47:42.9977904270\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-17 09:49:57.7358337750\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-17 09:47:42.9977904270\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1715\\t2026-06-17 09:47:43.0007906280\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots",
+      "/tmp/detect_fn.sh"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to read ssh keys/browser profiles/wallets. - its one external action is a `",
+          "he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to read ssh keys/browser profiles/wallets. - its one external action is a `"
+        ],
+        "commands_skipped": [
+          "npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation",
+          "vercel login | reason: opens browser / requires real Vercel account authentication",
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action",
+          "vercel --yes / vercel --yes --prod | reason: would create a real preview/production deployment (real external, account-affecting action)"
+        ],
+        "skipped_unsafe_commands": [
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+        ]
+      },
+      "evidence_short": "primitive=he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to ...; command=npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to read ssh keys/browser profiles/wallets. - its one external action is a `curl -x post` of a project tarball (excl"
+        ],
+        "commands_skipped": [
+          "npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation",
+          "vercel login | reason: opens browser / requires real Vercel account authentication",
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action",
+          "vercel --yes / vercel --yes --prod | reason: would create a real preview/production deployment (real external, account-affecting action)"
+        ],
+        "skipped_unsafe_commands": [
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+        ]
+      },
+      "evidence_short": "primitive=he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to ...; command=npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to read ssh keys/browser profiles/wallets. - its one external action is a `",
+          "npm install -g vercel vercel login vercel --token <your_vercel_token> vercel --yes / vercel --yes --prod vercel --token <your_vercel_token> credential ver"
+        ],
+        "dangerous_remote_install_hits": [
+          "he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to read ssh keys/browser profiles/wallets. - its one external action is a `"
+        ],
+        "supporting_package_install_hits": [
+          "npm install -g vercel vercel login vercel --token <your_vercel_token> vercel --yes / vercel --yes --prod vercel --token <your_vercel_token> credential ver"
+        ],
+        "skipped_remote_install": [
+          "npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation"
+        ],
+        "remote_install_instructions": [
+          "curl",
+          "npm install",
+          "npm install -g",
+          "global npm install",
+          "npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation"
+        ]
+      },
+      "evidence_short": "primitive=he skill is a single bash script (`deploy.sh`) plus `skill.md`. no obfuscation, no hidden code, no `curl|bash`/remote-script execution, no credential harvesting, no attempts to ...; install=npm install -g vercel | reason: global package install instructed by server response; system-level change, not required for safe local validation"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+        ]
+      },
+      "evidence_short": "skipped=vercel --token <YOUR_VERCEL_TOKEN> | reason: credential required; real account action"
+    }
+  ]
+}

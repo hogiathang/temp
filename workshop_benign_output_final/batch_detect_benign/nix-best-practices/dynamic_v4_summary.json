@@ -1,0 +1,269 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/nix-best-practices",
+  "skill_name": "nix-best-practices",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 4,
+  "num_raw_patterns": 4,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 3,
+  "num_executed_malicious_patterns": 1,
+  "num_high_executed_patterns": 1,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "https://nixos.org/nix/install)",
+      "https://example.com/tool-linux-amd64-v1.0.0"
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "ls -la /home/appuser/.claude/skills/nix-best-practices/",
+      "find /home/appuser/.claude/skills/nix-best-practices/ -type f",
+      "command -v nix nix-prefetch-url nix-build direnv git",
+      "nix --version (failed: not installed, exit 127)",
+      "nix flake check (failed: not installed, exit 127)",
+      "nix flake metadata (failed: not installed, exit 127)",
+      "nix develop -c true (failed: not installed, exit 127)",
+      "python3 local bracket-balance validation of flake.nix and shell.nix",
+      "presence check of NIXPKGS_ALLOW_UNFREE env var and ~/.config/nixpkgs/config.nix",
+      "{'payload': '/home/appuser/workdir/shell.nix', 'command': '105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"shell.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0'}",
+      "42    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5c3ce4757080 /* 22 vars */) = 0",
+      "43    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5c3ce475c800 /* 22 vars */) = 0",
+      "55    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x26d06374510 /* 28 vars */) = 0",
+      "57    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x26d0658c600 /* 24 vars */) = 0",
+      "58    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x26d06376c10 /* 28 vars */) = 0",
+      "60    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x26d06ef2310 /* 29 vars */) = 0",
+      "61    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x59cb8d96cc38 /* 29 vars */ <unfinished ...>",
+      "62    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x59cb8d96cd18 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x59cb8d96cc68 /* 29 vars */ <unfinished ...>",
+      "65    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x26d06ef2a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "66    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x26d06ef2d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x26d06ef3110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x26d06ef3490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x26d06ef3490 /* 32 vars */) = 0",
+      "69    execve(\"/usr/bin/env\", [\"env\"], 0x59a1be9e0700 /* 32 vars */) = 0",
+      "71    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x63e2c1e0ab70 /* 31 vars */ <unfinished ...>",
+      "73    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "77    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63e2c1e12750 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "79    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x63e2c1e12750 /* 31 vars */ <unfinished ...>",
+      "81    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "83    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x63e2c1e12750 /* 31 vars */ <unfinished ...>",
+      "85    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x63e2c1e12750 /* 31 vars */ <unfinished ...>",
+      "86    execve(\"/usr/bin/cat\", [\"cat\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x63e2c1e12750 /* 31 vars */) = 0",
+      "91    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/nix-best-practices/\"], 0x6219f007ecd0 /* 34 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/nix-best-practices/\", \"-type\", \"f\"], 0x6219f007ecd0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/workdir\"], 0x5c69ed05d320 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/ls\", [\"ls\", \"-la\"], 0x5904bb3a7b80 /* 34 vars */) = 0",
+      "104   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"flake.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0",
+      "105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"shell.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "python3"
+    ],
+    "tool_call_patterns": [
+      "ls -la /home/appuser/.claude/skills/nix-best-practices/",
+      "find /home/appuser/.claude/skills/nix-best-practices/ -type f",
+      "command -v nix nix-prefetch-url nix-build direnv git",
+      "nix --version (failed: not installed, exit 127)",
+      "nix flake check (failed: not installed, exit 127)",
+      "nix flake metadata (failed: not installed, exit 127)",
+      "nix develop -c true (failed: not installed, exit 127)",
+      "python3 local bracket-balance validation of flake.nix and shell.nix",
+      "presence check of NIXPKGS_ALLOW_UNFREE env var and ~/.config/nixpkgs/config.nix",
+      "{'command': 'sh <(curl -L https://nixos.org/nix/install)  (to install Nix)', 'reason': 'unsafe remote script (curl|sh) and would require modifying system / sudo'}",
+      "{'command': 'nix-prefetch-url https://example.com/tool-linux-amd64-v1.0.0', 'reason': 'documented URLs are example.com placeholders; nix not installed; would be a no-op outbound fetch with no real target'}",
+      "{'command': 'nix build / nix run / nix flake update (against real github inputs)', 'reason': 'nix not installed; would require network fetches of nixpkgs/overlays — not needed for safe local validation'}",
+      "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 12:17:26.8768394220\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:41.0691186680\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785041015', 'after': '-rw-r--r--\\t33\\t2026-06-18 12:17:21.0174359350\\t/home/appuser/.claude/backups/.claude.json.backup.1781785041015'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781785121068', 'after': '-rw-r--r--\\t24567\\t2026-06-18 12:18:41.0692418790\\t/home/appuser/.claude/backups/.claude.json.backup.1781785121068'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 12:17:21.6084766350\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:21.8614940580\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:26.7942974500\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7.jsonl', 'after': '-rw-------\\t89891\\t2026-06-18 12:18:40.7827210630\\t/home/appuser/.claude/projects/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:25.9434529900\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/2faced19-8687-4c0c-b795-2299384b34a7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:25.9434529900\\t/home/appuser/.claude/session-env/2faced19-8687-4c0c-b795-2299384b34a7'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 12:18:40.7599270750\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:40.7658165800\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/.envrc', 'after': '-rw-r--r--\\t10\\t2026-06-18 12:17:56.7248506820\\t/home/appuser/workdir/.envrc'}",
+      "{'path': '/home/appuser/workdir/flake.nix', 'after': '-rw-r--r--\\t1150\\t2026-06-18 12:17:50.5404689280\\t/home/appuser/workdir/flake.nix'}",
+      "{'path': '/home/appuser/workdir/shell.nix', 'after': '-rw-r--r--\\t176\\t2026-06-18 12:17:53.7796919830\\t/home/appuser/workdir/shell.nix'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 12:17:25.9487755140\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:25.9497755830\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:25.9505942890\\t/tmp/claude-1000/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:17.5423283000\\t/tmp/claude-1000/-home-appuser/2faced19-8687-4c0c-b795-2299384b34a7/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 12:18:41.7779971800\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:19.2123116320\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:18:41.0757564030\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:19.2093114250\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:26.8768394220\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 12:17:19.2123116320\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24650\\t2026-06-18 12:18:41.0716146690\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:19.2113115630\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 12:17:56.7358955520\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 12:17:20.2533833220\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 12:18:41.7779971800\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 12:17:20.2533833220\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1359\\t2026-06-18 12:17:20.2563835280\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "54    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "45    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "59    openat(AT_FDCWD, \"/home/appuser/workdir/.envrc.tmp.45.52f46679f139\", O_WRONLY|O_CREAT|O_EXCL|O_NOFOLLOW, 0666) = 21",
+      "{'payload': '/home/appuser/workdir/shell.nix', 'command': '105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"shell.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0'}",
+      "/home/appuser/.claude/shell-snapshots",
+      "/home/appuser/workdir/shell.nix"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "payload_execution",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 100.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "high",
+      "summary": "Suspicious payload/script was created and correlated with actual execution.",
+      "evidence": {
+        "executed_suspicious_payloads": [
+          {
+            "payload": "/home/appuser/workdir/shell.nix",
+            "command": "105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"shell.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0"
+          }
+        ]
+      },
+      "evidence_short": "payload={'payload': '/home/appuser/workdir/shell.nix', 'command': '105   execve(\"/usr/local/bin/python3\", [\"python3\", \"-\", \"shell.nix\"], 0x5904bb3a7b80 /* 34 vars */) = 0'}"
+    },
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "exercised because the `nix` binary is absent. i did **not** install it: the official installer is `curl … | sh`, which the policy prohibits, and i won't use sudo/system packages. **no network connections were attempted, no secrets touched, no system"
+        ],
+        "commands_skipped": [
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo",
+          "nix-prefetch-url https://example.com/tool-linux-amd64-v1.0.0 | reason: documented URLs are example.com placeholders; nix not installed; would be a no-op outbound fetch with no real target",
+          "nix build / nix run / nix flake update (against real github inputs) | reason: nix not installed; would require network fetches of nixpkgs/overlays — not needed for safe local validation"
+        ],
+        "skipped_unsafe_commands": [
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+        ]
+      },
+      "evidence_short": "primitive=exercised because the `nix` binary is absent. i did **not** install it: the official installer is `curl … | sh`, which the policy prohibits, and i won't use sudo/system packages...; command=sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "bracket-balance validation of flake.nix and shell.nix\", \"presence check of nixpkgs_allow_unfree env var and ~/.config/nixpkgs/config.nix\" ], \"commands_skipped\": [ { \"command\": \"sh <(curl -l https://nixos.org/nix/install) (to install nix)\", \"reason\": \"unsafe remote script (curl|sh) and would require modifying system /"
+        ],
+        "commands_skipped": [
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo",
+          "nix-prefetch-url https://example.com/tool-linux-amd64-v1.0.0 | reason: documented URLs are example.com placeholders; nix not installed; would be a no-op outbound fetch with no real target",
+          "nix build / nix run / nix flake update (against real github inputs) | reason: nix not installed; would require network fetches of nixpkgs/overlays — not needed for safe local validation"
+        ],
+        "skipped_unsafe_commands": [
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+        ]
+      },
+      "evidence_short": "primitive=bracket-balance validation of flake.nix and shell.nix\", \"presence check of nixpkgs_allow_unfree env var and ~/.config/nixpkgs/config.nix\" ], \"commands_skipped\": [ { \"command\": \"...; command=sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+        ],
+        "unsafe_command_instructions": [
+          "remote script",
+          "sudo",
+          "sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+        ]
+      },
+      "evidence_short": "skipped=sh <(curl -L https://nixos.org/nix/install)  (to install Nix) | reason: unsafe remote script (curl|sh) and would require modifying system / sudo"
+    }
+  ]
+}

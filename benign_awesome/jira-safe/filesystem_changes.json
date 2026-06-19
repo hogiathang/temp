@@ -1,0 +1,142 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-18 11:46:41.6971000180\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:48:51.8483948400\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781783195835",
+      "after": "-rw-r--r--\t33\t2026-06-18 11:46:35.8368352170\t/home/appuser/.claude/backups/.claude.json.backup.1781783195835"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781783331848",
+      "after": "-rw-r--r--\t24568\t2026-06-18 11:48:51.8487510680\t/home/appuser/.claude/backups/.claude.json.backup.1781783331848"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-18 11:46:36.4155270870\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:36.6910971490\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:41.6137848400\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241.jsonl",
+      "after": "-rw-------\t218419\t2026-06-18 11:48:51.4862336990\t/home/appuser/.claude/projects/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:40.6110680930\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/eaa3a985-3433-401c-9866-dbd2e86c7241",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:40.6110680930\t/home/appuser/.claude/session-env/eaa3a985-3433-401c-9866-dbd2e86c7241"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-18 11:48:51.4437231840\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:48:51.4487235280\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t127\t2026-06-18 11:47:57.4888817990\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-18 11:46:40.6246229010\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:40.6248130710\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:40.6250002040\t/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:48:11.0011804560\t/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-18 11:48:52.6128036710\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:46:34.0642650810\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:48:51.8557515500\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:46:34.0602648060\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:46:41.6957904860\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-18 11:46:34.0642650810\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24651\t2026-06-18 11:48:51.8515183940\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:46:34.0632650130\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-18 11:47:57.4875596290\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-18 11:46:35.1243380650\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-18 11:48:52.6128036710\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-18 11:46:35.1243380650\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2317\t2026-06-18 11:46:35.1273382710\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-18 11:46:34.0532643240\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/jira-safe",
+    "/home/appuser/.claude/skills/jira-safe/SKILL.md",
+    "/home/appuser/.claude/skills/jira-safe/jira-workflow",
+    "/home/appuser/.claude/skills/jira-safe/jira-workflow/SKILL.md",
+    "/home/appuser/.claude/skills/jira-safe/scripts",
+    "/home/appuser/.claude/skills/jira-safe/scripts/add-subtasks.mjs",
+    "/home/appuser/.claude/skills/jira-safe/scripts/add-subtasks.py",
+    "/home/appuser/.claude/skills/jira-safe/scripts/create-mvp.mjs",
+    "/home/appuser/.claude/skills/jira-safe/scripts/create-mvp.py",
+    "/home/appuser/.claude/skills/jira-safe/scripts/create-two-level.mjs",
+    "/home/appuser/.claude/skills/jira-safe/scripts/create-two-level.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 18,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 21,
+  "monitor": "find_based_no_smart_monitor"
+}

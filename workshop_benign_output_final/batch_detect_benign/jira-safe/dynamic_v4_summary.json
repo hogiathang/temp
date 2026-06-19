@@ -1,0 +1,308 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/jira-safe",
+  "skill_name": "jira-safe",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "malicious",
+  "score": 100.0,
+  "score_scale": "0-100",
+  "confidence": "high",
+  "num_patterns": 5,
+  "num_raw_patterns": 5,
+  "num_executed_patterns": 1,
+  "num_intent_only_patterns": 4,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 2,
+  "num_supporting_intent_patterns": 2,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 100.0 exceeded the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": [
+      "113   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"fetch\\\\(|urlopen|Request\\\\(|http://|https://\", \"add-subtasks.py\", \"create-mvp.py\",..."
+    ]
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "find/ls of skill directory",
+      "grep suspicious-pattern scan over all *.py/*.mjs (curl, exec, socket, ssh, exfil, etc.)",
+      "grep of all network call sites and http(s) literals",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "env-var presence check (JIRA_* all unset; no secrets printed)",
+      "node add-subtasks.mjs demo  (no creds -> missing-env error, exit 1)",
+      "python3 add-subtasks.py demo  (no creds -> missing-env error, exit 1)",
+      "python3 create-two-level.py  (no creds -> missing-env error, exit 1)",
+      "python3 create-mvp.py  (no creds -> missing-env error, exit 1)",
+      "node add-subtasks.mjs demo  (dummy creds -> 127.0.0.1:9999 -> ECONNREFUSED)",
+      "python3 add-subtasks.py demo  (dummy creds -> 127.0.0.1:9999 -> ConnectionRefused)",
+      "node create-two-level.mjs  (dummy creds -> 127.0.0.1:9999 -> 3 epics FAILED, fail-closed)",
+      "113   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nE\", \"fetch\\\\(|urlopen|Request\\\\(|http://|https://\", \"add-subtasks.py\", \"create-mvp.py\",...",
+      "Remote download command observed in strace",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5bcbc9f09060 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5bcbc9f0e7c0 /* 22 vars */) = 0",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x3fcdef74510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x3fcdf18c5e8 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x3fcdef76c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x3fcdfb11f90 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5bfe664d8c38 /* 29 vars */ <unfinished ...>",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5bfe664d8c68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5bfe664d8d18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x3fcdfb13490 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x3fcdfb12a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x3fcdfb12d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x3fcdfb13110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x3fcdfb13110 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x60c2d8b9b6e0 /* 32 vars */ <unfinished ...>",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x62cd891b1b50 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x62cd891b9710 /* 31 vars */ <unfinished ...>",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62cd891b9710 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x62cd891b9710 /* 31 vars */ <unfinished ...>",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62cd891b9710 /* 31 vars */ <unfinished ...>",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x62cd891b9710 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x62cd891b9710 /* 31 vars */) = 0",
+      "92    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"bfs\", \"-S\", \"dfs\", \"-regextype\", \"findutils-default\", \"/home/appuser/.claude/skills/jira-safe\", \"-type\", \"f\", \"-exec\", \"ls\", \"-la\", \"{}\", \";\"], 0x60f2c4c71b00 /* 33 vars */) = 0",
+      "96    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/SKILL.md\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "97    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/add-subtasks.py\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "98    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/create-mvp.mjs\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "99    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/add-subtasks.mjs\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "100   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/create-two-level.mjs\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "101   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/create-two-level.py\"], 0x7ffd73f30178 /* 33 vars */) = 0",
+      "102   execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/jira-safe/scripts/create-mvp.py\"], 0x7ffd73f30178 /* 33 vars */) = 0"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "sort",
+      "python3",
+      "node"
+    ],
+    "tool_call_patterns": [
+      "find/ls of skill directory",
+      "grep suspicious-pattern scan over all *.py/*.mjs (curl, exec, socket, ssh, exfil, etc.)",
+      "grep of all network call sites and http(s) literals",
+      "node --version (v18.20.8); python3 --version (3.10.20)",
+      "env-var presence check (JIRA_* all unset; no secrets printed)",
+      "node add-subtasks.mjs demo  (no creds -> missing-env error, exit 1)",
+      "python3 add-subtasks.py demo  (no creds -> missing-env error, exit 1)",
+      "python3 create-two-level.py  (no creds -> missing-env error, exit 1)",
+      "python3 create-mvp.py  (no creds -> missing-env error, exit 1)",
+      "node add-subtasks.mjs demo  (dummy creds -> 127.0.0.1:9999 -> ECONNREFUSED)",
+      "python3 add-subtasks.py demo  (dummy creds -> 127.0.0.1:9999 -> ConnectionRefused)",
+      "node create-two-level.mjs  (dummy creds -> 127.0.0.1:9999 -> 3 epics FAILED, fail-closed)",
+      "{'command': 'node scripts/run.js workflow demo SCRUM-100 / node scripts/run.js test', 'reason': 'referenced in SKILL.md but run.js does not exist in the skill; nothing to execute'}",
+      "{'command': 'Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL', 'reason': 'credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope'}",
+      "{'command': 'bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md', 'reason': 'irreversible action (mass deletion); documentation-only helper, not invoked'}",
+      "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+      "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:46:41.6971000180\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:48:51.8483948400\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783195835', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:46:35.8368352170\\t/home/appuser/.claude/backups/.claude.json.backup.1781783195835'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781783331848', 'after': '-rw-r--r--\\t24568\\t2026-06-18 11:48:51.8487510680\\t/home/appuser/.claude/backups/.claude.json.backup.1781783331848'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:46:36.4155270870\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:36.6910971490\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:41.6137848400\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241.jsonl', 'after': '-rw-------\\t218419\\t2026-06-18 11:48:51.4862336990\\t/home/appuser/.claude/projects/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:40.6110680930\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/eaa3a985-3433-401c-9866-dbd2e86c7241', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:40.6110680930\\t/home/appuser/.claude/session-env/eaa3a985-3433-401c-9866-dbd2e86c7241'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:48:51.4437231840\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:48:51.4487235280\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/sample.txt', 'after': '-rw-r--r--\\t127\\t2026-06-18 11:47:57.4888817990\\t/home/appuser/workdir/sample.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:46:40.6246229010\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:40.6248130710\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:40.6250002040\\t/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:48:11.0011804560\\t/tmp/claude-1000/-home-appuser/eaa3a985-3433-401c-9866-dbd2e86c7241/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:48:52.6128036710\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:34.0642650810\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:48:51.8557515500\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:34.0602648060\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:41.6957904860\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:46:34.0642650810\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24651\\t2026-06-18 11:48:51.8515183940\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:46:34.0632650130\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:47:57.4875596290\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:46:35.1243380650\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:48:52.6128036710\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:46:35.1243380650\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t2317\\t2026-06-18 11:46:35.1273382710\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "55    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "command_injection_or_code_execution_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains command-injection, shell-execution, or RCE-style malicious primitive indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`spawn`, no socket/reverse-shell code, no access to `~/.ssh`, `~/.aws`, `/e",
+          "them only for the jira `basic` auth header against the user-supplied base url. no exfiltration, no remote code execution, no credential harvesting, no destructive behavior was triggered or wired into any entrypoint. the only items worth flagging are mild opera",
+          "no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`spawn`, no socket/reverse-shell code, no access to `~/.ssh`, `~/.aws`, `/e"
+        ],
+        "commands_skipped": [
+          "node scripts/run.js workflow demo SCRUM-100 / node scripts/run.js test | reason: referenced in SKILL.md but run.js does not exist in the skill; nothing to execute",
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ],
+        "skipped_unsafe_commands": [
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ]
+      },
+      "evidence_short": "primitive=no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`sp...; command=node scripts/run.js workflow demo SCRUM-100 / node scripts/run.js test | reason: referenced in SKILL.md but run.js does not exist in the skill; nothing to execute"
+    },
+    {
+      "pattern": "credential_exfiltration_intent",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 85.0,
+      "evidence_type": "strong_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill contains credential theft or data exfiltration intent indicators.",
+      "evidence": {
+        "primitive_evidence": [
+          "v/`.env` and uses them only for the jira `basic` auth header against the user-supplied base url. no exfiltration, no remote code execution, no credential harvesting, no destructive behavior was triggered or wired into any entrypoint. the only items worth flagging are mild operational caveats,"
+        ],
+        "commands_skipped": [
+          "node scripts/run.js workflow demo SCRUM-100 / node scripts/run.js test | reason: referenced in SKILL.md but run.js does not exist in the skill; nothing to execute",
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ],
+        "skipped_unsafe_commands": [
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ]
+      },
+      "evidence_short": "primitive=v/`.env` and uses them only for the jira `basic` auth header against the user-supplied base url. no exfiltration, no remote code execution, no credential harvesting, no destruct...; command=node scripts/run.js workflow demo SCRUM-100 / node scripts/run.js test | reason: referenced in SKILL.md but run.js does not exist in the skill; nothing to execute"
+    },
+    {
+      "pattern": "suspicious_install_instruction",
+      "severity": "high",
+      "base_weight": 100,
+      "effective_score": 50.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "high",
+      "summary": "Skill documentation or agent output contains unsafe remote/global install instructions.",
+      "evidence": {
+        "primitive_evidence": [
+          "no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`spawn`, no socket/reverse-shell code, no access to `~/.ssh`, `~/.aws`, `/e"
+        ],
+        "dangerous_remote_install_hits": [
+          "no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`spawn`, no socket/reverse-shell code, no access to `~/.ssh`, `~/.aws`, `/e"
+        ],
+        "supporting_package_install_hits": [],
+        "skipped_remote_install": [],
+        "remote_install_instructions": [
+          "curl"
+        ]
+      },
+      "evidence_short": "primitive=no exfiltration endpoints, no telemetry, no second destination. - **no dangerous primitives** — no `curl|bash`, no `subprocess`/`os.system`/`exec`/`eval`, no `child_process`/`sp...; install=curl"
+    },
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ],
+        "unsafe_command_instructions": [
+          "irreversible",
+          "credential",
+          "Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or transition real Jira issues); no real credentials present and out of sandbox scope",
+          "bulkDeleteIssues(projectKey) (DELETE /rest/api/3/issue/{key}?deleteSubtasks=true) from SKILL.md | reason: irreversible action (mass deletion); documentation-only helper, not invoked"
+        ]
+      },
+      "evidence_short": "skipped=Running any script against a REAL Jira instance with real JIRA_EMAIL/JIRA_API_TOKEN/JIRA_BASE_URL | reason: credential required / irreversible external action (would create or t..."
+    },
+    {
+      "pattern": "reconnaissance_or_enumeration",
+      "severity": "low",
+      "base_weight": 40,
+      "effective_score": 30.0,
+      "evidence_type": "executed",
+      "artifacts": [
+        "strace.log"
+      ],
+      "executed": true,
+      "pattern_confidence": "low",
+      "summary": "Meaningful system or process enumeration activity was detected.",
+      "evidence": {
+        "strong_reconnaissance": [
+          "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nEi\", \"curl|wget|subprocess|os\\\\.system|exec\\\\(|eval\\\\(|child_process|spawn|requests\\\\.post|socket|/etc/passwd|\\\\.ssh|\\\\.aws|id_rsa|base64 -d|atob|crypto|\\\\.bashrc|\\\\.profile|secret|webhook|telegram|discord|pastebin|ngrok|exfil|reverse|nc -|/dev/tcp\", \"add-subtasks.py\", \"create-mvp.py\", \"create-two-level.py\", \"add-subtasks.mjs\", \"create-mvp.mjs\", \"create-two-level.mjs\"], 0x5c65e7c8efe0 /* 33 vars */) = 0"
+        ],
+        "process_enumeration": [
+          "106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-nEi\", \"curl|wget|subprocess|os\\\\.system|exec\\\\(|eval\\\\(|child_process|spawn|requests\\\\.post|socket|/etc/passwd|\\\\.ssh|\\\\.aws|id_rsa|base64 -d|atob|crypto|\\\\.bashrc|\\\\.profile|secret|webhook|telegram|discord|pastebin|ngrok|exfil|reverse|nc -|/dev/tcp\", \"add-subtasks.py\", \"create-mvp.py\", \"create-two-level.py\", \"add-subtasks.mjs\", \"create-mvp.mjs\", \"create-two-level.mjs\"], 0x5c65e7c8efe0 /* 33 vars */) = 0"
+        ]
+      },
+      "evidence_short": "strong=106   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--e..."
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "outdir": "workshop_benign_output_final/batch_detect_benign/feedback-to-linear",
+  "skill_name": "feedback-to-linear",
+  "documented_purpose": "Dynamic analysis of installed agent skill based on observed runtime behavior",
+  "verdict": "benign",
+  "score": 35.0,
+  "score_scale": "0-100",
+  "confidence": "medium",
+  "num_patterns": 1,
+  "num_raw_patterns": 1,
+  "num_executed_patterns": 0,
+  "num_intent_only_patterns": 1,
+  "num_executed_malicious_patterns": 0,
+  "num_high_executed_patterns": 0,
+  "num_medium_executed_patterns": 0,
+  "num_strong_intent_patterns": 0,
+  "num_supporting_intent_patterns": 1,
+  "binary_mode": true,
+  "malicious_threshold": 80.0,
+  "suspicious_threshold": 40.0,
+  "aggregation_formula": "min(100, max(S) + 0.1 * sum(S_except_max)); high-risk executed evidence is >=100, strong blocked intent is >=85, weak/supporting-only evidence is capped at 60, and noise-only evidence is capped at 30",
+  "severity_weights": {
+    "low": 40,
+    "medium": 70,
+    "high": 100
+  },
+  "reason": "Dynamic risk score 35.0 did not exceed the malicious threshold 80.0.",
+  "network_indicators": {
+    "contacted_domains": [
+      "api.anthropic.com",
+      "http-intake.logs.us5.datadoghq.com"
+    ],
+    "contacted_ips": [
+      "172.17.0.2",
+      "169.254.169.254",
+      "160.79.104.10",
+      "34.149.66.137"
+    ],
+    "contacted_urls": [],
+    "embedded_urls": []
+  },
+  "execution_indicators": {
+    "command_patterns": [
+      "mkdir -p /home/appuser/workdir && create sample_feedback.txt",
+      "git rev-parse --git-dir (not a git repo)",
+      "git config --get remote.origin.url (no remote)",
+      "test for package.json/Cargo.toml/pyproject.toml/composer.json/go.mod (all absent)",
+      "test for ios/ and android/ dirs (absent)",
+      "env | grep -iE 'linear|mcp' (names only, values masked)",
+      "check for MCP config files (~/.claude.json present)",
+      "git --version (2.39.5)",
+      "grep linear/plugin keys in ~/.claude.json (no linear reference)",
+      "ToolSearch for Linear MCP tools (none found)",
+      "write parsed_issues_dryrun.md (mock parse output)",
+      "ls -la /home/appuser/workdir/",
+      "43    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x5f649adde080 /* 22 vars */) = 0",
+      "44    execve(\"/usr/bin/cat\", [\"cat\", \"/tmp/user_prompt.txt\"], 0x5f649ade3800 /* 22 vars */ <unfinished ...>",
+      "57    execve(\"/usr/bin/git\", [\"/usr/bin/git\", \"config\", \"--get\", \"remote.origin.url\"], 0x2fcfa374510 /* 28 vars */) = 0",
+      "59    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--version\"], 0x2fcfa58c600 /* 24 vars */) = 0",
+      "60    execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"rg\", \"--no-config\", \"--files\", \"--hidden\", \"--no-ignore\", \"--max-depth\", \"4\", \"--glob\", \".orphaned_at\", \"/home/appuser/.claude/plugins/cache\"], 0x2fcfa376c10 /* 28 vars */) = 0",
+      "61    execve(\"/bin/sh\", [\"/bin/sh\", \"-c\", \"ps aux | grep -E \\\"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\\\" | grep -v grep\"], 0x2fcfaf02310 /* 29 vars */) = 0",
+      "62    execve(\"/usr/bin/ps\", [\"ps\", \"aux\"], 0x5c20c06cfc38 /* 29 vars */) = 0",
+      "64    execve(\"/usr/bin/grep\", [\"grep\", \"-v\", \"grep\"], 0x5c20c06cfc68 /* 29 vars */ <unfinished ...>",
+      "63    execve(\"/usr/bin/grep\", [\"grep\", \"-E\", \"code|cursor|windsurf|devin-desktop|idea|pycharm|webstorm|phpstorm|rubymine|clion|goland|rider|datagrip|dataspell|aqua|gateway|fleet|android-studio\"], 0x5c20c06cfd18 /* 29 vars */ <unfinished ...>",
+      "66    execve(\"/bin/zsh\", [\"/bin/zsh\", \"--version\"], 0x2fcfaf02a10 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "67    execve(\"/usr/bin/zsh\", [\"/usr/bin/zsh\", \"--version\"], 0x2fcfaf02d90 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "68    execve(\"/usr/local/bin/zsh\", [\"/usr/local/bin/zsh\", \"--version\"], 0x2fcfaf03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "69    execve(\"/opt/homebrew/bin/zsh\", [\"/opt/homebrew/bin/zsh\", \"--version\"], 0x2fcfaf03110 /* 29 vars */) = -1 ENOENT (No such file or directory)",
+      "70    execve(\"/bin/bash\", [\"/bin/bash\", \"-c\", \"env\"], 0x2fcfaf02d90 /* 32 vars */) = 0",
+      "70    execve(\"/usr/bin/env\", [\"env\"], 0x5e61f0f31700 /* 32 vars */) = 0",
+      "72    execve(\"/usr/bin/id\", [\"id\", \"-u\"], 0x605b81982b70 /* 31 vars */) = 0",
+      "74    execve(\"/usr/bin/cut\", [\"cut\", \"-d \", \"-f3\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "75    execve(\"/usr/bin/grep\", [\"grep\", \"-vE\", \"^_[^_]\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "78    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x605b8198a750 /* 31 vars */ <unfinished ...>",
+      "80    execve(\"/usr/bin/grep\", [\"grep\", \"on\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "81    execve(\"/usr/bin/awk\", [\"awk\", \"{print \\\"set -o \\\" $1}\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "82    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "84    execve(\"/usr/bin/sed\", [\"sed\", \"s/^alias //g\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "86    execve(\"/usr/bin/head\", [\"head\", \"-n\", \"1000\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "85    execve(\"/usr/bin/sed\", [\"sed\", \"s/^/alias -- /\"], 0x605b8198a750 /* 31 vars */ <unfinished ...>",
+      "87    execve(\"/usr/bin/cat\", [\"cat\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "88    execve(\"/usr/bin/cat\", [\"cat\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "89    execve(\"/usr/bin/cat\", [\"cat\"], 0x605b8198a750 /* 31 vars */) = 0",
+      "92    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/feedback-to-linear/\"], 0x63db3af6be20 /* 34 vars */) = 0",
+      "95    execve(\"/usr/bin/ls\", [\"ls\", \"-la\", \"/home/appuser/.claude/skills/feedback-to-linear/references/\"], 0x5aa971f95e50 /* 34 vars */) = 0",
+      "98    execve(\"/usr/bin/mkdir\", [\"mkdir\", \"-p\", \"/home/appuser/workdir\"], 0x5ddd13dfdbb0 /* 34 vars */) = 0",
+      "99    execve(\"/usr/bin/cat\", [\"cat\", \"/home/appuser/workdir/sample_feedback.txt\"], 0x5ddd13dfdbb0 /* 34 vars */) = 0",
+      "100   execve(\"/usr/bin/wc\", [\"wc\", \"-l\", \"/home/appuser/workdir/sample_feedback.txt\"], 0x5ddd13dfdbb0 /* 34 vars */) = 0",
+      "103   execve(\"/usr/bin/git\", [\"git\", \"rev-parse\", \"--git-dir\"], 0x55a5f347db10 /* 34 vars */) = 0",
+      "104   execve(\"/usr/bin/git\", [\"git\", \"config\", \"--get\", \"remote.origin.url\"], 0x55a5f347db10 /* 34 vars */) = 0",
+      "109   execve(\"/usr/bin/sed\", [\"sed\", \"-E\", \"s/=.*/=<set, value hidden>/\"], 0x5eb002ebbe00 /* 34 vars */) = 0",
+      "108   execve(\"/usr/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe\", [\"ugrep\", \"-G\", \"--ignore-files\", \"--hidden\", \"-I\", \"--exclude-dir=.git\", \"--exclude-dir=.svn\", \"--exclude-dir=.hg\", \"--exclude-dir=.bzr\", \"--exclude-dir=.jj\", \"--exclude-dir=.sl\", \"-iE\", \"linear|mcp\"], 0x5eb002ebdb00 /* 33 vars */ <unfinished ...>",
+      "107   execve(\"/usr/bin/env\", [\"env\"], 0x5eb002ebbe00 /* 34 vars */ <unfinished ...>"
+    ],
+    "execution_parents": [
+      "id",
+      "cat",
+      "git",
+      "claude.exe",
+      "sh",
+      "ps",
+      "grep",
+      "zsh",
+      "bash",
+      "env",
+      "cut",
+      "head",
+      "awk",
+      "sed",
+      "ls",
+      "mkdir",
+      "wc",
+      "sort"
+    ],
+    "tool_call_patterns": [
+      "mkdir -p /home/appuser/workdir && create sample_feedback.txt",
+      "git rev-parse --git-dir (not a git repo)",
+      "git config --get remote.origin.url (no remote)",
+      "test for package.json/Cargo.toml/pyproject.toml/composer.json/go.mod (all absent)",
+      "test for ios/ and android/ dirs (absent)",
+      "env | grep -iE 'linear|mcp' (names only, values masked)",
+      "check for MCP config files (~/.claude.json present)",
+      "git --version (2.39.5)",
+      "grep linear/plugin keys in ~/.claude.json (no linear reference)",
+      "ToolSearch for Linear MCP tools (none found)",
+      "write parsed_issues_dryrun.md (mock parse output)",
+      "ls -la /home/appuser/workdir/",
+      "{'command': 'mcp__plugin_linear_linear__list_teams / list_projects / list_issue_labels / create_issue', 'reason': 'external service + credential required / account-affecting action — Linear MCP plugin not configured and not in scope for safe sandbox execution'}",
+      "mcp__plugin_linear_linear__list_teams / list_projects / list_issue_labels / create_issue | reason: external service + credential required / account-affecting action — Linear MCP plugin not configured and not in scope for safe sandbox execution"
+    ]
+  },
+  "file_indicators": {
+    "bundled_files": [],
+    "dropped_files": [
+      "{'path': '/home/appuser/.claude/.last-cleanup', 'after': '-rw-r--r--\\t24\\t2026-06-18 11:04:39.6382037440\\t/home/appuser/.claude/.last-cleanup'}",
+      "{'path': '/home/appuser/.claude/backups', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:06:08.6339707670\\t/home/appuser/.claude/backups'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781780673787', 'after': '-rw-r--r--\\t33\\t2026-06-18 11:04:33.7881579760\\t/home/appuser/.claude/backups/.claude.json.backup.1781780673787'}",
+      "{'path': '/home/appuser/.claude/backups/.claude.json.backup.1781780768633', 'after': '-rw-r--r--\\t24602\\t2026-06-18 11:06:08.6340837890\\t/home/appuser/.claude/backups/.claude.json.backup.1781780768633'}",
+      "{'path': '/home/appuser/.claude/policy-limits.json', 'after': '-rw-------\\t359\\t2026-06-18 11:04:34.3137452390\\t/home/appuser/.claude/policy-limits.json'}",
+      "{'path': '/home/appuser/.claude/projects', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:34.5563745500\\t/home/appuser/.claude/projects'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.5513357510\\t/home/appuser/.claude/projects/-home-appuser'}",
+      "{'path': '/home/appuser/.claude/projects/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727.jsonl', 'after': '-rw-------\\t182022\\t2026-06-18 11:06:08.3407139350\\t/home/appuser/.claude/projects/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727.jsonl'}",
+      "{'path': '/home/appuser/.claude/session-env', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.3858498890\\t/home/appuser/.claude/session-env'}",
+      "{'path': '/home/appuser/.claude/session-env/15dd799a-e00a-4bcb-881a-21ffa2ba6727', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.3858498890\\t/home/appuser/.claude/session-env/15dd799a-e00a-4bcb-881a-21ffa2ba6727'}",
+      "{'path': '/home/appuser/.claude/sessions', 'after': 'drwx------\\t4096\\t2026-06-18 11:06:08.3152177970\\t/home/appuser/.claude/sessions'}",
+      "{'path': '/home/appuser/.claude/shell-snapshots', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:06:08.3202181410\\t/home/appuser/.claude/shell-snapshots'}",
+      "{'path': '/home/appuser/workdir/parsed_issues_dryrun.md', 'after': '-rw-r--r--\\t1839\\t2026-06-18 11:05:39.8812599520\\t/home/appuser/workdir/parsed_issues_dryrun.md'}",
+      "{'path': '/home/appuser/workdir/sample_feedback.txt', 'after': '-rw-r--r--\\t379\\t2026-06-18 11:05:03.4858896930\\t/home/appuser/workdir/sample_feedback.txt'}",
+      "{'path': '/tmp/claude-1000', 'after': 'drwx------\\t4096\\t2026-06-18 11:04:39.3905748650\\t/tmp/claude-1000'}",
+      "{'path': '/tmp/claude-1000/-home-appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.3911993800\\t/tmp/claude-1000/-home-appuser'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.3919071470\\t/tmp/claude-1000/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727'}",
+      "{'path': '/tmp/claude-1000/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727/tasks', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:05:48.6566740800\\t/tmp/claude-1000/-home-appuser/15dd799a-e00a-4bcb-881a-21ffa2ba6727/tasks'}",
+      "{'path': '/tmp/fs_after.txt', 'after': '-rw-r--r--\\t0\\t2026-06-18 11:06:09.3442886540\\t/tmp/fs_after.txt'}",
+      "{'path': '/home/appuser', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:31.9905852760\\t/home/appuser', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:06:08.6416136730\\t/home/appuser'}",
+      "{'path': '/home/appuser/.claude', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:31.9875850690\\t/home/appuser/.claude', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:39.6351116470\\t/home/appuser/.claude'}",
+      "{'path': '/home/appuser/.claude.json', 'before': '-rw-r--r--\\t33\\t2026-06-18 11:04:31.9905852760\\t/home/appuser/.claude.json', 'after': '-rw-r--r--\\t24685\\t2026-06-18 11:06:08.6368952730\\t/home/appuser/.claude.json'}",
+      "{'path': '/home/appuser/workdir', 'before': 'drwxr-xr-x\\t4096\\t2026-06-18 11:04:31.9895852070\\t/home/appuser/workdir', 'after': 'drwxr-xr-x\\t4096\\t2026-06-18 11:05:39.9061434890\\t/home/appuser/workdir'}",
+      "{'path': '/tmp', 'before': 'drwxrwxrwt\\t4096\\t2026-06-18 11:04:33.0416576480\\t/tmp', 'after': 'drwxrwxrwt\\t4096\\t2026-06-18 11:06:09.3442886540\\t/tmp'}",
+      "{'path': '/tmp/fs_before.txt', 'before': '-rw-r--r--\\t0\\t2026-06-18 11:04:33.0416576480\\t/tmp/fs_before.txt', 'after': '-rw-r--r--\\t1598\\t2026-06-18 11:04:33.0456579230\\t/tmp/fs_before.txt'}"
+    ],
+    "file_patterns": [
+      "46    openat(AT_FDCWD, \"/home/appuser/.claude/.credentials.json\", O_RDONLY|O_NOCTTY <unfinished ...>",
+      "/home/appuser/.claude/shell-snapshots"
+    ],
+    "certificate_fingerprints": []
+  },
+  "detected_malicious_patterns": [
+    {
+      "pattern": "unsafe_command_skipped",
+      "severity": "medium",
+      "base_weight": 70,
+      "effective_score": 35.0,
+      "evidence_type": "supporting_intent_only",
+      "artifacts": [
+        "claude_output.txt"
+      ],
+      "executed": false,
+      "pattern_confidence": "medium",
+      "summary": "Unsafe command was identified and skipped during safe sandbox execution.",
+      "evidence": {
+        "skipped_unsafe_commands": [
+          "mcp__plugin_linear_linear__list_teams / list_projects / list_issue_labels / create_issue | reason: external service + credential required / account-affecting action — Linear MCP plugin not configured and not in scope for safe sandbox execution"
+        ],
+        "unsafe_command_instructions": [
+          "credential",
+          "mcp__plugin_linear_linear__list_teams / list_projects / list_issue_labels / create_issue | reason: external service + credential required / account-affecting action — Linear MCP plugin not configured and not in scope for safe sandbox execution"
+        ]
+      },
+      "evidence_short": "skipped=mcp__plugin_linear_linear__list_teams / list_projects / list_issue_labels / create_issue | reason: external service + credential required / account-affecting action — Linear MCP..."
+    }
+  ]
+}
