@@ -1,0 +1,121 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 08:55:00.1375266870\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:54.3762500570\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781686494375",
+      "after": "-rw-r--r--\t33\t2026-06-17 08:54:54.3762500570\t/home/appuser/.claude/backups/.claude.json.backup.1781686494375"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 08:54:54.8921379490\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:55.1007152370\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:55:00.0782261760\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d.jsonl",
+      "after": "-rw-------\t41120\t2026-06-17 08:55:33.2086460740\t/home/appuser/.claude/projects/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:59.9424769300\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/4c7b464d-7920-42e1-8b45-9118c7468d8d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:59.9424769300\t/home/appuser/.claude/session-env/4c7b464d-7920-42e1-8b45-9118c7468d8d"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 08:55:33.1947088310\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:55:33.1977090320\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 08:54:59.9454771320\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:59.9465153230\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:54:59.9465153230\t/tmp/claude-1000/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:55:13.4733851300\t/tmp/claude-1000/-home-appuser/4c7b464d-7920-42e1-8b45-9118c7468d8d/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 08:55:34.2037765600\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:54:52.7219922890\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:55:33.5097735170\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:54:52.7199921550\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:55:00.1370872740\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 08:54:52.7219922890\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 08:55:33.5057297070\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 08:54:53.7590618980\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 08:55:34.2047766270\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 08:54:53.7590618980\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1416\t2026-06-17 08:54:53.7620621000\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:54:52.7149918190\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-prompt-injection",
+    "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-prompt-injection/SKILL.md",
+    "/home/appuser/.profile",
+    "/home/appuser/workdir",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 16,
+  "num_modified": 5,
+  "num_deleted": 1,
+  "num_unchanged": 13,
+  "monitor": "find_based_no_smart_monitor"
+}

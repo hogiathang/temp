@@ -1,0 +1,171 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 08:49:56.3640993400\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:58.1532469250\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781686190673",
+      "after": "-rw-r--r--\t33\t2026-06-17 08:49:50.6737173740\t/home/appuser/.claude/backups/.claude.json.backup.1781686190673"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781686258154",
+      "after": "-rw-r--r--\t24322\t2026-06-17 08:50:58.1545809500\t/home/appuser/.claude/backups/.claude.json.backup.1781686258154"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 08:49:51.1817514780\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:51.3857651700\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:56.3094611780\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660.jsonl",
+      "after": "-rw-------\t76481\t2026-06-17 08:50:57.8658839070\t/home/appuser/.claude/projects/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:55.4905167480\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/350b669b-9194-42c5-9f68-e935ef68c660",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:55.4890406020\t/home/appuser/.claude/session-env/350b669b-9194-42c5-9f68-e935ef68c660"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 08:50:57.8332254440\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:57.8372257120\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:35.9460626060\t/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/__pycache__/validate.cpython-310.pyc",
+      "after": "-rw-r--r--\t1041\t2026-06-17 08:50:35.9460626060\t/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/__pycache__/validate.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/documents",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:20.8527431370\t/home/appuser/documents"
+    },
+    {
+      "path": "/home/appuser/documents/sample.json",
+      "after": "-rw-r--r--\t17\t2026-06-17 08:50:20.8532170960\t/home/appuser/documents/sample.json"
+    },
+    {
+      "path": "/home/appuser/documents/test.txt",
+      "after": "-rw-r--r--\t27\t2026-06-17 08:50:20.8372047500\t/home/appuser/documents/test.txt"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.csv",
+      "after": "-rw-r--r--\t14\t2026-06-17 08:50:20.7944549230\t/home/appuser/workdir/sample.csv"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.exe",
+      "after": "-rw-r--r--\t9\t2026-06-17 08:50:20.7947392440\t/home/appuser/workdir/sample.exe"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.json",
+      "after": "-rw-r--r--\t17\t2026-06-17 08:50:20.7937466970\t/home/appuser/workdir/sample.json"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t27\t2026-06-17 08:50:20.7927391090\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 08:49:55.4965539240\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:55.4969411450\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:55.4969411450\t/tmp/claude-1000/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:36.0237614890\t/tmp/claude-1000/-home-appuser/350b669b-9194-42c5-9f68-e935ef68c660/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 08:50:58.8732952580\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:49:49.0066054700\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:58.1592473280\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:49:49.0046053350\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:49:56.3630992730\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 08:49:49.0066054700\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24405\t2026-06-17 08:50:58.1552470590\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:49:49.0116058050\t/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:26.8211437660\t/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:49:49.0066054700\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:50:20.7944549230\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 08:49:50.0456752170\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 08:50:58.8742953250\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 08:49:50.0456752170\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1682\t2026-06-17 08:49:50.0486754180\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:49:49.0006050670\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/SKILL.md",
+    "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/_expected.json",
+    "/home/appuser/.claude/skills/cisco-ai-defense-skill-scanner-file-validator/validate.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 26,
+  "num_modified": 7,
+  "num_deleted": 1,
+  "num_unchanged": 13,
+  "monitor": "find_based_no_smart_monitor"
+}

@@ -1,0 +1,184 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 09:03:10.2820432260\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:05:01.3958466800\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781686984573",
+      "after": "-rw-r--r--\t33\t2026-06-17 09:03:04.5742990240\t/home/appuser/.claude/backups/.claude.json.backup.1781686984573"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781687101396",
+      "after": "-rw-r--r--\t24323\t2026-06-17 09:05:01.3965154150\t/home/appuser/.claude/backups/.claude.json.backup.1781687101396"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 09:03:05.0900401970\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:05.2946927170\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:10.2332620780\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd.jsonl",
+      "after": "-rw-------\t246719\t2026-06-17 09:05:01.0861559640\t/home/appuser/.claude/projects/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:09.5323383660\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/84129097-f969-48c5-ac1f-0dde9c2271bd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:09.5323383660\t/home/appuser/.claude/session-env/84129097-f969-48c5-ac1f-0dde9c2271bd"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 09:05:01.0668245960\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:05:01.0708248650\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/SAMPLE.rpgle",
+      "after": "-rw-r--r--\t992\t2026-06-17 09:03:41.0904565560\t/home/appuser/workdir/SAMPLE.rpgle"
+    },
+    {
+      "path": "/home/appuser/workdir/dependencies.json",
+      "after": "-rw-r--r--\t462\t2026-06-17 09:03:55.1591099800\t/home/appuser/workdir/dependencies.json"
+    },
+    {
+      "path": "/home/appuser/workdir/javaout",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:03.7080896010\t/home/appuser/workdir/javaout"
+    },
+    {
+      "path": "/home/appuser/workdir/javaout/com",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:03.7080896010\t/home/appuser/workdir/javaout/com"
+    },
+    {
+      "path": "/home/appuser/workdir/javaout/com/example",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:03.7084946100\t/home/appuser/workdir/javaout/com/example"
+    },
+    {
+      "path": "/home/appuser/workdir/javaout/com/example/model",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:03.7084946100\t/home/appuser/workdir/javaout/com/example/model"
+    },
+    {
+      "path": "/home/appuser/workdir/javaout/com/example/model/Root.java",
+      "after": "-rw-r--r--\t143\t2026-06-17 09:04:03.7090782660\t/home/appuser/workdir/javaout/com/example/model/Root.java"
+    },
+    {
+      "path": "/home/appuser/workdir/structure.json",
+      "after": "-rw-r--r--\t2153\t2026-06-17 09:03:48.6075608520\t/home/appuser/workdir/structure.json"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 09:03:09.5375939470\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:09.5381032670\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:09.5382557370\t/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:32.2416886120\t/tmp/claude-1000/-home-appuser/84129097-f969-48c5-ac1f-0dde9c2271bd/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:05:02.0848929290\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:03:02.8598905090\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:05:01.4026818950\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:03:02.8568903070\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:03:10.2803885750\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 09:03:02.8598905090\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 09:05:01.3978468140\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:03:02.8598905090\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:04:03.7059745160\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 09:03:03.9129611920\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 09:05:02.0848929290\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 09:03:03.9129611920\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t5278\t2026-06-17 09:03:03.9169614610\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:03:02.8528900390\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/SKILL.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/assets",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/assets/java-class-template.java",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/assets/migration-report-template.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/messaging-integration.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/performance-patterns.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-common-rules.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-advanced.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-core-rules.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-data-structures.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-functions.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-migration-guide.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-patterns.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-rules.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/pseudocode-rpg-rules.md.backup",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/testing-strategy.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/references/transaction-handling.md",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/analyze-dependencies.ps1",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/analyze-dependencies.sh",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/estimate-complexity.py",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/extract-structure.py",
+    "/home/appuser/.claude/skills/dauquangthanh-hanoi-rainbow-skills-rpg-migration-analyzer/scripts/generate-java-classes.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 25,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 35,
+  "monitor": "find_based_no_smart_monitor"
+}

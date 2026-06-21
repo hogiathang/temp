@@ -1,0 +1,146 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 07:53:04.0010317590\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:54:09.6303507820\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781682778310",
+      "after": "-rw-r--r--\t33\t2026-06-17 07:52:58.3106497640\t/home/appuser/.claude/backups/.claude.json.backup.1781682778310"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781682849630",
+      "after": "-rw-r--r--\t24323\t2026-06-17 07:54:09.6306321260\t/home/appuser/.claude/backups/.claude.json.backup.1781682849630"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 07:52:58.8112721100\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:52:59.0055865210\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:03.9598429980\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe.jsonl",
+      "after": "-rw-------\t67851\t2026-06-17 07:54:09.3032208940\t/home/appuser/.claude/projects/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:02.7011192080\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:02.7011192080\t/home/appuser/.claude/session-env/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 07:54:09.2814140190\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:54:09.2854142880\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:27.9352218080\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/__pycache__/TOOL.cpython-310.pyc",
+      "after": "-rw-r--r--\t1336\t2026-06-17 07:53:27.9352218080\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/__pycache__/TOOL.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t60\t2026-06-17 07:53:46.7068581800\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 07:53:02.7053713070\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:02.7053713070\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:02.7058830370\t/tmp/claude-1000/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:46.7639024220\t/tmp/claude-1000/-home-appuser/7b9a402e-8a6d-4eb1-8880-66bfb5305bfe/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 07:54:10.3654867930\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 07:52:56.6575387910\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:54:09.6366558350\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 07:52:56.6555386570\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:04.0010317590\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 07:52:56.6575387910\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 07:54:09.6324375830\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 07:52:56.6626962410\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:27.9336383500\t/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 07:52:56.6575387910\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 07:53:46.7064326090\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 07:52:57.6956084780\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 07:54:10.3654867930\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 07:52:57.6956084780\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1560\t2026-06-17 07:52:57.6996087460\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 07:52:56.6515383890\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/SKILL.md",
+    "/home/appuser/.claude/skills/Charpup-skill-security-auditor-network-egress-skill/TOOL.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 20,
+  "num_modified": 7,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

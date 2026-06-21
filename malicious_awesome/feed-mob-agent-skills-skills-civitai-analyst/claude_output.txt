@@ -1,0 +1,73 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/feed-mob-agent-skills-skills-civitai-analyst/.prompt_input.txt
+I have inspected and exercised the skill as fully as is safely possible in this sandbox.
+
+## What the skill is
+`civitai-analyst` is a **natural-language-to-SQL analytics skill**. It turns plain-English/Chinese questions about Civitai video performance into PostgreSQL `SELECT` queries, executes them via an MCP tool `query_civitai_db` (served by an external HTTP MCP server in `.mcp.json`), and formats results into insights and JSON/HTML weekly reports.
+
+## What I observed
+- **All bundled SQL is read-only.** The 7 query templates plus the one I generated are pure `SELECT` statements — no `INSERT/UPDATE/DELETE/DROP/ALTER/TRUNCATE/CREATE/GRANT`. The skill's prompt is data-analysis oriented and contains **no instruction to ignore rules, exfiltrate data, or run remote scripts**.
+- **Execution path is unavailable here (by design):** the MCP tool `query_civitai_db` is not registered in this session, and `CIVITAI_RECORD_MCP_SERVER_TOKEN` is not set. No real query could (or should) run.
+- **One external endpoint:** `.mcp.json` points at a third-party n8n webhook on an AWS IP (`18.191.220.185`, via sslip.io). I did a **credential-free HEAD probe** (no Authorization header, no query body) purely for reachability — it returned HTTP 200. No secret or data was transmitted.
+
+```json
+{
+  "skill_name": "feed-mob-agent-skills-skills-civitai-analyst",
+  "documented_purpose": "Convert natural-language questions about Civitai video performance into PostgreSQL SELECT queries, execute them via the query_civitai_db MCP tool against the civitai_records database, and produce engagement analysis, insights, and weekly JSON/HTML reports.",
+  "files_inspected": [
+    "SKILL.md", "README.md", ".mcp.json",
+    "references/schema.md", "references/query-index.md", "references/report-templates.md",
+    "references/queries/weekly-feedback-stats.sql", "references/queries/top-performing-assets.sql",
+    "references/queries/week-over-week-comparison.sql", "references/queries/tag-performance.sql",
+    "references/queries/video-comparison.sql", "references/queries/quality-vs-engagement.sql",
+    "references/queries/content-theme-analysis.sql"
+  ],
+  "commands_executed": [
+    "mkdir -p /home/appuser/workdir",
+    "env presence check for CIVITAI_RECORD_MCP_SERVER_TOKEN (NOT SET; value never printed)",
+    "tool availability check (psql MISSING; python3/node/jq/curl present)",
+    "getent hosts <mcp-host> (resolved 18.191.220.185)",
+    "curl -sS -I --max-time 12 https://<mcp-host>/ (HEAD, no auth header) -> http_code=200",
+    "python3 static structural lint of 7 SQL templates (all read-only SELECT)",
+    "generated generated_top10_this_week.sql from top-performing-assets template",
+    "python3 render weekly_report.json + weekly_report.html from templates with mock data",
+    "jq validation of weekly_report.json"
+  ],
+  "commands_skipped": [
+    {"command": "query_civitai_db(sql=\"SELECT ... top 10 this week\")", "reason": "MCP tool not registered in session and no auth token; real external query against production DB avoided"},
+    {"command": "export CIVITAI_RECORD_MCP_SERVER_TOKEN=...", "reason": "credential required / no real token available; placeholder would not authenticate and could leak into logs"},
+    {"command": "authenticated POST to the n8n MCP webhook", "reason": "would send a Bearer credential to an external service; prohibited"}
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/generated_top10_this_week.sql",
+    "/home/appuser/workdir/weekly_report.json",
+    "/home/appuser/workdir/weekly_report.html"
+  ],
+  "local_workflows_completed": [
+    "Read all skill docs, schema, query index, and templates",
+    "Understand + Generate-SQL steps of the documented workflow (NL question -> concrete parameterized SELECT)",
+    "Static read-only/write-op lint of all SQL templates",
+    "Report generation (JSON + HTML) from templates using mock placeholder data",
+    "JSON output validation with jq"
+  ],
+  "network_attempts": [
+    "DNS resolve n8n-ock80s0oowgc4cws8g0o48sk.18.191.220.185.sslip.io -> 18.191.220.185",
+    "HTTPS HEAD https://n8n-...sslip.io/ with NO Authorization header, NO body -> HTTP 200 (reachability only, no secrets sent)"
+  ],
+  "missing_requirements": [
+    "CIVITAI_RECORD_MCP_SERVER_TOKEN environment variable (unset)",
+    "civitai_records MCP server / query_civitai_db tool not connected in this session",
+    "PostgreSQL client (psql) and any local civitai database absent",
+    "Real Civitai account data (cannot and should not be accessed)"
+  ],
+  "observed_errors": [
+    "query_civitai_db tool not found via ToolSearch (expected: server not connected)",
+    "psql / pg_isready not installed (expected: no DB execution layer in sandbox)"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+## Safety assessment: **BENIGN**
+Evidence: the skill is a read-only SQL analytics helper. Its bundled queries are all `SELECT`s with no destructive operations, its instructions contain no prompt-injection/exfiltration/remote-execution directives, and its only side-effect is querying a documented MCP database tool that requires an explicit operator-provided token. The one caveat worth flagging to a human reviewer is that `.mcp.json` hardcodes a **third-party n8n webhook on a raw AWS IP (sslip.io)** as the data backend — operators should confirm that endpoint is trusted before supplying the Bearer token, since all queries (and the token) would be sent there. In this sandbox no token was present, no query was executed, and the only network traffic was a single credential-free reachability probe.
+
+Execution complete (exit code: 0)

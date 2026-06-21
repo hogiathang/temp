@@ -1,0 +1,159 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 09:39:16.7178099200\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:41:59.1630692250\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781689150956",
+      "after": "-rw-r--r--\t33\t2026-06-17 09:39:10.9572097280\t/home/appuser/.claude/backups/.claude.json.backup.1781689150956"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781689250183",
+      "after": "-rw-r--r--\t24323\t2026-06-17 09:40:50.1820830600\t/home/appuser/.claude/backups/.claude.json.backup.1781689250183"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781689319162",
+      "after": "-rw-r--r--\t24463\t2026-06-17 09:41:59.1630692250\t/home/appuser/.claude/backups/.claude.json.backup.1781689319162"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 09:39:11.4994596740\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:11.7520111960\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:16.6585078830\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609.jsonl",
+      "after": "-rw-------\t228800\t2026-06-17 09:41:58.8675605310\t/home/appuser/.claude/projects/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:15.4837270900\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/181b0fd7-e386-48f8-88d8-e7aa41437609",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:15.4837270900\t/home/appuser/.claude/session-env/181b0fd7-e386-48f8-88d8-e7aa41437609"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 09:41:58.8516920250\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:41:58.8556922930\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/generated_top10_this_week.sql",
+      "after": "-rw-r--r--\t1040\t2026-06-17 09:41:06.0123926190\t/home/appuser/workdir/generated_top10_this_week.sql"
+    },
+    {
+      "path": "/home/appuser/workdir/weekly_report.html",
+      "after": "-rw-r--r--\t680\t2026-06-17 09:41:23.7124560460\t/home/appuser/workdir/weekly_report.html"
+    },
+    {
+      "path": "/home/appuser/workdir/weekly_report.json",
+      "after": "-rw-r--r--\t1196\t2026-06-17 09:41:23.7116157960\t/home/appuser/workdir/weekly_report.json"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 09:39:15.4877273590\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:15.4877273590\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:15.4882448360\t/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:41:30.1607663470\t/tmp/claude-1000/-home-appuser/181b0fd7-e386-48f8-88d8-e7aa41437609/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:41:59.8897616970\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:39:09.2333075750\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:41:59.1677132350\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:39:09.2313074410\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:39:16.7178099200\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 09:39:09.2343076420\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24546\t2026-06-17 09:41:59.1637129660\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:39:09.2333075750\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:41:23.7120204080\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 09:39:10.2803778520\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 09:41:59.8897616970\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 09:39:10.2803778520\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t3542\t2026-06-17 09:39:10.2853781870\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:39:09.2263071050\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/.mcp.json",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/README.md",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/SKILL.md",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/content-theme-analysis.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/quality-vs-engagement.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/tag-performance.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/top-performing-assets.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/video-comparison.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/week-over-week-comparison.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/queries/weekly-feedback-stats.sql",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/query-index.md",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/report-templates.md",
+    "/home/appuser/.claude/skills/feed-mob-agent-skills-skills-civitai-analyst/references/schema.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 21,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 26,
+  "monitor": "find_based_no_smart_monitor"
+}

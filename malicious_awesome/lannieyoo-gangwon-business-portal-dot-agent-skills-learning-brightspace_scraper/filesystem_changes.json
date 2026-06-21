@@ -1,0 +1,217 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 09:55:27.2089471870\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:50.9687088910\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781690121429",
+      "after": "-rw-r--r--\t33\t2026-06-17 09:55:21.4298471370\t/home/appuser/.claude/backups/.claude.json.backup.1781690121429"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781690270968",
+      "after": "-rw-r--r--\t24323\t2026-06-17 09:57:50.9690317410\t/home/appuser/.claude/backups/.claude.json.backup.1781690270968"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 09:55:21.9665953470\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:22.2176121940\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:27.1639441670\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4.jsonl",
+      "after": "-rw-------\t264496\t2026-06-17 09:57:50.6554160750\t/home/appuser/.claude/projects/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:26.0958724830\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/fc4c6418-99fc-4d8c-8255-c29d50cfeca4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:26.0958724830\t/home/appuser/.claude/session-env/fc4c6418-99fc-4d8c-8255-c29d50cfeca4"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 09:57:50.6385734620\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:50.6415736630\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:14.6437919490\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t402\t2026-06-17 09:57:14.6356483660\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/helpers.cpython-310.pyc",
+      "after": "-rw-r--r--\t1012\t2026-06-17 09:56:46.0866009400\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/helpers.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/scraper.cpython-310.pyc",
+      "after": "-rw-r--r--\t20898\t2026-06-17 09:57:14.6437919490\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__pycache__/scraper.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:07.0716494680\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t241\t2026-06-17 09:57:07.0694479200\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_links.cpython-310.pyc",
+      "after": "-rw-r--r--\t2538\t2026-06-17 09:56:46.1042422430\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_links.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_pdfs.cpython-310.pyc",
+      "after": "-rw-r--r--\t1506\t2026-06-17 09:56:46.1072424440\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/extract_pdfs.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/init_hashes.cpython-310.pyc",
+      "after": "-rw-r--r--\t1054\t2026-06-17 09:57:07.0716494680\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__pycache__/init_hashes.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/data",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:06.7162679300\t/home/appuser/workdir/data"
+    },
+    {
+      "path": "/home/appuser/workdir/data/ml",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:07.1133052380\t/home/appuser/workdir/data/ml"
+    },
+    {
+      "path": "/home/appuser/workdir/data/ml/.content_hashes.json",
+      "after": "-rw-r--r--\t127\t2026-06-17 09:57:07.1137696900\t/home/appuser/workdir/data/ml/.content_hashes.json"
+    },
+    {
+      "path": "/home/appuser/workdir/data/ml/Week1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:06.7306265810\t/home/appuser/workdir/data/ml/Week1"
+    },
+    {
+      "path": "/home/appuser/workdir/data/ml/Week1/99999_Lecture1.html",
+      "after": "-rw-r--r--\t228\t2026-06-17 09:57:06.7286264470\t/home/appuser/workdir/data/ml/Week1/99999_Lecture1.html"
+    },
+    {
+      "path": "/home/appuser/workdir/data/ml/Week1/index.html",
+      "after": "-rw-r--r--\t39\t2026-06-17 09:57:06.7407341170\t/home/appuser/workdir/data/ml/Week1/index.html"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_content.html",
+      "after": "-rw-r--r--\t421\t2026-06-17 09:56:36.0194511620\t/home/appuser/workdir/sample_content.html"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 09:55:26.1008728180\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:26.1028729530\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:26.1028729530\t/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:14.7321636040\t/tmp/claude-1000/-home-appuser/fc4c6418-99fc-4d8c-8255-c29d50cfeca4/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:57:51.7736496430\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6454395620\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:50.9735959470\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6424393610\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:55:27.2089471870\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 09:55:19.6454395620\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 09:57:50.9705957450\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6554402330\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:56:46.0852409680\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6590770460\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:56:46.1032421760\t/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6444394950\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:57:06.7156255740\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 09:55:20.6945099710\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 09:57:51.7736496430\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 09:55:20.6945099710\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t4460\t2026-06-17 09:55:20.6985102390\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:55:19.6384390920\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/SKILL.md",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/metadata.json",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/.session.json",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/__init__.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/config.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/helpers.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/scraper.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/__init__.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/cleanup_html.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/extract_links.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/extract_pdfs.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/init_hashes.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/brightspace/tools/migrate_data.py",
+    "/home/appuser/.claude/skills/lannieyoo-gangwon-business-portal-dot-agent-skills-learning-brightspace_scraper/scripts/run.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 33,
+  "num_modified": 8,
+  "num_deleted": 1,
+  "num_unchanged": 26,
+  "monitor": "find_based_no_smart_monitor"
+}

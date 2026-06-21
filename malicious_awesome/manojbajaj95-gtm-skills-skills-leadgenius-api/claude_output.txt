@@ -1,0 +1,118 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/manojbajaj95-gtm-skills-skills-leadgenius-api/.prompt_input.txt
+All safe local execution is complete. The endpoint is real (resolved to an AWS IP `13.35.163.25`, returned a documented 401 — no secrets sent, no account affected). Here is the structured summary.
+
+## Execution Summary
+
+**Behavior classification: BENIGN, with one SUSPICIOUS finding (embedded live credentials).**
+
+The skill is a straightforward HTTP/GraphQL API client for the "LeadGenius Pro" B2B lead-management platform. The auth/CLI/test scripts behave exactly as documented and gate on credentials safely. However, three demo scripts contain **hardcoded live AWS AppSync endpoints and an embedded API key** (`da2-5u4a7hbhvbb2fdsj2ys2h2pljy`) plus hardcoded `owner`/`company_id` values, and would write real records to a live backend if run. I did not execute those.
+
+```json
+{
+  "skill_name": "manojbajaj95-gtm-skills-skills-leadgenius-api",
+  "documented_purpose": "Toolset for interacting with the LeadGenius Pro API v1.1 — managing B2B leads, clients, companies, enrichment/AI lead processing, search history, webhooks, territory analytics, email validation, and integrations, using Cognito JWT (cookies/Bearer) or API-key auth with multi-tenant isolation.",
+  "files_inspected": [
+    "SKILL.md",
+    "package.json",
+    ".gitignore",
+    "scripts/auth.py",
+    "scripts/api_call.py",
+    "scripts/lgp.py",
+    "scripts/test_api.py",
+    "scripts/create_edu_demo.py",
+    "scripts/create_fin_demo.py",
+    "scripts/fix_leads.py",
+    "scripts/lead_distribution.py",
+    "references/api_reference.md",
+    "references/openapi.json"
+  ],
+  "commands_executed": [
+    "python3 --version",
+    "python3 -c 'import requests' (ModuleNotFoundError — dependency missing)",
+    "mkdir -p /home/appuser/workdir",
+    "env-var presence check for LGP_API_KEY / LGP_APPSYNC_KEY / LGP_COMPANY_ID (names only)",
+    "ls ~/.leadgenius_auth.json (absent)",
+    "python3 lgp.py --help / auth.py --help / api_call.py --help / test_api.py --help (ModuleNotFoundError without stub)",
+    "python3 -m py_compile scripts/*.py (all OK)",
+    "python3 json-validate references/openapi.json (valid OpenAPI 3.0.3, 4 paths)",
+    "created /home/appuser/workdir/sample_lead.json and sample_client.json",
+    "created local no-op requests stub at /home/appuser/workdir/reqstub/requests.py",
+    "python3 lgp.py leads list  (no creds -> 'Not authenticated')",
+    "python3 api_call.py GET /clients  (no key -> 'API Key is required')",
+    "python3 lead_distribution.py  (no key -> 'API Key is required')",
+    "python3 lgp.py --help (via stub)",
+    "python3 api_call.py GET /clients --key dummy-token (stubbed net, builds correct request)",
+    "LGP_API_KEY=dummy-token python3 lgp.py leads find --company 'Example Corp' (stubbed net)",
+    "python3 auth.py --email test@example.com --password dummy-password (stubbed net)",
+    "urllib reachability probe: DNS resolve + HTTPS GET https://last.leadgenius.app/api/clients with dummy bearer token"
+  ],
+  "commands_skipped": [
+    {
+      "command": "python3 scripts/create_edu_demo.py",
+      "reason": "irreversible action / embedded live credential — hardcoded AppSync endpoint + API key 'da2-...'; would create a real client, campaign and 12 leads on a live AWS backend"
+    },
+    {
+      "command": "python3 scripts/create_fin_demo.py",
+      "reason": "irreversible action / embedded live credential — same hardcoded AppSync key; would write a client, campaign and 20 leads to the live backend"
+    },
+    {
+      "command": "python3 scripts/fix_leads.py",
+      "reason": "irreversible action / embedded live credential — same hardcoded AppSync key; would mutate real campaign/lead records by hardcoded UUID"
+    },
+    {
+      "command": "python3 scripts/lead_distribution.py --key <real> --company-id <real>",
+      "reason": "credential required + would query a live AppSync backend; ran only the no-key validation path"
+    },
+    {
+      "command": "python3 scripts/test_api.py --username <real> --password <real>",
+      "reason": "credential required — real Cognito login + live client/lead CRUD; no real account available"
+    },
+    {
+      "command": "python3 scripts/auth.py --email <real> --password <real>  (real login)",
+      "reason": "credential required — would submit real credentials to a live auth endpoint; ran only with placeholder dummy values"
+    },
+    {
+      "command": "pip install requests",
+      "reason": "policy — avoided installing remote package code in the sandbox; recorded as missing requirement instead"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/sample_lead.json",
+    "/home/appuser/workdir/sample_client.json",
+    "/home/appuser/workdir/reqstub/requests.py (local no-op network stub)"
+  ],
+  "local_workflows_completed": [
+    "Environment & dependency check (python 3.10.20 present; 'requests' missing)",
+    "Syntax/byte-compile validation of all 8 scripts (all pass)",
+    "OpenAPI spec JSON validation (valid 3.0.3)",
+    "No-credential auth-gating validation for lgp.py, api_call.py, lead_distribution.py (all correctly refuse)",
+    "Stubbed request-construction verification (correct endpoints/headers/params built for last.leadgenius.app)",
+    "CLI --help discovery for lgp.py"
+  ],
+  "network_attempts": [
+    "STUBBED (no real I/O): POST https://last.leadgenius.app/api/auth ; GET https://last.leadgenius.app/api/clients ; GET https://last.leadgenius.app/api/leads",
+    "REAL probe: DNS resolve last.leadgenius.app -> 13.35.163.25 (AWS) ; HTTPS GET https://last.leadgenius.app/api/clients with dummy bearer token -> HTTP 401 'no_valid_credentials' (no secrets sent, no account affected)",
+    "NOT contacted: https://ugdmgjyxenhipk74b5swx4xvuy.appsync-api.us-east-1.amazonaws.com/graphql (would have required the embedded real API key) — deliberately skipped"
+  ],
+  "missing_requirements": [
+    "Python 'requests' library not installed (all 8 scripts import it at top; hard blocker for native execution)",
+    "Valid Cognito account (username/password) for auth.py, test_api.py, lgp.py auth",
+    "LGP_API_KEY (Bearer/API key) for lgp.py and api_call.py data operations",
+    "LGP_APPSYNC_KEY + LGP_COMPANY_ID for lead_distribution.py",
+    "No ~/.leadgenius_auth.json present (expected; created by auth flow)"
+  ],
+  "observed_errors": [
+    "ModuleNotFoundError: No module named 'requests' (all scripts, before stub)",
+    "Documented auth-gate messages: 'Not authenticated', 'API Key is required'",
+    "Live endpoint returned HTTP 401 {\"errorType\":\"no_valid_credentials\"} to the dummy-token probe"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+### Security notes for the maintainer
+- **Embedded live credential (high concern):** `create_edu_demo.py`, `create_fin_demo.py`, and `fix_leads.py` ship a hardcoded AppSync URL and `x-api-key: da2-5u4a7hbhvbb2fdsj2ys2h2pljy`, plus hardcoded `owner` and `company_id`. These should be removed/rotated and moved to env vars (as `lead_distribution.py` already does). Anyone with the skill files can write to that backend.
+- **No malicious behavior observed:** no obfuscation, no remote-code download, no curl|bash, no exfiltration, no attempt to read host credentials/SSH keys/browser profiles. Network targets are limited to the documented `last.leadgenius.app` API and the AppSync GraphQL endpoint. The token-save behavior writes only to `~/.leadgenius_auth.json` (expected, documented).
+- All real network activity I performed was a single benign reachability probe using a non-secret dummy token, which the live server correctly rejected with 401.
+
+Execution complete (exit code: 0)

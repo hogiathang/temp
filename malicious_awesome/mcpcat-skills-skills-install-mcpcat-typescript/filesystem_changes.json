@@ -1,0 +1,2237 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 10:10:11.3043871530\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:12:15.7946741330\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781691005591",
+      "after": "-rw-r--r--\t33\t2026-06-17 10:10:05.5917422700\t/home/appuser/.claude/backups/.claude.json.backup.1781691005591"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781691135794",
+      "after": "-rw-r--r--\t24323\t2026-06-17 10:12:15.7949675960\t/home/appuser/.claude/backups/.claude.json.backup.1781691135794"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 10:10:06.1049342590\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:06.2949656950\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:11.2519282020\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762.jsonl",
+      "after": "-rw-------\t125945\t2026-06-17 10:12:15.4817719460\t/home/appuser/.claude/projects/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:09.6321709900\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/151f28b7-17d4-4659-85fa-a0ef561d6762",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:09.6321709900\t/home/appuser/.claude/session-env/151f28b7-17d4-4659-85fa-a0ef561d6762"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 10:12:15.4676168070\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:12:15.4706170080\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.npm",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:27.0206408200\t/home/appuser/.npm"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:26.6102143060\t/home/appuser/.npm/_cacache"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:26.6023652880\t/home/appuser/.npm/_cacache/content-v2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1224030440\t/home/appuser/.npm/_cacache/content-v2/sha512"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/00",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9186642910\t/home/appuser/.npm/_cacache/content-v2/sha512/00"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/00/68",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9216891750\t/home/appuser/.npm/_cacache/content-v2/sha512/00/68"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/00/68/fca42c58b2dfa4e2107946afcce80ade0ee07b31da201f038aa497883aa6bcf7ba279b1c3a12a0bc22452179e7c5dd4788e4f8188a9e939baa6552822aa7",
+      "after": "-rw-r--r--\t31756\t2026-06-17 10:11:11.9143510550\t/home/appuser/.npm/_cacache/content-v2/sha512/00/68/fca42c58b2dfa4e2107946afcce80ade0ee07b31da201f038aa497883aa6bcf7ba279b1c3a12a0bc22452179e7c5dd4788e4f8188a9e939baa6552822aa7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/02",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.7692363860\t/home/appuser/.npm/_cacache/content-v2/sha512/02"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/02/e3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.7710259170\t/home/appuser/.npm/_cacache/content-v2/sha512/02/e3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/02/e3/f32eb2bd837c8e528bc254e0cf988c6af948698000943e8322f4bdcb31e7b977f3ac909e066fcc4e6aea9aea60c49dfa74143928a2e9558f5a0263e24de1",
+      "after": "-rw-r--r--\t9126\t2026-06-17 10:11:12.7677392440\t/home/appuser/.npm/_cacache/content-v2/sha512/02/e3/f32eb2bd837c8e528bc254e0cf988c6af948698000943e8322f4bdcb31e7b977f3ac909e066fcc4e6aea9aea60c49dfa74143928a2e9558f5a0263e24de1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/06",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.7015008550\t/home/appuser/.npm/_cacache/content-v2/sha512/06"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/06/dd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.7034932230\t/home/appuser/.npm/_cacache/content-v2/sha512/06/dd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/06/dd/1edb82eae35386e37abbe743641cb3ddae28c2d0ba3207c33424f408d167ae463460d44dfd18e3fa4da30bc049d95c8e3cd4d3af6f8aebbc3000605319db",
+      "after": "-rw-r--r--\t3552562\t2026-06-17 10:11:10.6996459830\t/home/appuser/.npm/_cacache/content-v2/sha512/06/dd/1edb82eae35386e37abbe743641cb3ddae28c2d0ba3207c33424f408d167ae463460d44dfd18e3fa4da30bc049d95c8e3cd4d3af6f8aebbc3000605319db"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/07",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1262182000\t/home/appuser/.npm/_cacache/content-v2/sha512/07"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/07/0f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1280993820\t/home/appuser/.npm/_cacache/content-v2/sha512/07/0f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/07/0f/abb1271933e1094e088766664a05ed62c52218fccf7d4d7e183779b2658be7896888532577b40411fcbeb5200e6f0aae42bd5ac32f717473192c450aa471",
+      "after": "-rw-r--r--\t92208\t2026-06-17 10:11:12.1255032610\t/home/appuser/.npm/_cacache/content-v2/sha512/07/0f/abb1271933e1094e088766664a05ed62c52218fccf7d4d7e183779b2658be7896888532577b40411fcbeb5200e6f0aae42bd5ac32f717473192c450aa471"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/07/bf",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6751496660\t/home/appuser/.npm/_cacache/content-v2/sha512/07/bf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/07/bf/e9502e5509b4bef104f0c73d62a0aaf8e728656482b537643206fb27f9ebab8358eaa5fe335cdb16a7b2f5135f87be8de5f0c15e980031a9ff3a76616f35",
+      "after": "-rw-r--r--\t309584\t2026-06-17 10:11:10.6662672900\t/home/appuser/.npm/_cacache/content-v2/sha512/07/bf/e9502e5509b4bef104f0c73d62a0aaf8e728656482b537643206fb27f9ebab8358eaa5fe335cdb16a7b2f5135f87be8de5f0c15e980031a9ff3a76616f35"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/09",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6548766820\t/home/appuser/.npm/_cacache/content-v2/sha512/09"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/09/35",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6565901260\t/home/appuser/.npm/_cacache/content-v2/sha512/09/35"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/09/35/48be3ca87d91e962a2f7a8711a25e01b35bdf05e5f3737b048bcfdd3c91588adc97b59b68864ce19d15965756b5d89ff95c87ec23108d3a26de28233dafb",
+      "after": "-rw-r--r--\t23212\t2026-06-17 10:11:11.6543898700\t/home/appuser/.npm/_cacache/content-v2/sha512/09/35/48be3ca87d91e962a2f7a8711a25e01b35bdf05e5f3737b048bcfdd3c91588adc97b59b68864ce19d15965756b5d89ff95c87ec23108d3a26de28233dafb"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/09/70",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5258748350\t/home/appuser/.npm/_cacache/content-v2/sha512/09/70"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/09/70/afc87bb58a57891822f8bc9bb34a2414fb368b5207997fd67969c43f400dd4ddb72da5bba5517ef521b5a7aac31ebe1e225db52ef6c1a73c03fd8bd75a21",
+      "after": "-rw-r--r--\t139110\t2026-06-17 10:11:11.5207233050\t/home/appuser/.npm/_cacache/content-v2/sha512/09/70/afc87bb58a57891822f8bc9bb34a2414fb368b5207997fd67969c43f400dd4ddb72da5bba5517ef521b5a7aac31ebe1e225db52ef6c1a73c03fd8bd75a21"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/0f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8282759750\t/home/appuser/.npm/_cacache/content-v2/sha512/0f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/0f/39",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8324126740\t/home/appuser/.npm/_cacache/content-v2/sha512/0f/39"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/0f/39/335ab24c7b707bd93b8adf5f5eab66b733405f5b042d2c7781fb37b1d77df26f782ab1f9efcc92f767ae49eeebe069dbeecd4713e2f1fe08234d8c8780e3",
+      "after": "-rw-r--r--\t15317\t2026-06-17 10:11:12.8266389030\t/home/appuser/.npm/_cacache/content-v2/sha512/0f/39/335ab24c7b707bd93b8adf5f5eab66b733405f5b042d2c7781fb37b1d77df26f782ab1f9efcc92f767ae49eeebe069dbeecd4713e2f1fe08234d8c8780e3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/13",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8654446550\t/home/appuser/.npm/_cacache/content-v2/sha512/13"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/13/02",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8684210650\t/home/appuser/.npm/_cacache/content-v2/sha512/13/02"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/13/02/221eb325b5bf297e2fdc8b49fd957dd8ab5a2b096324be5684d7d1463e1502419205ff95c4215a4407029f50c5d97c4e4019f4722638f76708eab273848d",
+      "after": "-rw-r--r--\t60985\t2026-06-17 10:11:12.8574302860\t/home/appuser/.npm/_cacache/content-v2/sha512/13/02/221eb325b5bf297e2fdc8b49fd957dd8ab5a2b096324be5684d7d1463e1502419205ff95c4215a4407029f50c5d97c4e4019f4722638f76708eab273848d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3643141390\t/home/appuser/.npm/_cacache/content-v2/sha512/1c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1c/54",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3743148110\t/home/appuser/.npm/_cacache/content-v2/sha512/1c/54"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1c/54/e851cdacd78f873abe9034f1449851ff6d1f522a1e6bfdfabe0289920104e34580ce792ab1dcb08d5652f121788b64357c068a32ab563b493241e971842c",
+      "after": "-rw-r--r--\t195840\t2026-06-17 10:11:11.3613139380\t/home/appuser/.npm/_cacache/content-v2/sha512/1c/54/e851cdacd78f873abe9034f1449851ff6d1f522a1e6bfdfabe0289920104e34580ce792ab1dcb08d5652f121788b64357c068a32ab563b493241e971842c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3498346940\t/home/appuser/.npm/_cacache/content-v2/sha512/1e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e/7b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3526311690\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/7b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e/7b/9fd35ab59ab2f4dffce373fe2726f140fb5e850a56a99b750149fb46d36396fe579a9febcbd3be2f280fbedb416443920da0bc5f4f956880a50371861ed1",
+      "after": "-rw-r--r--\t22678\t2026-06-17 10:11:12.3453799840\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/7b/9fd35ab59ab2f4dffce373fe2726f140fb5e850a56a99b750149fb46d36396fe579a9febcbd3be2f280fbedb416443920da0bc5f4f956880a50371861ed1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/24",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.4141408680\t/home/appuser/.npm/_cacache/content-v2/sha512/24"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/24/82",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.4158842490\t/home/appuser/.npm/_cacache/content-v2/sha512/24/82"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/24/82/08ded6aa4399e21b553a2ab89520de128f3dd75815f1a6538aab5b00f3ac8394fc64c86e4b281bf095b9ddc51c5d55c482bb9a3083b4dd3c8e7d20203c6f",
+      "after": "-rw-r--r--\t18521\t2026-06-17 10:11:12.4126135910\t/home/appuser/.npm/_cacache/content-v2/sha512/24/82/08ded6aa4399e21b553a2ab89520de128f3dd75815f1a6538aab5b00f3ac8394fc64c86e4b281bf095b9ddc51c5d55c482bb9a3083b4dd3c8e7d20203c6f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/25",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8038260190\t/home/appuser/.npm/_cacache/content-v2/sha512/25"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/25/dd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8103440740\t/home/appuser/.npm/_cacache/content-v2/sha512/25/dd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/25/dd/8c860a9fbe7d42cce4d98282819ea2a1ba0da577894351aace633ad815ac9816aeb418c63a9c4e031cc76d4d3dfadf3d6e6c3ca697b92baeb674986a3f0c",
+      "after": "-rw-r--r--\t120557\t2026-06-17 10:11:11.8013434710\t/home/appuser/.npm/_cacache/content-v2/sha512/25/dd/8c860a9fbe7d42cce4d98282819ea2a1ba0da577894351aace633ad815ac9816aeb418c63a9c4e031cc76d4d3dfadf3d6e6c3ca697b92baeb674986a3f0c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/26",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4755804460\t/home/appuser/.npm/_cacache/content-v2/sha512/26"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/26/a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4816012440\t/home/appuser/.npm/_cacache/content-v2/sha512/26/a2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/26/a2/fa3091b4b24fc190865aeec2d7523b5ff71a123452f078d32e0a69a0705f50e2ac64b3d6a868ce264cb55d9f3643ed30ed62538502c1956e02b1a1bdfb4d",
+      "after": "-rw-r--r--\t109066\t2026-06-17 10:11:10.4663993200\t/home/appuser/.npm/_cacache/content-v2/sha512/26/a2/fa3091b4b24fc190865aeec2d7523b5ff71a123452f078d32e0a69a0705f50e2ac64b3d6a868ce264cb55d9f3643ed30ed62538502c1956e02b1a1bdfb4d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/28",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0046168780\t/home/appuser/.npm/_cacache/content-v2/sha512/28"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/28/5a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2283721310\t/home/appuser/.npm/_cacache/content-v2/sha512/28/5a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/28/5a/94f127c3ab2e4cf2543dcf54148bba1a2436a0fdb2befabecbbdd43c121d33494a8b14a0f401b1362d03d6063c01f93a0b7c5039ddfe45671cbbd31e006c",
+      "after": "-rw-r--r--\t164953\t2026-06-17 10:11:12.2213879640\t/home/appuser/.npm/_cacache/content-v2/sha512/28/5a/94f127c3ab2e4cf2543dcf54148bba1a2436a0fdb2befabecbbdd43c121d33494a8b14a0f401b1362d03d6063c01f93a0b7c5039ddfe45671cbbd31e006c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/28/71",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0084233920\t/home/appuser/.npm/_cacache/content-v2/sha512/28/71"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/28/71/fc4add904b6a87bb4ab33a54c20281e52dd944236c2275c4a925bd5d01862cd8f78635ce416e8d8454012d6736df65c343b2accbbd366dd1c858911ead28",
+      "after": "-rw-r--r--\t15733\t2026-06-17 10:11:13.0024240830\t/home/appuser/.npm/_cacache/content-v2/sha512/28/71/fc4add904b6a87bb4ab33a54c20281e52dd944236c2275c4a925bd5d01862cd8f78635ce416e8d8454012d6736df65c343b2accbbd366dd1c858911ead28"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5212629000\t/home/appuser/.npm/_cacache/content-v2/sha512/2a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2a/d1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5245681440\t/home/appuser/.npm/_cacache/content-v2/sha512/2a/d1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2a/d1/ba6f4cd272dd898e3816d014c0b4060a067dc51ef8f8c404ebae87df82073aed818d3751f89779f073ee04636599cdc29a41efcb33b8390f28cc120a5bf1",
+      "after": "-rw-r--r--\t101912\t2026-06-17 10:11:12.5173915280\t/home/appuser/.npm/_cacache/content-v2/sha512/2a/d1/ba6f4cd272dd898e3816d014c0b4060a067dc51ef8f8c404ebae87df82073aed818d3751f89779f073ee04636599cdc29a41efcb33b8390f28cc120a5bf1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3126535940\t/home/appuser/.npm/_cacache/content-v2/sha512/2c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2c/0d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3171083900\t/home/appuser/.npm/_cacache/content-v2/sha512/2c/0d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/2c/0d/deb0e5944b26deb6b2cbb0865fa843a17c8e6ab620ee991fd9ba50cb10f452bef0e1eac92cc9ee12c367e08231e0103578240080e9c5cd22fb9dfbbc4ac9",
+      "after": "-rw-r--r--\t1142658\t2026-06-17 10:11:10.3092132450\t/home/appuser/.npm/_cacache/content-v2/sha512/2c/0d/deb0e5944b26deb6b2cbb0865fa843a17c8e6ab620ee991fd9ba50cb10f452bef0e1eac92cc9ee12c367e08231e0103578240080e9c5cd22fb9dfbbc4ac9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/32",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5110951580\t/home/appuser/.npm/_cacache/content-v2/sha512/32"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/32/de",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5154449480\t/home/appuser/.npm/_cacache/content-v2/sha512/32/de"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/32/de/2a88828b76a99a4cbd675bc8039b5978d572c1859b134339e6a5300bfc8ce01ea4586c7f1c50ef2a98e00c0f37646862cc449cf7d29b3e4e08a1b5a3b0a7",
+      "after": "-rw-r--r--\t16918\t2026-06-17 10:11:12.5043906560\t/home/appuser/.npm/_cacache/content-v2/sha512/32/de/2a88828b76a99a4cbd675bc8039b5978d572c1859b134339e6a5300bfc8ce01ea4586c7f1c50ef2a98e00c0f37646862cc449cf7d29b3e4e08a1b5a3b0a7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/36",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2932094980\t/home/appuser/.npm/_cacache/content-v2/sha512/36"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/36/7b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2955641500\t/home/appuser/.npm/_cacache/content-v2/sha512/36/7b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/36/7b/bf44ee104ee1549f397e0214c3f835fe56a71964043265e74388da652dea248ddf69f1903c8bba3b03d60454c3e85f00c2329bd324c524b113313aff7fa3",
+      "after": "-rw-r--r--\t69563\t2026-06-17 10:11:12.2909404700\t/home/appuser/.npm/_cacache/content-v2/sha512/36/7b/bf44ee104ee1549f397e0214c3f835fe56a71964043265e74388da652dea248ddf69f1903c8bba3b03d60454c3e85f00c2329bd324c524b113313aff7fa3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/39",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6166459650\t/home/appuser/.npm/_cacache/content-v2/sha512/39"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/39/27",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6210652650\t/home/appuser/.npm/_cacache/content-v2/sha512/39/27"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/39/27/583f6acad3f933d0aa960a88cfbe6881ee9aea067a3bf2e31575596657be0e179f6f66ff0f56d268a63ecffe67fd7dd83300a778f01e7aaccabd7ed83f3d",
+      "after": "-rw-r--r--\t224273\t2026-06-17 10:11:11.6134720040\t/home/appuser/.npm/_cacache/content-v2/sha512/39/27/583f6acad3f933d0aa960a88cfbe6881ee9aea067a3bf2e31575596657be0e179f6f66ff0f56d268a63ecffe67fd7dd83300a778f01e7aaccabd7ed83f3d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6773618240\t/home/appuser/.npm/_cacache/content-v2/sha512/3a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3a/8c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.0580801630\t/home/appuser/.npm/_cacache/content-v2/sha512/3a/8c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3a/8c/f0d15e5bcf8f226f494ef2a1e1515734df1616ee3e7ef9d938ad35bf244153366722d48795448988de8b628a471f28b3717e7d512f53082f7b51153bf416",
+      "after": "-rw-r--r--\t295660\t2026-06-17 10:11:10.0482258120\t/home/appuser/.npm/_cacache/content-v2/sha512/3a/8c/f0d15e5bcf8f226f494ef2a1e1515734df1616ee3e7ef9d938ad35bf244153366722d48795448988de8b628a471f28b3717e7d512f53082f7b51153bf416"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3a/a9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6793257110\t/home/appuser/.npm/_cacache/content-v2/sha512/3a/a9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3a/a9/4b2189b9033e8e0452f291bf1628d8a260a95c48549720363efa716f86c7a0b0ce583f321496abdf76a10a5ae3c37b4b158a6ae3b60487d43a3f2dc91979",
+      "after": "-rw-r--r--\t22228\t2026-06-17 10:11:11.6760052690\t/home/appuser/.npm/_cacache/content-v2/sha512/3a/a9/4b2189b9033e8e0452f291bf1628d8a260a95c48549720363efa716f86c7a0b0ce583f321496abdf76a10a5ae3c37b4b158a6ae3b60487d43a3f2dc91979"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5468778480\t/home/appuser/.npm/_cacache/content-v2/sha512/3f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3f/a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0512931310\t/home/appuser/.npm/_cacache/content-v2/sha512/3f/a2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3f/a2/0c4108cadd3b61646bacd217e41ff4f0731b4061fcfb8f9d8709563d2f97813724099870d918acae14cd1afdc7d265c4e12320e0f49bdbcadef14c92b821",
+      "after": "-rw-r--r--\t48634\t2026-06-17 10:11:11.0477855660\t/home/appuser/.npm/_cacache/content-v2/sha512/3f/a2/0c4108cadd3b61646bacd217e41ff4f0731b4061fcfb8f9d8709563d2f97813724099870d918acae14cd1afdc7d265c4e12320e0f49bdbcadef14c92b821"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3f/c1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5501314900\t/home/appuser/.npm/_cacache/content-v2/sha512/3f/c1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/3f/c1/18c454548865256be7854e6795436a3b11dfd92422b15d46f3c6578794175275970c0563924e67cf9f45ff8e1c6671cbee07888601b8e7e95ef61c369ee3",
+      "after": "-rw-r--r--\t61619\t2026-06-17 10:11:11.5404693640\t/home/appuser/.npm/_cacache/content-v2/sha512/3f/c1/18c454548865256be7854e6795436a3b11dfd92422b15d46f3c6578794175275970c0563924e67cf9f45ff8e1c6671cbee07888601b8e7e95ef61c369ee3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/42",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2686194090\t/home/appuser/.npm/_cacache/content-v2/sha512/42"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/42/e5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2704583300\t/home/appuser/.npm/_cacache/content-v2/sha512/42/e5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/42/e5/f288d399422f1884a38f46f6efeff6049f89e88eed857301708947bd4089a273485aad624e5dd940f835f904fc5c56f54e8a15c5d95b74c3f970f52ea701",
+      "after": "-rw-r--r--\t11229\t2026-06-17 10:11:12.2669933470\t/home/appuser/.npm/_cacache/content-v2/sha512/42/e5/f288d399422f1884a38f46f6efeff6049f89e88eed857301708947bd4089a273485aad624e5dd940f835f904fc5c56f54e8a15c5d95b74c3f970f52ea701"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/43",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1956464840\t/home/appuser/.npm/_cacache/content-v2/sha512/43"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/43/96",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1973400790\t/home/appuser/.npm/_cacache/content-v2/sha512/43/96"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/43/96/6ec997140d6c26823474add9d4db04de9ee20f5de56fcf6c642be4e18477373a839ae46b6ca86b5bb7d9da8274061e61d0376ba956d942fcec3ac7b925c6",
+      "after": "-rw-r--r--\t12006\t2026-06-17 10:11:12.1942061990\t/home/appuser/.npm/_cacache/content-v2/sha512/43/96/6ec997140d6c26823474add9d4db04de9ee20f5de56fcf6c642be4e18477373a839ae46b6ca86b5bb7d9da8274061e61d0376ba956d942fcec3ac7b925c6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/44",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2267365690\t/home/appuser/.npm/_cacache/content-v2/sha512/44"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/44/c8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2336833020\t/home/appuser/.npm/_cacache/content-v2/sha512/44/c8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/44/c8/6d7b946029d28fe8086ea39aa8b40af924500fb7ed1ce95144f8702db90d754de113600ad4791b5562a219ead5365ace42ed4c1300aa5a415991ab34bca4",
+      "after": "-rw-r--r--\t30032\t2026-06-17 10:11:11.2231855580\t/home/appuser/.npm/_cacache/content-v2/sha512/44/c8/6d7b946029d28fe8086ea39aa8b40af924500fb7ed1ce95144f8702db90d754de113600ad4791b5562a219ead5365ace42ed4c1300aa5a415991ab34bca4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2913092400\t/home/appuser/.npm/_cacache/content-v2/sha512/4b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4b/e6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2955022390\t/home/appuser/.npm/_cacache/content-v2/sha512/4b/e6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4b/e6/520a2690ab2c313ae66fd1fe9e903599939aab2805cddcff7fa86e4e5a1f8bdb176bf84053880714e2e701e23d6a00413f305a4ba51f6ba4dee6829ad40b",
+      "after": "-rw-r--r--\t11752\t2026-06-17 10:11:11.2869979030\t/home/appuser/.npm/_cacache/content-v2/sha512/4b/e6/520a2690ab2c313ae66fd1fe9e903599939aab2805cddcff7fa86e4e5a1f8bdb176bf84053880714e2e701e23d6a00413f305a4ba51f6ba4dee6829ad40b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0884291530\t/home/appuser/.npm/_cacache/content-v2/sha512/4c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4c/a3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0898027990\t/home/appuser/.npm/_cacache/content-v2/sha512/4c/a3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4c/a3/df1d7c13ebbb7fa4b22aa9aa099c7562b568e08a1e2e2895d73d58919ce041058c9a497484406f1ff2c7c94114bc1f0d01bed2a4ef15d5244e7af1d66d2a",
+      "after": "-rw-r--r--\t11337\t2026-06-17 10:11:11.0864503070\t/home/appuser/.npm/_cacache/content-v2/sha512/4c/a3/df1d7c13ebbb7fa4b22aa9aa099c7562b568e08a1e2e2895d73d58919ce041058c9a497484406f1ff2c7c94114bc1f0d01bed2a4ef15d5244e7af1d66d2a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:02.7224635040\t/home/appuser/.npm/_cacache/content-v2/sha512/4f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4f/7f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:02.7247342950\t/home/appuser/.npm/_cacache/content-v2/sha512/4f/7f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/4f/7f/6f6cfd1d935327e144657de506dcb4ee0b6e346e5283a23313d9d3b9c638feb6bef6903145542cfc9e99f14148d75d98c9df5c12cbc02895f3cbd4f266fa",
+      "after": "-rw-r--r--\t79615\t2026-06-17 10:11:02.7167337580\t/home/appuser/.npm/_cacache/content-v2/sha512/4f/7f/6f6cfd1d935327e144657de506dcb4ee0b6e346e5283a23313d9d3b9c638feb6bef6903145542cfc9e99f14148d75d98c9df5c12cbc02895f3cbd4f266fa"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/50",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5656954540\t/home/appuser/.npm/_cacache/content-v2/sha512/50"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/50/b7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5672650990\t/home/appuser/.npm/_cacache/content-v2/sha512/50/b7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/50/b7/923c6ae75667dc2805cd568e55ddbc6b71d6c0b0ac292d49c589be2cccd7ddafd4851b3f633a02253e8a7eff3d8a7262fbabd5e8cda1c78882096c66898a",
+      "after": "-rw-r--r--\t12620\t2026-06-17 10:11:12.5639969990\t/home/appuser/.npm/_cacache/content-v2/sha512/50/b7/923c6ae75667dc2805cd568e55ddbc6b71d6c0b0ac292d49c589be2cccd7ddafd4851b3f633a02253e8a7eff3d8a7262fbabd5e8cda1c78882096c66898a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/53",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5363208560\t/home/appuser/.npm/_cacache/content-v2/sha512/53"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/53/32",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5400941740\t/home/appuser/.npm/_cacache/content-v2/sha512/53/32"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/53/32/50a515cc2f899bf0658cdc7633e4d71260a14f0f61cfd7484c4a38dd32074e22fdb412ae007dcc2c3ee0bceaaae6281054afe40fc7cc118b59473ecee6f2",
+      "after": "-rw-r--r--\t18994\t2026-06-17 10:11:10.5339665650\t/home/appuser/.npm/_cacache/content-v2/sha512/53/32/50a515cc2f899bf0658cdc7633e4d71260a14f0f61cfd7484c4a38dd32074e22fdb412ae007dcc2c3ee0bceaaae6281054afe40fc7cc118b59473ecee6f2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/55",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9697633500\t/home/appuser/.npm/_cacache/content-v2/sha512/55"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/55/86",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9713207460\t/home/appuser/.npm/_cacache/content-v2/sha512/55/86"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/55/86/a9157ce8a8910789996fc58debdb020e23840acb30281f02c5d0789930cdaf6363c769a0b91dfa7a5b1bf0562a17556b8993f2d16aa72f07aa64138b77b4",
+      "after": "-rw-r--r--\t18361\t2026-06-17 10:11:12.9683478440\t/home/appuser/.npm/_cacache/content-v2/sha512/55/86/a9157ce8a8910789996fc58debdb020e23840acb30281f02c5d0789930cdaf6363c769a0b91dfa7a5b1bf0562a17556b8993f2d16aa72f07aa64138b77b4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/60",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2922682960\t/home/appuser/.npm/_cacache/content-v2/sha512/60"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/60/c3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2943953560\t/home/appuser/.npm/_cacache/content-v2/sha512/60/c3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/60/c3/80f2ea8beaa82c3092771c9443502852f19062cbefd592e03eb26d760293eee667a6b5a3ef3554f03d6cefbcc0fc0102c60cbcda91ff2977ed8dcc86ff88",
+      "after": "-rw-r--r--\t27650\t2026-06-17 10:11:12.2913671580\t/home/appuser/.npm/_cacache/content-v2/sha512/60/c3/80f2ea8beaa82c3092771c9443502852f19062cbefd592e03eb26d760293eee667a6b5a3ef3554f03d6cefbcc0fc0102c60cbcda91ff2977ed8dcc86ff88"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/60/d4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8643037080\t/home/appuser/.npm/_cacache/content-v2/sha512/60/d4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/60/d4/dfc1213397ddbab41dbbb71fe7b15b756379b54e84cb5ca2b7cd7e51740c8380fdeda17d755c3d221fcdacd0413ef7cfaaa46aceea65b138331add433b2c",
+      "after": "-rw-r--r--\t61278\t2026-06-17 10:11:11.8608750960\t/home/appuser/.npm/_cacache/content-v2/sha512/60/d4/dfc1213397ddbab41dbbb71fe7b15b756379b54e84cb5ca2b7cd7e51740c8380fdeda17d755c3d221fcdacd0413ef7cfaaa46aceea65b138331add433b2c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/66",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1870783160\t/home/appuser/.npm/_cacache/content-v2/sha512/66"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/66/f1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1887674480\t/home/appuser/.npm/_cacache/content-v2/sha512/66/f1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/66/f1/f7468718b0014ffeaa5e0ebb6d844fce0b04a5b4ec75fbbc5e7511ebea02d746f964721b66a58e1cadbb414dd1541475d4779b7eb21def30753c2c1f470c",
+      "after": "-rw-r--r--\t78018\t2026-06-17 10:11:11.1843020580\t/home/appuser/.npm/_cacache/content-v2/sha512/66/f1/f7468718b0014ffeaa5e0ebb6d844fce0b04a5b4ec75fbbc5e7511ebea02d746f964721b66a58e1cadbb414dd1541475d4779b7eb21def30753c2c1f470c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/69",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3515738990\t/home/appuser/.npm/_cacache/content-v2/sha512/69"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/69/63",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3547716330\t/home/appuser/.npm/_cacache/content-v2/sha512/69/63"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/69/63/93c55473a103ed85c009c158db5c9fefc5a56e4115f0d4c695d3e9f0bf7e4d94c1af9d3caf97d00b5e8f48bd50d344fbf1dbb8cb4474feec0d35daeb647d",
+      "after": "-rw-r--r--\t25427\t2026-06-17 10:11:11.3485803420\t/home/appuser/.npm/_cacache/content-v2/sha512/69/63/93c55473a103ed85c009c158db5c9fefc5a56e4115f0d4c695d3e9f0bf7e4d94c1af9d3caf97d00b5e8f48bd50d344fbf1dbb8cb4474feec0d35daeb647d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4317666270\t/home/appuser/.npm/_cacache/content-v2/sha512/6d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6d/58",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4346999810\t/home/appuser/.npm/_cacache/content-v2/sha512/6d/58"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6d/58/58ca2f854d409890c6eefff1df3c1e9f1767297ac156bef2991d6a4a6442c30706cb49dee1e3f0b96ed73648527ad6fe6889467a67d78c5548b128538e36",
+      "after": "-rw-r--r--\t117822\t2026-06-17 10:11:10.4293115220\t/home/appuser/.npm/_cacache/content-v2/sha512/6d/58/58ca2f854d409890c6eefff1df3c1e9f1767297ac156bef2991d6a4a6442c30706cb49dee1e3f0b96ed73648527ad6fe6889467a67d78c5548b128538e36"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4628063790\t/home/appuser/.npm/_cacache/content-v2/sha512/6e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6e/9b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4652400330\t/home/appuser/.npm/_cacache/content-v2/sha512/6e/9b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/6e/9b/6ad5726c132836af875127cc2d6e82e4ee5a51adff8f45622be7601a2e7ce9f81cd4ae9712bd8817e64bd0a1fe114f6b383b429412c6d52a1bd889990c9b",
+      "after": "-rw-r--r--\t24148\t2026-06-17 10:11:11.4608493600\t/home/appuser/.npm/_cacache/content-v2/sha512/6e/9b/6ad5726c132836af875127cc2d6e82e4ee5a51adff8f45622be7601a2e7ce9f81cd4ae9712bd8817e64bd0a1fe114f6b383b429412c6d52a1bd889990c9b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/71",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3736017290\t/home/appuser/.npm/_cacache/content-v2/sha512/71"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/71/31",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3838523550\t/home/appuser/.npm/_cacache/content-v2/sha512/71/31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/71/31/72843c87a98978dfb13663d613be6ff39c24ca3940ce3e4fd8cd5ca23dc326808e13e6e34813e641358e279585733618b7f021cb6a13f041b7e325477cd1",
+      "after": "-rw-r--r--\t804947\t2026-06-17 10:11:10.3704058340\t/home/appuser/.npm/_cacache/content-v2/sha512/71/31/72843c87a98978dfb13663d613be6ff39c24ca3940ce3e4fd8cd5ca23dc326808e13e6e34813e641358e279585733618b7f021cb6a13f041b7e325477cd1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/72",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2169910860\t/home/appuser/.npm/_cacache/content-v2/sha512/72"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/72/c8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2196845510\t/home/appuser/.npm/_cacache/content-v2/sha512/72/c8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/72/c8/9dd578dcd1b3820ecf7c4ecb0fb1b872ecbd70971f3e1516e61f468d3f3df08ed321cdf5b4590bed79d5d22ba37a6f6ac6f604046e2b640406591542ee31",
+      "after": "-rw-r--r--\t15327\t2026-06-17 10:11:12.2145620520\t/home/appuser/.npm/_cacache/content-v2/sha512/72/c8/9dd578dcd1b3820ecf7c4ecb0fb1b872ecbd70971f3e1516e61f468d3f3df08ed321cdf5b4590bed79d5d22ba37a6f6ac6f604046e2b640406591542ee31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0482587600\t/home/appuser/.npm/_cacache/content-v2/sha512/7a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7a/45",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0506005800\t/home/appuser/.npm/_cacache/content-v2/sha512/7a/45"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7a/45/aed143997c15f45c981a45f3cb4b1910d99af6dc75253ef318d60234cfd60c22bdda17288f793e14f10144f7001a8232124eac20acdf509caee23f9a77e1",
+      "after": "-rw-r--r--\t48046\t2026-06-17 10:11:12.0456104830\t/home/appuser/.npm/_cacache/content-v2/sha512/7a/45/aed143997c15f45c981a45f3cb4b1910d99af6dc75253ef318d60234cfd60c22bdda17288f793e14f10144f7001a8232124eac20acdf509caee23f9a77e1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6360466260\t/home/appuser/.npm/_cacache/content-v2/sha512/7d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7d/f3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6413395070\t/home/appuser/.npm/_cacache/content-v2/sha512/7d/f3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/7d/f3/0d62b4dbb86e4611b855ee220fd3f1225824ad5f72c622616093234316244a39a0a1d9b4ff291f88a2f1374ad3eaac9cfb8af662fbc164017f1cc87f0ca7",
+      "after": "-rw-r--r--\t443601\t2026-06-17 10:11:10.6312975770\t/home/appuser/.npm/_cacache/content-v2/sha512/7d/f3/0d62b4dbb86e4611b855ee220fd3f1225824ad5f72c622616093234316244a39a0a1d9b4ff291f88a2f1374ad3eaac9cfb8af662fbc164017f1cc87f0ca7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/80",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6798152930\t/home/appuser/.npm/_cacache/content-v2/sha512/80"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/80/f7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6821312370\t/home/appuser/.npm/_cacache/content-v2/sha512/80/f7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/80/f7/8e1b80878758ce149c627c3b4cfa610aabbb43e2ceee00a3db420d2073523ddfc433101760212284eac68ba503dfddebf30102397a30a87b1b4fcf3a4ad7",
+      "after": "-rw-r--r--\t79291\t2026-06-17 10:11:11.6775296180\t/home/appuser/.npm/_cacache/content-v2/sha512/80/f7/8e1b80878758ce149c627c3b4cfa610aabbb43e2ceee00a3db420d2073523ddfc433101760212284eac68ba503dfddebf30102397a30a87b1b4fcf3a4ad7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/81",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7758602760\t/home/appuser/.npm/_cacache/content-v2/sha512/81"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/81/8d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7784192700\t/home/appuser/.npm/_cacache/content-v2/sha512/81/8d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/81/8d/aa0e9c2308afca3f9c89998471ca9e556904ff58f2b624c483712292e3c81ebca42561aa94700f5938a8be11f07fa22bed901628a431b44e5f8317bf274f",
+      "after": "-rw-r--r--\t3609\t2026-06-17 10:11:11.7745580620\t/home/appuser/.npm/_cacache/content-v2/sha512/81/8d/aa0e9c2308afca3f9c89998471ca9e556904ff58f2b624c483712292e3c81ebca42561aa94700f5938a8be11f07fa22bed901628a431b44e5f8317bf274f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/84",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4608493600\t/home/appuser/.npm/_cacache/content-v2/sha512/84"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/84/ee",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4640019450\t/home/appuser/.npm/_cacache/content-v2/sha512/84/ee"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/84/ee/3bd5c3e0d94ab5803ac52d165dea2838051eeea54e989a46ab7492ffa91ceaaca06692e0201473939b23b1964f6e0209ff6afefada077b1b6827392fa96d",
+      "after": "-rw-r--r--\t88614\t2026-06-17 10:11:11.4585916690\t/home/appuser/.npm/_cacache/content-v2/sha512/84/ee/3bd5c3e0d94ab5803ac52d165dea2838051eeea54e989a46ab7492ffa91ceaaca06692e0201473939b23b1964f6e0209ff6afefada077b1b6827392fa96d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/85",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4898856160\t/home/appuser/.npm/_cacache/content-v2/sha512/85"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/85/a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4915650180\t/home/appuser/.npm/_cacache/content-v2/sha512/85/a2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/85/a2/8e1df3f60e23142e45728bafb2ad57985042f9db1108d5d95af321b9c6ff4712770cccd611db1f0d68767706738c51e64cb2bbf222b96b76864a79ff2b28",
+      "after": "-rw-r--r--\t37117\t2026-06-17 10:11:11.4883183810\t/home/appuser/.npm/_cacache/content-v2/sha512/85/a2/8e1df3f60e23142e45728bafb2ad57985042f9db1108d5d95af321b9c6ff4712770cccd611db1f0d68767706738c51e64cb2bbf222b96b76864a79ff2b28"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/86",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2209179870\t/home/appuser/.npm/_cacache/content-v2/sha512/86"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/86/47",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2267365690\t/home/appuser/.npm/_cacache/content-v2/sha512/86/47"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/86/47/894e330ef9f8eb5ff3045eb88af4dfe68b44a6ddec2e683d977fbc0f78fe59f3441a9505b23e25237e45234c3739de3e498ae26bdf57063dbd80d29f24c3",
+      "after": "-rw-r--r--\t40182\t2026-06-17 10:11:11.2146915360\t/home/appuser/.npm/_cacache/content-v2/sha512/86/47/894e330ef9f8eb5ff3045eb88af4dfe68b44a6ddec2e683d977fbc0f78fe59f3441a9505b23e25237e45234c3739de3e498ae26bdf57063dbd80d29f24c3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/97",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3778698090\t/home/appuser/.npm/_cacache/content-v2/sha512/97"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/97/b1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3807664010\t/home/appuser/.npm/_cacache/content-v2/sha512/97/b1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/97/b1/8cc3e49aa6dfbca170dc357c37d92be8cc1eeb6300e17eb45ffc5bbc038c65ead239a63f83f1e57969540fb247c2a16f86cd1e6ef64f0bff5aceb80a197d",
+      "after": "-rw-r--r--\t72891\t2026-06-17 10:11:11.3756705900\t/home/appuser/.npm/_cacache/content-v2/sha512/97/b1/8cc3e49aa6dfbca170dc357c37d92be8cc1eeb6300e17eb45ffc5bbc038c65ead239a63f83f1e57969540fb247c2a16f86cd1e6ef64f0bff5aceb80a197d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/98",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7741248760\t/home/appuser/.npm/_cacache/content-v2/sha512/98"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/98/9a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7764016410\t/home/appuser/.npm/_cacache/content-v2/sha512/98/9a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/98/9a/68e84545cf186953b6927c75871a5e5f661d07ef805b585fa7c3a0c5be109626fd58145345d8bb858e94e1b66b59937dc1c3d4eb628c1c660dea5c352de7",
+      "after": "-rw-r--r--\t37018\t2026-06-17 10:11:11.7687785350\t/home/appuser/.npm/_cacache/content-v2/sha512/98/9a/68e84545cf186953b6927c75871a5e5f661d07ef805b585fa7c3a0c5be109626fd58145345d8bb858e94e1b66b59937dc1c3d4eb628c1c660dea5c352de7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/99",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9204769230\t/home/appuser/.npm/_cacache/content-v2/sha512/99"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/99/32",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9228792110\t/home/appuser/.npm/_cacache/content-v2/sha512/99/32"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/99/32/7a7e72a23da461d6c0130d5becbceaeefba6f6e91504d21fa28c5d2bbd3b730572cec7341b8322316f8e782a7682f4ea429ea390c64ccb135574dbc15766",
+      "after": "-rw-r--r--\t9763\t2026-06-17 10:11:11.9180654240\t/home/appuser/.npm/_cacache/content-v2/sha512/99/32/7a7e72a23da461d6c0130d5becbceaeefba6f6e91504d21fa28c5d2bbd3b730572cec7341b8322316f8e782a7682f4ea429ea390c64ccb135574dbc15766"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0617275360\t/home/appuser/.npm/_cacache/content-v2/sha512/9a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9a/20",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0644854960\t/home/appuser/.npm/_cacache/content-v2/sha512/9a/20"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9a/20/280bd0336faab3f36d34408dbfb3008695078223a3a415152693629e2112e4a9bc3a6a01baf40ecf5d245521afa533aae92cf51352e8ea9ba47fbba1511a",
+      "after": "-rw-r--r--\t9265\t2026-06-17 10:11:13.0560382420\t/home/appuser/.npm/_cacache/content-v2/sha512/9a/20/280bd0336faab3f36d34408dbfb3008695078223a3a415152693629e2112e4a9bc3a6a01baf40ecf5d245521afa533aae92cf51352e8ea9ba47fbba1511a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0431990010\t/home/appuser/.npm/_cacache/content-v2/sha512/9c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9c/8b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0473695130\t/home/appuser/.npm/_cacache/content-v2/sha512/9c/8b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/9c/8b/5e07a34a7efd07f09a481c3320e608bf1ed0e6f530c72c9b7ef810231528d8b8a902a49dd7c63d174f8d34a270d5985c8c78c6fcab0383ce83467fa94269",
+      "after": "-rw-r--r--\t42559\t2026-06-17 10:11:11.0354077880\t/home/appuser/.npm/_cacache/content-v2/sha512/9c/8b/5e07a34a7efd07f09a481c3320e608bf1ed0e6f530c72c9b7ef810231528d8b8a902a49dd7c63d174f8d34a270d5985c8c78c6fcab0383ce83467fa94269"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.9363515310\t/home/appuser/.npm/_cacache/content-v2/sha512/a3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a3/c5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.9381454280\t/home/appuser/.npm/_cacache/content-v2/sha512/a3/c5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a3/c5/9804e9bfa40c450dfdd8aa8ba141d752ed16a3f212369f4c259aa6e4c4d12ddfd08ab917869fe4ea486951e94a8236cb01ee3217f7a9dd1550658864f986",
+      "after": "-rw-r--r--\t16357\t2026-06-17 10:11:10.9346389690\t/home/appuser/.npm/_cacache/content-v2/sha512/a3/c5/9804e9bfa40c450dfdd8aa8ba141d752ed16a3f212369f4c259aa6e4c4d12ddfd08ab917869fe4ea486951e94a8236cb01ee3217f7a9dd1550658864f986"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/aa",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2643960880\t/home/appuser/.npm/_cacache/content-v2/sha512/aa"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/aa/4d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1348318680\t/home/appuser/.npm/_cacache/content-v2/sha512/aa/4d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/aa/4d/f2d182d755b2327019a887549a75e6a42dfdd1220b4001b550aebc6db50c4a03148729c7f60d6547af2898435eb422a37b3a7ca6733fa2bdc51eee521c92",
+      "after": "-rw-r--r--\t70143\t2026-06-17 10:11:11.1316169100\t/home/appuser/.npm/_cacache/content-v2/sha512/aa/4d/f2d182d755b2327019a887549a75e6a42dfdd1220b4001b550aebc6db50c4a03148729c7f60d6547af2898435eb422a37b3a7ca6733fa2bdc51eee521c92"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/aa/74",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2663368470\t/home/appuser/.npm/_cacache/content-v2/sha512/aa/74"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/aa/74/56ce3da446e1a4782960040f07dedd6d5a83d9922083f6a16d3af603abff6fce828a01884d23dbaede41d318fa68ee5a0e3d827f92de0f5f3468cacc8f22",
+      "after": "-rw-r--r--\t356906\t2026-06-17 10:11:11.2639735820\t/home/appuser/.npm/_cacache/content-v2/sha512/aa/74/56ce3da446e1a4782960040f07dedd6d5a83d9922083f6a16d3af603abff6fce828a01884d23dbaede41d318fa68ee5a0e3d827f92de0f5f3468cacc8f22"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ad",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7532798910\t/home/appuser/.npm/_cacache/content-v2/sha512/ad"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ad/07",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7552613890\t/home/appuser/.npm/_cacache/content-v2/sha512/ad/07"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ad/07/2303ea8b464566e613cd2574499862e222796790aebd0c4e58583bd049bd62235753398863aaf81b80727314e5b7018f011892876ae5ff45a54384efe84b",
+      "after": "-rw-r--r--\t42862\t2026-06-17 10:11:11.7521996590\t/home/appuser/.npm/_cacache/content-v2/sha512/ad/07/2303ea8b464566e613cd2574499862e222796790aebd0c4e58583bd049bd62235753398863aaf81b80727314e5b7018f011892876ae5ff45a54384efe84b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ae",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:26.6034220370\t/home/appuser/.npm/_cacache/content-v2/sha512/ae"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ae/d3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:26.6061877430\t/home/appuser/.npm/_cacache/content-v2/sha512/ae/d3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ae/d3/5cb1320314bb8036aa6b8a869e23f075f0fa65d0d7d8ab5524ecd45bfcc3085f5a56690244a55426121dd55c37c43463d8311ffce1c7c89f6ce1b053fbf3",
+      "after": "-rw-r--r--\t10029\t2026-06-17 10:10:26.5173042340\t/home/appuser/.npm/_cacache/content-v2/sha512/ae/d3/5cb1320314bb8036aa6b8a869e23f075f0fa65d0d7d8ab5524ecd45bfcc3085f5a56690244a55426121dd55c37c43463d8311ffce1c7c89f6ce1b053fbf3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/af",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4250742620\t/home/appuser/.npm/_cacache/content-v2/sha512/af"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/af/c9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4273296550\t/home/appuser/.npm/_cacache/content-v2/sha512/af/c9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/af/c9/957d1db593b1575807ea0e1af85beabe06e344799b3471ab557a6a73d3cbb657f8ac16b4e22d8b6fc383dae2bdb868c33edda4a6d47ed98733ae013dd621",
+      "after": "-rw-r--r--\t116499\t2026-06-17 10:11:11.4229500340\t/home/appuser/.npm/_cacache/content-v2/sha512/af/c9/957d1db593b1575807ea0e1af85beabe06e344799b3471ab557a6a73d3cbb657f8ac16b4e22d8b6fc383dae2bdb868c33edda4a6d47ed98733ae013dd621"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0484342160\t/home/appuser/.npm/_cacache/content-v2/sha512/b0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b0/c4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0504030900\t/home/appuser/.npm/_cacache/content-v2/sha512/b0/c4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b0/c4/86eae8813cc26b7dfb5c095299e8d9b392c4d3b26e95a0736a0e93e14e5a532b33da47ecb9f8c6756f22a21ea62399d17e15f3c3819ecaa7043faa2e8914",
+      "after": "-rw-r--r--\t23537\t2026-06-17 10:11:11.0456461990\t/home/appuser/.npm/_cacache/content-v2/sha512/b0/c4/86eae8813cc26b7dfb5c095299e8d9b392c4d3b26e95a0736a0e93e14e5a532b33da47ecb9f8c6756f22a21ea62399d17e15f3c3819ecaa7043faa2e8914"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6210652650\t/home/appuser/.npm/_cacache/content-v2/sha512/b3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b3/37",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6263317250\t/home/appuser/.npm/_cacache/content-v2/sha512/b3/37"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b3/37/93e93f081f1b52eaeea513a0d2047eb67c9867c0cfd0c50715fa684257899895194977f387b0cf247f1a55c95619796aae5c2ccd16a941242e1fd3923d51",
+      "after": "-rw-r--r--\t71987\t2026-06-17 10:11:11.6175531440\t/home/appuser/.npm/_cacache/content-v2/sha512/b3/37/93e93f081f1b52eaeea513a0d2047eb67c9867c0cfd0c50715fa684257899895194977f387b0cf247f1a55c95619796aae5c2ccd16a941242e1fd3923d51"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.2230886800\t/home/appuser/.npm/_cacache/content-v2/sha512/b5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b5/04",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.2264797310\t/home/appuser/.npm/_cacache/content-v2/sha512/b5/04"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b5/04/1c2bb914432a94452dcf3aa8c0c729df55a6ab3d39378bc6ecf5d2e7acdf8c4c78a019373bbe56f1c666b5f4f5d8c3a4e8581f9e815bc797d0afda1674b8",
+      "after": "-rw-r--r--\t77956\t2026-06-17 10:11:10.2207589420\t/home/appuser/.npm/_cacache/content-v2/sha512/b5/04/1c2bb914432a94452dcf3aa8c0c729df55a6ab3d39378bc6ecf5d2e7acdf8c4c78a019373bbe56f1c666b5f4f5d8c3a4e8581f9e815bc797d0afda1674b8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5128095690\t/home/appuser/.npm/_cacache/content-v2/sha512/b8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b8/41",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5163914610\t/home/appuser/.npm/_cacache/content-v2/sha512/b8/41"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b8/41/1cf8f4d26a35371cde4bf67bfc05963a5ee6cbf4a19a4bd3008ccd8e72732ae4f765423c87b3df8e9f9e20ba49ba015f35aa3812371e92110c196812f85a",
+      "after": "-rw-r--r--\t9021\t2026-06-17 10:11:12.5119267600\t/home/appuser/.npm/_cacache/content-v2/sha512/b8/41/1cf8f4d26a35371cde4bf67bfc05963a5ee6cbf4a19a4bd3008ccd8e72732ae4f765423c87b3df8e9f9e20ba49ba015f35aa3812371e92110c196812f85a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b8/f4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1074493020\t/home/appuser/.npm/_cacache/content-v2/sha512/b8/f4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b8/f4/29fa74fee77c7761103051cad3cd1731cd93a6735dff495bbae0af5a12128ca345a077a3c5ab8e93d07e2945f99c65275c709cb5f1be8a6f4cd4f09d9957",
+      "after": "-rw-r--r--\t28988\t2026-06-17 10:11:11.0965486910\t/home/appuser/.npm/_cacache/content-v2/sha512/b8/f4/29fa74fee77c7761103051cad3cd1731cd93a6735dff495bbae0af5a12128ca345a077a3c5ab8e93d07e2945f99c65275c709cb5f1be8a6f4cd4f09d9957"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9477829090\t/home/appuser/.npm/_cacache/content-v2/sha512/b9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b9/56",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9499764350\t/home/appuser/.npm/_cacache/content-v2/sha512/b9/56"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/b9/56/167f35417bf11731609680f2aa0beca7bcb3ba6074475ffa8413c32af0d790c8399245ad0c71b685a088fd45171ddeb59e81665ef88031b37afacdfea8f7",
+      "after": "-rw-r--r--\t11458\t2026-06-17 10:11:12.9454655490\t/home/appuser/.npm/_cacache/content-v2/sha512/b9/56/167f35417bf11731609680f2aa0beca7bcb3ba6074475ffa8413c32af0d790c8399245ad0c71b685a088fd45171ddeb59e81665ef88031b37afacdfea8f7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ba",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1561810800\t/home/appuser/.npm/_cacache/content-v2/sha512/ba"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ba/87",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1603675660\t/home/appuser/.npm/_cacache/content-v2/sha512/ba/87"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ba/87/1d601e8fc0d3534f3cfe4a7c93e094c6a87064e8034be58274b369cb6eaa81cb10d0c2512702754c553574d790254507289530cdcb2ba18b42f1cc8c8741",
+      "after": "-rw-r--r--\t14532\t2026-06-17 10:11:12.1508125320\t/home/appuser/.npm/_cacache/content-v2/sha512/ba/87/1d601e8fc0d3534f3cfe4a7c93e094c6a87064e8034be58274b369cb6eaa81cb10d0c2512702754c553574d790254507289530cdcb2ba18b42f1cc8c8741"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4982560140\t/home/appuser/.npm/_cacache/content-v2/sha512/c2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c2/8e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5042564170\t/home/appuser/.npm/_cacache/content-v2/sha512/c2/8e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c2/8e/793a896b56f6fd6efa8370934255aaf4a9e5a982c5dad2e9f79a0e1914e73a762f00c03f5090258807d7b72beae29b90b554bdfd29be810e62ffc7be7fe9",
+      "after": "-rw-r--r--\t128214\t2026-06-17 10:11:10.4892964310\t/home/appuser/.npm/_cacache/content-v2/sha512/c2/8e/793a896b56f6fd6efa8370934255aaf4a9e5a982c5dad2e9f79a0e1914e73a762f00c03f5090258807d7b72beae29b90b554bdfd29be810e62ffc7be7fe9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3193111190\t/home/appuser/.npm/_cacache/content-v2/sha512/c3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c3/c5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3221495850\t/home/appuser/.npm/_cacache/content-v2/sha512/c3/c5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c3/c5/49c4b20d1a742941c44f634a0107e7db08f1d376747754b0d2aa50031d284a89ac70fcf549c8d953220bc58f26e2a0628300883a3618b5444fec21743581",
+      "after": "-rw-r--r--\t152810\t2026-06-17 10:11:11.3075546180\t/home/appuser/.npm/_cacache/content-v2/sha512/c3/c5/49c4b20d1a742941c44f634a0107e7db08f1d376747754b0d2aa50031d284a89ac70fcf549c8d953220bc58f26e2a0628300883a3618b5444fec21743581"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1539250700\t/home/appuser/.npm/_cacache/content-v2/sha512/c6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6/2f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1568445000\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/2f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6/2f/51a634f454060024c57d0b3d37cc5553daf51d185c7261beddb30762da7e236c51218c5db531b0290c72813c4a96dc1e5170c1c251730d48e72946eaea09",
+      "after": "-rw-r--r--\t12925\t2026-06-17 10:11:12.1468807020\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/2f/51a634f454060024c57d0b3d37cc5553daf51d185c7261beddb30762da7e236c51218c5db531b0290c72813c4a96dc1e5170c1c251730d48e72946eaea09"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9954236140\t/home/appuser/.npm/_cacache/content-v2/sha512/c9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c9/a6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0024240830\t/home/appuser/.npm/_cacache/content-v2/sha512/c9/a6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c9/a6/84ff18a003077a9cb20cb3a542f8cda23c689e247fd26ec7ef5645c0c19f44c6be59d718f54077cf176c33f363b716098c57a827780409e4695d2a131816",
+      "after": "-rw-r--r--\t21550\t2026-06-17 10:11:12.9939473920\t/home/appuser/.npm/_cacache/content-v2/sha512/c9/a6/84ff18a003077a9cb20cb3a542f8cda23c689e247fd26ec7ef5645c0c19f44c6be59d718f54077cf176c33f363b716098c57a827780409e4695d2a131816"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ca",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9470467910\t/home/appuser/.npm/_cacache/content-v2/sha512/ca"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ca/8b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9489909240\t/home/appuser/.npm/_cacache/content-v2/sha512/ca/8b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ca/8b/5db2dd3f9bc534d9fdf138a84b86495af76c312f065fbff300503e9c4fdf8770f7aac92f92b1f11600ae755d0842053762fcbc5bdd8b74c5f8cf49ef3708",
+      "after": "-rw-r--r--\t12744\t2026-06-17 10:11:12.9434201240\t/home/appuser/.npm/_cacache/content-v2/sha512/ca/8b/5db2dd3f9bc534d9fdf138a84b86495af76c312f065fbff300503e9c4fdf8770f7aac92f92b1f11600ae755d0842053762fcbc5bdd8b74c5f8cf49ef3708"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1543000440\t/home/appuser/.npm/_cacache/content-v2/sha512/d4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d4/8b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1591126590\t/home/appuser/.npm/_cacache/content-v2/sha512/d4/8b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d4/8b/9b19d9a5bb074dc0365ef4d9960366e39c92e714a3b854e19cac0ee9d473970f5065798c769d410c51900d6060fb7788f42f577b48546f509636fc315f52",
+      "after": "-rw-r--r--\t16975\t2026-06-17 10:11:11.1429721700\t/home/appuser/.npm/_cacache/content-v2/sha512/d4/8b/9b19d9a5bb074dc0365ef4d9960366e39c92e714a3b854e19cac0ee9d473970f5065798c769d410c51900d6060fb7788f42f577b48546f509636fc315f52"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7295414660\t/home/appuser/.npm/_cacache/content-v2/sha512/d5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d5/bb",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7317016270\t/home/appuser/.npm/_cacache/content-v2/sha512/d5/bb"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d5/bb/e4172ad9807c0db5594d8c20c84dd8e2011d97aa04f8068d9e209efb3f1223ab62a459aa06fb72cbd97e559ff5429272d880d51197a7a6b23930cbf2983d",
+      "after": "-rw-r--r--\t16527\t2026-06-17 10:11:11.7273975850\t/home/appuser/.npm/_cacache/content-v2/sha512/d5/bb/e4172ad9807c0db5594d8c20c84dd8e2011d97aa04f8068d9e209efb3f1223ab62a459aa06fb72cbd97e559ff5429272d880d51197a7a6b23930cbf2983d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9953119340\t/home/appuser/.npm/_cacache/content-v2/sha512/d6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d6/ba",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0022158790\t/home/appuser/.npm/_cacache/content-v2/sha512/d6/ba"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d6/ba/56acfd6adfd6c6530f2cd14ef6bd60e7d01c424c7665fa0c747ba4ef2bd5bd0f3c4ae426e096445266b289a65b8ff67c1a3aebe5b9fd23dd52ca8167ce20",
+      "after": "-rw-r--r--\t8300\t2026-06-17 10:11:12.9925701420\t/home/appuser/.npm/_cacache/content-v2/sha512/d6/ba/56acfd6adfd6c6530f2cd14ef6bd60e7d01c424c7665fa0c747ba4ef2bd5bd0f3c4ae426e096445266b289a65b8ff67c1a3aebe5b9fd23dd52ca8167ce20"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0641707790\t/home/appuser/.npm/_cacache/content-v2/sha512/d7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d7/c9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0663794950\t/home/appuser/.npm/_cacache/content-v2/sha512/d7/c9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d7/c9/a1e38b8fea15d4c0a365cc03107d6cacb577c99fa1ce816893a01f5bc0faf3196191c9287571ed396565ec6af665262a3a02e97c8e9d43ded175e55eb657",
+      "after": "-rw-r--r--\t8542\t2026-06-17 10:11:13.0617275360\t/home/appuser/.npm/_cacache/content-v2/sha512/d7/c9/a1e38b8fea15d4c0a365cc03107d6cacb577c99fa1ce816893a01f5bc0faf3196191c9287571ed396565ec6af665262a3a02e97c8e9d43ded175e55eb657"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1082969570\t/home/appuser/.npm/_cacache/content-v2/sha512/d8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d8/96",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1111764260\t/home/appuser/.npm/_cacache/content-v2/sha512/d8/96"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/d8/96/831f92b62d61b3a89d96cd1d3eec172bb1b078224a2dfb3d20403920cf7c0da1c28f78d72895f73056de37b937a2888342001cca11528870bed98b21022d",
+      "after": "-rw-r--r--\t15994\t2026-06-17 10:11:11.1069209300\t/home/appuser/.npm/_cacache/content-v2/sha512/d8/96/831f92b62d61b3a89d96cd1d3eec172bb1b078224a2dfb3d20403920cf7c0da1c28f78d72895f73056de37b937a2888342001cca11528870bed98b21022d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/da",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5149274620\t/home/appuser/.npm/_cacache/content-v2/sha512/da"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/da/cc",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5200238390\t/home/appuser/.npm/_cacache/content-v2/sha512/da/cc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/da/cc/499ecc397fe2a8456af1f8061ed542b29091e35907967c6e0b7c814c2e2946d76bc74c9b923dcc7de5470320021649100c7b7133c632d21b49060fcf6692",
+      "after": "-rw-r--r--\t12296\t2026-06-17 10:11:11.5122114060\t/home/appuser/.npm/_cacache/content-v2/sha512/da/cc/499ecc397fe2a8456af1f8061ed542b29091e35907967c6e0b7c814c2e2946d76bc74c9b923dcc7de5470320021649100c7b7133c632d21b49060fcf6692"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7279251270\t/home/appuser/.npm/_cacache/content-v2/sha512/e0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e0/47",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7300102720\t/home/appuser/.npm/_cacache/content-v2/sha512/e0/47"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e0/47/eb8deec342011f3858ecf3ccb9af0868de15fa4af75fd12cc557ad513d79335894ac80253a61d6b97a1e72ba4ec3162e2aa1dbb2cc3c57db9403587b86b8",
+      "after": "-rw-r--r--\t21777\t2026-06-17 10:11:11.7243383020\t/home/appuser/.npm/_cacache/content-v2/sha512/e0/47/eb8deec342011f3858ecf3ccb9af0868de15fa4af75fd12cc557ad513d79335894ac80253a61d6b97a1e72ba4ec3162e2aa1dbb2cc3c57db9403587b86b8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1224321370\t/home/appuser/.npm/_cacache/content-v2/sha512/e5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e5/31",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1247461340\t/home/appuser/.npm/_cacache/content-v2/sha512/e5/31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e5/31/40b34ba2216870b47d1233b97640069129254e43e43f590b47dac5d9dd1bed96acfe6867de306d30e33f385faec886ecbb5cdfc7a09c3069df101a2dc370",
+      "after": "-rw-r--r--\t8256\t2026-06-17 10:11:13.1204320030\t/home/appuser/.npm/_cacache/content-v2/sha512/e5/31/40b34ba2216870b47d1233b97640069129254e43e43f590b47dac5d9dd1bed96acfe6867de306d30e33f385faec886ecbb5cdfc7a09c3069df101a2dc370"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0420520630\t/home/appuser/.npm/_cacache/content-v2/sha512/ea"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/3e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0452177570\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/3e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/3e/405c7885091fe7e029f5d7c391de1c0138949c51a6c2c1b4ea6f443f789f6236dbdbbd1e3daae76a2d0232e0ff8270b53afd8fa59393e87582b74779b025",
+      "after": "-rw-r--r--\t18278\t2026-06-17 10:11:13.0363584270\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/3e/405c7885091fe7e029f5d7c391de1c0138949c51a6c2c1b4ea6f443f789f6236dbdbbd1e3daae76a2d0232e0ff8270b53afd8fa59393e87582b74779b025"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/84",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5693217640\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/84"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/84/277d9a3afbf79e0eaa40a6dfae04ca8db6bab786b91fbdf2f314ad6b957818ca0952bf6ff86bc3f6ce85c3eed2641bcc5a44b848f5f173c21e619ac9183c",
+      "after": "-rw-r--r--\t37734\t2026-06-17 10:11:10.5558310270\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/84/277d9a3afbf79e0eaa40a6dfae04ca8db6bab786b91fbdf2f314ad6b957818ca0952bf6ff86bc3f6ce85c3eed2641bcc5a44b848f5f173c21e619ac9183c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/f2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3255209660\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/f2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ea/f2/c25357ac48646541323e78a389ead426d9300536b819515d9b3186e357ec1607f7e00833ce9243b6e713e912381fb872b7348efdbd4512ff93c467d4fc1d",
+      "after": "-rw-r--r--\t18599\t2026-06-17 10:11:12.3228720270\t/home/appuser/.npm/_cacache/content-v2/sha512/ea/f2/c25357ac48646541323e78a389ead426d9300536b819515d9b3186e357ec1607f7e00833ce9243b6e713e912381fb872b7348efdbd4512ff93c467d4fc1d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ec",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1591126590\t/home/appuser/.npm/_cacache/content-v2/sha512/ec"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ec/e6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1610161680\t/home/appuser/.npm/_cacache/content-v2/sha512/ec/e6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/ec/e6/9648d61f3267bec484430eec267dfd1873c556455325d4e0652cf8b5550f03b8256432c20399d4bbc06e9d16ae8e2b97143acf17732808372685686612fc",
+      "after": "-rw-r--r--\t8525\t2026-06-17 10:11:11.1567854960\t/home/appuser/.npm/_cacache/content-v2/sha512/ec/e6/9648d61f3267bec484430eec267dfd1873c556455325d4e0652cf8b5550f03b8256432c20399d4bbc06e9d16ae8e2b97143acf17732808372685686612fc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3560762870\t/home/appuser/.npm/_cacache/content-v2/sha512/f6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f6/0c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3584574150\t/home/appuser/.npm/_cacache/content-v2/sha512/f6/0c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f6/0c/b2d4b1760d8689bb419361145d4ca276a362db0b18529e991709a5a17d27c52b0551a039c71bce2e5ba4313b47b9d64a0728db0f711edd64f8f1e934daaa",
+      "after": "-rw-r--r--\t216334\t2026-06-17 10:11:12.3538735830\t/home/appuser/.npm/_cacache/content-v2/sha512/f6/0c/b2d4b1760d8689bb419361145d4ca276a362db0b18529e991709a5a17d27c52b0551a039c71bce2e5ba4313b47b9d64a0728db0f711edd64f8f1e934daaa"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4280431800\t/home/appuser/.npm/_cacache/content-v2/sha512/f9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f9/ac",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4297934810\t/home/appuser/.npm/_cacache/content-v2/sha512/f9/ac"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f9/ac/732a8f22b8fc6c2dc0847e05c313aa6d1da4f1c7101aeaebeb3cfad1e66b4669288d042e43d1f0bf6163ee43c4e1bbb08c64dc20b1bb979f6a2345c3c175",
+      "after": "-rw-r--r--\t77054\t2026-06-17 10:11:11.4258734350\t/home/appuser/.npm/_cacache/content-v2/sha512/f9/ac/732a8f22b8fc6c2dc0847e05c313aa6d1da4f1c7101aeaebeb3cfad1e66b4669288d042e43d1f0bf6163ee43c4e1bbb08c64dc20b1bb979f6a2345c3c175"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fa",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6093305840\t/home/appuser/.npm/_cacache/content-v2/sha512/fa"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fa/a8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6147976810\t/home/appuser/.npm/_cacache/content-v2/sha512/fa/a8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fa/a8/7f9758d3e28d93448a365d8a2b4791139acef726c471436dac8901327ff2071679106906e65b7292d7ea547006ef6df6420f5be44fe2b8be1c8b8500891b",
+      "after": "-rw-r--r--\t7345\t2026-06-17 10:11:11.5928843630\t/home/appuser/.npm/_cacache/content-v2/sha512/fa/a8/7f9758d3e28d93448a365d8a2b4791139acef726c471436dac8901327ff2071679106906e65b7292d7ea547006ef6df6420f5be44fe2b8be1c8b8500891b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fe",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2443662020\t/home/appuser/.npm/_cacache/content-v2/sha512/fe"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fe/bf",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2523737420\t/home/appuser/.npm/_cacache/content-v2/sha512/fe/bf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fe/bf/37c6c84f2c2c3138c50cc21580fffef19f2fe554145712c8f5f8a02827c48268a23fbeeebc48224571c46505484e0ae44924f614d416d691ba1004feb007",
+      "after": "-rw-r--r--\t7682\t2026-06-17 10:11:12.2435365940\t/home/appuser/.npm/_cacache/content-v2/sha512/fe/bf/37c6c84f2c2c3138c50cc21580fffef19f2fe554145712c8f5f8a02827c48268a23fbeeebc48224571c46505484e0ae44924f614d416d691ba1004feb007"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fe/eb",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7082765700\t/home/appuser/.npm/_cacache/content-v2/sha512/fe/eb"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/fe/eb/d19448dfa40547d3503e42677ec1aa1e88fff333edd37313acad5151038625a24f2b208278c50fdb1462b05f178fc70368c08cdd6b96d4049f29eb1417b4",
+      "after": "-rw-r--r--\t150391\t2026-06-17 10:11:11.7052399210\t/home/appuser/.npm/_cacache/content-v2/sha512/fe/eb/d19448dfa40547d3503e42677ec1aa1e88fff333edd37313acad5151038625a24f2b208278c50fdb1462b05f178fc70368c08cdd6b96d4049f29eb1417b4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1265683270\t/home/appuser/.npm/_cacache/index-v5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/03",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2724581760\t/home/appuser/.npm/_cacache/index-v5/03"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/03/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2734611470\t/home/appuser/.npm/_cacache/index-v5/03/c6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/03/c6/b08c3c1e7780180f5329e1963e92ea160416e9dbbfab749ba4bf22a12563",
+      "after": "-rw-r--r--\t695\t2026-06-17 10:11:12.2740605460\t/home/appuser/.npm/_cacache/index-v5/03/c6/b08c3c1e7780180f5329e1963e92ea160416e9dbbfab749ba4bf22a12563"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/04",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.7056601380\t/home/appuser/.npm/_cacache/index-v5/04"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/04/5a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.7068714420\t/home/appuser/.npm/_cacache/index-v5/04/5a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/04/5a/2b5d7a7c407d85d746baa0f5c9388a333e35a717a8a0a81943daa6cb1364",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:10.7074716270\t/home/appuser/.npm/_cacache/index-v5/04/5a/2b5d7a7c407d85d746baa0f5c9388a333e35a717a8a0a81943daa6cb1364"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/06",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9514398880\t/home/appuser/.npm/_cacache/index-v5/06"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/06/4b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9520955770\t/home/appuser/.npm/_cacache/index-v5/06/4b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/06/4b/6c1d4325f34a83acf333ab8a7d0e98a29bb01013836bc053b0634e1e8d0e",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:12.9528045640\t/home/appuser/.npm/_cacache/index-v5/06/4b/6c1d4325f34a83acf333ab8a7d0e98a29bb01013836bc053b0634e1e8d0e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/06/5a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3634224160\t/home/appuser/.npm/_cacache/index-v5/06/5a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/06/5a/98f8c4232b39b6ac68023a0bc186c128dffdec812a144648c26dac71f91a",
+      "after": "-rw-r--r--\t706\t2026-06-17 10:11:12.3641308490\t/home/appuser/.npm/_cacache/index-v5/06/5a/98f8c4232b39b6ac68023a0bc186c128dffdec812a144648c26dac71f91a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/0e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3977620110\t/home/appuser/.npm/_cacache/index-v5/0e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/0e/bc",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3983164210\t/home/appuser/.npm/_cacache/index-v5/0e/bc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/0e/bc/3e860ac298a0e1f2ebc7443600688e9009766fff3e452683186dee25bd1c",
+      "after": "-rw-r--r--\t689\t2026-06-17 10:11:11.3998007510\t/home/appuser/.npm/_cacache/index-v5/0e/bc/3e860ac298a0e1f2ebc7443600688e9009766fff3e452683186dee25bd1c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/11",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7801180920\t/home/appuser/.npm/_cacache/index-v5/11"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/11/cd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0582936010\t/home/appuser/.npm/_cacache/index-v5/11/cd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/11/cd/6bad29635813d9d16b3a2d02542892345db19a559dcb44c848f337e93bcc",
+      "after": "-rw-r--r--\t707\t2026-06-17 10:11:11.0673841870\t/home/appuser/.npm/_cacache/index-v5/11/cd/6bad29635813d9d16b3a2d02542892345db19a559dcb44c848f337e93bcc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/11/e1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7805819980\t/home/appuser/.npm/_cacache/index-v5/11/e1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/11/e1/1c483d2122bd9cb1fa851dc036984e3754849f699fe4eca57537ef5d33ee",
+      "after": "-rw-r--r--\t688\t2026-06-17 10:11:11.7809152750\t/home/appuser/.npm/_cacache/index-v5/11/e1/1c483d2122bd9cb1fa851dc036984e3754849f699fe4eca57537ef5d33ee"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/12",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7317016270\t/home/appuser/.npm/_cacache/index-v5/12"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/12/61",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7321144990\t/home/appuser/.npm/_cacache/index-v5/12/61"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/12/61/455290931b30bfbc94a86ab8e6efc0d0698c0703ca98485308d5df7d3750",
+      "after": "-rw-r--r--\t709\t2026-06-17 10:11:11.7325190030\t/home/appuser/.npm/_cacache/index-v5/12/61/455290931b30bfbc94a86ab8e6efc0d0698c0703ca98485308d5df7d3750"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/12/af",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.9410747670\t/home/appuser/.npm/_cacache/index-v5/12/af"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/12/af/c7556c0be08d6aac4a6031cd99e4444ea807c2d4235462f11c5f55977b0e",
+      "after": "-rw-r--r--\t697\t2026-06-17 10:11:10.9415621110\t/home/appuser/.npm/_cacache/index-v5/12/af/c7556c0be08d6aac4a6031cd99e4444ea807c2d4235462f11c5f55977b0e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/13",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5522596380\t/home/appuser/.npm/_cacache/index-v5/13"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/13/29",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0212699510\t/home/appuser/.npm/_cacache/index-v5/13/29"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/13/29/572bf43d686299dd8263b106410c0cdb26df1485ef40041d2172cc942990",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:12.0184776870\t/home/appuser/.npm/_cacache/index-v5/13/29/572bf43d686299dd8263b106410c0cdb26df1485ef40041d2172cc942990"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/1f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5375524960\t/home/appuser/.npm/_cacache/index-v5/1f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/1f/b0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5386809960\t/home/appuser/.npm/_cacache/index-v5/1f/b0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/1f/b0/6763ae7ebee3d460106305f31e4621f14f72551b87a5dcb70627c4f40559",
+      "after": "-rw-r--r--\t706\t2026-06-17 10:11:12.5394014300\t/home/appuser/.npm/_cacache/index-v5/1f/b0/6763ae7ebee3d460106305f31e4621f14f72551b87a5dcb70627c4f40559"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/24",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.7737633440\t/home/appuser/.npm/_cacache/index-v5/24"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/24/42",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.7745309020\t/home/appuser/.npm/_cacache/index-v5/24/42"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/24/42/59d14339f3ecc48699194017a86420badf8364f9808797cc45d8c0d4d8e3",
+      "after": "-rw-r--r--\t708\t2026-06-17 10:11:12.7751502550\t/home/appuser/.npm/_cacache/index-v5/24/42/59d14339f3ecc48699194017a86420badf8364f9808797cc45d8c0d4d8e3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3033759880\t/home/appuser/.npm/_cacache/index-v5/25"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25/5e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3053101790\t/home/appuser/.npm/_cacache/index-v5/25/5e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25/5e/e8321d61d4731578a250b240981ac3bb550d2ad726b8e9822f1ca03d43ca",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:11.3075546180\t/home/appuser/.npm/_cacache/index-v5/25/5e/e8321d61d4731578a250b240981ac3bb550d2ad726b8e9822f1ca03d43ca"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/27",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.4185426920\t/home/appuser/.npm/_cacache/index-v5/27"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/27/b6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.4192995830\t/home/appuser/.npm/_cacache/index-v5/27/b6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/27/b6/bc1d086124331680bbaa5c4c1b8d244d40fc2dad68e9fe8dcd4f002638ec",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:12.4199150770\t/home/appuser/.npm/_cacache/index-v5/27/b6/bc1d086124331680bbaa5c4c1b8d244d40fc2dad68e9fe8dcd4f002638ec"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/2a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8659180540\t/home/appuser/.npm/_cacache/index-v5/2a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/2a/2a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6488823870\t/home/appuser/.npm/_cacache/index-v5/2a/2a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/2a/2a/c4d84747bc66366e9e4ba755d9543288be973d5f1ee302b4f935e776e0dc",
+      "after": "-rw-r--r--\t714\t2026-06-17 10:11:10.6497349620\t/home/appuser/.npm/_cacache/index-v5/2a/2a/c4d84747bc66366e9e4ba755d9543288be973d5f1ee302b4f935e776e0dc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/2a/73",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8666325950\t/home/appuser/.npm/_cacache/index-v5/2a/73"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/2a/73/f5b12412d0e8766b46ec3a813882f8caa828b5c3948efc5468c88b123a11",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:11.8671465830\t/home/appuser/.npm/_cacache/index-v5/2a/73/f5b12412d0e8766b46ec3a813882f8caa828b5c3948efc5468c88b123a11"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/33",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0573606530\t/home/appuser/.npm/_cacache/index-v5/33"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/33/61",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0673613240\t/home/appuser/.npm/_cacache/index-v5/33/61"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/33/61/b25f71e94c58e2b76f0a00ec021a6d5ec6bb015dedfbb236ed370841d698",
+      "after": "-rw-r--r--\t697\t2026-06-17 10:11:12.0744340520\t/home/appuser/.npm/_cacache/index-v5/33/61/b25f71e94c58e2b76f0a00ec021a6d5ec6bb015dedfbb236ed370841d698"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/37",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4373190390\t/home/appuser/.npm/_cacache/index-v5/37"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/37/92",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4393191730\t/home/appuser/.npm/_cacache/index-v5/37/92"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/37/92/e818c7d8b7c82df51a6485bed4155a8bc48774c70d38b41ca1332d530719",
+      "after": "-rw-r--r--\t691\t2026-06-17 10:11:11.4423193750\t/home/appuser/.npm/_cacache/index-v5/37/92/e818c7d8b7c82df51a6485bed4155a8bc48774c70d38b41ca1332d530719"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/38",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5700314240\t/home/appuser/.npm/_cacache/index-v5/38"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/38/81",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5707546520\t/home/appuser/.npm/_cacache/index-v5/38/81"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/38/81/c030e826e9dc842d495f4518a8110b49ad8e112bc6d52580d50305e87152",
+      "after": "-rw-r--r--\t717\t2026-06-17 10:11:12.5714476300\t/home/appuser/.npm/_cacache/index-v5/38/81/c030e826e9dc842d495f4518a8110b49ad8e112bc6d52580d50305e87152"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/3e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3613139380\t/home/appuser/.npm/_cacache/index-v5/3e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/3e/29",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3627502860\t/home/appuser/.npm/_cacache/index-v5/3e/29"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/3e/29/efa0ba3be1304a4c786f731b668d3d6526d57957d6fe7fe27ed3309c18b5",
+      "after": "-rw-r--r--\t687\t2026-06-17 10:11:11.3641230160\t/home/appuser/.npm/_cacache/index-v5/3e/29/efa0ba3be1304a4c786f731b668d3d6526d57957d6fe7fe27ed3309c18b5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/46",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0949813470\t/home/appuser/.npm/_cacache/index-v5/46"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/46/19",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0958571220\t/home/appuser/.npm/_cacache/index-v5/46/19"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/46/19/40450fcc6c50118d248943b47c1604211094b7c983b13e49f8734b58ead7",
+      "after": "-rw-r--r--\t729\t2026-06-17 10:11:11.0965486910\t/home/appuser/.npm/_cacache/index-v5/46/19/40450fcc6c50118d248943b47c1604211094b7c983b13e49f8734b58ead7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/47",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6789167040\t/home/appuser/.npm/_cacache/index-v5/47"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/47/b1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.6803371220\t/home/appuser/.npm/_cacache/index-v5/47/b1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/47/b1/bae8ec0b8218dd898af07f7ae581d4d0fe8dbeba332842ba5216e9dca32a",
+      "after": "-rw-r--r--\t714\t2026-06-17 10:11:10.6807598080\t/home/appuser/.npm/_cacache/index-v5/47/b1/bae8ec0b8218dd898af07f7ae581d4d0fe8dbeba332842ba5216e9dca32a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/49",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0542141490\t/home/appuser/.npm/_cacache/index-v5/49"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/49/c2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0553682860\t/home/appuser/.npm/_cacache/index-v5/49/c2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/49/c2/6b0f3de8953e1f78cb273e90a4a5b266d906c96f3e10dd2e1bc16f9b2e51",
+      "after": "-rw-r--r--\t689\t2026-06-17 10:11:11.0567737550\t/home/appuser/.npm/_cacache/index-v5/49/c2/6b0f3de8953e1f78cb273e90a4a5b266d906c96f3e10dd2e1bc16f9b2e51"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3891555110\t/home/appuser/.npm/_cacache/index-v5/4f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f/4a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3917478950\t/home/appuser/.npm/_cacache/index-v5/4f/4a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f/4a/c432dbdaabe4d1a0e47519ed9d0df6b9c9b672157e02a8e1549737c07958",
+      "after": "-rw-r--r--\t692\t2026-06-17 10:11:10.3926077850\t/home/appuser/.npm/_cacache/index-v5/4f/4a/c432dbdaabe4d1a0e47519ed9d0df6b9c9b672157e02a8e1549737c07958"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/57",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7789990600\t/home/appuser/.npm/_cacache/index-v5/57"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/57/b7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0212699510\t/home/appuser/.npm/_cacache/index-v5/57/b7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/57/b7/2772f8c4daa4b31074e03545f8e473b547e88ef3141501fe2a54e1abdfc4",
+      "after": "-rw-r--r--\t687\t2026-06-17 10:11:12.0180263930\t/home/appuser/.npm/_cacache/index-v5/57/b7/2772f8c4daa4b31074e03545f8e473b547e88ef3141501fe2a54e1abdfc4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/59",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0663794950\t/home/appuser/.npm/_cacache/index-v5/59"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/59/08",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0664283790\t/home/appuser/.npm/_cacache/index-v5/59/08"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/59/08/7048656a801d0afc85d258adaca095e8f43558b84aacffaa7c60350005c4",
+      "after": "-rw-r--r--\t706\t2026-06-17 10:11:13.0677742540\t/home/appuser/.npm/_cacache/index-v5/59/08/7048656a801d0afc85d258adaca095e8f43558b84aacffaa7c60350005c4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/59/85",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:26.6125771030\t/home/appuser/.npm/_cacache/index-v5/59/85"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/59/85/5d2bfb6ea76096fd713f54c9ddf444883252d699ca6204a99677b8d328b5",
+      "after": "-rw-r--r--\t758\t2026-06-17 10:10:26.6134113040\t/home/appuser/.npm/_cacache/index-v5/59/85/5d2bfb6ea76096fd713f54c9ddf444883252d699ca6204a99677b8d328b5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/60",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5570486340\t/home/appuser/.npm/_cacache/index-v5/60"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/60/60",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5578660360\t/home/appuser/.npm/_cacache/index-v5/60/60"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/60/60/921266f6a9624f9b2f1896296fde0b03c6c726da992cf5b2bf3491abaa28",
+      "after": "-rw-r--r--\t697\t2026-06-17 10:11:11.5582189960\t/home/appuser/.npm/_cacache/index-v5/60/60/921266f6a9624f9b2f1896296fde0b03c6c726da992cf5b2bf3491abaa28"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/66",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6293319260\t/home/appuser/.npm/_cacache/index-v5/66"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/66/dc",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6306172030\t/home/appuser/.npm/_cacache/index-v5/66/dc"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/66/dc/91ce4ba83e8b37347df1c0ee838f5e4353d22219c5d2aa9804507c18ec71",
+      "after": "-rw-r--r--\t700\t2026-06-17 10:11:11.6321197910\t/home/appuser/.npm/_cacache/index-v5/66/dc/91ce4ba83e8b37347df1c0ee838f5e4353d22219c5d2aa9804507c18ec71"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.2304799950\t/home/appuser/.npm/_cacache/index-v5/6a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6a/ec",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.2312888220\t/home/appuser/.npm/_cacache/index-v5/6a/ec"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6a/ec/15f8087f2f2639cddfe907c22cf2fb422b664f14fbaade057fa15c80c3bf",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:10.2325530080\t/home/appuser/.npm/_cacache/index-v5/6a/ec/15f8087f2f2639cddfe907c22cf2fb422b664f14fbaade057fa15c80c3bf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4940612400\t/home/appuser/.npm/_cacache/index-v5/6c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6c/b8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1583674320\t/home/appuser/.npm/_cacache/index-v5/6c/b8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/6c/b8/bf3defaf56a777b0a2db86bdc94ecb2191281a9ae7585d3ff39ed841c8f5",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:12.1539250700\t/home/appuser/.npm/_cacache/index-v5/6c/b8/bf3defaf56a777b0a2db86bdc94ecb2191281a9ae7585d3ff39ed841c8f5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/71",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4297934810\t/home/appuser/.npm/_cacache/index-v5/71"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/71/4d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4307949440\t/home/appuser/.npm/_cacache/index-v5/71/4d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/71/4d/5b0338e05514c5895eb53603a1cdb6086d2e3806f59dff8152644474e711",
+      "after": "-rw-r--r--\t690\t2026-06-17 10:11:11.4314711900\t/home/appuser/.npm/_cacache/index-v5/71/4d/5b0338e05514c5895eb53603a1cdb6086d2e3806f59dff8152644474e711"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/72",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3562468630\t/home/appuser/.npm/_cacache/index-v5/72"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/72/a7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3563807220\t/home/appuser/.npm/_cacache/index-v5/72/a7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/72/a7/30c77e6f637fd471e7f3e0402cae756c6db1d8dc65d845240361886dc66d",
+      "after": "-rw-r--r--\t699\t2026-06-17 10:11:12.3578805560\t/home/appuser/.npm/_cacache/index-v5/72/a7/30c77e6f637fd471e7f3e0402cae756c6db1d8dc65d845240361886dc66d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6328075040\t/home/appuser/.npm/_cacache/index-v5/7a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a/83",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8013434710\t/home/appuser/.npm/_cacache/index-v5/7a/83"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a/83/6be996e7250adf9a97984c85c3a7d3c22c795ce5321c44d257e053fd7442",
+      "after": "-rw-r--r--\t699\t2026-06-17 10:11:11.7983271700\t/home/appuser/.npm/_cacache/index-v5/7a/83/6be996e7250adf9a97984c85c3a7d3c22c795ce5321c44d257e053fd7442"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1302461490\t/home/appuser/.npm/_cacache/index-v5/7f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7f/c3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1313163580\t/home/appuser/.npm/_cacache/index-v5/7f/c3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7f/c3/dc0657b650edb6ea8e350ae8c6dd6cee5ca84fcc91d9d0b666cf225a139b",
+      "after": "-rw-r--r--\t681\t2026-06-17 10:11:12.1320377380\t/home/appuser/.npm/_cacache/index-v5/7f/c3/dc0657b650edb6ea8e350ae8c6dd6cee5ca84fcc91d9d0b666cf225a139b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/81",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1267804600\t/home/appuser/.npm/_cacache/index-v5/81"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/81/18",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1274324730\t/home/appuser/.npm/_cacache/index-v5/81/18"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/81/18/dc968dc58cf2e03b6fdf660412df274d4ec69e93304f5b2fa4437684d84b",
+      "after": "-rw-r--r--\t700\t2026-06-17 10:11:13.1284872400\t/home/appuser/.npm/_cacache/index-v5/81/18/dc968dc58cf2e03b6fdf660412df274d4ec69e93304f5b2fa4437684d84b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/86",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.8138010370\t/home/appuser/.npm/_cacache/index-v5/86"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/86/a2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0511939180\t/home/appuser/.npm/_cacache/index-v5/86/a2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/86/a2/5b27bb74c4b5717e38015bd570d651f9a9ebdd15044c34b5717193654f28",
+      "after": "-rw-r--r--\t698\t2026-06-17 10:11:12.0471158440\t/home/appuser/.npm/_cacache/index-v5/86/a2/5b27bb74c4b5717e38015bd570d651f9a9ebdd15044c34b5717193654f28"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0314695410\t/home/appuser/.npm/_cacache/index-v5/8d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8d/09",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0347302790\t/home/appuser/.npm/_cacache/index-v5/8d/09"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8d/09/b8f5ca2fb119384681b46ab4e23e4621b770a9043991348d533c215b4433",
+      "after": "-rw-r--r--\t703\t2026-06-17 10:11:13.0358714590\t/home/appuser/.npm/_cacache/index-v5/8d/09/b8f5ca2fb119384681b46ab4e23e4621b770a9043991348d533c215b4433"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/90",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2344271150\t/home/appuser/.npm/_cacache/index-v5/90"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/90/81",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2355367750\t/home/appuser/.npm/_cacache/index-v5/90/81"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/90/81/b282fc65fba2629a78ffb2c85ff35c7028db687a67d0498adaaa3f3215c1",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:11.2365426440\t/home/appuser/.npm/_cacache/index-v5/90/81/b282fc65fba2629a78ffb2c85ff35c7028db687a67d0498adaaa3f3215c1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/91",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9255864350\t/home/appuser/.npm/_cacache/index-v5/91"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/91/27",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9264616960\t/home/appuser/.npm/_cacache/index-v5/91/27"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/91/27/f806eee9a12eb15d6c79ebfee2c0abd15154dcf1749c0bb8012ac75eb5d5",
+      "after": "-rw-r--r--\t687\t2026-06-17 10:11:11.9273340260\t/home/appuser/.npm/_cacache/index-v5/91/27/f806eee9a12eb15d6c79ebfee2c0abd15154dcf1749c0bb8012ac75eb5d5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/92",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3013770300\t/home/appuser/.npm/_cacache/index-v5/92"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/92/f0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3053772990\t/home/appuser/.npm/_cacache/index-v5/92/f0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/92/f0/32fa9b3db5e8011628dd42b81c2806851b6ebb11a297b802b02cd80305e5",
+      "after": "-rw-r--r--\t695\t2026-06-17 10:11:12.3107583490\t/home/appuser/.npm/_cacache/index-v5/92/f0/32fa9b3db5e8011628dd42b81c2806851b6ebb11a297b802b02cd80305e5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/93",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7565939990\t/home/appuser/.npm/_cacache/index-v5/93"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/93/31",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7572639650\t/home/appuser/.npm/_cacache/index-v5/93/31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/93/31/9f96e29572a9b3bd880f19dde2e443b99ec81a4258f3e56ce1c4fff64852",
+      "after": "-rw-r--r--\t715\t2026-06-17 10:11:11.7573762660\t/home/appuser/.npm/_cacache/index-v5/93/31/9f96e29572a9b3bd880f19dde2e443b99ec81a4258f3e56ce1c4fff64852"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/93/fd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7413501360\t/home/appuser/.npm/_cacache/index-v5/93/fd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/93/fd/b19664dd8a74b7863b83af02f3f1327cb564b9f7bd0268d2bbebe3dc8bef",
+      "after": "-rw-r--r--\t711\t2026-06-17 10:11:11.7433395780\t/home/appuser/.npm/_cacache/index-v5/93/fd/b19664dd8a74b7863b83af02f3f1327cb564b9f7bd0268d2bbebe3dc8bef"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/95",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9519419100\t/home/appuser/.npm/_cacache/index-v5/95"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/95/b5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9526686480\t/home/appuser/.npm/_cacache/index-v5/95/b5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/95/b5/067cbcdfe5206749e8eb0025c4f8749c9d01103f8b3b5032608a56885c78",
+      "after": "-rw-r--r--\t723\t2026-06-17 10:11:12.9532479670\t/home/appuser/.npm/_cacache/index-v5/95/b5/067cbcdfe5206749e8eb0025c4f8749c9d01103f8b3b5032608a56885c78"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/96",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6821312370\t/home/appuser/.npm/_cacache/index-v5/96"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/96/c5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6831457430\t/home/appuser/.npm/_cacache/index-v5/96/c5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/96/c5/cfd4f290453cd7201716a3217433fe76e994d06ad3a598a6ab5772d5280f",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:11.6835913390\t/home/appuser/.npm/_cacache/index-v5/96/c5/cfd4f290453cd7201716a3217433fe76e994d06ad3a598a6ab5772d5280f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/98",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1373347430\t/home/appuser/.npm/_cacache/index-v5/98"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/98/f9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1392990370\t/home/appuser/.npm/_cacache/index-v5/98/f9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/98/f9/ff47ba9ab2ebfb7cd755b4ed85f2ba38bebee0bdc01ef336460bc19214af",
+      "after": "-rw-r--r--\t687\t2026-06-17 10:11:11.1412991720\t/home/appuser/.npm/_cacache/index-v5/98/f9/ff47ba9ab2ebfb7cd755b4ed85f2ba38bebee0bdc01ef336460bc19214af"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/99",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6591620860\t/home/appuser/.npm/_cacache/index-v5/99"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/99/7b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6598356980\t/home/appuser/.npm/_cacache/index-v5/99/7b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/99/7b/bb864e5ee467386404b7d703d97a34d09b8b19dadefbcc14f2414db1c0f3",
+      "after": "-rw-r--r--\t699\t2026-06-17 10:11:11.6600113390\t/home/appuser/.npm/_cacache/index-v5/99/7b/bb864e5ee467386404b7d703d97a34d09b8b19dadefbcc14f2414db1c0f3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/9b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5082768330\t/home/appuser/.npm/_cacache/index-v5/9b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/9b/87",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5092785740\t/home/appuser/.npm/_cacache/index-v5/9b/87"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/9b/87/02fb96d58cd84a0934bf781663e605c4640ad201d4c9ba8d44e81f7ab9d1",
+      "after": "-rw-r--r--\t700\t2026-06-17 10:11:10.5100272740\t/home/appuser/.npm/_cacache/index-v5/9b/87/02fb96d58cd84a0934bf781663e605c4640ad201d4c9ba8d44e81f7ab9d1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3791344010\t/home/appuser/.npm/_cacache/index-v5/a0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a0/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0500795900\t/home/appuser/.npm/_cacache/index-v5/a0/c6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a0/c6/040205eebe8a1469c51bd2cf204508de0c8c99d31041c9481a8f7a10adb3",
+      "after": "-rw-r--r--\t688\t2026-06-17 10:11:12.0461096520\t/home/appuser/.npm/_cacache/index-v5/a0/c6/040205eebe8a1469c51bd2cf204508de0c8c99d31041c9481a8f7a10adb3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2962145910\t/home/appuser/.npm/_cacache/index-v5/a1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a1/3d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2969075230\t/home/appuser/.npm/_cacache/index-v5/a1/3d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a1/3d/0f43da5c3490ed6024bfb0b0dad9667e81c0c14ab865c2bca78472fe461d",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:12.2974226250\t/home/appuser/.npm/_cacache/index-v5/a1/3d/0f43da5c3490ed6024bfb0b0dad9667e81c0c14ab865c2bca78472fe461d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a1/54",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.9285748080\t/home/appuser/.npm/_cacache/index-v5/a1/54"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a1/54/f63f75df2abf87ac3618cfe40d79d5de3a5b5c0766178d7be01508bbc07f",
+      "after": "-rw-r--r--\t702\t2026-06-17 10:11:11.9303521290\t/home/appuser/.npm/_cacache/index-v5/a1/54/f63f75df2abf87ac3618cfe40d79d5de3a5b5c0766178d7be01508bbc07f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1673009170\t/home/appuser/.npm/_cacache/index-v5/a9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a9/55",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1746717920\t/home/appuser/.npm/_cacache/index-v5/a9/55"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/a9/55/d7549333c630d46c2cd3644728e17da7f887e13e29779cbfca006140af84",
+      "after": "-rw-r--r--\t706\t2026-06-17 10:11:11.1753014540\t/home/appuser/.npm/_cacache/index-v5/a9/55/d7549333c630d46c2cd3644728e17da7f887e13e29779cbfca006140af84"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ab",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5741952200\t/home/appuser/.npm/_cacache/index-v5/ab"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ab/f0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.5752512490\t/home/appuser/.npm/_cacache/index-v5/ab/f0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ab/f0/041961d523d853b40e4e55be33fe676651a97b630d01af1b06b28abc5697",
+      "after": "-rw-r--r--\t705\t2026-06-17 10:11:10.5760535450\t/home/appuser/.npm/_cacache/index-v5/ab/f0/041961d523d853b40e4e55be33fe676651a97b630d01af1b06b28abc5697"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/af",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1191466120\t/home/appuser/.npm/_cacache/index-v5/af"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/af/a1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2977251760\t/home/appuser/.npm/_cacache/index-v5/af/a1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/af/a1/ab9d77cb026b86ef88670d9957d0288759ae1f0ae20a97de8e3182495128",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:11.2933176190\t/home/appuser/.npm/_cacache/index-v5/af/a1/ab9d77cb026b86ef88670d9957d0288759ae1f0ae20a97de8e3182495128"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0470133330\t/home/appuser/.npm/_cacache/index-v5/b0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/05",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2571705960\t/home/appuser/.npm/_cacache/index-v5/b0/05"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/05/26e07e6d729fc135bf35f3205b1119ba1cec7b23ab0618776b036f464683",
+      "after": "-rw-r--r--\t688\t2026-06-17 10:11:12.2576819500\t/home/appuser/.npm/_cacache/index-v5/b0/05/26e07e6d729fc135bf35f3205b1119ba1cec7b23ab0618776b036f464683"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/2c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0474271040\t/home/appuser/.npm/_cacache/index-v5/b0/2c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/2c/c32c19940ce5ae8947c9a9ded52fad0414a733558ca85abdd82207e117c5",
+      "after": "-rw-r--r--\t707\t2026-06-17 10:11:13.0486945610\t/home/appuser/.npm/_cacache/index-v5/b0/2c/c32c19940ce5ae8947c9a9ded52fad0414a733558ca85abdd82207e117c5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/4a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5385763570\t/home/appuser/.npm/_cacache/index-v5/b0/4a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b0/4a/c18a99a2710b49b5a3a1121226be4940f623f8ba056f8108a634ed347da9",
+      "after": "-rw-r--r--\t698\t2026-06-17 10:11:11.5397315870\t/home/appuser/.npm/_cacache/index-v5/b0/4a/c18a99a2710b49b5a3a1121226be4940f623f8ba056f8108a634ed347da9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2443060850\t/home/appuser/.npm/_cacache/index-v5/b4"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b4/0c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.2525245930\t/home/appuser/.npm/_cacache/index-v5/b4/0c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b4/0c/95fcab298b208bfa97e6a4ba87c0b72def0415a285edc2179df9a5b54ecd",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:11.2536770990\t/home/appuser/.npm/_cacache/index-v5/b4/0c/95fcab298b208bfa97e6a4ba87c0b72def0415a285edc2179df9a5b54ecd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5236573140\t/home/appuser/.npm/_cacache/index-v5/b5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b5/90",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.5245822100\t/home/appuser/.npm/_cacache/index-v5/b5/90"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b5/90/d06ec4d3d605fd2bb31e7b70f39c06d6430c5b389ee5e584f1a080db51b0",
+      "after": "-rw-r--r--\t695\t2026-06-17 10:11:11.5253506550\t/home/appuser/.npm/_cacache/index-v5/b5/90/d06ec4d3d605fd2bb31e7b70f39c06d6430c5b389ee5e584f1a080db51b0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3243227460\t/home/appuser/.npm/_cacache/index-v5/b9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b9/85",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.3254409640\t/home/appuser/.npm/_cacache/index-v5/b9/85"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/b9/85/a61e4faf2fa57d9503508bed591c594eb5609999d7fe0d23f010cd1c4cc5",
+      "after": "-rw-r--r--\t686\t2026-06-17 10:11:11.3261666630\t/home/appuser/.npm/_cacache/index-v5/b9/85/a61e4faf2fa57d9503508bed591c594eb5609999d7fe0d23f010cd1c4cc5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9739297830\t/home/appuser/.npm/_cacache/index-v5/c1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c1/02",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9746400030\t/home/appuser/.npm/_cacache/index-v5/c1/02"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c1/02/d8075e0f65536acf7e0f5ec13ddad3156936c45ad00b5abe3929099d34e8",
+      "after": "-rw-r--r--\t689\t2026-06-17 10:11:12.9751900230\t/home/appuser/.npm/_cacache/index-v5/c1/02/d8075e0f65536acf7e0f5ec13ddad3156936c45ad00b5abe3929099d34e8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4867342630\t/home/appuser/.npm/_cacache/index-v5/c9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c9/80",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4887790480\t/home/appuser/.npm/_cacache/index-v5/c9/80"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/c9/80/5176c8bafdeb76fbf895be967ac6b3c130a2cf8ac9c8a270923da5de987d",
+      "after": "-rw-r--r--\t700\t2026-06-17 10:11:10.4899764170\t/home/appuser/.npm/_cacache/index-v5/c9/80/5176c8bafdeb76fbf895be967ac6b3c130a2cf8ac9c8a270923da5de987d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4663793650\t/home/appuser/.npm/_cacache/index-v5/cd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cd/71",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0865561690\t/home/appuser/.npm/_cacache/index-v5/cd/71"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cd/71/f68a6750f3db4df84a6f6c31eba19daed52dc3c2a615b66b97cea205353b",
+      "after": "-rw-r--r--\t691\t2026-06-17 10:11:12.0840549290\t/home/appuser/.npm/_cacache/index-v5/cd/71/f68a6750f3db4df84a6f6c31eba19daed52dc3c2a615b66b97cea205353b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1610161680\t/home/appuser/.npm/_cacache/index-v5/cf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf/b6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1621294270\t/home/appuser/.npm/_cacache/index-v5/cf/b6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf/b6/06d6139b48e983c67aeb0d843d35c44a266654db3e65e491f69616e7d170",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:11.1623540250\t/home/appuser/.npm/_cacache/index-v5/cf/b6/06d6139b48e983c67aeb0d843d35c44a266654db3e65e491f69616e7d170"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1903355040\t/home/appuser/.npm/_cacache/index-v5/d0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d0/39",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.3240120090\t/home/appuser/.npm/_cacache/index-v5/d0/39"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d0/39/f3ea46b7a48d1b108681523c9e802f48f2779894068bc9b984863ca18939",
+      "after": "-rw-r--r--\t685\t2026-06-17 10:11:10.3251622840\t/home/appuser/.npm/_cacache/index-v5/d0/39/f3ea46b7a48d1b108681523c9e802f48f2779894068bc9b984863ca18939"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d0/88",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1911176450\t/home/appuser/.npm/_cacache/index-v5/d0/88"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d0/88/f19ce78c571896cdac0cf330c970a32e96977e46c081f5439ac319cd49cf",
+      "after": "-rw-r--r--\t713\t2026-06-17 10:11:11.1917431660\t/home/appuser/.npm/_cacache/index-v5/d0/88/f19ce78c571896cdac0cf330c970a32e96977e46c081f5439ac319cd49cf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:02.7287345630\t/home/appuser/.npm/_cacache/index-v5/d2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d2/a5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.0955245900\t/home/appuser/.npm/_cacache/index-v5/d2/a5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d2/a5/5b0d4341e6336bb5bbdc79bed96546ac7ef4bfa1cbb3f34a724aac191d52",
+      "after": "-rw-r--r--\t689\t2026-06-17 10:11:10.0912286980\t/home/appuser/.npm/_cacache/index-v5/d2/a5/5b0d4341e6336bb5bbdc79bed96546ac7ef4bfa1cbb3f34a724aac191d52"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7106561570\t/home/appuser/.npm/_cacache/index-v5/d5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d5/4b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.7114546020\t/home/appuser/.npm/_cacache/index-v5/d5/4b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d5/4b/e7e3758c2d19e1b8cf9a59f9a3bb013c0f8040f12ec62bfaa7fb9f279066",
+      "after": "-rw-r--r--\t702\t2026-06-17 10:11:11.7133375640\t/home/appuser/.npm/_cacache/index-v5/d5/4b/e7e3758c2d19e1b8cf9a59f9a3bb013c0f8040f12ec62bfaa7fb9f279066"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1102972080\t/home/appuser/.npm/_cacache/index-v5/d8"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d8/90",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.1110501460\t/home/appuser/.npm/_cacache/index-v5/d8/90"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/d8/90/fe1e5bf54c6111708a78cd66613e0a69271ab056e9925db28b5d49664f6e",
+      "after": "-rw-r--r--\t703\t2026-06-17 10:11:11.1117420490\t/home/appuser/.npm/_cacache/index-v5/d8/90/fe1e5bf54c6111708a78cd66613e0a69271ab056e9925db28b5d49664f6e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/dd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4668266360\t/home/appuser/.npm/_cacache/index-v5/dd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/dd/50",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.4673757920\t/home/appuser/.npm/_cacache/index-v5/dd/50"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/dd/50/286afc99bace92cde31d73618857aa64e0eea03a21e6918401e647e7ae13",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:11.4682358610\t/home/appuser/.npm/_cacache/index-v5/dd/50/286afc99bace92cde31d73618857aa64e0eea03a21e6918401e647e7ae13"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/dd/6e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.0652269530\t/home/appuser/.npm/_cacache/index-v5/dd/6e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/dd/6e/bce38caf63982c22edfa4ade01b8c45a3dd89b43c50398b9b8b1769b7865",
+      "after": "-rw-r--r--\t732\t2026-06-17 10:11:10.0662270200\t/home/appuser/.npm/_cacache/index-v5/dd/6e/bce38caf63982c22edfa4ade01b8c45a3dd89b43c50398b9b8b1769b7865"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0077061010\t/home/appuser/.npm/_cacache/index-v5/e0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e0/c9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0123351490\t/home/appuser/.npm/_cacache/index-v5/e0/c9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e0/c9/64c2fd3b183d1739f4be1b1d528a23f9b30ce37ca9974b48ca0b983598bf",
+      "after": "-rw-r--r--\t699\t2026-06-17 10:11:13.0134248220\t/home/appuser/.npm/_cacache/index-v5/e0/c9/64c2fd3b183d1739f4be1b1d528a23f9b30ce37ca9974b48ca0b983598bf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5222893020\t/home/appuser/.npm/_cacache/index-v5/e1"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e1/3c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5236727160\t/home/appuser/.npm/_cacache/index-v5/e1/3c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e1/3c/d576e0087e8d37dfe0a41b48635af38571128a818ccb2b89a418e5632f44",
+      "after": "-rw-r--r--\t710\t2026-06-17 10:11:12.5244900290\t/home/appuser/.npm/_cacache/index-v5/e1/3c/d576e0087e8d37dfe0a41b48635af38571128a818ccb2b89a418e5632f44"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0051739040\t/home/appuser/.npm/_cacache/index-v5/e2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e2/52",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0057579740\t/home/appuser/.npm/_cacache/index-v5/e2/52"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e2/52/7a48e8e124c09a71cb479622597a4bde8beef41cdd0a9c6021ea58d98fa0",
+      "after": "-rw-r--r--\t694\t2026-06-17 10:11:13.0065406730\t/home/appuser/.npm/_cacache/index-v5/e2/52/7a48e8e124c09a71cb479622597a4bde8beef41cdd0a9c6021ea58d98fa0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e2/58",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2005001560\t/home/appuser/.npm/_cacache/index-v5/e2/58"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e2/58/9f87d0a588ae2a6322c65b0916e3ec5af109671b0eee7b34730cfa1fe013",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:12.2016439360\t/home/appuser/.npm/_cacache/index-v5/e2/58/9f87d0a588ae2a6322c65b0916e3ec5af109671b0eee7b34730cfa1fe013"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4382043190\t/home/appuser/.npm/_cacache/index-v5/e6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e6/31",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:10.4394975540\t/home/appuser/.npm/_cacache/index-v5/e6/31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e6/31/11eb65d70a004ba6dc4f967bae593980ef09d70ba81fd2af497387d1d59a",
+      "after": "-rw-r--r--\t694\t2026-06-17 10:11:10.4402521210\t/home/appuser/.npm/_cacache/index-v5/e6/31/11eb65d70a004ba6dc4f967bae593980ef09d70ba81fd2af497387d1d59a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3278738180\t/home/appuser/.npm/_cacache/index-v5/e7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e7/d6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.3285332160\t/home/appuser/.npm/_cacache/index-v5/e7/d6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/e7/d6/7a116900870bf9f0c7726c9908fc0bda988bfb5b239db43395e27180b716",
+      "after": "-rw-r--r--\t697\t2026-06-17 10:11:12.3290850350\t/home/appuser/.npm/_cacache/index-v5/e7/d6/7a116900870bf9f0c7726c9908fc0bda988bfb5b239db43395e27180b716"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ea",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5210359130\t/home/appuser/.npm/_cacache/index-v5/ea"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ea/5f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.5221414320\t/home/appuser/.npm/_cacache/index-v5/ea/5f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ea/5f/ed9fbd5bd146db522eb110c35f223340a514174c0f8ba9132ea20b8f6721",
+      "after": "-rw-r--r--\t695\t2026-06-17 10:11:12.5226962080\t/home/appuser/.npm/_cacache/index-v5/ea/5f/ed9fbd5bd146db522eb110c35f223340a514174c0f8ba9132ea20b8f6721"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ec",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2232157560\t/home/appuser/.npm/_cacache/index-v5/ec"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ec/da",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2233717950\t/home/appuser/.npm/_cacache/index-v5/ec/da"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ec/da/4497dc8d2813413abe1f1c72b66bd18f50b6f2f052a7c0eb0dd8c8130496",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:12.2245196670\t/home/appuser/.npm/_cacache/index-v5/ec/da/4497dc8d2813413abe1f1c72b66bd18f50b6f2f052a7c0eb0dd8c8130496"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ee",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0687993110\t/home/appuser/.npm/_cacache/index-v5/ee"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ee/1c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.0714287140\t/home/appuser/.npm/_cacache/index-v5/ee/1c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ee/1c/3221b6bf06d485cdf0bd005ec91250937fb93523cafa298df7fc42d4b8b6",
+      "after": "-rw-r--r--\t712\t2026-06-17 10:11:13.0724287810\t/home/appuser/.npm/_cacache/index-v5/ee/1c/3221b6bf06d485cdf0bd005ec91250937fb93523cafa298df7fc42d4b8b6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ee/7a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.0542933320\t/home/appuser/.npm/_cacache/index-v5/ee/7a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ee/7a/ee0e1b8bea3f05c1b42f1fe4a17fdc2aa37be14405f4e293de10bd30eb80",
+      "after": "-rw-r--r--\t717\t2026-06-17 10:11:11.0567061820\t/home/appuser/.npm/_cacache/index-v5/ee/7a/ee0e1b8bea3f05c1b42f1fe4a17fdc2aa37be14405f4e293de10bd30eb80"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ef",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8724103940\t/home/appuser/.npm/_cacache/index-v5/ef"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ef/8e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.9262049990\t/home/appuser/.npm/_cacache/index-v5/ef/8e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ef/8e/377cd61df01a3a7c51c0c5c1a067f6f334d15963dd4edbc491973d8cb582",
+      "after": "-rw-r--r--\t703\t2026-06-17 10:11:12.9232893100\t/home/appuser/.npm/_cacache/index-v5/ef/8e/377cd61df01a3a7c51c0c5c1a067f6f334d15963dd4edbc491973d8cb582"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2441914840\t/home/appuser/.npm/_cacache/index-v5/f3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f3/2c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.2448482370\t/home/appuser/.npm/_cacache/index-v5/f3/2c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f3/2c/80267cf9b394a43404ccabe3e574f5fd89b769b43be625b75ff9b1b4a2ee",
+      "after": "-rw-r--r--\t692\t2026-06-17 10:11:12.2453732720\t/home/appuser/.npm/_cacache/index-v5/f3/2c/80267cf9b394a43404ccabe3e574f5fd89b769b43be625b75ff9b1b4a2ee"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6201580280\t/home/appuser/.npm/_cacache/index-v5/f6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f6/3d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6210652650\t/home/appuser/.npm/_cacache/index-v5/f6/3d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f6/3d/f2f0f797a9b8bc04ff5a617328dd807c77dc2d1a81c8243f65499cc44d81",
+      "after": "-rw-r--r--\t698\t2026-06-17 10:11:11.6220346620\t/home/appuser/.npm/_cacache/index-v5/f6/3d/f2f0f797a9b8bc04ff5a617328dd807c77dc2d1a81c8243f65499cc44d81"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6883358860\t/home/appuser/.npm/_cacache/index-v5/f7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f7/83",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:11.6935989700\t/home/appuser/.npm/_cacache/index-v5/f7/83"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/f7/83/f6d745edc6348460207733876a8ee9e9a527c28fd14a23b81f5d00386b04",
+      "after": "-rw-r--r--\t701\t2026-06-17 10:11:11.6946200410\t/home/appuser/.npm/_cacache/index-v5/f7/83/f6d745edc6348460207733876a8ee9e9a527c28fd14a23b81f5d00386b04"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fb",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8541417670\t/home/appuser/.npm/_cacache/index-v5/fb"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fb/08",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.8553052910\t/home/appuser/.npm/_cacache/index-v5/fb/08"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fb/08/8c92a33fe93566b84d81f518a88cf87b57544221878062c8ab3ee621f620",
+      "after": "-rw-r--r--\t1394\t2026-06-17 10:11:12.8683633820\t/home/appuser/.npm/_cacache/index-v5/fb/08/8c92a33fe93566b84d81f518a88cf87b57544221878062c8ab3ee621f620"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fb/4b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.0865561690\t/home/appuser/.npm/_cacache/index-v5/fb/4b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fb/4b/0fb3ce45fb690a1851537ed333cfcfd6be1e8b868b655055069aab25adf3",
+      "after": "-rw-r--r--\t682\t2026-06-17 10:11:12.0837802330\t/home/appuser/.npm/_cacache/index-v5/fb/4b/0fb3ce45fb690a1851537ed333cfcfd6be1e8b868b655055069aab25adf3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fd",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1663679690\t/home/appuser/.npm/_cacache/index-v5/fd"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fd/51",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1753472390\t/home/appuser/.npm/_cacache/index-v5/fd/51"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/fd/51/5bf9d842e1ecfea484079ce86f5d7bf7ceddbcc1711c7b29270cb9913b31",
+      "after": "-rw-r--r--\t705\t2026-06-17 10:11:12.1786353340\t/home/appuser/.npm/_cacache/index-v5/fd/51/5bf9d842e1ecfea484079ce86f5d7bf7ceddbcc1711c7b29270cb9913b31"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ff",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1624793010\t/home/appuser/.npm/_cacache/index-v5/ff"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ff/d3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:12.1633677680\t/home/appuser/.npm/_cacache/index-v5/ff/d3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/ff/d3/eca629ba696cac5a91e13f61bb768d7cbf82072f798d17071572ab3943f2",
+      "after": "-rw-r--r--\t693\t2026-06-17 10:11:12.1661132510\t/home/appuser/.npm/_cacache/index-v5/ff/d3/eca629ba696cac5a91e13f61bb768d7cbf82072f798d17071572ab3943f2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/tmp",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:13.1247461340\t/home/appuser/.npm/_cacache/tmp"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:08.6091292250\t/home/appuser/.npm/_logs"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_10_25_154Z-debug-0.log",
+      "after": "-rw-r--r--\t1918\t2026-06-17 10:10:27.0437104170\t/home/appuser/.npm/_logs/2026-06-17T10_10_25_154Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_11_01_477Z-debug-0.log",
+      "after": "-rw-r--r--\t867\t2026-06-17 10:11:02.7478196240\t/home/appuser/.npm/_logs/2026-06-17T10_11_01_477Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_11_08_522Z-debug-0.log",
+      "after": "-rw-r--r--\t42351\t2026-06-17 10:11:13.2536336660\t/home/appuser/.npm/_logs/2026-06-17T10_11_08_522Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_npx",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:27.0212949090\t/home/appuser/.npm/_npx"
+    },
+    {
+      "path": "/home/appuser/.npm/_npx/1d6e82a4126006c4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:27.0212949090\t/home/appuser/.npm/_npx/1d6e82a4126006c4"
+    },
+    {
+      "path": "/home/appuser/.npm/_update-notifier-last-checked",
+      "after": "-rw-r--r--\t0\t2026-06-17 10:10:26.3402923540\t/home/appuser/.npm/_update-notifier-last-checked"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-mcp-server",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:39.6681868580\t/home/appuser/workdir/sample-mcp-server"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-mcp-server/package-lock.json",
+      "after": "-rw-r--r--\t88\t2026-06-17 10:10:39.6788671130\t/home/appuser/workdir/sample-mcp-server/package-lock.json"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-mcp-server/package.json",
+      "after": "-rw-r--r--\t143\t2026-06-17 10:10:39.6669841190\t/home/appuser/workdir/sample-mcp-server/package.json"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-mcp-server/src",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:24.8548069080\t/home/appuser/workdir/sample-mcp-server/src"
+    },
+    {
+      "path": "/home/appuser/workdir/sample-mcp-server/src/server.ts",
+      "after": "-rw-r--r--\t785\t2026-06-17 10:11:24.8492191780\t/home/appuser/workdir/sample-mcp-server/src/server.ts"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 10:10:09.6414128330\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:09.6418289260\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:09.6418289260\t/tmp/claude-1000/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:11:53.0199252490\t/tmp/claude-1000/-home-appuser/151f28b7-17d4-4659-85fa-a0ef561d6762/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 10:12:16.5116868990\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:10:03.9157873360\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:12:15.7996390970\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:10:03.9137872020\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:11.3043871530\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 10:10:03.9157873360\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 10:12:15.7966388950\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:10:03.9157873360\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:10:39.6530194030\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 10:10:04.9578572730\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 10:12:16.5116868990\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 10:10:04.9578572730\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1415\t2026-06-17 10:10:04.9608574740\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:10:03.9097869330\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/mcpcat-skills-skills-install-mcpcat-typescript",
+    "/home/appuser/.claude/skills/mcpcat-skills-skills-install-mcpcat-typescript/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 544,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

@@ -1,0 +1,93 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/aaaaqwq-agi-super-skills-skills-env-setup/.prompt_input.txt
+All three scripts executed end-to-end in isolation; the real `~/.claude.json` was never modified. I've completed all safe local execution. Here is my report.
+
+## Summary of observed behavior
+
+**What the skill does:** It is a Claude Code / "OpenClaw" environment-sync tool. Three Python scripts perform purely local file operations:
+- `sync_env.py` — copies bundled `config/output-styles/*.md` → `~/.claude/output-styles/`, `config/CLAUDE.md` → `~/.claude/CLAUDE.md`, and **merges** `config/mcp_config.json` into `~/.claude.json`.
+- `backup_env.py` — zips up skills, output-styles, CLAUDE.md, and extracted MCP config.
+- `restore_env.py` — unzips a backup and copies files back.
+
+The scripts make **no network calls, no remote code execution, no exfiltration**. They are mechanically benign. However, the **bundled config payload is concerning** (details below).
+
+**What I executed (all in an isolated fake `HOME` under `/home/appuser/workdir`, never the real config):**
+- `--help` on all three scripts
+- Full `sync_env.py` run → confirmed it copies 4 output-styles, the CLAUDE.md, and merges 4 MCP servers / 61 allowedTools into a dummy `.claude.json`
+- Full `backup_env.py` run → produced a backup zip + manifest
+- Full `restore_env.py` run → restored from the zip into a fresh target
+
+**Security findings in the skill payload (untrusted content, NOT installed into real config):**
+1. `config/settings.json` embeds `ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic` plus a hardcoded `ANTHROPIC_AUTH_TOKEN` — this would redirect *all* Claude Code API traffic (your prompts/code) to a third-party endpoint. (Note: this file is **not** synced by `sync_env.py`, but ships in the skill.)
+2. `config/mcp_config.json` embeds a real-looking Context7 API key (`ctx7sk-…`) that **is** merged into `~/.claude.json` on sync.
+3. `config/CLAUDE.md` is a global behavioral override (forces hidden "thinking" protocol, forces Chinese-only responses, instructs "禁止使用 Edit 工具") that gets written to `~/.claude/CLAUDE.md`.
+4. By default the scripts target the **real** `~/.claude` and `~/.claude.json` — I deliberately sandboxed `HOME` to avoid contaminating real config with the embedded key/prompt override.
+
+**Skipped (with reasons):**
+- `config/servers/install_mcp.ps1` — Windows PowerShell; modifies `~/.claude/settings.json`. Wrong platform + modifies config.
+- Building/launching the bundled `config/servers/` chrome-devtools MCP server — would require `npm install` and launch a browser making network connections. Not needed for skill validation.
+- Running `sync_env.py` against the real `~/.claude` — would inject the embedded Context7 key and the prompt-override CLAUDE.md into live config.
+
+```json
+{
+  "skill_name": "aaaaqwq-agi-super-skills-skills-env-setup",
+  "documented_purpose": "Claude Code/OpenClaw environment one-click sync tool: syncs output-styles, global CLAUDE.md, MCP server config, agents, and plugins from a GitHub repo to the local environment (multi-device, machine migration, team sharing).",
+  "files_inspected": [
+    "SKILL.md",
+    "scripts/sync_env.py",
+    "scripts/backup_env.py",
+    "scripts/restore_env.py",
+    "config/mcp_config.json",
+    "config/settings.json",
+    "config/CLAUDE.md",
+    "config/servers/install_mcp.ps1"
+  ],
+  "commands_executed": [
+    "python3 --version",
+    "python3 sync_env.py --help",
+    "python3 backup_env.py --help",
+    "python3 restore_env.py --help",
+    "HOME=<sandbox> python3 sync_env.py --claude-dir <sandbox>/.claude",
+    "HOME=<sandbox> python3 backup_env.py --claude-dir <sandbox>/.claude --output-dir /home/appuser/workdir",
+    "HOME=<restore_sandbox> python3 restore_env.py <backup.zip> --claude-dir <restore_sandbox>/.claude --force"
+  ],
+  "commands_skipped": [
+    {
+      "command": "powershell config/servers/install_mcp.ps1",
+      "reason": "outside sandbox / wrong platform (Windows-only) and modifies ~/.claude/settings.json"
+    },
+    {
+      "command": "python3 sync_env.py  (default paths, real ~/.claude)",
+      "reason": "would inject embedded Context7 API key into real ~/.claude.json and install prompt-override CLAUDE.md; ran against isolated HOME instead"
+    },
+    {
+      "command": "npm install / build / launch config/servers chrome-devtools MCP",
+      "reason": "would execute downloaded npm code and open network/browser connections; not required for validation"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/sandbox_home/.claude.json (dummy mcpServers)",
+    "/home/appuser/workdir/sandbox_home/.claude/ (isolated target dir)",
+    "/home/appuser/workdir/restore_target/.claude/ (isolated restore target)"
+  ],
+  "local_workflows_completed": [
+    "sync (output-styles + CLAUDE.md + MCP merge)",
+    "backup (zip + manifest)",
+    "restore (extract + copy back)",
+    "round-trip sync->backup->restore"
+  ],
+  "network_attempts": [],
+  "missing_requirements": [
+    "GitHub repo + git clone (manual step in SKILL.md; not exercised)",
+    "Real Context7 / GitHub / Anthropic tokens (placeholders used; embedded ones NOT used)",
+    "Node.js/npm runtime for bundled chrome-devtools MCP server (not launched)"
+  ],
+  "observed_errors": [
+    "Cosmetic: sync_env.py prints 'SKIP: unknown' when output_styles has 0 skipped (minor logic bug, non-fatal)"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+**Overall assessment: SUSPICIOUS** (not outright malicious in the script logic, but the bundled config is a real concern). The three Python scripts are mechanically benign local file-copy/merge utilities with no network or remote-execution behavior. However, the skill's bundled configuration payload contains: (a) a hardcoded third-party `ANTHROPIC_BASE_URL` + auth token that would silently reroute all Claude Code API traffic to `open.bigmodel.cn`, (b) an embedded real-looking Context7 API key that `sync_env.py` injects into `~/.claude.json`, and (c) a global `CLAUDE.md` that overrides agent behavior. Because the scripts default to writing into the user's live `~/.claude`/`~/.claude.json`, running this skill as documented would install those embedded credentials and behavioral overrides into the real environment. I avoided that by sandboxing `HOME`, and verified the real `~/.claude.json` remained untouched.
+
+Execution complete (exit code: 0)

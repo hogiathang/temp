@@ -1,0 +1,176 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 10:23:11.2356415220\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:25:18.7993137140\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781691785386",
+      "after": "-rw-r--r--\t33\t2026-06-17 10:23:05.3872290060\t/home/appuser/.claude/backups/.claude.json.backup.1781691785386"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781691918799",
+      "after": "-rw-r--r--\t24323\t2026-06-17 10:25:18.7993137140\t/home/appuser/.claude/backups/.claude.json.backup.1781691918799"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 10:23:05.8732815220\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:06.2038784030\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:11.1863641360\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4.jsonl",
+      "after": "-rw-------\t197989\t2026-06-17 10:25:18.4857732500\t/home/appuser/.claude/projects/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:09.6371891360\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:09.6371891360\t/home/appuser/.claude/session-env/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 10:25:18.4541822830\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:25:18.4581825520\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/color_palettes.cpython-310.pyc",
+      "after": "-rw-r--r--\t6632\t2026-06-17 10:24:33.9457688610\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/color_palettes.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/easing.cpython-310.pyc",
+      "after": "-rw-r--r--\t6458\t2026-06-17 10:24:33.9374020560\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/easing.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/validators.cpython-310.pyc",
+      "after": "-rw-r--r--\t6020\t2026-06-17 10:24:28.2594378320\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/validators.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.gif",
+      "after": "-rw-r--r--\t2054\t2026-06-17 10:24:21.3705916280\t/home/appuser/workdir/sample.gif"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 10:23:09.6402601280\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:09.6402601280\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:09.6407413280\t/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:24:44.1138768610\t/tmp/claude-1000/-home-appuser/07bd38e9-63d2-4fa8-a890-6d0b5c1747f4/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 10:25:19.4722506310\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:23:03.6951352930\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:25:18.8056731200\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:23:03.6931351590\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:23:11.2356415220\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 10:23:03.6951352930\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 10:25:18.8002055130\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:23:03.7045298790\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:24:33.9459402180\t/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:23:03.6951352930\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:24:21.3570554150\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 10:23:04.7542063940\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 10:25:19.4722506310\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 10:23:04.7542063940\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t5325\t2026-06-17 10:23:04.7582066630\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:23:03.6891348900\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/LICENSE.txt",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/SKILL.md",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/frame_composer.cpython-314.pyc",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/__pycache__/gif_builder.cpython-314.pyc",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/color_palettes.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/easing.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/frame_composer.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/gif_builder.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/typography.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/validators.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/core/visual_effects.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/requirements.txt",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/bounce.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/explode.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/fade.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/flip.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/kaleidoscope.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/morph.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/move.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/pulse.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/shake.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/slide.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/spin.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/wiggle.py",
+    "/home/appuser/.claude/skills/natemcgrady-slack-gif-creator-slack-gif-creator/templates/zoom.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 21,
+  "num_modified": 7,
+  "num_deleted": 1,
+  "num_unchanged": 38,
+  "monitor": "find_based_no_smart_monitor"
+}

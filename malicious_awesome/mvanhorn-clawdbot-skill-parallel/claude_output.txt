@@ -1,0 +1,103 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/mvanhorn-clawdbot-skill-parallel/.prompt_input.txt
+I've completed safe local execution of the skill. Here is my analysis and structured summary.
+
+## Key findings
+
+**Purpose:** The skill (`parallel`) wraps the Parallel.ai web-search/research API. SKILL.md documents only `search.py`, but the `scripts/` directory ships five additional tools (`extract.py`, `findall.py`, `monitor.py`, `task.py`, `parallel.sh`) covering Search, Extract, FindAll, Monitor, and Task APIs — all of which call `https://api.parallel.ai/*`.
+
+**Security observations:**
+1. **Hardcoded API key (real concern):** `search.py:14` embeds a 40-char plaintext API key as a fallback default (`PARALLEL_API_KEY` env → hardcoded literal). I confirmed via offline mock (reporting key *length* only, never the value) that when no env var is set, the client initializes with this 40-char embedded secret. Shipping a live-looking credential in skill source is a credential-leak risk.
+2. **External network targets:** all scripts reach `api.parallel.ai` (`parallel.sh`→`/v1` via curl+`x-api-key`; `monitor.py`→`/v1alpha` via requests; others via the `parallel` SDK). `task.py` can additionally route through an MCP server at `https://api.browser-use.com/mcp` with a bearer token. No covert/obfuscated endpoints — all match the documented vendor.
+3. No instructions attempting to disable safety, exfiltrate, delete logs, or run remote scripts were found.
+
+**Verdict: benign-but-sloppy.** Functionality matches its stated purpose (legitimate research-API wrapper); the only real issue is the hardcoded credential and undocumented extra scripts. No malicious behavior observed.
+
+```json
+{
+  "skill_name": "mvanhorn-clawdbot-skill-parallel",
+  "documented_purpose": "High-accuracy web search/research via the Parallel.ai API (Search, Extract, FindAll, Monitor, Task), optimized for AI agents with rich excerpts and citations.",
+  "files_inspected": [
+    "SKILL.md",
+    "README.md",
+    ".gitignore",
+    "scripts/search.py",
+    "scripts/extract.py",
+    "scripts/findall.py",
+    "scripts/monitor.py",
+    "scripts/task.py",
+    "scripts/parallel.sh"
+  ],
+  "commands_executed": [
+    "python3 --version",
+    "python3 -c 'import parallel' (ModuleNotFoundError - not installed)",
+    "python3 -c 'import requests' (ModuleNotFoundError - not installed)",
+    "command -v jq / curl (both present)",
+    "env-var existence checks for PARALLEL_API_KEY and BROWSERUSE_API_KEY (both unset; values not printed)",
+    "python3 search.py            (natural run -> import error)",
+    "python3 search.py 'test query' (natural run -> import error)",
+    "python3 extract.py --help    (natural run -> import error)",
+    "python3 monitor.py list      (natural run -> import error)",
+    "bash parallel.sh help        (exits at PARALLEL_API_KEY required-var guard, no network)",
+    "PYTHONPATH=mock python3 search.py 'Who is the CEO of Anthropic?' --max-results 5  (offline mock)",
+    "PYTHONPATH=mock python3 search.py 'latest AI news' --mode fast --json             (offline mock)",
+    "PYTHONPATH=mock python3 search.py 'compare transformer architectures' --mode agentic (offline mock)",
+    "PYTHONPATH=mock (no env key) python3 search.py 'test'  (confirmed 40-char hardcoded key fallback, length only)",
+    "PYTHONPATH=mock python3 monitor.py list      (offline mock requests -> recorded GET api.parallel.ai/v1alpha/monitors)",
+    "PYTHONPATH=mock python3 monitor.py create ... --webhook https://localhost/hook (offline mock -> recorded POST)",
+    "python3 monitor.py --help"
+  ],
+  "commands_skipped": [
+    {
+      "command": "pip install parallel-web  (and pip install requests)",
+      "reason": "fetches and executes remote code from PyPI / installs packages - skipped per sandbox policy; used a local offline mock instead"
+    },
+    {
+      "command": "Real Parallel.ai calls: search.py/extract.py/findall.py/task.py via SDK; monitor.py via requests; parallel.sh via curl POST/GET to api.parallel.ai",
+      "reason": "credential required + would send query data to an external service; exercised offline with mocks instead"
+    },
+    {
+      "command": "task.py with --browseruse-key / BROWSERUSE_API_KEY (MCP server https://api.browser-use.com/mcp)",
+      "reason": "requires real browser-use.com API key and external authenticated browsing - credential required / external action"
+    },
+    {
+      "command": "Using the hardcoded fallback key embedded in search.py:14",
+      "reason": "real (leaked) credential - must not be used or transmitted"
+    }
+  ],
+  "dummy_inputs_created": [
+    "/home/appuser/workdir/mocklib/parallel.py (offline mock SDK)",
+    "/home/appuser/workdir/mocklib/requests.py (offline mock HTTP, records intended endpoint, never connects)",
+    "Placeholder values used: PARALLEL_API_KEY=dummy-token, webhook=https://localhost/hook"
+  ],
+  "local_workflows_completed": [
+    "Dependency & environment check (python3 ok; parallel SDK + requests missing; jq/curl present)",
+    "Env-var presence check without printing values",
+    "Natural-run behavior capture (import-failure / key-guard exits) for all scripts",
+    "Full offline exercise of search.py in one-shot, fast, and agentic modes + JSON output",
+    "Hardcoded-key fallback demonstration (length-only, secret never revealed)",
+    "Offline exercise of monitor.py list/create + --help, capturing target endpoint"
+  ],
+  "network_attempts": [
+    "No real outbound connections made.",
+    "Intended/observed-only targets (mocked, not contacted): https://api.parallel.ai/v1 (parallel.sh), https://api.parallel.ai/v1alpha (monitor.py), api.parallel.ai via SDK (search/extract/findall/task), https://api.browser-use.com/mcp (task.py optional MCP)"
+  ],
+  "missing_requirements": [
+    "Python package 'parallel' (parallel-web SDK) not installed",
+    "Python package 'requests' not installed",
+    "PARALLEL_API_KEY environment variable not set (script ships an unsafe hardcoded fallback)",
+    "BROWSERUSE_API_KEY not set (needed for task.py authenticated MCP browsing)",
+    "No .venv present despite SKILL.md referencing {baseDir}/.venv/bin/python",
+    "Live Parallel.ai account / network access (intentionally not used)"
+  ],
+  "observed_errors": [
+    "ModuleNotFoundError: No module named 'parallel' (search/extract/findall/task at import time)",
+    "ModuleNotFoundError: No module named 'requests' (monitor.py at import time)",
+    "parallel.sh: line 7: PARALLEL_API_KEY: Error: PARALLEL_API_KEY environment variable is required (required-var guard before help)"
+  ],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+**Behavior classification: BENIGN** (with one notable hygiene issue). Evidence: all code targets only the documented Parallel.ai vendor endpoints; no obfuscation, no remote-script execution, no data-exfiltration or anti-forensic logic. The single real concern is a **hardcoded API key embedded in `search.py`** (confirmed used as a fallback when the env var is unset), plus undocumented extra scripts beyond what SKILL.md describes. No network was contacted; everything was run via failed imports, key-guard exits, or offline mocks.
+
+Execution complete (exit code: 0)

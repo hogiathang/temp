@@ -1,0 +1,142 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 08:30:03.8756175770\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:31:51.5002769870\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781684998107",
+      "after": "-rw-r--r--\t33\t2026-06-17 08:29:58.1078634690\t/home/appuser/.claude/backups/.claude.json.backup.1781684998107"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781685111500",
+      "after": "-rw-r--r--\t24322\t2026-06-17 08:31:51.5002769870\t/home/appuser/.claude/backups/.claude.json.backup.1781685111500"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 08:29:58.6206996100\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:29:58.8127125000\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.7778217030\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7.jsonl",
+      "after": "-rw-------\t96248\t2026-06-17 08:31:51.1993774590\t/home/appuser/.claude/projects/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.7360429930\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/1b0400fd-1f73-47d3-8903-4cd06931dfc7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.7360429930\t/home/appuser/.claude/session-env/1b0400fd-1f73-47d3-8903-4cd06931dfc7"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 08:31:51.1832557060\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:31:51.1862559080\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/workdir/mock_market_report.json",
+      "after": "-rw-r--r--\t359\t2026-06-17 08:31:11.2645760460\t/home/appuser/workdir/mock_market_report.json"
+    },
+    {
+      "path": "/home/appuser/workdir/sample_request.txt",
+      "after": "-rw-r--r--\t68\t2026-06-17 08:31:11.2352949380\t/home/appuser/workdir/sample_request.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 08:30:03.7420433950\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.7420433950\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.7434450450\t/tmp/claude-1000/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:31:11.7286071950\t/tmp/claude-1000/-home-appuser/1b0400fd-1f73-47d3-8903-4cd06931dfc7/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 08:31:52.2033241810\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:29:56.4395531940\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:31:51.5062773900\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:29:56.4375530600\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:30:03.8754305830\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 08:29:56.4395531940\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24405\t2026-06-17 08:31:51.5027343930\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:29:56.4395531940\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 08:31:11.2505751060\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 08:29:57.4796230150\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 08:31:52.2033241810\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 08:29:57.4796230150\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2237\t2026-06-17 08:29:57.4816231490\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 08:29:56.4335527920\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/.clawhub",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/.clawhub/origin.json",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/SKILL.md",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/_meta.json",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/rules",
+    "/home/appuser/.claude/skills/boomsystel-code-openclaw-workspace-skills-financial-market-analysis/rules/logic.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 19,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 17,
+  "monitor": "find_based_no_smart_monitor"
+}

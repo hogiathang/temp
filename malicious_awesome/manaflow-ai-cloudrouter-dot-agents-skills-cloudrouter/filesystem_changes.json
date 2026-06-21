@@ -1,0 +1,449 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 10:00:18.1754753970\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:03:45.4318458080\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781690412016",
+      "after": "-rw-r--r--\t33\t2026-06-17 10:00:12.0172199480\t/home/appuser/.claude/backups/.claude.json.backup.1781690412016"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781690625431",
+      "after": "-rw-r--r--\t24323\t2026-06-17 10:03:45.4318458080\t/home/appuser/.claude/backups/.claude.json.backup.1781690625431"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 10:00:12.5480977160\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:13.1500048550\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:18.1213938430\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6.jsonl",
+      "after": "-rw-------\t236980\t2026-06-17 10:03:45.1353717070\t/home/appuser/.claude/projects/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:17.7674480120\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/fb95745a-8993-426b-ab53-fc584dc330b6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:17.7674480120\t/home/appuser/.claude/session-env/fb95745a-8993-426b-ab53-fc584dc330b6"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 10:03:45.1183643600\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:03:45.1213645610\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.npm",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1112295250\t/home/appuser/.npm"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1331248800\t/home/appuser/.npm/_cacache"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1260012690\t/home/appuser/.npm/_cacache/content-v2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6591601830\t/home/appuser/.npm/_cacache/content-v2/sha512"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6598635840\t/home/appuser/.npm/_cacache/content-v2/sha512/1e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e/77",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6631894030\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/77"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/1e/77/b39c76f89ee90e455f37a47d29b90d03a9c7fbbfd23a2560195a65554674089ae9654dba054352bf0ed56697611281a2b18decbb574373d88d0d3a48f13d",
+      "after": "-rw-r--r--\t3597501\t2026-06-17 10:01:28.6565432210\t/home/appuser/.npm/_cacache/content-v2/sha512/1e/77/b39c76f89ee90e455f37a47d29b90d03a9c7fbbfd23a2560195a65554674089ae9654dba054352bf0ed56697611281a2b18decbb574373d88d0d3a48f13d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/22",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9801603360\t/home/appuser/.npm/_cacache/content-v2/sha512/22"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/22/ae",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9837461370\t/home/appuser/.npm/_cacache/content-v2/sha512/22/ae"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/22/ae/c315f67a52b140ddda1288bcb0948cadfca443deb00e277d9b0b784d887b2edac7ca976e1c7b84859225fc2267229e659fbe968a4d9f7cfeb7f7b9b4624c",
+      "after": "-rw-r--r--\t3388913\t2026-06-17 10:01:27.9751600000\t/home/appuser/.npm/_cacache/content-v2/sha512/22/ae/c315f67a52b140ddda1288bcb0948cadfca443deb00e277d9b0b784d887b2edac7ca976e1c7b84859225fc2267229e659fbe968a4d9f7cfeb7f7b9b4624c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.8223163450\t/home/appuser/.npm/_cacache/content-v2/sha512/a0"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a0/db",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.8237267580\t/home/appuser/.npm/_cacache/content-v2/sha512/a0/db"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/a0/db/4004f3a918f831bb3f5237c850c4bcf450b954fd1c73dff7aa51297ad12b53274247b3078b2c5903540de953ff20fbd4f265375845271b4ae77aa35f5839",
+      "after": "-rw-r--r--\t39219\t2026-06-17 10:01:26.8198808440\t/home/appuser/.npm/_cacache/content-v2/sha512/a0/db/4004f3a918f831bb3f5237c850c4bcf450b954fd1c73dff7aa51297ad12b53274247b3078b2c5903540de953ff20fbd4f265375845271b4ae77aa35f5839"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.0880333470\t/home/appuser/.npm/_cacache/content-v2/sha512/c6"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6/55",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.0940337490\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/55"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/c6/55/e41549d5e1e5afcb90a941844b1e279cbb85c4713aee006eaa3664461c23a7871010ef81d46623fcba0710f78501e91cf95efa89df29746ccf45808ca041",
+      "after": "-rw-r--r--\t39405\t2026-06-17 10:01:26.0810328770\t/home/appuser/.npm/_cacache/content-v2/sha512/c6/55/e41549d5e1e5afcb90a941844b1e279cbb85c4713aee006eaa3664461c23a7871010ef81d46623fcba0710f78501e91cf95efa89df29746ccf45808ca041"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/cf",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1270220250\t/home/appuser/.npm/_cacache/content-v2/sha512/cf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1295850200\t/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9/3c6763b2eada99dffc7add885159961a33454fe4ea9d5c8f2abc6564697f137a43125a07c83c2f98d8e069825c8bdd1b31604654d3996b319f753d52b8ba",
+      "after": "-rw-r--r--\t62134\t2026-06-17 10:01:14.1211593240\t/home/appuser/.npm/_cacache/content-v2/sha512/cf/a9/3c6763b2eada99dffc7add885159961a33454fe4ea9d5c8f2abc6564697f137a43125a07c83c2f98d8e069825c8bdd1b31604654d3996b319f753d52b8ba"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1047188450\t/home/appuser/.npm/_cacache/content-v2/sha512/e9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e9/08",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1224209470\t/home/appuser/.npm/_cacache/content-v2/sha512/e9/08"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/e9/08/bd83a04c69b2e44eb04b47a953116e668e0def3516d5ae5a229bb371d142e81e15e016fde8176f16fb10db51e16713ab75bfc14914093d08855b9dd2699b",
+      "after": "-rw-r--r--\t39658\t2026-06-17 10:01:26.1012229020\t/home/appuser/.npm/_cacache/content-v2/sha512/e9/08/bd83a04c69b2e44eb04b47a953116e668e0def3516d5ae5a229bb371d142e81e15e016fde8176f16fb10db51e16713ab75bfc14914093d08855b9dd2699b"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/eb",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.0880333470\t/home/appuser/.npm/_cacache/content-v2/sha512/eb"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.0954436410\t/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e/cdaec6f6b7866ebc9fdd4dd5c44a9cb73a3ebecc527ee0b8716915ed1c17a9174b9a4ec886f3deb83c4841f9953891a6d9284356e6f4dcfc403d384f4d01",
+      "after": "-rw-r--r--\t39843\t2026-06-17 10:01:26.0823194320\t/home/appuser/.npm/_cacache/content-v2/sha512/eb/0e/cdaec6f6b7866ebc9fdd4dd5c44a9cb73a3ebecc527ee0b8716915ed1c17a9174b9a4ec886f3deb83c4841f9953891a6d9284356e6f4dcfc403d384f4d01"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.7694069180\t/home/appuser/.npm/_cacache/content-v2/sha512/f3"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f3/da",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.7716568180\t/home/appuser/.npm/_cacache/content-v2/sha512/f3/da"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/content-v2/sha512/f3/da/112b3f179cf38bb1c342a367f6640cb8adda9dee3349ba1de3975aa2ad275cabd1cf03f840b3fdd58f7a7d105b432cf1ce035b82641f33de3171ed05d047",
+      "after": "-rw-r--r--\t39274\t2026-06-17 10:01:26.7671680640\t/home/appuser/.npm/_cacache/content-v2/sha512/f3/da/112b3f179cf38bb1c342a367f6640cb8adda9dee3349ba1de3975aa2ad275cabd1cf03f840b3fdd58f7a7d105b432cf1ce035b82641f33de3171ed05d047"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6665600370\t/home/appuser/.npm/_cacache/index-v5"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.8273616560\t/home/appuser/.npm/_cacache/index-v5/25"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25/97",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.8273616560\t/home/appuser/.npm/_cacache/index-v5/25/97"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/25/97/a974e56e94043b3f3613b5a37c74e89392d9a282386f34bfdb299b1cda4c",
+      "after": "-rw-r--r--\t749\t2026-06-17 10:01:26.8280830140\t/home/appuser/.npm/_cacache/index-v5/25/97/a974e56e94043b3f3613b5a37c74e89392d9a282386f34bfdb299b1cda4c"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/35",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1006023880\t/home/appuser/.npm/_cacache/index-v5/35"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/35/5e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1025717910\t/home/appuser/.npm/_cacache/index-v5/35/5e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/35/5e/395503e57de196037814cdb428bc8f35abcdea1a3ac9e7247d1884415390",
+      "after": "-rw-r--r--\t755\t2026-06-17 10:01:26.1038337920\t/home/appuser/.npm/_cacache/index-v5/35/5e/395503e57de196037814cdb428bc8f35abcdea1a3ac9e7247d1884415390"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6670749210\t/home/appuser/.npm/_cacache/index-v5/4f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f/a9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6672064470\t/home/appuser/.npm/_cacache/index-v5/4f/a9"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/4f/a9/21a661cf706ab0ec55c0ab3c0d796f4e2f4e64969261815fa5481cb0995d",
+      "after": "-rw-r--r--\t784\t2026-06-17 10:01:28.6684818300\t/home/appuser/.npm/_cacache/index-v5/4f/a9/21a661cf706ab0ec55c0ab3c0d796f4e2f4e64969261815fa5481cb0995d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/65",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1006023880\t/home/appuser/.npm/_cacache/index-v5/65"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/65/49",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1025717910\t/home/appuser/.npm/_cacache/index-v5/65/49"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/65/49/a86521f278d51907cc7b920dae94e6f10fd70df29dedbe045a3b8c6cfc89",
+      "after": "-rw-r--r--\t751\t2026-06-17 10:01:26.1038337920\t/home/appuser/.npm/_cacache/index-v5/65/49/a86521f278d51907cc7b920dae94e6f10fd70df29dedbe045a3b8c6cfc89"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/70",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9858306410\t/home/appuser/.npm/_cacache/index-v5/70"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/70/11",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9866447150\t/home/appuser/.npm/_cacache/index-v5/70/11"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/70/11/1107f400012aa42057b1a598d53d172f04591016c404c66c467fe50924e2",
+      "after": "-rw-r--r--\t744\t2026-06-17 10:01:27.9874342590\t/home/appuser/.npm/_cacache/index-v5/70/11/1107f400012aa42057b1a598d53d172f04591016c404c66c467fe50924e2"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:14.1347374340\t/home/appuser/.npm/_cacache/index-v5/7a"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a/2e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:25.2279756230\t/home/appuser/.npm/_cacache/index-v5/7a/2e"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/7a/2e/65c761ea0b4228c6de69d3fc92aa7a20130e6d657fa82b9f5227a3305e3d",
+      "after": "-rw-r--r--\t729\t2026-06-17 10:01:25.2259160210\t/home/appuser/.npm/_cacache/index-v5/7a/2e/65c761ea0b4228c6de69d3fc92aa7a20130e6d657fa82b9f5227a3305e3d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.7752456490\t/home/appuser/.npm/_cacache/index-v5/8f"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8f/88",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.7763032000\t/home/appuser/.npm/_cacache/index-v5/8f/88"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/8f/88/3ebc935d55dbc995cf4cf162df3f7b440a7f3b8c03cd97b93cb5417100ad",
+      "after": "-rw-r--r--\t749\t2026-06-17 10:01:26.7772519190\t/home/appuser/.npm/_cacache/index-v5/8f/88/3ebc935d55dbc995cf4cf162df3f7b440a7f3b8c03cd97b93cb5417100ad"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1250093470\t/home/appuser/.npm/_cacache/index-v5/cf"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf/6d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:26.1257974960\t/home/appuser/.npm/_cacache/index-v5/cf/6d"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/index-v5/cf/6d/cf84c98d3eb0ecb41b6cafa655f7bf5b3c1685674653217400ce080bd7f7",
+      "after": "-rw-r--r--\t753\t2026-06-17 10:01:26.1264872110\t/home/appuser/.npm/_cacache/index-v5/cf/6d/cf84c98d3eb0ecb41b6cafa655f7bf5b3c1685674653217400ce080bd7f7"
+    },
+    {
+      "path": "/home/appuser/.npm/_cacache/tmp",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6631894030\t/home/appuser/.npm/_cacache/tmp"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:24.1409026640\t/home/appuser/.npm/_logs"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_00_47_091Z-debug-0.log",
+      "after": "-rw-r--r--\t620\t2026-06-17 10:00:47.2314254850\t/home/appuser/.npm/_logs/2026-06-17T10_00_47_091Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_01_12_364Z-debug-0.log",
+      "after": "-rw-r--r--\t1210\t2026-06-17 10:01:14.1537125020\t/home/appuser/.npm/_logs/2026-06-17T10_01_12_364Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T10_01_24_051Z-debug-0.log",
+      "after": "-rw-r--r--\t5907\t2026-06-17 10:01:28.7119830650\t/home/appuser/.npm/_logs/2026-06-17T10_01_24_051Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/.npm/_update-notifier-last-checked",
+      "after": "-rw-r--r--\t0\t2026-06-17 10:01:13.2931746190\t/home/appuser/.npm/_update-notifier-last-checked"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.7002086620\t/home/appuser/workdir/cr-local"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.7032088630\t/home/appuser/workdir/cr-local/node_modules"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/.bin",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6778374020\t/home/appuser/workdir/cr-local/node_modules/.bin"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/.bin/cloudrouter",
+      "after": "lrwxrwxrwx\t43\t2026-06-17 10:01:28.6762070510\t/home/appuser/workdir/cr-local/node_modules/.bin/cloudrouter"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/.bin/cr",
+      "after": "lrwxrwxrwx\t43\t2026-06-17 10:01:28.6778374020\t/home/appuser/workdir/cr-local/node_modules/.bin/cr"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/.package-lock.json",
+      "after": "-rw-r--r--\t1367\t2026-06-17 10:01:28.7053353000\t/home/appuser/workdir/cr-local/node_modules/.package-lock.json"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6847624210\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9781602010\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:28.6657739990\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/bin",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.5591320790\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/bin"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/bin/cloudrouter",
+      "after": "-rwxr-xr-x\t8851640\t2026-06-17 10:01:28.6647264330\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/bin/cloudrouter"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/package.json",
+      "after": "-rw-r--r--\t204\t2026-06-17 10:01:28.6665600370\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter-linux-x64/package.json"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/bin",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.3601187230\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/bin"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/bin/cloudrouter",
+      "after": "-rwxr-xr-x\t714\t2026-06-17 10:01:27.3641189920\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/bin/cloudrouter"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:01:27.9741599330\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/cloudrouter",
+      "after": "-rwxr-xr-x\t8459826\t2026-06-17 10:01:27.9741599330\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/cloudrouter"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js",
+      "after": "-rw-r--r--\t3467\t2026-06-17 10:01:27.9781102830\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/lib/postinstall.js"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/package.json",
+      "after": "-rw-r--r--\t1009\t2026-06-17 10:01:27.9815110260\t/home/appuser/workdir/cr-local/node_modules/@manaflow-ai/cloudrouter/package.json"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/package-lock.json",
+      "after": "-rw-r--r--\t3290\t2026-06-17 10:01:28.7012087290\t/home/appuser/workdir/cr-local/package-lock.json"
+    },
+    {
+      "path": "/home/appuser/workdir/cr-local/package.json",
+      "after": "-rw-r--r--\t70\t2026-06-17 10:01:28.6946521490\t/home/appuser/workdir/cr-local/package.json"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t14\t2026-06-17 10:02:52.0428021960\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 10:00:17.7734484150\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:17.7734484150\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:17.7741499800\t/tmp/claude-1000/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:03:06.0657433450\t/tmp/claude-1000/-home-appuser/fb95745a-8993-426b-ab53-fc584dc330b6/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 10:03:46.1224317480\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:00:10.3479500530\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:03:45.4363857050\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:00:10.3459499190\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:00:18.1754753970\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 10:00:10.3479500530\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 10:03:45.4335212570\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:00:10.3479500530\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 10:02:52.0423980500\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 10:00:11.3890199240\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 10:03:46.1224317480\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 10:00:11.3890199240\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t1430\t2026-06-17 10:00:11.3920201260\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 10:00:10.3409495830\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/manaflow-ai-cloudrouter-dot-agents-skills-cloudrouter",
+    "/home/appuser/.claude/skills/manaflow-ai-cloudrouter-dot-agents-skills-cloudrouter/SKILL.md",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 97,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 12,
+  "monitor": "find_based_no_smart_monitor"
+}

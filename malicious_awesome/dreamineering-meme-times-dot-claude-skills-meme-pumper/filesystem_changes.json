@@ -1,0 +1,157 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 09:29:57.9142982900\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:32:49.1494255190\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781688592152",
+      "after": "-rw-r--r--\t33\t2026-06-17 09:29:52.1523996960\t/home/appuser/.claude/backups/.claude.json.backup.1781688592152"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781688769149",
+      "after": "-rw-r--r--\t24323\t2026-06-17 09:32:49.1497935290\t/home/appuser/.claude/backups/.claude.json.backup.1781688769149"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 09:29:52.7127313600\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:52.9479648940\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.8671648230\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6.jsonl",
+      "after": "-rw-------\t221209\t2026-06-17 09:32:48.8877759410\t/home/appuser/.claude/projects/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.1872494820\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/1e243183-9a4b-4f65-9a58-97b21ff0aed6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.1872494820\t/home/appuser/.claude/session-env/1e243183-9a4b-4f65-9a58-97b21ff0aed6"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 09:32:48.8467731900\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:32:48.8507734580\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.npm",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:31:02.4439013740\t/home/appuser/.npm"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:31:02.4476304980\t/home/appuser/.npm/_logs"
+    },
+    {
+      "path": "/home/appuser/.npm/_logs/2026-06-17T09_31_02_348Z-debug-0.log",
+      "after": "-rw-r--r--\t671\t2026-06-17 09:31:02.4706320420\t/home/appuser/.npm/_logs/2026-06-17T09_31_02_348Z-debug-0.log"
+    },
+    {
+      "path": "/home/appuser/workdir/local-port.js",
+      "after": "-rw-r--r--\t2644\t2026-06-17 09:32:04.0347649090\t/home/appuser/workdir/local-port.js"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t64\t2026-06-17 09:31:40.3476821570\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 09:29:57.1922498170\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.1932498850\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.1940638520\t/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:32:20.4218649910\t/tmp/claude-1000/-home-appuser/1e243183-9a4b-4f65-9a58-97b21ff0aed6/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:32:49.8638414640\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:29:50.4017939680\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:32:49.1557939320\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:29:50.3997938340\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:29:57.9142982900\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 09:29:50.4017939680\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24406\t2026-06-17 09:32:49.1517936630\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:29:50.4017939680\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:32:04.0397652450\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 09:29:51.4478641910\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 09:32:49.8638414640\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 09:29:51.4478641910\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2715\t2026-06-17 09:29:51.4518644600\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:29:50.3957935650\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/SKILL.md",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/references",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/references/meme-creation-templates.md",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/references/platform-best-practices.md",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/references/viral-content-frameworks.md",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/scripts",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/scripts/content-generator.ts",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/scripts/test-prompts.md",
+    "/home/appuser/.claude/skills/dreamineering-meme-times-dot-claude-skills-meme-pumper/scripts/validate-meme-pumper-skill.test.ts",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 22,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 20,
+  "monitor": "find_based_no_smart_monitor"
+}

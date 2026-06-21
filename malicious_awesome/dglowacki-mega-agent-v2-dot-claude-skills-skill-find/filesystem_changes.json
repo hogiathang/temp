@@ -1,0 +1,1371 @@
+{
+  "created": [
+    {
+      "path": "/home/appuser/.cache",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0299096270\t/home/appuser/.cache"
+    },
+    {
+      "path": "/home/appuser/.cache/pip",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.4610728350\t/home/appuser/.cache/pip"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3060624290\t/home/appuser/.cache/pip/http"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.2929272850\t/home/appuser/.cache/pip/http/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.2943984040\t/home/appuser/.cache/pip/http/0/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0/a/6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.2943984040\t/home/appuser/.cache/pip/http/0/a/6"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0/a/6/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.2943984040\t/home/appuser/.cache/pip/http/0/a/6/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0/a/6/b/7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.2979276200\t/home/appuser/.cache/pip/http/0/a/6/b/7"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/0/a/6/b/7/0a6b76df38e61ac4e1f757a1132d2c6424dcb9c23751423afee448ac",
+      "after": "-rw-------\t74321\t2026-06-17 09:22:55.2956159800\t/home/appuser/.cache/pip/http/0/a/6/b/7/0a6b76df38e61ac4e1f757a1132d2c6424dcb9c23751423afee448ac"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2837428360\t/home/appuser/.cache/pip/http/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1/e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2837428360\t/home/appuser/.cache/pip/http/1/e"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1/e/d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2837428360\t/home/appuser/.cache/pip/http/1/e/d"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1/e/d/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2843009010\t/home/appuser/.cache/pip/http/1/e/d/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1/e/d/5/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2869940180\t/home/appuser/.cache/pip/http/1/e/d/5/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/1/e/d/5/5/1ed556defd2a8ab2cc731547ac075b6d45780b497beca6fbad1e4b42",
+      "after": "-rw-------\t66713\t2026-06-17 09:22:56.2850702770\t/home/appuser/.cache/pip/http/1/e/d/5/5/1ed556defd2a8ab2cc731547ac075b6d45780b497beca6fbad1e4b42"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8869671630\t/home/appuser/.cache/pip/http/4"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8399640080\t/home/appuser/.cache/pip/http/4/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/0/f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8412634830\t/home/appuser/.cache/pip/http/4/0/f"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/0/f/8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8412634830\t/home/appuser/.cache/pip/http/4/0/f/8"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/0/f/8/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8464091810\t/home/appuser/.cache/pip/http/4/0/f/8/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/0/f/8/0/40f80b19ea83567715442ee81d6ccbbb60ed7305be53676c27d89192",
+      "after": "-rw-------\t218207\t2026-06-17 09:22:55.8423060680\t/home/appuser/.cache/pip/http/4/0/f/8/0/40f80b19ea83567715442ee81d6ccbbb60ed7305be53676c27d89192"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8879672310\t/home/appuser/.cache/pip/http/4/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/b/e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8879672310\t/home/appuser/.cache/pip/http/4/b/e"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/b/e/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8891481970\t/home/appuser/.cache/pip/http/4/b/e/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/b/e/0/7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.8919674990\t/home/appuser/.cache/pip/http/4/b/e/0/7"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/4/b/e/0/7/4be07d3ac353e38d2c9e3a257cad36ee2a758fc88b4cd5f0d479a5a9",
+      "after": "-rw-------\t20644\t2026-06-17 09:22:55.8901095030\t/home/appuser/.cache/pip/http/4/b/e/0/7/4be07d3ac353e38d2c9e3a257cad36ee2a758fc88b4cd5f0d479a5a9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.3839333940\t/home/appuser/.cache/pip/http/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.3849334610\t/home/appuser/.cache/pip/http/5/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5/b/d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.3849334610\t/home/appuser/.cache/pip/http/5/b/d"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5/b/d/8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.3849334610\t/home/appuser/.cache/pip/http/5/b/d/8"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5/b/d/8/9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.3919339310\t/home/appuser/.cache/pip/http/5/b/d/8/9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/5/b/d/8/9/5bd894eeb3dfe1c8aaee1daecdfb74bbb314293813a730238621f077",
+      "after": "-rw-------\t194395\t2026-06-17 09:22:55.3877162480\t/home/appuser/.cache/pip/http/5/b/d/8/9/5bd894eeb3dfe1c8aaee1daecdfb74bbb314293813a730238621f077"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1969879760\t/home/appuser/.cache/pip/http/8"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/b",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1979880430\t/home/appuser/.cache/pip/http/8/b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/b/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1979880430\t/home/appuser/.cache/pip/http/8/b/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/b/2/4",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1993085530\t/home/appuser/.cache/pip/http/8/b/2/4"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/b/2/4/2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.2019883110\t/home/appuser/.cache/pip/http/8/b/2/4/2"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/b/2/4/2/8b24226e2da88df4abeee0d8ca6bce79b19ca2bcd5f94b543939c66c",
+      "after": "-rw-------\t11663\t2026-06-17 09:22:56.1998143000\t/home/appuser/.cache/pip/http/8/b/2/4/2/8b24226e2da88df4abeee0d8ca6bce79b19ca2bcd5f94b543939c66c"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.0279766300\t/home/appuser/.cache/pip/http/8/d"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/d/0",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.0298456000\t/home/appuser/.cache/pip/http/8/d/0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/d/0/e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.0298456000\t/home/appuser/.cache/pip/http/8/d/0/e"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/d/0/e/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.0329769650\t/home/appuser/.cache/pip/http/8/d/0/e/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/8/d/0/e/1/8d0e104919449355aedb55b5b546bb9fd53f0e1a8ca1b082109464e9",
+      "after": "-rw-------\t27530\t2026-06-17 09:22:56.0308191140\t/home/appuser/.cache/pip/http/8/d/0/e/1/8d0e104919449355aedb55b5b546bb9fd53f0e1a8ca1b082109464e9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.9849737430\t/home/appuser/.cache/pip/http/9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9/d",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.9868789010\t/home/appuser/.cache/pip/http/9/d"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9/d/7",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.9868789010\t/home/appuser/.cache/pip/http/9/d/7"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9/d/7/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.9872881790\t/home/appuser/.cache/pip/http/9/d/7/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9/d/7/3/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.9899740780\t/home/appuser/.cache/pip/http/9/d/7/3/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/9/d/7/3/1/9d731f2c786de32b646a4a55c324f4853068bfd6c6f1fd7f9a0e296b",
+      "after": "-rw-------\t135383\t2026-06-17 09:22:55.9877801990\t/home/appuser/.cache/pip/http/9/d/7/3/1/9d731f2c786de32b646a4a55c324f4853068bfd6c6f1fd7f9a0e296b"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3070624960\t/home/appuser/.cache/pip/http/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3070624960\t/home/appuser/.cache/pip/http/a/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3083134000\t/home/appuser/.cache/pip/http/a/1/9"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3083134000\t/home/appuser/.cache/pip/http/a/1/9/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.3110627650\t/home/appuser/.cache/pip/http/a/1/9/5/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a",
+      "after": "-rw-------\t39703\t2026-06-17 09:22:57.3092965880\t/home/appuser/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1569852900\t/home/appuser/.cache/pip/http/c"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/f",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1569852900\t/home/appuser/.cache/pip/http/c/f"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/f/e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1569852900\t/home/appuser/.cache/pip/http/c/f/e"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/f/e/5",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1569852900\t/home/appuser/.cache/pip/http/c/f/e/5"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/f/e/5/3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.1619856260\t/home/appuser/.cache/pip/http/c/f/e/5/3"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/c/f/e/5/3/cfe53db609feaba2efb2139916693c3ff859e7f1e6e6e557fbd82ae0",
+      "after": "-rw-------\t132351\t2026-06-17 09:22:56.1592690380\t/home/appuser/.cache/pip/http/c/f/e/5/3/cfe53db609feaba2efb2139916693c3ff859e7f1e6e6e557fbd82ae0"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0314454390\t/home/appuser/.cache/pip/http/e"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e/a",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0319187420\t/home/appuser/.cache/pip/http/e/a"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e/a/c",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0319187420\t/home/appuser/.cache/pip/http/e/a/c"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e/a/c/6",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0319187420\t/home/appuser/.cache/pip/http/e/a/c/6"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e/a/c/6/1",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:55.0359100300\t/home/appuser/.cache/pip/http/e/a/c/6/1"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/http/e/a/c/6/1/eac61126daf80149d2a016f12a54eab5e3b5c1dbc77410ff1a97edc4",
+      "after": "-rw-------\t33246\t2026-06-17 09:22:55.0329948590\t/home/appuser/.cache/pip/http/e/a/c/6/1/eac61126daf80149d2a016f12a54eab5e3b5c1dbc77410ff1a97edc4"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.4660731710\t/home/appuser/.cache/pip/selfcheck"
+    },
+    {
+      "path": "/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b",
+      "after": "-rw-------\t80\t2026-06-17 09:22:57.4636887780\t/home/appuser/.cache/pip/selfcheck/fe300af6f7d708c14827daac3afc81fbb8306b73de8dd6e3f1f8ea3b"
+    },
+    {
+      "path": "/home/appuser/.claude/.last-cleanup",
+      "after": "-rw-r--r--\t24\t2026-06-17 09:21:55.7599311490\t/home/appuser/.claude/.last-cleanup"
+    },
+    {
+      "path": "/home/appuser/.claude/backups",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:24:01.0873441320\t/home/appuser/.claude/backups"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781688109553",
+      "after": "-rw-r--r--\t33\t2026-06-17 09:21:49.5545146390\t/home/appuser/.claude/backups/.claude.json.backup.1781688109553"
+    },
+    {
+      "path": "/home/appuser/.claude/backups/.claude.json.backup.1781688241088",
+      "after": "-rw-r--r--\t24322\t2026-06-17 09:24:01.0885550370\t/home/appuser/.claude/backups/.claude.json.backup.1781688241088"
+    },
+    {
+      "path": "/home/appuser/.claude/policy-limits.json",
+      "after": "-rw-------\t359\t2026-06-17 09:21:50.5506705050\t/home/appuser/.claude/policy-limits.json"
+    },
+    {
+      "path": "/home/appuser/.claude/projects",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:50.7965980080\t/home/appuser/.claude/projects"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:55.7119570100\t/home/appuser/.claude/projects/-home-appuser"
+    },
+    {
+      "path": "/home/appuser/.claude/projects/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e.jsonl",
+      "after": "-rw-------\t117016\t2026-06-17 09:24:00.7771590010\t/home/appuser/.claude/projects/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e.jsonl"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:54.6598573110\t/home/appuser/.claude/session-env"
+    },
+    {
+      "path": "/home/appuser/.claude/session-env/132c73fc-e0d8-4306-986d-c35f8543da9e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:54.6598573110\t/home/appuser/.claude/session-env/132c73fc-e0d8-4306-986d-c35f8543da9e"
+    },
+    {
+      "path": "/home/appuser/.claude/sessions",
+      "after": "drwx------\t4096\t2026-06-17 09:24:00.7533217080\t/home/appuser/.claude/sessions"
+    },
+    {
+      "path": "/home/appuser/.claude/shell-snapshots",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:24:00.7593221110\t/home/appuser/.claude/shell-snapshots"
+    },
+    {
+      "path": "/home/appuser/.local",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8070289280\t/home/appuser/.local"
+    },
+    {
+      "path": "/home/appuser/.local/bin",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9247137470\t/home/appuser/.local/bin"
+    },
+    {
+      "path": "/home/appuser/.local/bin/idna",
+      "after": "-rwxr-xr-x\t213\t2026-06-17 09:22:56.8084198890\t/home/appuser/.local/bin/idna"
+    },
+    {
+      "path": "/home/appuser/.local/bin/normalizer",
+      "after": "-rwxr-xr-x\t239\t2026-06-17 09:22:56.9251888260\t/home/appuser/.local/bin/normalizer"
+    },
+    {
+      "path": "/home/appuser/.local/lib",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.4530051620\t/home/appuser/.local/lib"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.4530051620\t/home/appuser/.local/lib/python3.10"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.0086396600\t/home/appuser/.local/lib/python3.10/site-packages"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/81d243bd2c585b0f4821__mypyc.cpython-310-x86_64-linux-gnu.so",
+      "after": "-rwxr-xr-x\t429648\t2026-06-17 09:22:56.8331847680\t/home/appuser/.local/lib/python3.10/site-packages/81d243bd2c585b0f4821__mypyc.cpython-310-x86_64-linux-gnu.so"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9604503850\t/home/appuser/.local/lib/python3.10/site-packages/certifi"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9730400730\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-17 09:22:56.9672462420\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/METADATA",
+      "after": "-rw-r--r--\t2474\t2026-06-17 09:22:56.9551739020\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/RECORD",
+      "after": "-rw-r--r--\t1023\t2026-06-17 09:22:56.9716903710\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/WHEEL",
+      "after": "-rw-r--r--\t91\t2026-06-17 09:22:56.9563472840\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9534937640\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/licenses/LICENSE",
+      "after": "-rw-r--r--\t989\t2026-06-17 09:22:56.9539745970\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/licenses/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/top_level.txt",
+      "after": "-rw-r--r--\t8\t2026-06-17 09:22:56.9574544550\t/home/appuser/.local/lib/python3.10/site-packages/certifi-2026.5.20.dist-info/top_level.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__init__.py",
+      "after": "-rw-r--r--\t94\t2026-06-17 09:22:56.9443117930\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__main__.py",
+      "after": "-rw-r--r--\t243\t2026-06-17 09:22:56.9456555630\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__main__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9661942510\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t275\t2026-06-17 09:22:56.9611767000\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/__main__.cpython-310.pyc",
+      "after": "-rw-r--r--\t413\t2026-06-17 09:22:56.9634705390\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/__main__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/core.cpython-310.pyc",
+      "after": "-rw-r--r--\t1388\t2026-06-17 09:22:56.9660619020\t/home/appuser/.local/lib/python3.10/site-packages/certifi/__pycache__/core.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/cacert.pem",
+      "after": "-rw-r--r--\t236095\t2026-06-17 09:22:56.9495502050\t/home/appuser/.local/lib/python3.10/site-packages/certifi/cacert.pem"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/core.py",
+      "after": "-rw-r--r--\t3394\t2026-06-17 09:22:56.9506281480\t/home/appuser/.local/lib/python3.10/site-packages/certifi/core.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/certifi/py.typed",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:56.9520195250\t/home/appuser/.local/lib/python3.10/site-packages/certifi/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8673454220\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9360375890\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-17 09:22:56.9289670370\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/METADATA",
+      "after": "-rw-r--r--\t40931\t2026-06-17 09:22:56.8583171960\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/RECORD",
+      "after": "-rw-r--r--\t2902\t2026-06-17 09:22:56.9350438430\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/WHEEL",
+      "after": "-rw-r--r--\t190\t2026-06-17 09:22:56.8597253350\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/entry_points.txt",
+      "after": "-rw-r--r--\t65\t2026-06-17 09:22:56.8610256340\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/entry_points.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8646470570\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/licenses/LICENSE",
+      "after": "-rw-r--r--\t1071\t2026-06-17 09:22:56.8651648470\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/licenses/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/top_level.txt",
+      "after": "-rw-r--r--\t47\t2026-06-17 09:22:56.8624344150\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer-3.4.7.dist-info/top_level.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__init__.py",
+      "after": "-rw-r--r--\t1590\t2026-06-17 09:22:56.8347113960\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__main__.py",
+      "after": "-rw-r--r--\t109\t2026-06-17 09:22:56.8364105900\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__main__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.9235578550\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t1617\t2026-06-17 09:22:56.8680730270\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/__main__.cpython-310.pyc",
+      "after": "-rw-r--r--\t306\t2026-06-17 09:22:56.8702196620\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/__main__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/api.cpython-310.pyc",
+      "after": "-rw-r--r--\t14831\t2026-06-17 09:22:56.8772824400\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/api.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/cd.cpython-310.pyc",
+      "after": "-rw-r--r--\t10606\t2026-06-17 09:22:56.8833325810\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/cd.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/constant.cpython-310.pyc",
+      "after": "-rw-r--r--\t34456\t2026-06-17 09:22:56.9000364690\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/constant.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/legacy.cpython-310.pyc",
+      "after": "-rw-r--r--\t2258\t2026-06-17 09:22:56.9028667610\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/legacy.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/md.cpython-310.pyc",
+      "after": "-rw-r--r--\t17995\t2026-06-17 09:22:56.9104845510\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/md.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/models.cpython-310.pyc",
+      "after": "-rw-r--r--\t12229\t2026-06-17 09:22:56.9156695680\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/models.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/utils.cpython-310.pyc",
+      "after": "-rw-r--r--\t10025\t2026-06-17 09:22:56.9210690880\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/utils.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/version.cpython-310.pyc",
+      "after": "-rw-r--r--\t308\t2026-06-17 09:22:56.9235578550\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/__pycache__/version.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/api.py",
+      "after": "-rw-r--r--\t38844\t2026-06-17 09:22:56.8381136700\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/api.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cd.cpython-310-x86_64-linux-gnu.so",
+      "after": "-rwxr-xr-x\t15912\t2026-06-17 09:22:56.8396224910\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cd.cpython-310-x86_64-linux-gnu.so"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cd.py",
+      "after": "-rw-r--r--\t15174\t2026-06-17 09:22:56.8413312100\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cd.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8850778870\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__init__.py",
+      "after": "-rw-r--r--\t136\t2026-06-17 09:22:56.8553288000\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__main__.py",
+      "after": "-rw-r--r--\t11940\t2026-06-17 09:22:56.8564966780\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__main__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8901819080\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t309\t2026-06-17 09:22:56.8856314140\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__/__main__.cpython-310.pyc",
+      "after": "-rw-r--r--\t8743\t2026-06-17 09:22:56.8901819080\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/cli/__pycache__/__main__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/constant.py",
+      "after": "-rw-r--r--\t44431\t2026-06-17 09:22:56.8420312780\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/constant.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/legacy.py",
+      "after": "-rw-r--r--\t2661\t2026-06-17 09:22:56.8438773090\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/legacy.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/md.cpython-310-x86_64-linux-gnu.so",
+      "after": "-rwxr-xr-x\t15912\t2026-06-17 09:22:56.8455169110\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/md.cpython-310-x86_64-linux-gnu.so"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/md.py",
+      "after": "-rw-r--r--\t30441\t2026-06-17 09:22:56.8477877190\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/md.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/models.py",
+      "after": "-rw-r--r--\t12821\t2026-06-17 09:22:56.8502328320\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/models.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/py.typed",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:56.8510590210\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/utils.py",
+      "after": "-rw-r--r--\t12282\t2026-06-17 09:22:56.8530823230\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/utils.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/version.py",
+      "after": "-rw-r--r--\t115\t2026-06-17 09:22:56.8539685140\t/home/appuser/.local/lib/python3.10/site-packages/charset_normalizer/version.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.7165545770\t/home/appuser/.local/lib/python3.10/site-packages/idna"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8180296670\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-17 09:22:56.8113942560\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/METADATA",
+      "after": "-rw-r--r--\t6119\t2026-06-17 09:22:56.7140128260\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/RECORD",
+      "after": "-rw-r--r--\t1785\t2026-06-17 09:22:56.8171215450\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/WHEEL",
+      "after": "-rw-r--r--\t82\t2026-06-17 09:22:56.7129181270\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/entry_points.txt",
+      "after": "-rw-r--r--\t38\t2026-06-17 09:22:56.7109821100\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/entry_points.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.7116077620\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/licenses/LICENSE.md",
+      "after": "-rw-r--r--\t1541\t2026-06-17 09:22:56.7120431220\t/home/appuser/.local/lib/python3.10/site-packages/idna-3.18.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__init__.py",
+      "after": "-rw-r--r--\t868\t2026-06-17 09:22:56.6973733140\t/home/appuser/.local/lib/python3.10/site-packages/idna/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__main__.py",
+      "after": "-rw-r--r--\t83\t2026-06-17 09:22:56.6983967800\t/home/appuser/.local/lib/python3.10/site-packages/idna/__main__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.8062372440\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t823\t2026-06-17 09:22:56.7174961740\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/__main__.cpython-310.pyc",
+      "after": "-rw-r--r--\t267\t2026-06-17 09:22:56.7191508230\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/__main__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/cli.cpython-310.pyc",
+      "after": "-rw-r--r--\t4333\t2026-06-17 09:22:56.7224840350\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/cli.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/codec.cpython-310.pyc",
+      "after": "-rw-r--r--\t4737\t2026-06-17 09:22:56.7261797770\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/codec.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/compat.cpython-310.pyc",
+      "after": "-rw-r--r--\t1742\t2026-06-17 09:22:56.7283976590\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/compat.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/core.cpython-310.pyc",
+      "after": "-rw-r--r--\t20457\t2026-06-17 09:22:56.7376328110\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/core.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/idnadata.cpython-310.pyc",
+      "after": "-rw-r--r--\t21972\t2026-06-17 09:22:56.7471442690\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/idnadata.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/intranges.cpython-310.pyc",
+      "after": "-rw-r--r--\t1913\t2026-06-17 09:22:56.7500162280\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/intranges.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/package_data.cpython-310.pyc",
+      "after": "-rw-r--r--\t183\t2026-06-17 09:22:56.7523428170\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/package_data.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/uts46data.cpython-310.pyc",
+      "after": "-rw-r--r--\t96240\t2026-06-17 09:22:56.8050287940\t/home/appuser/.local/lib/python3.10/site-packages/idna/__pycache__/uts46data.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/cli.py",
+      "after": "-rw-r--r--\t4139\t2026-06-17 09:22:56.6995143680\t/home/appuser/.local/lib/python3.10/site-packages/idna/cli.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/codec.py",
+      "after": "-rw-r--r--\t5040\t2026-06-17 09:22:56.7005218330\t/home/appuser/.local/lib/python3.10/site-packages/idna/codec.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/compat.py",
+      "after": "-rw-r--r--\t1353\t2026-06-17 09:22:56.7016250820\t/home/appuser/.local/lib/python3.10/site-packages/idna/compat.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/core.py",
+      "after": "-rw-r--r--\t24685\t2026-06-17 09:22:56.7027869800\t/home/appuser/.local/lib/python3.10/site-packages/idna/core.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/idnadata.py",
+      "after": "-rw-r--r--\t44862\t2026-06-17 09:22:56.7041855440\t/home/appuser/.local/lib/python3.10/site-packages/idna/idnadata.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/intranges.py",
+      "after": "-rw-r--r--\t1851\t2026-06-17 09:22:56.7052981410\t/home/appuser/.local/lib/python3.10/site-packages/idna/intranges.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/package_data.py",
+      "after": "-rw-r--r--\t21\t2026-06-17 09:22:56.7063937470\t/home/appuser/.local/lib/python3.10/site-packages/idna/package_data.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/py.typed",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:56.7070389430\t/home/appuser/.local/lib/python3.10/site-packages/idna/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/idna/uts46data.py",
+      "after": "-rw-r--r--\t234325\t2026-06-17 09:22:56.7096333260\t/home/appuser/.local/lib/python3.10/site-packages/idna/uts46data.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.0190431610\t/home/appuser/.local/lib/python3.10/site-packages/requests"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.1260503450\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-17 09:22:57.1199463550\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/METADATA",
+      "after": "-rw-r--r--\t4806\t2026-06-17 09:22:57.0121053950\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/RECORD",
+      "after": "-rw-r--r--\t3153\t2026-06-17 09:22:57.1253724120\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/REQUESTED",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:57.1220500760\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/REQUESTED"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/WHEEL",
+      "after": "-rw-r--r--\t91\t2026-06-17 09:22:57.0136052740\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.0106366810\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses/LICENSE",
+      "after": "-rw-r--r--\t10142\t2026-06-17 09:22:57.0102038770\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses/LICENSE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses/NOTICE",
+      "after": "-rw-r--r--\t38\t2026-06-17 09:22:57.0113410220\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/licenses/NOTICE"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/top_level.txt",
+      "after": "-rw-r--r--\t9\t2026-06-17 09:22:57.0146416380\t/home/appuser/.local/lib/python3.10/site-packages/requests-2.34.2.dist-info/top_level.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__init__.py",
+      "after": "-rw-r--r--\t5922\t2026-06-17 09:22:56.9800405430\t/home/appuser/.local/lib/python3.10/site-packages/requests/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:57.1189090520\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t4272\t2026-06-17 09:22:57.0214670390\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/__version__.cpython-310.pyc",
+      "after": "-rw-r--r--\t521\t2026-06-17 09:22:57.0236940020\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/__version__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/_internal_utils.cpython-310.pyc",
+      "after": "-rw-r--r--\t1660\t2026-06-17 09:22:57.0265855630\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/_internal_utils.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/_types.cpython-310.pyc",
+      "after": "-rw-r--r--\t5616\t2026-06-17 09:22:57.0340441680\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/_types.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/adapters.cpython-310.pyc",
+      "after": "-rw-r--r--\t23037\t2026-06-17 09:22:57.0442218440\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/adapters.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/api.cpython-310.pyc",
+      "after": "-rw-r--r--\t7359\t2026-06-17 09:22:57.0471683830\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/api.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/auth.cpython-310.pyc",
+      "after": "-rw-r--r--\t9815\t2026-06-17 09:22:57.0524909410\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/auth.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/certs.cpython-310.pyc",
+      "after": "-rw-r--r--\t598\t2026-06-17 09:22:57.0548212230\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/certs.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/compat.cpython-310.pyc",
+      "after": "-rw-r--r--\t2056\t2026-06-17 09:22:57.0572414380\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/compat.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/cookies.cpython-310.pyc",
+      "after": "-rw-r--r--\t21578\t2026-06-17 09:22:57.0651753310\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/cookies.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/exceptions.cpython-310.pyc",
+      "after": "-rw-r--r--\t6623\t2026-06-17 09:22:57.0687128010\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/exceptions.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/help.cpython-310.pyc",
+      "after": "-rw-r--r--\t2878\t2026-06-17 09:22:57.0718527260\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/help.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/hooks.cpython-310.pyc",
+      "after": "-rw-r--r--\t1457\t2026-06-17 09:22:57.0747040270\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/hooks.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/models.cpython-310.pyc",
+      "after": "-rw-r--r--\t29208\t2026-06-17 09:22:57.0864406180\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/models.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/packages.cpython-310.pyc",
+      "after": "-rw-r--r--\t602\t2026-06-17 09:22:57.0886203850\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/packages.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/sessions.cpython-310.pyc",
+      "after": "-rw-r--r--\t22910\t2026-06-17 09:22:57.0995658590\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/sessions.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/status_codes.cpython-310.pyc",
+      "after": "-rw-r--r--\t4789\t2026-06-17 09:22:57.1020487330\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/status_codes.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/structures.cpython-310.pyc",
+      "after": "-rw-r--r--\t5844\t2026-06-17 09:22:57.1062992000\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/structures.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/utils.cpython-310.pyc",
+      "after": "-rw-r--r--\t28093\t2026-06-17 09:22:57.1189090520\t/home/appuser/.local/lib/python3.10/site-packages/requests/__pycache__/utils.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/__version__.py",
+      "after": "-rw-r--r--\t435\t2026-06-17 09:22:56.9827686120\t/home/appuser/.local/lib/python3.10/site-packages/requests/__version__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/_internal_utils.py",
+      "after": "-rw-r--r--\t1542\t2026-06-17 09:22:56.9866526570\t/home/appuser/.local/lib/python3.10/site-packages/requests/_internal_utils.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/_types.py",
+      "after": "-rw-r--r--\t5838\t2026-06-17 09:22:56.9879969580\t/home/appuser/.local/lib/python3.10/site-packages/requests/_types.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/adapters.py",
+      "after": "-rw-r--r--\t28064\t2026-06-17 09:22:56.9891747920\t/home/appuser/.local/lib/python3.10/site-packages/requests/adapters.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/api.py",
+      "after": "-rw-r--r--\t7152\t2026-06-17 09:22:56.9902232190\t/home/appuser/.local/lib/python3.10/site-packages/requests/api.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/auth.py",
+      "after": "-rw-r--r--\t12233\t2026-06-17 09:22:56.9912761860\t/home/appuser/.local/lib/python3.10/site-packages/requests/auth.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/certs.py",
+      "after": "-rw-r--r--\t430\t2026-06-17 09:22:56.9922167190\t/home/appuser/.local/lib/python3.10/site-packages/requests/certs.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/compat.py",
+      "after": "-rw-r--r--\t2465\t2026-06-17 09:22:56.9931408100\t/home/appuser/.local/lib/python3.10/site-packages/requests/compat.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/cookies.py",
+      "after": "-rw-r--r--\t21549\t2026-06-17 09:22:56.9942594100\t/home/appuser/.local/lib/python3.10/site-packages/requests/cookies.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/exceptions.py",
+      "after": "-rw-r--r--\t4564\t2026-06-17 09:22:56.9954305160\t/home/appuser/.local/lib/python3.10/site-packages/requests/exceptions.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/help.py",
+      "after": "-rw-r--r--\t4210\t2026-06-17 09:22:56.9965344540\t/home/appuser/.local/lib/python3.10/site-packages/requests/help.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/hooks.py",
+      "after": "-rw-r--r--\t1138\t2026-06-17 09:22:56.9972531710\t/home/appuser/.local/lib/python3.10/site-packages/requests/hooks.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/models.py",
+      "after": "-rw-r--r--\t41783\t2026-06-17 09:22:56.9989298750\t/home/appuser/.local/lib/python3.10/site-packages/requests/models.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/packages.py",
+      "after": "-rw-r--r--\t904\t2026-06-17 09:22:56.9990418180\t/home/appuser/.local/lib/python3.10/site-packages/requests/packages.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/py.typed",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:57.0003026870\t/home/appuser/.local/lib/python3.10/site-packages/requests/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/sessions.py",
+      "after": "-rw-r--r--\t34248\t2026-06-17 09:22:57.0020888570\t/home/appuser/.local/lib/python3.10/site-packages/requests/sessions.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/status_codes.py",
+      "after": "-rw-r--r--\t4351\t2026-06-17 09:22:57.0031663050\t/home/appuser/.local/lib/python3.10/site-packages/requests/status_codes.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/structures.py",
+      "after": "-rw-r--r--\t4134\t2026-06-17 09:22:57.0051971770\t/home/appuser/.local/lib/python3.10/site-packages/requests/structures.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/requests/utils.py",
+      "after": "-rw-r--r--\t36322\t2026-06-17 09:22:57.0070423550\t/home/appuser/.local/lib/python3.10/site-packages/requests/utils.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5150093250\t/home/appuser/.local/lib/python3.10/site-packages/urllib3"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6880209390\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/INSTALLER",
+      "after": "-rw-r--r--\t4\t2026-06-17 09:22:56.6803867480\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/INSTALLER"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/METADATA",
+      "after": "-rw-r--r--\t6852\t2026-06-17 09:22:56.5107442270\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/METADATA"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/RECORD",
+      "after": "-rw-r--r--\t5527\t2026-06-17 09:22:56.6863659100\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/RECORD"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/WHEEL",
+      "after": "-rw-r--r--\t87\t2026-06-17 09:22:56.5119224800\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/WHEEL"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/licenses",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5124523040\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/licenses"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/licenses/LICENSE.txt",
+      "after": "-rw-r--r--\t1093\t2026-06-17 09:22:56.5128180050\t/home/appuser/.local/lib/python3.10/site-packages/urllib3-2.7.0.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__init__.py",
+      "after": "-rw-r--r--\t6979\t2026-06-17 09:22:56.4558588850\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6357542350\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t6097\t2026-06-17 09:22:56.5174692700\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_base_connection.cpython-310.pyc",
+      "after": "-rw-r--r--\t5678\t2026-06-17 09:22:56.5210518530\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_base_connection.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_collections.cpython-310.pyc",
+      "after": "-rw-r--r--\t16346\t2026-06-17 09:22:56.5274252360\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_collections.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_request_methods.cpython-310.pyc",
+      "after": "-rw-r--r--\t9079\t2026-06-17 09:22:56.5315040900\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_request_methods.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_version.cpython-310.pyc",
+      "after": "-rw-r--r--\t544\t2026-06-17 09:22:56.5341362580\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/_version.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/connection.cpython-310.pyc",
+      "after": "-rw-r--r--\t25650\t2026-06-17 09:22:56.5441491170\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/connection.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/connectionpool.cpython-310.pyc",
+      "after": "-rw-r--r--\t29357\t2026-06-17 09:22:56.5527575060\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/connectionpool.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/exceptions.cpython-310.pyc",
+      "after": "-rw-r--r--\t13812\t2026-06-17 09:22:56.5946814220\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/exceptions.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/fields.cpython-310.pyc",
+      "after": "-rw-r--r--\t9690\t2026-06-17 09:22:56.5993077180\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/fields.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/filepost.cpython-310.pyc",
+      "after": "-rw-r--r--\t2335\t2026-06-17 09:22:56.6025868690\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/filepost.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/poolmanager.cpython-310.pyc",
+      "after": "-rw-r--r--\t18375\t2026-06-17 09:22:56.6220831390\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/poolmanager.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/response.cpython-310.pyc",
+      "after": "-rw-r--r--\t36976\t2026-06-17 09:22:56.6357542350\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/__pycache__/response.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/_base_connection.py",
+      "after": "-rw-r--r--\t5580\t2026-06-17 09:22:56.4560053640\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/_base_connection.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/_collections.py",
+      "after": "-rw-r--r--\t17522\t2026-06-17 09:22:56.4580054980\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/_collections.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/_request_methods.py",
+      "after": "-rw-r--r--\t9931\t2026-06-17 09:22:56.4617694110\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/_request_methods.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/_version.py",
+      "after": "-rw-r--r--\t520\t2026-06-17 09:22:56.4640707960\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/_version.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/connection.py",
+      "after": "-rw-r--r--\t42786\t2026-06-17 09:22:56.4656550590\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/connection.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/connectionpool.py",
+      "after": "-rw-r--r--\t44164\t2026-06-17 09:22:56.4671313520\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/connectionpool.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5545079210\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__init__.py",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:22:56.4748310900\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5896807440\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t170\t2026-06-17 09:22:56.5551441770\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/pyopenssl.cpython-310.pyc",
+      "after": "-rw-r--r--\t17850\t2026-06-17 09:22:56.5847460040\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/pyopenssl.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/socks.cpython-310.pyc",
+      "after": "-rw-r--r--\t6131\t2026-06-17 09:22:56.5895321280\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/__pycache__/socks.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5560120770\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__init__.py",
+      "after": "-rw-r--r--\t836\t2026-06-17 09:22:56.4792426830\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.5782873810\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t744\t2026-06-17 09:22:56.5577263140\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/connection.cpython-310.pyc",
+      "after": "-rw-r--r--\t7663\t2026-06-17 09:22:56.5627568590\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/connection.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/fetch.cpython-310.pyc",
+      "after": "-rw-r--r--\t18937\t2026-06-17 09:22:56.5707085070\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/fetch.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/request.cpython-310.pyc",
+      "after": "-rw-r--r--\t1225\t2026-06-17 09:22:56.5741563600\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/request.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/response.cpython-310.pyc",
+      "after": "-rw-r--r--\t8119\t2026-06-17 09:22:56.5782873810\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/__pycache__/response.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/connection.py",
+      "after": "-rw-r--r--\t8960\t2026-06-17 09:22:56.4804244950\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/connection.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js",
+      "after": "-rw-r--r--\t3677\t2026-06-17 09:22:56.4816686370\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/fetch.py",
+      "after": "-rw-r--r--\t23520\t2026-06-17 09:22:56.4831892270\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/fetch.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/request.py",
+      "after": "-rw-r--r--\t566\t2026-06-17 09:22:56.4841315440\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/request.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/response.py",
+      "after": "-rw-r--r--\t9719\t2026-06-17 09:22:56.4863660830\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/emscripten/response.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/pyopenssl.py",
+      "after": "-rw-r--r--\t19734\t2026-06-17 09:22:56.4765109030\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/pyopenssl.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/socks.py",
+      "after": "-rw-r--r--\t7639\t2026-06-17 09:22:56.4778682380\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/contrib/socks.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/exceptions.py",
+      "after": "-rw-r--r--\t9945\t2026-06-17 09:22:56.4683221850\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/exceptions.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/fields.py",
+      "after": "-rw-r--r--\t10801\t2026-06-17 09:22:56.4690133330\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/fields.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/filepost.py",
+      "after": "-rw-r--r--\t2388\t2026-06-17 09:22:56.4703672870\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/filepost.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6040153000\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__init__.py",
+      "after": "-rw-r--r--\t1741\t2026-06-17 09:22:56.4877709650\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6166580850\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t1407\t2026-06-17 09:22:56.6054661640\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/connection.cpython-310.pyc",
+      "after": "-rw-r--r--\t10890\t2026-06-17 09:22:56.6123710060\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/connection.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/probe.cpython-310.pyc",
+      "after": "-rw-r--r--\t2541\t2026-06-17 09:22:56.6166580850\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/__pycache__/probe.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/connection.py",
+      "after": "-rw-r--r--\t12578\t2026-06-17 09:22:56.4890894550\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/connection.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/probe.py",
+      "after": "-rw-r--r--\t3014\t2026-06-17 09:22:56.4903139560\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/http2/probe.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/poolmanager.py",
+      "after": "-rw-r--r--\t23895\t2026-06-17 09:22:56.4714536460\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/poolmanager.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/py.typed",
+      "after": "-rw-r--r--\t93\t2026-06-17 09:22:56.4723847550\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/py.typed"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/response.py",
+      "after": "-rw-r--r--\t53219\t2026-06-17 09:22:56.4736922460\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/response.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6374820960\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__init__.py",
+      "after": "-rw-r--r--\t1001\t2026-06-17 09:22:56.4915615480\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__init__.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:22:56.6794863250\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/__init__.cpython-310.pyc",
+      "after": "-rw-r--r--\t950\t2026-06-17 09:22:56.6379201740\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/__init__.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/connection.cpython-310.pyc",
+      "after": "-rw-r--r--\t3465\t2026-06-17 09:22:56.6414520590\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/connection.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/proxy.cpython-310.pyc",
+      "after": "-rw-r--r--\t1080\t2026-06-17 09:22:56.6434142320\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/proxy.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/request.cpython-310.pyc",
+      "after": "-rw-r--r--\t6483\t2026-06-17 09:22:56.6464981680\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/request.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/response.cpython-310.pyc",
+      "after": "-rw-r--r--\t2336\t2026-06-17 09:22:56.6489784380\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/response.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/retry.cpython-310.pyc",
+      "after": "-rw-r--r--\t16510\t2026-06-17 09:22:56.6534554400\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/retry.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssl_.cpython-310.pyc",
+      "after": "-rw-r--r--\t11675\t2026-06-17 09:22:56.6578080800\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssl_.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssl_match_hostname.cpython-310.pyc",
+      "after": "-rw-r--r--\t3659\t2026-06-17 09:22:56.6614097400\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssl_match_hostname.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssltransport.cpython-310.pyc",
+      "after": "-rw-r--r--\t9419\t2026-06-17 09:22:56.6657667320\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/ssltransport.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/timeout.cpython-310.pyc",
+      "after": "-rw-r--r--\t9601\t2026-06-17 09:22:56.6691550960\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/timeout.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/url.cpython-310.pyc",
+      "after": "-rw-r--r--\t11239\t2026-06-17 09:22:56.6741167130\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/url.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/util.cpython-310.pyc",
+      "after": "-rw-r--r--\t1210\t2026-06-17 09:22:56.6767286420\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/util.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/wait.cpython-310.pyc",
+      "after": "-rw-r--r--\t2389\t2026-06-17 09:22:56.6794863250\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/__pycache__/wait.cpython-310.pyc"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/connection.py",
+      "after": "-rw-r--r--\t4444\t2026-06-17 09:22:56.4927122350\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/connection.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/proxy.py",
+      "after": "-rw-r--r--\t1148\t2026-06-17 09:22:56.4935702260\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/proxy.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/request.py",
+      "after": "-rw-r--r--\t8363\t2026-06-17 09:22:56.4951835380\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/request.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/response.py",
+      "after": "-rw-r--r--\t3374\t2026-06-17 09:22:56.4970081160\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/response.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/retry.py",
+      "after": "-rw-r--r--\t19577\t2026-06-17 09:22:56.4995946100\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/retry.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssl_.py",
+      "after": "-rw-r--r--\t17742\t2026-06-17 09:22:56.5010093370\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssl_.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssl_match_hostname.py",
+      "after": "-rw-r--r--\t5479\t2026-06-17 09:22:56.5023640210\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssl_match_hostname.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssltransport.py",
+      "after": "-rw-r--r--\t8847\t2026-06-17 09:22:56.5037220750\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/ssltransport.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/timeout.py",
+      "after": "-rw-r--r--\t10346\t2026-06-17 09:22:56.5051162670\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/timeout.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/url.py",
+      "after": "-rw-r--r--\t15205\t2026-06-17 09:22:56.5068506840\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/url.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/util.py",
+      "after": "-rw-r--r--\t1146\t2026-06-17 09:22:56.5081940270\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/util.py"
+    },
+    {
+      "path": "/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/wait.py",
+      "after": "-rw-r--r--\t4423\t2026-06-17 09:22:56.5094116810\t/home/appuser/.local/lib/python3.10/site-packages/urllib3/util/wait.py"
+    },
+    {
+      "path": "/home/appuser/workdir/sample.txt",
+      "after": "-rw-r--r--\t38\t2026-06-17 09:23:32.0533349890\t/home/appuser/workdir/sample.txt"
+    },
+    {
+      "path": "/tmp/claude-1000",
+      "after": "drwx------\t4096\t2026-06-17 09:21:54.6648576470\t/tmp/claude-1000"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:54.6648576470\t/tmp/claude-1000/-home-appuser"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:54.6648576470\t/tmp/claude-1000/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e/tasks",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:23:32.1304002220\t/tmp/claude-1000/-home-appuser/132c73fc-e0d8-4306-986d-c35f8543da9e/tasks"
+    },
+    {
+      "path": "/tmp/fs_after.txt",
+      "after": "-rw-r--r--\t0\t2026-06-17 09:24:01.8353943490\t/tmp/fs_after.txt"
+    }
+  ],
+  "modified": [
+    {
+      "path": "/home/appuser",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:21:46.7253247420\t/home/appuser",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:24:01.0936822360\t/home/appuser"
+    },
+    {
+      "path": "/home/appuser/.claude",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:21:46.7233246080\t/home/appuser/.claude",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:21:55.7599311490\t/home/appuser/.claude"
+    },
+    {
+      "path": "/home/appuser/.claude.json",
+      "before": "-rw-r--r--\t33\t2026-06-17 09:21:46.7253247420\t/home/appuser/.claude.json",
+      "after": "-rw-r--r--\t24405\t2026-06-17 09:24:01.0893442660\t/home/appuser/.claude.json"
+    },
+    {
+      "path": "/home/appuser/workdir",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:21:46.7253247420\t/home/appuser/workdir",
+      "after": "drwxr-xr-x\t4096\t2026-06-17 09:23:32.0527227640\t/home/appuser/workdir"
+    },
+    {
+      "path": "/tmp",
+      "before": "drwxrwxrwt\t4096\t2026-06-17 09:21:47.7903962310\t/tmp",
+      "after": "drwxrwxrwt\t4096\t2026-06-17 09:24:01.8353943490\t/tmp"
+    },
+    {
+      "path": "/tmp/fs_before.txt",
+      "before": "-rw-r--r--\t0\t2026-06-17 09:21:47.7903962310\t/tmp/fs_before.txt",
+      "after": "-rw-r--r--\t2302\t2026-06-17 09:21:47.7933964320\t/tmp/fs_before.txt"
+    }
+  ],
+  "deleted": [
+    {
+      "path": "/home/appuser/.claude/todos",
+      "before": "drwxr-xr-x\t4096\t2026-06-17 09:21:46.7183242730\t/home/appuser/.claude/todos"
+    }
+  ],
+  "unchanged": [
+    "/home/appuser/.bash_logout",
+    "/home/appuser/.bashrc",
+    "/home/appuser/.claude/cache",
+    "/home/appuser/.claude/debug",
+    "/home/appuser/.claude/skills",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/SKILL.md",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/assets",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/assets/example_asset.txt",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/references",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/references/api_reference.md",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/scripts",
+    "/home/appuser/.claude/skills/dglowacki-mega-agent-v2-dot-claude-skills-skill-find/scripts/skillsmp_api.py",
+    "/home/appuser/.profile",
+    "/tmp/claude_env.sh",
+    "/tmp/nova-requirements.txt",
+    "/tmp/user_prompt.txt",
+    "/var/tmp"
+  ],
+  "num_created": 326,
+  "num_modified": 6,
+  "num_deleted": 1,
+  "num_unchanged": 18,
+  "monitor": "find_based_no_smart_monitor"
+}

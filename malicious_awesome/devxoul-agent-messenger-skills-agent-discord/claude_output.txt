@@ -1,0 +1,3 @@
+[Executor] Prompt loaded successfully from /app/logs/malicious_awesome/devxoul-agent-messenger-skills-agent-discord/.prompt_input.txt
+
+Warning: Execution timeout (300s)
